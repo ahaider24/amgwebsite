@@ -67,7 +67,13 @@
     .tier .tbtn{background:#2A241B;color:var(--darkcard-ink)}
     .tier.pop .tbtn{background:var(--accent);color:#fff}
     .tier .tnote{background:rgba(244,238,226,.05);border-color:rgba(244,238,226,.1)}
-    .nav-cta,.tier .tbtn{background:var(--accent);color:#fff}
+    /* ROI funnel: card, chips, reveal box need dark treatment */
+    .roi{background:#15120D!important;border-color:rgba(244,238,226,.1)}
+    .chip{border-color:rgba(244,238,226,.18);color:var(--ink-soft)}
+    .chip.on{background:var(--accent)!important;color:#fff!important;border-color:var(--accent)!important}
+    .roi-reveal{background:rgba(244,238,226,.05)}
+    .final-search{background:#1C1813;border-color:rgba(244,238,226,.14)}
+    .nav-cta{background:var(--accent);color:#fff}
     .nav-burger span{background:var(--ink)}
     /* photos/gradients that assumed light */
     .founder-photo{background:linear-gradient(160deg,#211C14,#15120D)}
@@ -359,6 +365,37 @@
   .final-search input{flex:1;border:none;background:none;font-family:var(--mono);font-size:15px;color:var(--ink);outline:none;min-width:0}
   .final-search input::placeholder{color:var(--faint)}
   .final-micro{font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--faint);margin-top:18px}
+  /* ROI FUNNEL */
+  .roi{max-width:600px;margin:40px auto 0;background:#fff;border:1px solid var(--line-soft);border-radius:24px;box-shadow:var(--shadow-lg);padding:28px 24px;text-align:left}
+  .roi-controls{display:flex;flex-direction:column;gap:16px;margin-bottom:24px}
+  .roi-row{display:flex;flex-direction:column;gap:9px}
+  .roi-lbl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{font-family:var(--sans);font-weight:700;font-size:14px;padding:10px 16px;border-radius:100px;border:1.5px solid var(--line);background:transparent;color:var(--ink-soft);cursor:pointer;transition:all .2s;flex:1;min-width:fit-content}
+  .chip:hover{border-color:var(--ink)}
+  .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .funnel{display:flex;flex-direction:column;gap:0;margin:8px 0 20px}
+  .fstage{position:relative;margin:0 auto;border-radius:10px;padding:13px 16px;color:#fff;transition:width .7s cubic-bezier(.3,.9,.3,1),background .4s;display:flex;justify-content:space-between;align-items:center;overflow:hidden;min-height:48px}
+  .fstage .fs-label{font-family:var(--sans);font-weight:700;font-size:13px;z-index:2}
+  .fstage .fs-val{font-family:var(--display);font-weight:600;font-size:17px;z-index:2}
+  .fstage .fs-leak{position:absolute;right:10px;bottom:3px;font-family:var(--mono);font-size:9.5px;color:rgba(255,255,255,.7);z-index:2}
+  .fconnect{text-align:center;font-family:var(--mono);font-size:10px;color:var(--faint);padding:3px 0;line-height:1}
+  .roi-reveal{display:flex;align-items:center;justify-content:center;gap:14px;margin:8px 0 18px;padding:20px;background:var(--paper);border-radius:16px}
+  .rv-side{text-align:center;flex:1}
+  .rv-cap{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+  .rv-num{font-family:var(--display);font-weight:600;font-size:clamp(30px,9vw,44px);line-height:1;letter-spacing:-.02em}
+  .rv-old .rv-num{color:var(--ink-soft)}
+  .rv-new .rv-num{color:var(--good)}
+  .rv-sub{font-size:12px;color:var(--faint);margin-top:5px}
+  .rv-arrow{font-size:22px;color:var(--accent);flex-shrink:0}
+  .rv-new{opacity:.25;transition:opacity .6s}
+  .roi.revealed .rv-new{opacity:1}
+  .roi-toggle{width:100%;padding:14px;border-radius:100px;border:none;background:var(--accent);color:#fff;font-family:var(--sans);font-weight:700;font-size:15px;cursor:pointer;transition:transform .2s,background .2s}
+  .roi-toggle:hover{transform:translateY(-2px)}
+  .roi.revealed .roi-toggle{background:var(--ink)}
+  .roi-foot{font-family:var(--mono);font-size:10.5px;line-height:1.6;color:var(--faint);margin-top:14px;text-align:center}
+  .final-or{font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--faint);margin-top:36px}
+  .final-cta{margin-top:32px;display:flex;justify-content:center}
 
   /* CONTACT */
   .contact{padding:0 0 110px}
@@ -461,7 +498,7 @@
       </div>
     </div>
   </div>
-  <a href="#audit" class="nav-cta">See your AI audit</a>
+  <a href="/what-ai-can-do" class="nav-cta">See your AI audit</a>
   <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
@@ -475,7 +512,7 @@
         <p class="hero-deck rv in d1">Bring your business into the AI era. And beyond.</p>
         <p class="sub rv in d2">We're a marketing and AI agency for home service businesses, and a few select industries. World-class SEO. AI workflows wired into how you already work.</p>
         <div class="hero-ctas rv in d3">
-          <a href="#audit" class="btn btn-primary">See what AI says about your biz <span class="arr">→</span></a>
+          <a href="/what-ai-can-do" class="btn btn-primary">See what AI says about your biz <span class="arr">→</span></a>
           <a href="#contact" class="btn btn-ghost">Talk to us</a>
         </div>
       </div>
@@ -1019,13 +1056,12 @@
 <!-- ============ FINAL ============ -->
 <section class="final" id="audit">
   <div class="wrap">
-    <h2 class="rv">See what AI says about <em>your biz</em>.</h2>
-    <p class="rv d1">Drop in your website. We show you exactly how the AI engines see you today, grade you on all four fronts, and send one specific fix for each within 24 hours.</p>
-    <div class="final-search rv d1">
-      <input type="text" placeholder="yourbusiness.com" aria-label="Your website URL">
-      <button class="btn btn-primary">Run the check <span class="arr">→</span></button>
+    <h2 class="rv">See what your leads <em>actually</em> cost you.</h2>
+    <p class="rv d1">Most contractors have no idea what a real customer costs them. Pick your trade, see the honest math, and watch what we'd save you. Two minutes, no email required.</p>
+    <div class="final-cta rv d1">
+      <a href="/what-ai-can-do" class="btn btn-primary">See what AI can do for you <span class="arr">→</span></a>
     </div>
-    <div class="final-micro rv d2">One URL · four grades · zero commitment</div>
+    <div class="final-micro rv d2">Your trade · your numbers · zero commitment</div>
   </div>
 </section>
 
@@ -1273,7 +1309,7 @@
   });
 
   /* CTA scroll */
-  document.querySelectorAll('.tbtn,.final-search .btn').forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();document.getElementById('audit').scrollIntoView({behavior:'smooth'});});});
+  document.querySelectorAll('.tbtn').forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();document.getElementById('audit').scrollIntoView({behavior:'smooth'});});});
 })();
 </script>
 </body>
