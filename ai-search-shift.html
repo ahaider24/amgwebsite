@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Search Shift · AmirGets</title>
+<meta name="description" content="Search stopped being ten blue links. Now it's one AI answer that names a few businesses. Here's what changed, and why ranking under the answer is invisible.">
+<link rel="canonical" href="https://amirgets.com/ai-search-shift">
+<meta name="theme-color" content="#FBF8F2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The AI Search Shift · AmirGets">
+<meta property="og:description" content="Search didn't get better. It got answered. What the shift from ten blue links to one AI answer means for your business.">
+<meta property="og:url" content="https://amirgets.com/ai-search-shift">
+<meta property="og:image" content="https://amirgets.com/og-image.png">
+<meta property="og:site_name" content="AmirGets">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The AI Search Shift · AmirGets">
+<meta name="twitter:description" content="Search didn't get better. It got answered.">
+<meta name="twitter:image" content="https://amirgets.com/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2314110A'/%3E%3Ctext x='50' y='72' font-family='Georgia,serif' font-size='62' font-weight='700' fill='%23FF4D1C' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=Archivo:wght@400;500;600;700;800;900&family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF;--paper:#FBF8F2;--paper-2:#F1EAD9;--paper-3:#E7DDC8;
+    --ink:#14110A;--ink-soft:#574F40;--faint:#9A917B;
+    --accent:#FF4D1C;--accent-deep:#C8380E;--gold:#F2B01E;--good:#1E9B57;
+    --slate:#2E455F;--slate-soft:#B7C6D6;--gblue:#4285F4;
+    --line:rgba(20,17,10,.12);--line-soft:rgba(20,17,10,.06);
+    --shadow:0 1px 2px rgba(20,17,10,.04),0 12px 36px rgba(20,17,10,.07);
+    --shadow-lg:0 40px 96px rgba(20,17,10,.16);
+    --display:"Fraunces",Georgia,serif;--sans:"Archivo",-apple-system,sans-serif;--mono:"JetBrains Mono",monospace;
+    --maxw:1160px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;color-scheme:light}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:multiply}
+  ::selection{background:var(--accent);color:#fff}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  .mono{font-family:var(--mono)}.serif{font-family:var(--display)}.accent{color:var(--accent)}
+  .eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep)}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:16px 26px;transition:background .4s,box-shadow .4s,padding .4s;background:rgba(251,248,242,.9);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line-soft)}
+  .logo{font-family:"Geist",-apple-system,sans-serif;font-weight:700;font-size:21px;letter-spacing:-.02em;color:var(--ink)}
+  .logo .lw{color:var(--accent)}
+  .nav-back{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--ink-soft);display:flex;align-items:center;gap:7px;transition:color .2s}
+  .nav-back:hover{color:var(--accent)}
+  .nav-cta{font-weight:700;font-size:14px;background:var(--ink);color:#fff;padding:10px 18px;border-radius:100px;transition:transform .2s,background .2s;white-space:nowrap}
+  .nav-cta:hover{transform:translateY(-2px);background:var(--accent)}
+  .nav-right{display:flex;align-items:center;gap:18px}
+
+  .btn{font-weight:700;font-size:16px;padding:15px 25px;border-radius:100px;display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s,background .2s;font-family:var(--sans)}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 12px 32px rgba(255,77,28,.32)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(255,77,28,.44)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-3px)}
+  .btn .arr{transition:transform .25s}.btn:hover .arr{transform:translateX(4px)}
+
+  .hero{padding:150px 0 80px;background:linear-gradient(180deg,#fff,var(--paper) 80%)}
+  .hero .klabel{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .hero .klabel .crumb{color:var(--faint)}
+  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(38px,5.4vw,76px);line-height:.99;letter-spacing:-.025em;margin-bottom:24px;max-width:16ch}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero .sub{font-size:20px;color:var(--ink-soft);max-width:54ch;line-height:1.5}
+
+  .stage{margin-top:54px;background:var(--white);border:1px solid var(--line-soft);border-radius:24px;box-shadow:var(--shadow-lg);padding:24px;overflow:hidden}
+  .stage .stage-top{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+  .stage .stage-top .t{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  .stage .stage-top .live{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--good)}
+  .stage .stage-top .live .pulse{width:7px;height:7px;border-radius:50%;background:var(--good);animation:livePulse 1.8s ease-in-out infinite}
+  @keyframes livePulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(30,155,87,.4)}50%{opacity:.6;box-shadow:0 0 0 5px rgba(30,155,87,0)}}
+  .stage .stage-top .live.bad{color:var(--accent-deep)}
+  .stage .stage-top .live.bad .pulse{background:var(--accent);animation:badPulse 1s ease-in-out infinite}
+  @keyframes badPulse{0%,100%{opacity:1}50%{opacity:.3}}
+  .flow-svg{width:100%;height:auto;display:block}
+  .compare{margin-top:54px;display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:stretch}
+  .compare .stage{margin-top:0;display:flex;flex-direction:column}
+  .stage.old{border-color:rgba(46,69,95,.25)}
+  .compare-vs{display:flex;align-items:center;justify-content:center}
+  .compare-vs span{font-family:var(--display);font-style:italic;font-size:18px;color:var(--faint);white-space:nowrap}
+
+  .shift{padding:110px 0;background:var(--ink);color:var(--paper)}
+  .shift .eyebrow{color:var(--gold)}
+  .shift h2{font-family:var(--display);font-weight:420;font-size:clamp(30px,4.4vw,56px);line-height:1.04;letter-spacing:-.025em;color:#fff;margin:16px 0 0;max-width:20ch}
+  .shift h2 em{font-style:italic;color:var(--accent)}
+  .shift-cols{display:grid;grid-template-columns:1fr 1fr;gap:46px;margin-top:44px}
+  .shift-cols p{color:rgba(251,248,242,.78);font-size:18px;line-height:1.55}
+  .shift-cols p b{color:#fff;font-weight:600}
+  .shift-cols p+p{margin-top:18px}
+  .shift-pull{font-family:var(--display);font-style:italic;font-size:clamp(22px,2.8vw,30px);line-height:1.3;color:#fff;border-left:3px solid var(--accent);padding-left:22px}
+  .shift-pull b{font-style:normal;color:var(--accent)}
+
+  .work{padding:114px 0}
+  .work .head{max-width:680px;margin-bottom:8px}
+  .work h2{font-family:var(--display);font-weight:430;font-size:clamp(30px,4.2vw,52px);line-height:1.03;letter-spacing:-.02em;margin-top:14px}
+  .work .head>p{color:var(--ink-soft);font-size:18px;margin-top:16px;max-width:56ch}
+  .wf{display:grid;grid-template-columns:120px 1fr;gap:30px;padding:38px 0;border-top:1px solid var(--line)}
+  .wf:last-child{border-bottom:1px solid var(--line)}
+  .wf .wf-n{font-family:var(--display);font-weight:500;font-size:54px;line-height:1;color:var(--accent);letter-spacing:-.02em}
+  .wf h3{font-family:var(--display);font-weight:540;font-size:27px;letter-spacing:-.01em;margin-bottom:10px}
+  .wf .feel{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--accent-deep);margin-bottom:12px}
+  .wf p{color:var(--ink-soft);font-size:17px;line-height:1.55;max-width:60ch}
+  .wf .outcome{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px;color:var(--ink)}
+  .wf .outcome .dot{width:7px;height:7px;border-radius:50%;background:var(--good)}
+
+  .stats{padding:110px 0;background:var(--paper-2)}
+  .stats .head{max-width:680px;margin-bottom:46px}
+  .stats h2{font-family:var(--display);font-weight:430;font-size:clamp(28px,4vw,50px);line-height:1.04;letter-spacing:-.02em;margin-top:14px}
+  .stats h2 em{font-style:italic;color:var(--accent)}
+  .statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .statc{background:var(--white);border:1px solid var(--line-soft);border-radius:18px;padding:32px 28px}
+  .statc .sv{font-family:var(--display);font-weight:500;font-size:clamp(38px,4.6vw,58px);line-height:1;color:var(--accent);letter-spacing:-.02em}
+  .statc .sl{color:var(--ink-soft);font-size:15px;line-height:1.5;margin-top:14px}
+  .stats .src{font-family:var(--mono);font-size:12px;color:var(--faint);line-height:1.7;margin-top:28px;max-width:74ch}
+
+  .method{padding:110px 0}
+  .method .head{max-width:640px;margin-bottom:48px}
+  .method h2{font-family:var(--display);font-weight:430;font-size:clamp(30px,4.2vw,52px);line-height:1.03;letter-spacing:-.02em;margin-top:14px}
+  .method .head>p{color:var(--ink-soft);font-size:18px;margin-top:16px;max-width:52ch}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .step{background:var(--white);border:1px solid var(--line-soft);border-radius:18px;padding:32px 28px;position:relative}
+  .step .sn{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--accent);font-weight:700;margin-bottom:16px}
+  .step h3{font-family:var(--display);font-weight:540;font-size:23px;letter-spacing:-.01em;margin-bottom:10px}
+  .step p{color:var(--ink-soft);font-size:15.5px;line-height:1.5}
+
+  .faq{padding:110px 0;background:var(--paper-2)}
+  .faq-head{max-width:640px;margin-bottom:40px}
+  .faq-head h2{font-family:var(--display);font-weight:430;font-size:clamp(28px,3.8vw,48px);line-height:1.04;letter-spacing:-.02em;margin-top:14px}
+  .faq-list{max-width:820px}
+  .faq-item{border-top:1px solid var(--line)}
+  .faq-item:last-child{border-bottom:1px solid var(--line)}
+  .faq-q{width:100%;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--display);font-weight:520;font-size:clamp(19px,2.2vw,24px);letter-spacing:-.01em;color:var(--ink);padding:26px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;transition:color .2s}
+  .faq-q:hover{color:var(--accent-deep)}
+  .faq-x{font-family:var(--sans);font-weight:400;font-size:26px;color:var(--accent);flex-shrink:0;transition:transform .3s;line-height:1}
+  .faq-item.open .faq-x{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .faq-item.open .faq-a{max-height:420px}
+  .faq-a p{color:var(--ink-soft);font-size:17px;line-height:1.55;padding-bottom:26px;max-width:64ch}
+
+  .cta{padding:120px 0;text-align:center;background:linear-gradient(180deg,var(--paper),#fff)}
+  .cta h2{font-family:var(--display);font-weight:420;font-size:clamp(32px,5vw,64px);line-height:1.0;letter-spacing:-.025em;max-width:18ch;margin:0 auto 20px}
+  .cta h2 em{font-style:italic;color:var(--accent)}
+  .cta p{color:var(--ink-soft);font-size:19px;max-width:48ch;margin:0 auto 30px}
+  .cta-row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+
+  footer{padding:50px 0;border-top:1px solid var(--line);background:var(--paper-2)}
+  .foot-grid{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+  .foot-logo{font-family:"Geist",sans-serif;font-weight:700;font-size:21px;letter-spacing:-.02em}
+  .foot-logo .lw{color:var(--accent)}
+  .foot-meta{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.03em;line-height:1.8}
+
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+
+  @media(max-width:900px){
+    .hero{padding:120px 0 60px}
+    .compare{grid-template-columns:1fr;gap:14px}
+    .compare-vs span{font-size:16px}
+    .shift-cols{grid-template-columns:1fr;gap:30px}
+    .steps,.statgrid{grid-template-columns:1fr}
+    .wf{grid-template-columns:1fr;gap:8px}
+    .wf .wf-n{font-size:42px}
+  }
+  @media(max-width:600px){
+    body{font-size:17px}.wrap{padding:0 18px}
+    nav{padding:12px 18px}.logo{font-size:18px}
+    .nav-back{display:none}
+    .hero{padding:108px 0 54px}
+    .shift,.work,.method,.stats,.cta{padding:78px 0}
+    .stage{padding:14px;border-radius:18px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .rv{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">AmirGets<span class="lw">Scale</span></a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">← Back to home</a>
+    <a href="index.html#audit" class="nav-cta">See your lead math</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="klabel rv in"><span>Insights</span><span class="crumb">/ The AI Search Shift</span></div>
+    <h1 class="rv in d1">Search didn't get better. <em>It got answered.</em></h1>
+    <p class="sub rv in d2">For twenty years, searching meant ten blue links and you did the digging. Now you ask, and one AI answer hands back the verdict, naming a couple of businesses by name. Most people never click a thing. If your name isn't in that answer, you're not in the running.</p>
+
+    <div class="compare rv in d2">
+      <div class="stage old">
+        <div class="stage-top">
+          <span class="t">Search, the old way</span>
+          <span class="live bad"><span class="pulse"></span> ten links</span>
+        </div>
+        <svg class="flow-svg" id="oldSvg" viewBox="0 0 480 470" preserveAspectRatio="xMidYMid meet" aria-label="A classic search results page with ten blue links the user has to read and compare"></svg>
+      </div>
+
+      <div class="compare-vs"><span>became</span></div>
+
+      <div class="stage">
+        <div class="stage-top">
+          <span class="t">Search, now</span>
+          <span class="live"><span class="pulse"></span> one answer</span>
+        </div>
+        <svg class="flow-svg" id="newSvg" viewBox="0 0 480 470" preserveAspectRatio="xMidYMid meet" aria-label="An AI answer that resolves the question and names a few businesses, while the blue links below go unclicked"></svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ THE SHIFT ============ -->
+<section class="shift">
+  <div class="wrap">
+    <span class="eyebrow rv">What actually changed</span>
+    <h2 class="rv d1">The link was the product. <em>Now the answer is.</em></h2>
+    <div class="shift-cols">
+      <div class="rv d1">
+        <p>Old search sold attention by the click. Ten results, and the game was ranking high enough to earn the tap. SEO was about being on page one, because page one is where the clicks were.</p>
+        <p>AI search sells the answer itself. The model reads the whole web, decides who's worth mentioning, and writes a few sentences that settle it. <b>The customer gets what they needed without visiting a single site.</b> The click, the thing the old web ran on, just quietly disappeared.</p>
+      </div>
+      <div class="rv d2">
+        <p class="shift-pull">You can still rank number one. <b>It just doesn't matter the way it used to,</b> because the answer sits above you and most people never scroll past it. The new question isn't where you rank. It's whether the answer says your name.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT IT MEANS ============ -->
+<section class="work">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">What it means for your business</span>
+      <h2>Four things that are already true, whether you've noticed or not.</h2>
+      <p>This isn't a forecast. It's how your customers are searching right now, today, for exactly what you sell.</p>
+    </div>
+
+    <div class="wf rv">
+      <div class="wf-n">01</div>
+      <div>
+        <div class="feel">the click is vanishing</div>
+        <h3>Most searches end without a click</h3>
+        <p>A huge share of searches now end on the results page itself. People read the answer and move on. The visit you used to compete for often never happens, because the question got resolved before anyone left the search.</p>
+        <span class="outcome"><span class="dot"></span> Fewer clicks to win, so each one matters more.</span>
+      </div>
+    </div>
+
+    <div class="wf rv">
+      <div class="wf-n">02</div>
+      <div>
+        <div class="feel">the answer names names</div>
+        <h3>AI recommends a few businesses, by name</h3>
+        <p>Ask for the best option in your trade and town and the AI doesn't list twenty. It names two or three, in a sentence, like a friend would. Those names get the call. Everyone else is a footnote the customer never reads.</p>
+        <span class="outcome"><span class="dot"></span> Being named is the new being found.</span>
+      </div>
+    </div>
+
+    <div class="wf rv">
+      <div class="wf-n">03</div>
+      <div>
+        <div class="feel">page one is the new page two</div>
+        <h3>Ranking under the answer is invisible</h3>
+        <p>You can hold the number one organic spot and still lose, because it sits below an answer that already gave the customer everything they wanted. The old prize, top of the links, now lives in the part of the page nobody scrolls to.</p>
+        <span class="outcome"><span class="dot"></span> Old-school SEO alone no longer gets you seen.</span>
+      </div>
+    </div>
+
+    <div class="wf rv">
+      <div class="wf-n">04</div>
+      <div>
+        <div class="feel">the only winning move</div>
+        <h3>You have to be in the answer</h3>
+        <p>Getting cited by the AI is a different job than ranking. It comes from clear, specific, trustworthy content the model can confidently quote, plus the local signals that prove you're real. That's the work, and it's learnable, on purpose.</p>
+        <span class="outcome"><span class="dot"></span> This is the whole game now, and it's winnable.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE DATA ============ -->
+<section class="stats">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">This already happened</span>
+      <h2>It's not coming. <em>It's here, and it's measured.</em></h2>
+    </div>
+    <div class="statgrid">
+      <div class="statc rv"><div class="sv">58%</div><div class="sl">of Google searches now end without a single click to any website</div></div>
+      <div class="statc rv d1"><div class="sv">42%</div><div class="sl">better conversion from AI-referred visitors than any other channel</div></div>
+      <div class="statc rv d2"><div class="sv">393%</div><div class="sl">year-over-year growth in AI-driven traffic, Q1 2026</div></div>
+    </div>
+    <div class="src rv">Zero-click figure: industry search data. AI-traffic figures: Adobe Analytics, Q1 2026, based on over one trillion visits to U.S. retail sites. A year earlier that same AI traffic converted 38% worse. The flip took twelve months.</div>
+  </div>
+</section>
+
+<!-- ============ WHAT TO DO ============ -->
+<section class="method">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">What to do about it</span>
+      <h2>You don't fight the shift. You get on the right side of it.</h2>
+      <p>The businesses that win the next decade aren't the ones who ranked highest. They're the ones the answer engines trust enough to name.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv">
+        <div class="sn">01</div>
+        <h3>Get cited, not just ranked</h3>
+        <p>Build the clear, specific, quotable content and the local proof that makes an AI confident enough to put your name in the answer. That's the <a href="seo-geo-playbook.html" style="color:var(--accent-deep);font-weight:600">SEO &amp; GEO playbook</a>.</p>
+      </div>
+      <div class="step rv d1">
+        <div class="sn">02</div>
+        <h3>Publish what only you know</h3>
+        <p>Original, on-brand content from your real expertise gives the model something worth quoting and gives people a reason to remember you. That's <a href="content-strategy.html" style="color:var(--accent-deep);font-weight:600">content strategy</a>.</p>
+      </div>
+      <div class="step rv d2">
+        <div class="sn">03</div>
+        <h3>Catch the leads it sends</h3>
+        <p>AI-referred customers convert better, but only if you answer fast. The workflows make sure the lead the answer sends you never sits in a voicemail. That's <a href="ai-workflows.html" style="color:var(--accent-deep);font-weight:600">AI workflows</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="faq-head rv">
+      <span class="eyebrow">Straight answers</span>
+      <h2>Questions about the shift.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item rv">
+        <button class="faq-q">Is regular SEO dead, then?<span class="faq-x">+</span></button>
+        <div class="faq-a"><p>No, but it's only half the job now. You still need to rank and show up on the map, because the AI reads those same signals to decide who to trust. The change is that ranking alone no longer gets you seen. You need to be in the answer too, and that takes both SEO and GEO together.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <button class="faq-q">How do I even know if AI is recommending me?<span class="faq-x">+</span></button>
+        <div class="faq-a"><p>You ask it. Type the questions your customers ask, best option in your trade and town, into ChatGPT, Google's AI Overview, and Perplexity, and see whose name comes up. Usually it's two or three competitors and not you. That gap is exactly what we close.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <button class="faq-q">Isn't this just a fad that'll blow over?<span class="faq-x">+</span></button>
+        <div class="faq-a"><p>The behavior is already mainstream and the numbers are climbing fast, not cooling off. Whether one particular tool wins doesn't matter. People have learned they can ask a question and get an answer instead of a list, and they're not going back to digging through ten links.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <button class="faq-q">Why are AI-referred customers worth more?<span class="faq-x">+</span></button>
+        <div class="faq-a"><p>Because the AI already pre-sold them. By the time someone arrives, the answer has told them you're a strong choice, so they show up further along and readier to buy. The catch is they expect a fast response, which is why visibility and speed-to-lead have to work together.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <div class="wrap">
+    <h2 class="rv">Find out what the AI <em>says about you</em>.</h2>
+    <p class="rv d1">See what your leads actually cost you today, then we'll show you where the answer engines leave you out, and how to fix it.</p>
+    <div class="cta-row rv d1">
+      <a href="index.html#audit" class="btn btn-primary">See your lead math <span class="arr">→</span></a>
+      <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-ghost">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">AmirGets<span class="lw">Scale</span></div>
+        <div class="foot-meta">Central California's AI-native SEO &amp; marketing agency.</div>
+      </div>
+      <div class="foot-meta" style="text-align:right">
+        Serving Fresno, Los Angeles & Phoenix<br>(559) 550-5474<br>AmirGets, an Amir Gets LLC company
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv:not(.in)').forEach(function(el){io.observe(el);});
+
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.closest('.faq-item');var wasOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!wasOpen)item.classList.add('open');
+    });
+  });
+
+  /* ===== OLD SEARCH (ten blue links) ===== */
+  var ov=document.getElementById('oldSvg');
+  if(ov){
+    var O='http://www.w3.org/2000/svg';
+    function OE(t,a,p){var e=document.createElementNS(O,t);for(var k in a)e.setAttribute(k,a[k]);(p||ov).appendChild(e);return e;}
+    OE('rect',{x:0,y:0,width:480,height:470,rx:14,fill:'#fff'});
+    // search bar
+    OE('rect',{x:24,y:24,width:432,height:40,rx:20,fill:'#fff',stroke:'#dcd7cd'});
+    OE('circle',{cx:48,cy:44,r:7,fill:'none',stroke:'#9aa0a6','stroke-width':2}); OE('line',{x1:53,y1:49,x2:59,y2:55,stroke:'#9aa0a6','stroke-width':2,'stroke-linecap':'round'});
+    OE('text',{x:72,y:49,'font-family':'var(--sans)','font-size':14,fill:'#3c4043'}).textContent='best hvac company in fresno';
+    OE('circle',{cx:430,cy:44,r:3,fill:'#4285F4'});OE('circle',{cx:440,cy:44,r:3,fill:'#EA4335'});OE('circle',{cx:450,cy:44,r:3,fill:'#FBBC05'});
+    OE('text',{x:24,y:88,'font-family':'var(--mono)','font-size':10,fill:'#70757a'}).textContent='About 2,470,000 results';
+    // ten link rows (compact)
+    var rowsG=OE('g',{});
+    var ry=104, results=[];
+    for(var i=0;i<7;i++){
+      var y=ry+i*48;
+      var g=OE('g',{opacity:0},rowsG);
+      OE('text',{x:24,y:y,'font-family':'var(--sans)','font-size':9,fill:'#1E9B57'},g).textContent='somehvacsite'+(i+1)+'.com';
+      OE('text',{x:24,y:y+16,'font-family':'var(--sans)','font-size':13,'font-weight':500,fill:'#1A0DAB'},g).textContent=['Top 10 HVAC Companies in Fresno','Fresno Air Conditioning Repair | Best Rated','HVAC Near Me - Fresno, CA','Affordable AC Repair Fresno','Heating & Cooling Fresno Reviews','24/7 HVAC Service Fresno','Fresno HVAC Contractors Directory'][i];
+      OE('rect',{x:24,y:y+24,width:400,height:6,rx:3,fill:'#e6e3db'},g);
+      OE('rect',{x:24,y:y+34,width:330,height:6,rx:3,fill:'#e6e3db'},g);
+      results.push(g);
+    }
+    // scrollbar hint
+    OE('rect',{x:466,y:100,width:5,height:330,rx:2.5,fill:'#eee'});
+    var scroller=OE('rect',{x:466,y:100,width:5,height:80,rx:2.5,fill:'#c7c2b6'});
+    // a "you scan all of these" cursor
+    var eye=OE('g',{opacity:0});
+    OE('circle',{cx:0,cy:0,r:16,fill:'rgba(255,77,28,.12)'},eye);
+    OE('path',{d:'M-6 2 l4 8 l3 -4 l5 1 z',fill:'var(--ink)'},eye);
+    var tag=OE('g',{opacity:0});
+    OE('rect',{x:150,y:432,width:180,height:26,rx:13,fill:'var(--ink)'},tag);
+    OE('text',{x:240,y:449,'text-anchor':'middle','font-family':'var(--sans)','font-size':12,'font-weight':700,fill:'#fff'},tag).textContent='ten links, you do the work';
+
+    function play(){
+      results.forEach(function(g,i){setTimeout(function(){g.style.transition='opacity .3s';g.setAttribute('opacity',1);},120+i*120);});
+      // eye scans down
+      setTimeout(function(){
+        eye.setAttribute('opacity',1);
+        var p=0;
+        function hop(){ if(p>=results.length){ setTimeout(function(){eye.setAttribute('opacity',0);},400); return;} eye.style.transition='transform .45s ease'; eye.setAttribute('transform','translate(250 '+(ry+p*48+10)+')'); p++; setTimeout(hop,520);}
+        hop();
+      },1100);
+      setTimeout(function(){tag.style.transition='opacity .4s';tag.setAttribute('opacity',1);},1300);
+      setTimeout(function(){
+        results.forEach(function(g){g.setAttribute('opacity',0);}); tag.setAttribute('opacity',0);
+        setTimeout(play,700);
+      },6500);
+    }
+    if(!reduce){play();} else {results.forEach(function(g){g.setAttribute('opacity',1);});tag.setAttribute('opacity',1);}
+  }
+
+  /* ===== NEW SEARCH (one answer, names names, links ignored) ===== */
+  var nv=document.getElementById('newSvg');
+  if(nv){
+    var N='http://www.w3.org/2000/svg';
+    function NE(t,a,p){var e=document.createElementNS(N,t);for(var k in a)e.setAttribute(k,a[k]);(p||nv).appendChild(e);return e;}
+    var defs=NE('defs',{});
+    var grad=NE('linearGradient',{id:'sparkS',x1:'0',y1:'0',x2:'1',y2:'1'},defs);
+    NE('stop',{offset:'0','stop-color':'#4285F4'},grad);NE('stop',{offset:'.5','stop-color':'#9B72F6'},grad);NE('stop',{offset:'1','stop-color':'#EA4335'},grad);
+    NE('rect',{x:0,y:0,width:480,height:470,rx:14,fill:'#fff'});
+    // search bar
+    NE('rect',{x:24,y:24,width:432,height:40,rx:20,fill:'#fff',stroke:'#dcd7cd'});
+    NE('circle',{cx:48,cy:44,r:7,fill:'none',stroke:'#9aa0a6','stroke-width':2}); NE('line',{x1:53,y1:49,x2:59,y2:55,stroke:'#9aa0a6','stroke-width':2,'stroke-linecap':'round'});
+    NE('text',{x:72,y:49,'font-family':'var(--sans)','font-size':14,fill:'#3c4043'}).textContent='best hvac company in fresno';
+    // AI Overview card
+    NE('rect',{x:24,y:84,width:432,height:210,rx:14,fill:'#F6F9FE',stroke:'#E2E8F3'});
+    NE('path',{d:'M48 112 l3 7.5 l7.5 3 l-7.5 3 l-3 7.5 l-3 -7.5 l-7.5 -3 l7.5 -3 z',fill:'url(#sparkS)'});
+    NE('text',{x:66,y:118,'font-family':'var(--sans)','font-size':13,'font-weight':800,fill:'#1f1f1f'}).textContent='AI Overview';
+    // typed answer lines
+    var lines=[
+      NE('rect',{x:48,y:134,width:384,height:8,rx:4,fill:'#D9E2F1',opacity:0}),
+      NE('rect',{x:48,y:150,width:360,height:8,rx:4,fill:'#D9E2F1',opacity:0}),
+      NE('rect',{x:48,y:166,width:300,height:8,rx:4,fill:'#D9E2F1',opacity:0})
+    ];
+    NE('text',{x:48,y:198,'font-family':'var(--mono)','font-size':10,'letter-spacing':'.1em',fill:'#5f6368'}).textContent='TOP PICKS';
+    // three named businesses appear
+    var names=['Valley Comfort Heating','Sierra Climate Pros','Central Cal Mechanical'];
+    var cols=['#1E9B57','#4285F4','#F2B01E'];
+    var nameG=[];
+    names.forEach(function(nm,i){
+      var g=NE('g',{opacity:0});
+      var y=210+i*26;
+      NE('circle',{cx:60,cy:y+8,r:9,fill:cols[i]},g);
+      NE('text',{x:60,y:y+11,'text-anchor':'middle','font-family':'var(--sans)','font-size':9,'font-weight':800,fill:'#fff'},g).textContent=(i+1);
+      NE('text',{x:78,y:y+12,'font-family':'var(--sans)','font-size':13,'font-weight':700,fill:'#1f1f1f'},g).textContent=nm;
+      nameG.push(g);
+    });
+    // the blue links below, dimmed and ignored
+    var linksG=NE('g',{opacity:.4});
+    NE('text',{x:24,y:320,'font-family':'var(--mono)','font-size':10,fill:'#9aa0a6'},linksG).textContent='Web results';
+    for(var i=0;i<3;i++){
+      var y=334+i*40;
+      NE('text',{x:24,y:y,'font-family':'var(--sans)','font-size':11,fill:'#1A0DAB'},linksG).textContent=['Top 10 HVAC Companies in Fresno','Fresno AC Repair | Best Rated','HVAC Near Me - Fresno, CA'][i];
+      NE('rect',{x:24,y:y+8,width:380,height:5,rx:2.5,fill:'#e6e3db'},linksG);
+      NE('rect',{x:24,y:y+18,width:300,height:5,rx:2.5,fill:'#e6e3db'},linksG);
+    }
+    // zero-click chip over the links
+    var zc=NE('g',{opacity:0});
+    NE('rect',{x:150,y:432,width:180,height:26,rx:13,fill:'var(--ink)'},zc);
+    NE('circle',{cx:170,cy:445,r:5,fill:'var(--accent)'},zc);
+    NE('text',{x:184,y:449,'font-family':'var(--sans)','font-size':12,'font-weight':700,fill:'#fff'},zc).textContent='nobody scrolls here';
+
+    function playN(){
+      lines.forEach(function(l,i){setTimeout(function(){l.style.transition='opacity .3s';l.setAttribute('opacity',1);},250+i*240);});
+      nameG.forEach(function(g,i){setTimeout(function(){g.style.transition='opacity .4s, transform .5s cubic-bezier(.2,1.2,.3,1)';g.setAttribute('opacity',1);},1150+i*240);});
+      setTimeout(function(){zc.style.transition='opacity .4s';zc.setAttribute('opacity',1);},2100);
+      setTimeout(function(){
+        lines.forEach(function(l){l.setAttribute('opacity',0);});nameG.forEach(function(g){g.setAttribute('opacity',0);});zc.setAttribute('opacity',0);
+        setTimeout(playN,700);
+      },6500);
+    }
+    if(!reduce){playN();} else {lines.forEach(function(l){l.setAttribute('opacity',1);});nameG.forEach(function(g){g.setAttribute('opacity',1);});zc.setAttribute('opacity',1);}
+  }
+})();
+</script>
+</body>
+</html>
