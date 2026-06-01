@@ -476,10 +476,22 @@
       return;
     }
     var payload={firstName:first,lastName:last,company:company,email:email,phone:phone,trade:tradeSel?tradeSel.t:''};
-    // TODO: POST payload to Airtable CRM endpoint
-    console.log('lead',payload);
-    document.getElementById('leadcard').classList.add('sent');
-    document.getElementById('leadcard').innerHTML='<div class="lead-eyebrow">Got it</div><h3 class="lead-h">We\u2019re on it, '+first+'.</h3><p class="lead-p">We\u2019ll build your numbers and reach out within one business day. Talk soon.</p>';
+    var btn=document.getElementById('leadSubmit');
+    var label=btn.textContent;
+    btn.disabled=true; btn.textContent='Sending...';
+    note.textContent='Building your numbers...';
+    note.style.color='';
+    fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+      .then(function(r){if(!r.ok)throw new Error('status '+r.status);})
+      .then(function(){
+        document.getElementById('leadcard').classList.add('sent');
+        document.getElementById('leadcard').innerHTML='<div class="lead-eyebrow">Got it</div><h3 class="lead-h">We\u2019re on it, '+first+'.</h3><p class="lead-p">We\u2019ll build your numbers and reach out within one business day. Talk soon.</p>';
+      })
+      .catch(function(){
+        btn.disabled=false; btn.textContent=label;
+        note.textContent='Something went wrong sending that. Call or text (559) 550-5474 and we\u2019ll sort it.';
+        note.style.color='var(--lose)';
+      });
   });
 
   document.getElementById('bookBtn').addEventListener('click',function(ev){

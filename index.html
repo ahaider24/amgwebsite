@@ -73,12 +73,12 @@
     .chip.on{background:var(--accent)!important;color:#fff!important;border-color:var(--accent)!important}
     .roi-reveal{background:rgba(244,238,226,.05)}
     .final-search{background:#1C1813;border-color:rgba(244,238,226,.14)}
-    .nav-cta{background:var(--accent);color:#fff}
-    .nav-burger span{background:var(--ink)}
+    .nav-cta{background:var(--accent)!important;color:#fff!important}
+    .nav-burger span{background:var(--ink)!important}
     /* photos/gradients that assumed light */
     .founder-photo{background:linear-gradient(160deg,#211C14,#15120D)}
     .final{background:linear-gradient(180deg,var(--paper),#15120D)}
-    .hero{background:linear-gradient(180deg,#1A1712,var(--paper) 72%)}
+    .hero{background:linear-gradient(180deg,#1A1712,var(--paper) 72%)!important}
     /* nav was a hardcoded light cream; match the dark page */
     nav.scrolled{background:rgba(15,13,9,.9)!important;box-shadow:0 1px 0 rgba(244,238,226,.08)!important}
     .logo{color:var(--ink)}
@@ -101,7 +101,7 @@
   /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:16px 26px;transition:background .4s,box-shadow .4s,padding .4s}
   nav.scrolled{background:rgba(251,248,242,.9);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line-soft);padding:11px 26px}
-  .logo{font-family:"Geist",-apple-system,sans-serif;font-weight:700;font-size:21px;letter-spacing:-.02em;display:inline-flex;align-items:baseline;gap:2px;line-height:1}
+  .logo{font-family:"Geist",-apple-system,sans-serif;font-weight:700;font-size:21px;letter-spacing:-.02em;display:inline-flex;align-items:flex-end;gap:2px;line-height:1}
   .logo .tword{position:relative;display:inline-block;width:92px;height:1em;overflow:hidden}
   .logo .tword span{position:absolute;left:0;top:0;color:var(--accent);font-style:italic;opacity:0;transform:translateY(105%);white-space:nowrap}
   .logo .tword span.in{animation:rollIn .55s cubic-bezier(.2,.8,.2,1) forwards}
@@ -498,7 +498,7 @@
       </div>
     </div>
   </div>
-  <a href="/what-ai-can-do" class="nav-cta">See your AI audit</a>
+  <a href="/what-ai-can-do" class="nav-cta">See your lead math</a>
   <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
@@ -512,7 +512,7 @@
         <p class="hero-deck rv in d1">Bring your business into the AI era. And beyond.</p>
         <p class="sub rv in d2">We're a marketing and AI agency for home service businesses, and a few select industries. World-class SEO. AI workflows wired into how you already work.</p>
         <div class="hero-ctas rv in d3">
-          <a href="/what-ai-can-do" class="btn btn-primary">See what AI says about your biz <span class="arr">→</span></a>
+          <a href="/what-ai-can-do" class="btn btn-primary">See what your leads cost you <span class="arr">→</span></a>
           <a href="#contact" class="btn btn-ghost">Talk to us</a>
         </div>
       </div>
@@ -1118,7 +1118,7 @@
   }
 
   /* turnstile logo */
-  var words=['Jobs','Found','Busy','Cited','Calls','Booked','Ahead','Scale'];
+  var words=['Jobs','Found','Booked','AI','Scale','Cited','Calls','Ahead'];
   var tw=document.getElementById('tword'),ti=0,cur=null;
   function showWord(i){var s=document.createElement('span');s.textContent=words[i];s.classList.add('in');tw.appendChild(s);if(cur){var o=cur;o.classList.remove('in');o.classList.add('out');setTimeout(function(){o.remove();},600);}cur=s;}
   showWord(0); if(!reduce) setInterval(function(){ti=(ti+1)%words.length;showWord(ti);},2200);
