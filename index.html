@@ -513,7 +513,7 @@
         <p class="sub rv in d2">We're a marketing and AI agency for home service businesses, and a few select industries. World-class SEO. AI workflows wired into how you already work.</p>
         <div class="hero-ctas rv in d3">
           <a href="/what-ai-can-do" class="btn btn-primary">See what your leads cost you <span class="arr">→</span></a>
-          <a href="#contact" class="btn btn-ghost">Talk to us</a>
+          <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-ghost">Talk to us</a>
         </div>
       </div>
       <div class="rv in d2">
@@ -1014,7 +1014,7 @@
           <li><span class="ck">→</span> Unified weekly dashboard + quarterly strategy</li>
         </ul>
         <div class="tnote">Ad management: 10% of spend above $2,000/mo. Lower rate, more firepower.</div>
-        <div class="tbtn">Book a fit call</div>
+        <div class="tbtn" data-cal>Book a fit call</div>
       </div>
     </div>
     <p class="price-foot rv">Ad management is a transparent fee on top of your spend, never a markup of it. Setup can be split (T1 in 2, T2 &amp; T3 in 3), or save 7% paying upfront.</p>
@@ -1075,7 +1075,7 @@
         <p>A straight conversation about your business, no pitch deck, no pressure. If we're a fit, you'll know. If we're not, we'll point you somewhere better.</p>
       </div>
       <div class="contact-cta">
-        <a href="tel:5595505474" class="btn btn-primary">Book a call <span class="arr">→</span></a>
+        <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-primary">Book a call <span class="arr">→</span></a>
         <div class="contact-meta">(559) 550-5474</div>
       </div>
     </div>
@@ -1309,7 +1309,7 @@
   });
 
   /* CTA scroll */
-  document.querySelectorAll('.tbtn').forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();document.getElementById('audit').scrollIntoView({behavior:'smooth'});});});
+  document.querySelectorAll('.tbtn').forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();if(b.hasAttribute('data-cal')){window.open('https://calendly.com/amir-amirgetsjobs/30min','_blank','noopener');}else{document.getElementById('audit').scrollIntoView({behavior:'smooth'});}});});
 })();
 </script>
 </body>
