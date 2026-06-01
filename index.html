@@ -6,8 +6,7 @@
 <title>AmirGets · AI-Native Marketing for Home Service Businesses</title>
 <meta name="description" content="We're a marketing and AI agency for home service businesses. World-class SEO and AI workflows wired into how you already work. Go from winging it to winning it.">
 <link rel="canonical" href="https://amirgets.com/">
-<meta name="theme-color" content="#FBF8F2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0F0D09" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FBF8F2">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AmirGets · AI-Native Marketing for Home Service Businesses">
 <meta property="og:description" content="World-class SEO and AI workflows wired into how you already work. Go from winging it to winning it.">
@@ -49,7 +48,8 @@
     --maxw:1160px;
     --darkcard:#14110A;--darkcard-ink:#FBF8F2;
   }
-  @media (prefers-color-scheme: dark){
+  /* Dark mode paused: forced light for now. Re-enable by deleting " and (max-width:1px)" below, then revisit the palette to match the orange, not brown. */
+  @media (prefers-color-scheme: dark) and (max-width:1px){
     :root{
       --white:#1A1712;--paper:#0F0D09;--paper-2:#15120D;--paper-3:#211C14;
       --ink:#F4EEE2;--ink-soft:#B7AE9C;--faint:#7E7765;
@@ -89,7 +89,7 @@
     body::after{mix-blend-mode:screen;opacity:.06}
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;color-scheme:light dark}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;color-scheme:light}
   body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:multiply}
   ::selection{background:var(--accent);color:#fff}
@@ -484,6 +484,7 @@
       <button class="nav-trigger" aria-expanded="false">Insights <span class="chev">⌄</span></button>
       <div class="nav-drop">
         <a href="ai-workflows.html" class="drop-link"><b>AI Workflows</b><span>How we wire AI into your business</span></a>
+        <a href="content-strategy.html" class="drop-link"><b>Content Strategy</b><span>Content people remember and AI cites</span></a>
         <a href="#" class="drop-link"><b>The AI search shift</b><span>What changed and why it matters</span></a>
         <a href="#" class="drop-link"><b>GEO playbook</b><span>Getting cited by ChatGPT &amp; Perplexity</span></a>
         <a href="#" class="drop-link"><b>Field notes</b><span>What's working right now</span></a>
@@ -618,21 +619,21 @@
           <!-- local pack listings -->
           <g class="an" id="ml1">
             <rect x="0" y="144" width="360" height="50" rx="10" fill="#fff" stroke="var(--line-soft)"/>
-            <text x="14" y="166" font-family="var(--sans)" font-weight="700" font-size="14" fill="var(--ink)">1. Valley Comfort Heating</text>
+            <text x="14" y="166" font-family="var(--sans)" font-weight="700" font-size="14" fill="#1A73E8">1. Valley Comfort Heating</text>
             <text x="14" y="183" font-family="var(--mono)" font-size="10" fill="var(--gold)">★★★★★ 4.9 · HVAC · Open</text>
             <rect x="250" y="158" width="44" height="22" rx="11" fill="none" stroke="var(--slate)" stroke-width="1"/><text x="272" y="172" text-anchor="middle" font-family="var(--sans)" font-size="9" fill="var(--slate)">Call</text>
             <rect x="300" y="158" width="48" height="22" rx="11" fill="var(--slate)"/><text x="324" y="172" text-anchor="middle" font-family="var(--sans)" font-size="9" fill="#fff">Website</text>
           </g>
           <g class="an" id="ml2">
             <rect x="0" y="200" width="360" height="50" rx="10" fill="#fff" stroke="var(--line-soft)"/>
-            <text x="14" y="222" font-family="var(--sans)" font-weight="700" font-size="14" fill="var(--ink)">2. Sierra Climate Pros</text>
+            <text x="14" y="222" font-family="var(--sans)" font-weight="700" font-size="14" fill="#1A73E8">2. Sierra Climate Pros</text>
             <text x="14" y="239" font-family="var(--mono)" font-size="10" fill="var(--gold)">★★★★☆ 4.6 · HVAC · Open</text>
             <rect x="250" y="214" width="44" height="22" rx="11" fill="none" stroke="var(--slate)" stroke-width="1"/><text x="272" y="228" text-anchor="middle" font-family="var(--sans)" font-size="9" fill="var(--slate)">Call</text>
             <rect x="300" y="214" width="48" height="22" rx="11" fill="var(--slate)"/><text x="324" y="228" text-anchor="middle" font-family="var(--sans)" font-size="9" fill="#fff">Website</text>
           </g>
           <g class="an" id="ml3">
             <rect x="0" y="256" width="360" height="50" rx="10" fill="#fff" stroke="var(--line-soft)"/>
-            <text x="14" y="278" font-family="var(--sans)" font-weight="700" font-size="14" fill="var(--ink)">3. Central Cal Mechanical</text>
+            <text x="14" y="278" font-family="var(--sans)" font-weight="700" font-size="14" fill="#1A73E8">3. Central Cal Mechanical</text>
             <text x="14" y="295" font-family="var(--mono)" font-size="10" fill="var(--gold)">★★★★☆ 4.5 · HVAC · Open</text>
             <rect x="250" y="270" width="44" height="22" rx="11" fill="none" stroke="var(--slate)" stroke-width="1"/><text x="272" y="284" text-anchor="middle" font-family="var(--sans)" font-size="9" fill="var(--slate)">Call</text>
             <rect x="300" y="270" width="48" height="22" rx="11" fill="var(--slate)"/><text x="324" y="284" text-anchor="middle" font-family="var(--sans)" font-size="9" fill="#fff">Website</text>
@@ -701,7 +702,7 @@
           <rect x="42" y="16" width="236" height="416" rx="32" fill="#fff"/>
           <rect x="128" y="22" width="60" height="15" rx="7.5" fill="#15110a"/>
           <!-- header -->
-          <text x="58" y="64" font-family="var(--sans)" font-weight="800" font-size="22" fill="var(--ink)">Recents</text>
+          <text x="58" y="64" font-family="var(--sans)" font-weight="800" font-size="22" fill="#14110A">Recents</text>
           <text x="262" y="64" text-anchor="end" font-family="var(--sans)" font-size="13" fill="var(--gblue)">Edit</text>
           <text class="an" id="missTab" x="58" y="86" font-family="var(--sans)" font-weight="700" font-size="13" fill="var(--gred)">Missed</text>
           <line x1="58" y1="94" x2="92" y2="94" stroke="var(--gred)" stroke-width="2"/>
@@ -709,18 +710,18 @@
           <g id="callRows"></g>
           <!-- floating notifications -->
           <g class="an" id="noteMsg">
-            <rect x="6" y="118" width="150" height="44" rx="12" fill="#fff" stroke="var(--line)" filter="url(#sh)"/>
-            <rect x="18" y="130" width="20" height="20" rx="6" fill="var(--ggreen)"/><path d="M23 140 h10 M23 144 h7" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
-            <text x="46" y="135" font-family="var(--sans)" font-weight="700" font-size="11" fill="var(--ink)">Messages</text>
-            <text x="46" y="149" font-family="var(--mono)" font-size="9" fill="var(--ink-soft)">7 unread from clients</text>
-            <circle cx="146" cy="128" r="9" fill="var(--gred)"/><text x="146" y="132" text-anchor="middle" font-family="var(--sans)" font-weight="700" font-size="9" fill="#fff">7</text>
+            <rect x="52" y="294" width="174" height="44" rx="12" fill="#fff" stroke="var(--line)" filter="url(#sh)"/>
+            <rect x="64" y="306" width="20" height="20" rx="6" fill="var(--ggreen)"/><path d="M69 316 h10 M69 320 h7" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+            <text x="92" y="311" font-family="var(--sans)" font-weight="700" font-size="11" fill="#14110A">Messages</text>
+            <text x="92" y="325" font-family="var(--mono)" font-size="9" fill="#574F40">7 unread from clients</text>
+            <circle cx="216" cy="304" r="9" fill="var(--gred)"/><text x="216" y="308" text-anchor="middle" font-family="var(--sans)" font-weight="700" font-size="9" fill="#fff">7</text>
           </g>
           <g class="an" id="noteRev">
-            <rect x="150" y="372" width="164" height="56" rx="12" fill="#fff" stroke="var(--line)" filter="url(#sh)"/>
-            <text x="162" y="390" font-family="var(--mono)" font-size="8.5" letter-spacing="1" fill="var(--faint)">GOOGLE REVIEW</text>
-            <text x="162" y="405" font-family="var(--sans)" font-size="11" fill="var(--gold)">★★☆☆☆</text>
-            <text x="210" y="405" font-family="var(--sans)" font-size="10" fill="var(--ink-soft)">"never called back"</text>
-            <text x="162" y="420" font-family="var(--mono)" font-size="9" fill="var(--accent-deep)">no reply · 9 days</text>
+            <rect x="52" y="350" width="200" height="56" rx="12" fill="#fff" stroke="var(--line)" filter="url(#sh)"/>
+            <text x="64" y="368" font-family="var(--mono)" font-size="8.5" letter-spacing="1" fill="var(--faint)">GOOGLE REVIEW</text>
+            <text x="64" y="384" font-family="var(--sans)" font-size="11" fill="var(--gold)">★★☆☆☆</text>
+            <text x="112" y="384" font-family="var(--sans)" font-size="10" fill="#574F40">"never called back"</text>
+            <text x="64" y="399" font-family="var(--mono)" font-size="9" fill="var(--accent-deep)">no reply · 9 days</text>
           </g>
           <defs><filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#14110a" flood-opacity=".14"/></filter></defs>
         </svg>
@@ -935,15 +936,8 @@
         <span class="eyebrow">The operator</span>
         <h2>Trained at the highest level. Home to do it for his own.</h2>
         <p style="color:var(--ink-soft);max-width:58ch">From the millions of text messages that ping your phone every time you pick up your Mercedes, to delivering car repair to your driveway, to solving prediction markets and content aggregation before most people had heard of Kalshi or knew what a feed was: Amir spent his career on the cutting edge of tech and marketing, building for some of the biggest names in the business.</p>
-        <p style="color:var(--ink-soft);max-width:58ch;margin-top:14px">Now he's back in Fresno, doing it for the people he grew up around. The contractors, the family businesses, the shops that have always run on word of mouth. The lead response, the instant quote, the follow-up that never drops a customer: the same world-class systems he built for boardrooms, brought home to the people who actually need them.</p>
+        <p style="color:var(--ink-soft);max-width:58ch;margin-top:14px">Now he's back in Fresno, doing it for the people he grew up around. The contractors, the family businesses, the shops that have always run on word of mouth. The lead response, the instant quote, the follow-up that never drops a customer, the same systems, brought home to the people who actually need them.</p>
         <p style="color:var(--ink-soft);max-width:58ch;margin-top:14px">Same story every time, a great business quietly leaking customers between the lead and the close. Sealing that gap is the whole job. The only difference now is whose business it is.</p>
-        <div class="founder-cred rv d1">
-          <div class="fc-row"><span class="fc-co">myKaarma</span><span class="fc-what">Led the messaging product. Communications partner for Mercedes-Benz USA.</span></div>
-          <div class="fc-row"><span class="fc-co">RepairSmith</span><span class="fc-what">Built the lead messaging for the Daimler-backed repair company. Acquired by AutoNation, $190M.</span></div>
-          <div class="fc-row"><span class="fc-co">HOFr</span><span class="fc-what">Chief Product Officer. Pivoted the company from a token game show into a real-money prediction-market app. 15,000+ users in 60 days.</span></div>
-          <div class="fc-row"><span class="fc-co">Grail</span><span class="fc-what">Product lead. A feed that ranked the web's most-shared content, years before the algorithmic feed was everywhere.</span></div>
-          <div class="fc-row"><span class="fc-co">Bizoo</span><span class="fc-what">Co-founder. AI-native financial modeling for PE and founders.</span></div>
-        </div>
         <div class="founder-press rv d1">
           <span class="fp fc">Fast Company</span>
           <span class="fp">USC Neuroscience</span>
@@ -1273,9 +1267,7 @@
       {name:'(559) 221-0094',sub:'Missed · 9:42 AM',missed:true},
       {name:'Maria G. · kitchen',sub:'Missed · 9:08 AM',missed:true},
       {name:'(559) 348-7720',sub:'Missed · 8:51 AM',missed:true},
-      {name:'Dave (repeat client)',sub:'Missed · Yesterday',missed:true},
-      {name:'(559) 559-2201',sub:'Missed · Yesterday',missed:true},
-      {name:'Unknown',sub:'Missed · Yesterday',missed:true}
+      {name:'Dave (repeat client)',sub:'Missed · Yesterday',missed:true}
     ];
     var startY=102, rh=44, x0=58, xr=270;
     calls.forEach(function(c,i){

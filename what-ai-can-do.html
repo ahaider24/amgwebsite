@@ -6,8 +6,7 @@
 <title>What AI Can Do For You · AmirGets</title>
 <meta name="description" content="Most contractors have no idea what a real customer actually costs them. Pick your trade, see the honest math, and watch what we'd save you.">
 <link rel="canonical" href="https://amirgets.com/what-ai-can-do">
-<meta name="theme-color" content="#FBF8F2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0F0D09" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FBF8F2">
 <meta property="og:type" content="website">
 <meta property="og:title" content="What AI Can Do For You · AmirGets">
 <meta property="og:description" content="See what your leads actually cost you. Your trade, your numbers, the honest math.">
@@ -32,7 +31,8 @@
     --shadow-lg:0 40px 96px rgba(20,17,10,.16);
     --display:"Fraunces",Georgia,serif;--sans:"Archivo",-apple-system,sans-serif;--mono:"JetBrains Mono",monospace;--logo:"Geist",sans-serif;
   }
-  @media (prefers-color-scheme: dark){
+  /* Dark mode paused: forced light for now. Re-enable by deleting " and (max-width:1px)" below, then revisit the palette to match the orange, not brown. */
+  @media (prefers-color-scheme: dark) and (max-width:1px){
     :root{
       --white:#1A1712;--paper:#0F0D09;--paper-2:#15120D;--paper-3:#211C14;
       --ink:#F4EEE2;--ink-soft:#B7AE9C;--faint:#7E7765;
@@ -52,7 +52,7 @@
     body::after{mix-blend-mode:screen;opacity:.06}
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;color-scheme:light dark}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;color-scheme:light}
   body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:multiply}
   .wrap{max-width:620px;margin:0 auto;padding:0 20px}
