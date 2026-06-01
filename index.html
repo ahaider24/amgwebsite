@@ -281,7 +281,8 @@
   /* FOUNDER */
   .founder{padding:108px 0}
   .founder-card{background:var(--white);border:1.5px solid var(--line-soft);border-radius:22px;box-shadow:var(--shadow);padding:46px;display:grid;grid-template-columns:270px 1fr;gap:40px;align-items:center}
-  .founder-photo{aspect-ratio:4/5;border-radius:16px;background:linear-gradient(160deg,var(--paper-3),var(--paper));display:flex;align-items:center;justify-content:center;color:var(--faint);font-family:var(--mono);font-size:12px;text-align:center;border:1px solid var(--line-soft)}
+  .founder-photo{aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,var(--paper-3),var(--paper));display:flex;align-items:center;justify-content:center;color:var(--faint);font-family:var(--mono);font-size:12px;text-align:center;border:1px solid var(--line-soft)}
+  .founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
   .founder-card h2{font-family:var(--display);font-weight:440;font-size:clamp(26px,3.4vw,40px);line-height:1.06;letter-spacing:-.02em;margin:13px 0 15px}
   .founder-note{font-family:var(--mono);font-size:12px;color:var(--faint);line-height:1.7;background:var(--paper);border-radius:12px;padding:17px 19px;border:1px solid var(--line-soft);margin-top:17px}
   .founder-note b{color:var(--accent-deep)}
@@ -487,7 +488,7 @@
         <a href="content-strategy.html" class="drop-link"><b>Content Strategy</b><span>Content people remember and AI cites</span></a>
         <a href="ai-search-shift.html" class="drop-link"><b>The AI search shift</b><span>What changed and why it matters</span></a>
         <a href="seo-geo-playbook.html" class="drop-link"><b>SEO/GEO Playbook</b><span>Rank on Google, get cited by AI</span></a>
-        <a href="#" class="drop-link"><b>Field notes</b><span>What's working right now</span></a>
+        <a href="field-notes.html" class="drop-link"><b>Field notes</b><span>What's working right now</span></a>
       </div>
     </div>
     <div class="nav-item">
@@ -931,7 +932,7 @@
 <section class="founder">
   <div class="wrap">
     <div class="founder-card rv">
-      <div class="founder-photo">[ founder photo<br>4:5 ]</div>
+      <div class="founder-photo"><img src="amir-haider.jpg" alt="Amir Haider, founder of AmirGets" onerror="this.style.display='none'"></div>
       <div>
         <span class="eyebrow">The operator</span>
         <h2>Trained at the highest level. Home to do it for his own.</h2>
@@ -1080,7 +1081,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="foot-logo">AmirGets<span class="accent serif" style="font-style:italic">Scale</span></div>
+        <div class="foot-logo">AmirGets<span class="accent serif" style="font-style:italic">Jobs</span></div>
         <div class="foot-meta">Central California's AI-native SEO &amp; marketing agency.</div>
       </div>
       <div class="foot-meta" style="text-align:right">
