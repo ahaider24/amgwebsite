@@ -294,17 +294,24 @@
   .founder-press{margin-top:22px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
   .founder-press .fp{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--faint);text-transform:uppercase}
   .founder-press .fp.fc{font-family:var(--display);font-size:16px;font-weight:600;letter-spacing:-.01em;color:var(--ink);text-transform:none;opacity:.6}
-  .otherside{padding:114px 0}
-  .otherside .os-head{max-width:720px;margin-bottom:48px}
-  .otherside h2{font-family:var(--display);font-weight:430;font-size:clamp(30px,4.4vw,54px);line-height:1.03;letter-spacing:-.025em;margin-top:14px}
-  .otherside h2 em{font-style:italic;color:var(--accent)}
-  .otherside .os-head>p{color:var(--ink-soft);font-size:18px;margin-top:16px;max-width:60ch}
-  .os-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-  .os-card{background:var(--white);border:1px solid var(--line-soft);border-radius:18px;padding:30px 26px;box-shadow:var(--shadow)}
-  .os-when{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:16px}
-  .os-card p{font-family:var(--display);font-weight:430;font-size:19px;line-height:1.42;color:var(--ink)}
-  @media(max-width:820px){.os-grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:540px){.os-grid{grid-template-columns:1fr}}
+  .ba{padding:114px 0}
+  .ba .ba-head{max-width:720px;margin-bottom:44px}
+  .ba h2{font-family:var(--display);font-weight:430;font-size:clamp(30px,4.4vw,54px);line-height:1.03;letter-spacing:-.025em;margin-top:14px}
+  .ba h2 em{font-style:italic;color:var(--accent)}
+  .ba .ba-head>p{color:var(--ink-soft);font-size:18px;margin-top:16px;max-width:60ch}
+  .ba-compare{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center}
+  .ba-stage{background:var(--white);border:1px solid var(--line-soft);border-radius:24px;box-shadow:var(--shadow-lg);padding:22px 22px 26px;overflow:hidden}
+  .ba-stage.old{border-color:rgba(234,67,53,.22)}
+  .ba-stage-top{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  .ba-stage-top .t{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  .ba-stage-top .tg{margin-left:auto;font-family:var(--mono);font-size:11px;display:inline-flex;align-items:center;gap:6px}
+  .ba-stage-top .tg.bad{color:var(--gred)}
+  .ba-stage-top .tg.good{color:var(--good)}
+  .ba-stage-top .tg .pulse{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+  .ba-phone{width:100%;height:auto;display:block;max-width:270px;margin:8px auto 0}
+  .ba-vs{display:flex;align-items:center;justify-content:center}
+  .ba-vs span{font-family:var(--display);font-style:italic;font-size:19px;color:var(--faint)}
+  @media(max-width:820px){.ba-compare{grid-template-columns:1fr;gap:16px}}
 
   /* BRANDS */
   .brands{padding:58px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
@@ -940,19 +947,24 @@
   </div>
 </section>
 
-<!-- ============ THE OTHER SIDE ============ -->
-<section class="otherside">
+<!-- ============ BEFORE / AFTER ============ -->
+<section class="ba">
   <div class="wrap">
-    <div class="os-head rv">
-      <span class="eyebrow">What the other side looks like</span>
-      <h2>The work keeps running. <em>You get your life back.</em></h2>
-      <p>You got into this to do the work you're good at, not to answer the phone from a ladder or write quotes at the kitchen table after the kids are down. Here's the version where the business handles itself, and you're just on the job.</p>
+    <div class="ba-head rv">
+      <span class="eyebrow">Before and after</span>
+      <h2>Same week. <em>You just can't go back.</em></h2>
+      <p>Your whole business runs through the one device in your pocket. Here's what that phone feels like now, and what it feels like once the work runs itself.</p>
     </div>
-    <div class="os-grid">
-      <div class="os-card rv"><div class="os-when">6:42 PM</div><p>You're at dinner, not drafting a quote. It went out this afternoon, the minute you finished the walkthrough.</p></div>
-      <div class="os-card rv d1"><div class="os-when">Mid-job</div><p>A call comes in while you're under the house. By the time you're out, it's answered and there's a new job on the calendar.</p></div>
-      <div class="os-card rv d2"><div class="os-when">Somewhere in town</div><p>A stranger asks AI who to hire. It says your name first, and you never even saw the conversation happen.</p></div>
-      <div class="os-card rv d3"><div class="os-when">Sunday night</div><p>No pile of unread texts, no reviews left hanging, no list running in the back of your head. The week is handled.</p></div>
+    <div class="ba-compare rv">
+      <div class="ba-stage old">
+        <div class="ba-stage-top"><span class="t">The old way</span><span class="tg bad"><span class="pulse"></span> all on you</span></div>
+        <svg class="ba-phone" id="phoneOld" viewBox="0 0 280 470" aria-label="A phone overwhelmed with red missed calls, unread texts, and an ignored review"></svg>
+      </div>
+      <div class="ba-vs"><span>becomes</span></div>
+      <div class="ba-stage">
+        <div class="ba-stage-top"><span class="t">With AmirGets</span><span class="tg good"><span class="pulse"></span> handled for you</span></div>
+        <svg class="ba-phone" id="phoneNew" viewBox="0 0 280 470" aria-label="The same phone with every lead answered and booked, the review replied, and nothing left needing the owner"></svg>
+      </div>
     </div>
   </div>
 </section>
@@ -1315,6 +1327,79 @@
 
   /* CTA scroll */
   document.querySelectorAll('.tbtn').forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();if(b.hasAttribute('data-cal')){window.open('https://calendly.com/amir-amirgetsjobs/30min','_blank','noopener');}else{document.getElementById('audit').scrollIntoView({behavior:'smooth'});}});});
+})();
+</script>
+<script>
+/* Before/after phone story: the old way (chaos, red) becomes life with us (handled, green) */
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var NS='http://www.w3.org/2000/svg';
+  function mk(svg,t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e;}
+  function frame(svg){
+    mk(svg,'rect',{x:34,y:8,width:212,height:454,rx:36,fill:'#15110a'});
+    mk(svg,'rect',{x:42,y:16,width:196,height:438,rx:29,fill:'#fff'});
+    mk(svg,'rect',{x:118,y:22,width:44,height:11,rx:5.5,fill:'#15110a'});
+    mk(svg,'text',{x:58,y:64,'font-family':'var(--sans)','font-size':17,'font-weight':800,fill:'#14110A'}).textContent='Today';
+  }
+  var oldSvg=document.getElementById('phoneOld'), newSvg=document.getElementById('phoneNew');
+  if(!oldSvg||!newSvg) return;
+  frame(oldSvg); frame(newSvg);
+
+  // OLD: red badge, chaos rows, climbing "needs you" counter
+  mk(oldSvg,'circle',{cx:220,cy:58,r:12,fill:'var(--gred)'});
+  mk(oldSvg,'text',{x:220,y:62,'text-anchor':'middle','font-family':'var(--sans)','font-size':11,'font-weight':800,fill:'#fff'}).textContent='12';
+  var oldRows=[['Missed call','(559) 221-0094 · 9:42a'],['Missed call','Maria G. · 9:08a'],['7 unread texts','clients waiting on you'],['Bad review, no reply','2 stars · 9 days ago']];
+  var oldG=[];
+  oldRows.forEach(function(r,i){
+    var y=104+i*52, g=mk(oldSvg,'g',{opacity:0});
+    mk(oldSvg,'circle',{cx:62,cy:y-4,r:5,fill:'var(--gred)'},g);
+    mk(oldSvg,'text',{x:78,y:y,'font-family':'var(--sans)','font-size':12.5,'font-weight':700,fill:'var(--gred)'},g).textContent=r[0];
+    mk(oldSvg,'text',{x:78,y:y+15,'font-family':'var(--mono)','font-size':8.5,fill:'#9A917B'},g).textContent=r[1];
+    mk(oldSvg,'line',{x1:62,y1:y+28,x2:222,y2:y+28,stroke:'rgba(20,17,10,.06)'},g);
+    oldG.push(g);
+  });
+  mk(oldSvg,'rect',{x:54,y:406,width:172,height:36,rx:18,fill:'var(--gred)'});
+  var oldCount=mk(oldSvg,'text',{x:140,y:429,'text-anchor':'middle','font-family':'var(--sans)','font-size':13,'font-weight':800,fill:'#fff'});
+  oldCount.textContent='0 things need you';
+
+  // NEW: green all-clear rows with drawn checks, then "nothing needs you"
+  mk(newSvg,'circle',{cx:220,cy:58,r:12,fill:'var(--good)'});
+  mk(newSvg,'path',{d:'M214 58 l4 4 l7 -8',fill:'none',stroke:'#fff','stroke-width':2.2,'stroke-linecap':'round','stroke-linejoin':'round'});
+  var newRows=[['Lead answered, booked','in 38 seconds'],['Quote sent and signed','same afternoon'],['Review replied','five stars'],['Follow-ups done','nothing slipped']];
+  var newG=[];
+  newRows.forEach(function(r,i){
+    var y=104+i*52, g=mk(newSvg,'g',{opacity:0});
+    mk(newSvg,'text',{x:62,y:y,'font-family':'var(--sans)','font-size':12.5,'font-weight':700,fill:'#14110A'},g).textContent=r[0];
+    mk(newSvg,'text',{x:62,y:y+15,'font-family':'var(--mono)','font-size':8.5,fill:(i===2?'var(--gold)':'#9A917B')},g).textContent=r[1];
+    mk(newSvg,'circle',{cx:212,cy:y-3,r:10,fill:'rgba(30,155,87,.14)'},g);
+    var ck=mk(newSvg,'path',{d:'M207 '+(y-3)+' l3.5 3.5 l7 -8',fill:'none',stroke:'var(--good)','stroke-width':2.2,'stroke-linecap':'round','stroke-linejoin':'round','stroke-dasharray':22,'stroke-dashoffset':22},g);
+    mk(newSvg,'line',{x1:62,y1:y+28,x2:222,y2:y+28,stroke:'rgba(20,17,10,.06)'},g);
+    newG.push({g:g,ck:ck});
+  });
+  var banner=mk(newSvg,'g',{opacity:0});
+  mk(newSvg,'rect',{x:54,y:406,width:172,height:36,rx:18,fill:'var(--good)'},banner);
+  mk(newSvg,'text',{x:140,y:429,'text-anchor':'middle','font-family':'var(--sans)','font-size':12.5,'font-weight':800,fill:'#fff'},banner).textContent='Nothing needs you. Go.';
+
+  function reset(){
+    oldG.forEach(function(g){g.setAttribute('opacity',0);}); oldCount.textContent='0 things need you';
+    newG.forEach(function(o){o.g.setAttribute('opacity',0);o.ck.style.transition='none';o.ck.setAttribute('stroke-dashoffset',22);});
+    banner.setAttribute('opacity',0);
+  }
+  function play(){
+    oldG.forEach(function(g,i){setTimeout(function(){g.style.transition='opacity .3s';g.setAttribute('opacity',1);},150+i*180);});
+    var n=0,ci=setInterval(function(){n+=Math.floor(Math.random()*3)+1;if(n>=17){n=17;clearInterval(ci);}oldCount.textContent=n+' things need you';},170);
+    newG.forEach(function(o,i){setTimeout(function(){o.g.style.transition='opacity .4s';o.g.setAttribute('opacity',1);o.ck.style.transition='stroke-dashoffset .45s ease';o.ck.setAttribute('stroke-dashoffset',0);},500+i*430);});
+    setTimeout(function(){banner.style.transition='opacity .5s';banner.setAttribute('opacity',1);},500+newG.length*430+200);
+    setTimeout(function(){reset();setTimeout(play,700);},500+newG.length*430+2900);
+  }
+  if(reduce){
+    oldG.forEach(function(g){g.setAttribute('opacity',1);});oldCount.textContent='17 things need you';
+    newG.forEach(function(o){o.g.setAttribute('opacity',1);o.ck.setAttribute('stroke-dashoffset',0);});banner.setAttribute('opacity',1);
+  } else {
+    var started=false;
+    var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!started){started=true;play();io2.disconnect();}});},{threshold:.3});
+    io2.observe(document.querySelector('.ba-compare'));
+  }
 })();
 </script>
 </body>
