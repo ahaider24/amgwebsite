@@ -721,6 +721,12 @@
           <rect x="34" y="8" width="252" height="432" rx="40" fill="#15110a"/>
           <rect x="42" y="16" width="236" height="416" rx="32" fill="#fff"/>
           <rect x="128" y="22" width="60" height="15" rx="7.5" fill="#15110a"/>
+          <!-- status bar -->
+          <text x="56" y="31" font-family="var(--sans)" font-weight="700" font-size="11.5" fill="#14110A">9:42</text>
+          <g fill="#14110A">
+            <rect x="222" y="26" width="3" height="6" rx="1"/><rect x="227" y="24" width="3" height="8" rx="1"/><rect x="232" y="22" width="3" height="10" rx="1"/><rect x="237" y="20" width="3" height="12" rx="1"/>
+            <rect x="250" y="22.5" width="18" height="10" rx="2.5" fill="none" stroke="#14110A" stroke-width="1.2"/><rect x="252" y="24.5" width="12" height="6" rx="1"/><rect x="269" y="25" width="2" height="5" rx="1"/>
+          </g>
           <!-- header -->
           <text x="58" y="64" font-family="var(--sans)" font-weight="800" font-size="22" fill="#14110A">Recents</text>
           <text x="262" y="64" text-anchor="end" font-family="var(--sans)" font-size="13" fill="var(--gblue)">Edit</text>
@@ -737,11 +743,11 @@
             <circle cx="216" cy="304" r="9" fill="var(--gred)"/><text x="216" y="308" text-anchor="middle" font-family="var(--sans)" font-weight="700" font-size="9" fill="#fff">7</text>
           </g>
           <g class="an" id="noteRev">
-            <rect x="52" y="350" width="200" height="56" rx="12" fill="#fff" stroke="var(--line)" filter="url(#sh)"/>
-            <text x="64" y="368" font-family="var(--mono)" font-size="8.5" letter-spacing="1" fill="var(--faint)">GOOGLE REVIEW</text>
-            <text x="64" y="384" font-family="var(--sans)" font-size="11" fill="var(--gold)">★★☆☆☆</text>
-            <text x="112" y="384" font-family="var(--sans)" font-size="10" fill="#574F40">"never called back"</text>
-            <text x="64" y="399" font-family="var(--mono)" font-size="9" fill="var(--accent-deep)">no reply · 9 days</text>
+            <rect x="52" y="348" width="200" height="62" rx="12" fill="#fff" stroke="var(--line)" filter="url(#sh)"/>
+            <text x="64" y="367" font-family="var(--mono)" font-size="8.5" letter-spacing="1" fill="var(--faint)">GOOGLE REVIEW</text>
+            <text x="240" y="367" text-anchor="end" font-family="var(--mono)" font-size="8.5" fill="var(--accent-deep)">no reply · 9 days</text>
+            <text x="64" y="388" font-family="var(--sans)" font-size="12" fill="var(--gold)">★★☆☆☆</text>
+            <text x="64" y="403" font-family="var(--sans)" font-size="10.5" font-style="italic" fill="#574F40">"never called back"</text>
           </g>
           <defs><filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#14110a" flood-opacity=".14"/></filter></defs>
         </svg>
@@ -1299,7 +1305,8 @@
       var y=startY+i*rh;
       var g=document.createElementNS(NS4,'g');g.setAttribute('class','an');g.setAttribute('id','call'+i);g.style.transition='opacity .45s ease';
       // phone icon (red down-arrow for missed)
-      var ic=document.createElementNS(NS4,'path');ic.setAttribute('d','M'+(x0)+' '+(y-4)+' a14 9 0 0 1 18 0 l-3 4 a4 4 0 0 0 -3 -2 h-6 a4 4 0 0 0 -3 2 z');ic.setAttribute('fill',c.missed?'var(--gred)':'var(--ggreen)');ic.setAttribute('transform','rotate(135 '+(x0+9)+' '+(y-2)+')');g.appendChild(ic);
+      var icg=document.createElementNS(NS4,'g');icg.setAttribute('transform','translate('+(x0-3)+' '+(y-13)+') scale(0.62)');icg.setAttribute('fill',c.missed?'var(--gred)':'var(--ggreen)');
+      var ph=document.createElementNS(NS4,'path');ph.setAttribute('d','M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.3 0 .7-.2 1z');icg.appendChild(ph);g.appendChild(icg);
       var nm=document.createElementNS(NS4,'text');nm.setAttribute('x',x0+26);nm.setAttribute('y',y);nm.setAttribute('font-family','var(--sans)');nm.setAttribute('font-size','13');nm.setAttribute('font-weight','600');nm.setAttribute('fill',c.missed?'var(--gred)':'var(--ink)');nm.textContent=c.name;g.appendChild(nm);
       var sb=document.createElementNS(NS4,'text');sb.setAttribute('x',x0+26);sb.setAttribute('y',y+14);sb.setAttribute('font-family','var(--mono)');sb.setAttribute('font-size','9');sb.setAttribute('fill','var(--faint)');sb.textContent=c.sub;g.appendChild(sb);
       var ln=document.createElementNS(NS4,'line');ln.setAttribute('x1',x0);ln.setAttribute('y1',y+24);ln.setAttribute('x2',xr-4);ln.setAttribute('y2',y+24);ln.setAttribute('stroke','var(--line-soft)');g.appendChild(ln);
