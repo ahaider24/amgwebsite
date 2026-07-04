@@ -11,7 +11,7 @@
 <meta property="og:title" content="AI Marketing Agency in Fresno, CA | AmirGetsJobs">
 <meta property="og:description" content="How Fresno service businesses go from one truck to an operation, and where we fit. Built in the 559, run from the 559.">
 <meta property="og:url" content="https://amirgetsjobs.com/ai-marketing-agency-fresno">
-<meta property="og:image" content="https://amirgetsjobs.com/og-image.png">
+<meta property="og:image" content="https://amirgetsjobs.com/fresno-aerial-poster.jpg">
 <meta property="og:site_name" content="AmirGets">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2314110A'/%3E%3Ctext x='50' y='72' font-family='Georgia,serif' font-size='62' font-weight='700' fill='%23FF4D1C' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
@@ -102,27 +102,23 @@
   .btn-ghost:hover{border-color:var(--ink);transform:translateY(-3px)}
   .btn .arr{transition:transform .25s}.btn:hover .arr{transform:translateX(4px)}
 
-  /* ============ HERO: FRESNO DUSK, POSTER-STYLE ============ */
-  .hero{position:relative;padding:150px 0 0;overflow:hidden;background:linear-gradient(180deg,#FFF3E4 0%,#FBEEDC 42%,var(--paper) 100%)}
-  .hero .wrap{position:relative;z-index:3}
+  /* ============ HERO: FRESNO FROM THE AIR ============ */
+  .hero-film{position:relative;height:clamp(380px,64vh,660px);overflow:hidden;background:var(--ink) url(fresno-aerial-poster.jpg) center/cover no-repeat}
+  .hero-film video,.hero-film .fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-film .fallback{display:none}
+  .hero-film::after{content:"";position:absolute;left:0;right:0;bottom:0;height:110px;background:linear-gradient(180deg,rgba(251,248,242,0),var(--paper))}
+  @media (max-width:700px),(prefers-reduced-motion: reduce){
+    .hero-film{height:clamp(300px,44vh,430px)}
+    .hero-film video{display:none}
+    .hero-film .fallback{display:block}
+  }
+  .hero{position:relative;padding:44px 0 10px;background:var(--paper)}
   .hero .klabel{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:18px;display:flex;align-items:center;gap:10px}
   .hero .klabel .crumb{color:var(--faint)}
   .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,5.8vw,76px);line-height:1.0;letter-spacing:-.025em;margin-bottom:20px;max-width:14ch}
   .hero h1 em{font-style:italic;color:var(--accent)}
   .hero .sub{font-size:20px;color:var(--ink-soft);max-width:54ch;line-height:1.5;margin-bottom:30px}
   .hero-ctas{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:26px}
-  .valley{position:relative;display:block;width:100%;height:clamp(260px,36vw,460px)}
-  .valley svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-  @supports (animation-timeline: view()) {
-    .vl-sun{animation:sunrise linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
-    @keyframes sunrise{from{transform:translateY(52px)}to{transform:translateY(-30px)}}
-    .vl-ridge{animation:drift-l linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
-    @keyframes drift-l{from{transform:translateX(0)}to{transform:translateX(-24px)}}
-    .vl-grove{animation:drift-r linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
-    @keyframes drift-r{from{transform:translateX(0)}to{transform:translateX(30px)}}
-    .vl-559{animation:ghost-up linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
-    @keyframes ghost-up{from{transform:translateY(24px)}to{transform:translateY(-40px)}}
-  }
 
   /* ============ NEIGHBORHOOD MARQUEE ============ */
   .marquee{background:var(--ink);color:var(--paper);overflow:hidden;padding:15px 0;border-top:1px solid rgba(251,248,242,.08)}
@@ -220,7 +216,6 @@
   .rv.in{opacity:1;transform:none}
   @media (prefers-reduced-motion: reduce){
     .rv{opacity:1;transform:none;transition:none}
-    .vl-sun,.vl-ridge,.vl-grove,.vl-559{animation:none!important}
     .marquee .track{animation:none;transform:none}
     html{scroll-behavior:auto}
   }
@@ -243,8 +238,15 @@
   </div>
 </nav>
 
-<!-- ============ HERO: FRESNO AT DUSK ============ -->
-<header class="hero">
+<!-- ============ HERO: FRESNO FROM THE AIR ============ -->
+<header class="hero-film" aria-label="Aerial view of downtown Fresno">
+  <video autoplay muted loop playsinline preload="metadata" poster="fresno-aerial-poster.jpg">
+    <source src="fresno-aerial.mp4" type="video/mp4">
+  </video>
+  <img class="fallback" src="fresno-aerial-poster.jpg" alt="Aerial view of Chukchansi Park and downtown Fresno">
+</header>
+
+<section class="hero">
   <div class="wrap">
     <div class="klabel rv">Locations <span class="crumb">/</span> Fresno, California <span class="crumb">/</span> HQ</div>
     <h1 class="rv">AI Marketing Agency in <em>Fresno</em></h1>
@@ -254,129 +256,7 @@
       <a href="/what-ai-can-do" class="btn btn-ghost">See what your leads cost you</a>
     </div>
   </div>
-  <div class="valley" aria-hidden="true">
-    <svg viewBox="0 0 1440 470" preserveAspectRatio="xMidYMax slice" role="presentation">
-      <defs>
-        <clipPath id="sunclip"><circle cx="1100" cy="148" r="88"/></clipPath>
-      </defs>
-      <!-- ghost 559, clear of the sun -->
-      <g class="vl-559">
-        <text x="450" y="228" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="900" font-size="205" fill="none" stroke="#C8380E" stroke-width="1.5" opacity=".11" letter-spacing="14">559</text>
-      </g>
-      <!-- poster sun, slats clipped inside the disc -->
-      <g class="vl-sun">
-        <circle cx="1100" cy="148" r="118" fill="#FF4D1C" opacity=".07"/>
-        <circle cx="1100" cy="148" r="88" fill="#FF4D1C"/>
-        <g clip-path="url(#sunclip)" fill="#FBEEDC">
-          <rect x="1000" y="158" width="200" height="8"/>
-          <rect x="1000" y="182" width="200" height="12"/>
-          <rect x="1000" y="210" width="200" height="17"/>
-        </g>
-      </g>
-      <!-- birds -->
-      <g stroke="#14110A" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".5">
-        <path d="M330 92 q7 -8 14 0 q7 -8 14 0"/>
-        <path d="M388 118 q6 -7 12 0 q6 -7 12 0"/>
-        <path d="M296 136 q5 -6 10 0 q5 -6 10 0"/>
-      </g>
-      <!-- far ridge -->
-      <path d="M0 244 L170 214 L340 240 L540 206 L740 238 L940 210 L1140 240 L1310 216 L1440 236 L1440 470 L0 470 Z" fill="#EFE6D2"/>
-      <!-- sierra ridge with shaded facets -->
-      <g class="vl-ridge">
-        <path d="M0 268 L130 220 L250 258 L385 200 L520 254 L660 212 L800 262 L950 208 L1105 256 L1250 222 L1370 260 L1440 238 L1440 470 L0 470 Z" fill="#E7DDC8"/>
-        <g fill="#DCD0B6" opacity=".8">
-          <path d="M385 200 L440 226 L385 232 Z"/>
-          <path d="M660 212 L716 240 L660 244 Z"/>
-          <path d="M950 208 L1010 236 L950 240 Z"/>
-          <path d="M1250 222 L1298 244 L1250 248 Z"/>
-        </g>
-        <path d="M0 302 L170 260 L330 296 L500 252 L680 298 L860 258 L1040 300 L1220 264 L1380 298 L1440 280 L1440 470 L0 470 Z" fill="#D9CCAF" opacity=".92"/>
-      </g>
-      <!-- quilted valley floor: field bands -->
-      <g>
-        <rect x="0" y="302" width="1440" height="16" fill="#F2EAD6"/>
-        <rect x="0" y="318" width="1440" height="16" fill="#EAE0C6"/>
-        <rect x="0" y="334" width="1440" height="14" fill="#F0E8D2"/>
-        <rect x="0" y="348" width="1440" height="18" fill="#E6DCC0"/>
-        <g stroke="#D9CCAF" stroke-width="1.5">
-          <path d="M0 318 L1440 318 M0 334 L1440 334 M0 348 L1440 348"/>
-        </g>
-        <g stroke="#CBBE9C" stroke-width="1.5" opacity=".8">
-          <path d="M240 302 L252 366 M560 302 L548 366 M880 302 L892 366 M1180 302 L1170 366"/>
-        </g>
-        <!-- distant tree clusters -->
-        <g fill="#574F40" opacity=".55">
-          <circle cx="330" cy="313" r="3"/><circle cx="338" cy="314" r="2.4"/><circle cx="345" cy="313" r="2.8"/>
-          <circle cx="700" cy="329" r="3"/><circle cx="708" cy="330" r="2.4"/><circle cx="715" cy="329" r="2.7"/>
-          <circle cx="1020" cy="313" r="2.8"/><circle cx="1028" cy="314" r="2.3"/>
-          <circle cx="480" cy="344" r="2.8"/><circle cx="488" cy="345" r="2.3"/><circle cx="495" cy="344" r="2.6"/>
-          <circle cx="1330" cy="343" r="2.9"/><circle cx="1338" cy="344" r="2.3"/>
-        </g>
-      </g>
-      <!-- FRESNO WATER TOWER, properly drawn, seated on the fields -->
-      <g transform="translate(140,204)">
-        <g fill="#14110A">
-          <path d="M6 30 L38 4 L70 30 Z"/>
-          <rect x="36" y="-8" width="4" height="12" rx="2"/>
-          <rect x="10" y="30" width="56" height="34" rx="3"/>
-        </g>
-        <g stroke="#FBF8F2" stroke-width="1.6" opacity=".28">
-          <path d="M22 32 L22 62 M34 32 L34 62 M46 32 L46 62 M58 32 L58 62"/>
-          <path d="M11 38 L65 38 M11 56 L65 56"/>
-        </g>
-        <g stroke="#14110A" stroke-width="4" stroke-linecap="round" fill="none">
-          <path d="M16 64 L4 98 M60 64 L72 98 M28 64 L24 98 M48 64 L52 98"/>
-        </g>
-        <g stroke="#14110A" stroke-width="2" fill="none" opacity=".9">
-          <path d="M10 78 L66 78"/>
-          <path d="M14 66 L58 94 M62 66 L18 94"/>
-        </g>
-        <circle cx="38" cy="-10" r="2.6" fill="#FF4D1C"/>
-        <path d="M-26 98 L100 98" stroke="#14110A" stroke-width="2" opacity=".25"/>
-      </g>
-      <!-- TOWER THEATRE, deco massing with lit fin, seated right -->
-      <g transform="translate(1240,212)">
-        <g fill="#14110A">
-          <rect x="0" y="66" width="60" height="24" rx="1"/>
-          <rect x="7" y="46" width="46" height="20" rx="1"/>
-          <rect x="15" y="28" width="30" height="18" rx="1"/>
-          <rect x="24" y="0" width="12" height="88" rx="1"/>
-        </g>
-        <rect x="27.5" y="4" width="5" height="80" fill="#F2B01E"/>
-        <g stroke="#14110A" stroke-width="1.6">
-          <path d="M27.5 14 L32.5 14 M27.5 26 L32.5 26 M27.5 38 L32.5 38 M27.5 50 L32.5 50 M27.5 62 L32.5 62 M27.5 74 L32.5 74"/>
-        </g>
-        <g fill="#FBF8F2" opacity=".22">
-          <rect x="11" y="50" width="3.5" height="12"/><rect x="18" y="50" width="3.5" height="12"/>
-          <rect x="45" y="50" width="3.5" height="12"/><rect x="38" y="50" width="3.5" height="12"/>
-          <rect x="4" y="70" width="4" height="16"/><rect x="52" y="70" width="4" height="16"/>
-        </g>
-        <circle cx="30" cy="-3" r="3" fill="#FF4D1C"/>
-        <path d="M-20 90 L84 90" stroke="#14110A" stroke-width="2" opacity=".25"/>
-      </g>
-      <!-- ORANGE GROVE: one continuous canopy, two staggered rows -->
-      <g class="vl-grove">
-        <path d="M0 372 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 q30 -17 60 0 L1440 470 L0 470 Z" fill="#1D170D"/>
-        <path d="M-30 392 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 q30 -15 60 0 L1470 470 L-30 470 Z" fill="#14110A"/>
-        <!-- oranges on the crests -->
-        <g fill="#FF4D1C">
-          <circle cx="30" cy="362" r="4"/><circle cx="150" cy="361" r="3.4"/><circle cx="270" cy="363" r="4.2"/>
-          <circle cx="390" cy="361" r="3.3"/><circle cx="510" cy="362" r="4"/><circle cx="630" cy="361" r="3.5"/>
-          <circle cx="750" cy="363" r="4.1"/><circle cx="870" cy="361" r="3.4"/><circle cx="990" cy="362" r="4"/>
-          <circle cx="1110" cy="361" r="3.4"/><circle cx="1230" cy="363" r="4.2"/><circle cx="1350" cy="361" r="3.5"/>
-          <circle cx="90" cy="383" r="3.2"/><circle cx="330" cy="384" r="3.6"/><circle cx="570" cy="383" r="3.2"/>
-          <circle cx="810" cy="384" r="3.6"/><circle cx="1050" cy="383" r="3.2"/><circle cx="1290" cy="384" r="3.6"/>
-        </g>
-        <!-- vineyard rows -->
-        <g stroke="#FBF8F2" stroke-width="2" opacity=".13" fill="none">
-          <path d="M0 416 C 260 404, 520 404, 720 416 C 940 428, 1200 428, 1440 416"/>
-          <path d="M0 438 C 260 428, 520 428, 720 438 C 940 448, 1200 448, 1440 438"/>
-          <path d="M0 458 C 260 450, 520 450, 720 458 C 940 466, 1200 466, 1440 458"/>
-        </g>
-      </g>
-    </svg>
-  </div>
-</header>
+</section>
 
 <!-- ============ NEIGHBORHOOD MARQUEE ============ -->
 <div class="marquee" aria-hidden="true">
