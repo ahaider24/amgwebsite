@@ -175,6 +175,11 @@
   .wiring{margin-top:40px;font-family:var(--display);font-style:italic;font-size:clamp(19px,2.6vw,30px);color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
   @media (max-width:560px){ .wiring{white-space:normal} }
   .wiring .u{border-bottom:3px solid var(--accent)}
+  .thread{display:grid;gap:20px;margin:38px 0 44px;max-width:56ch}
+  .tw{font-size:19.5px;font-weight:700;line-height:1.42;color:var(--ink);letter-spacing:-.005em}
+  .tw .a{color:var(--accent)}
+  .tw.soft{font-weight:500;color:var(--ink-soft)}
+  .lead-in{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:6px}
   .punch{margin-top:36px;font-family:var(--display);font-style:italic;font-size:clamp(21px,2.8vw,32px);line-height:1.25;color:var(--ink);letter-spacing:-.01em;max-width:26ch}
   .punch .u{border-bottom:3px solid var(--accent)}
   .deep-links{margin-top:18px;font-size:15.5px;color:var(--ink-soft)}
@@ -333,9 +338,15 @@
   <div class="wrap">
     <div class="mnum rv">02 · THE SQUEEZE</div>
     <h2 class="rv">Your competition is not the shop across town <em>anymore.</em></h2>
-    <p class="rv">Private equity has already bought five mid-size plumbing companies in Fresno and merged them into one operation with one budget and one playbook. If you have not felt the squeeze yet, you will. And the customer changed underneath you at the same time: you get about five minutes to convert a lead before they move on, attention spans are engineered shorter every day, and budgets are tighter than they were a year ago.</p>
-    <p class="rv">So what is stopping you from just using AI? Honestly, nothing. You could hand it to a kid who learned prompts in school. But a kid can make words appear on a screen. He cannot tell you how a rollup plans to take your market, and he will not be in the room the week it starts. Interested is not the same as armed.</p>
-    <p class="rv">Our approach is simple. Before anything gets built, we examine how your business actually performs today:</p>
+    <div class="thread">
+      <p class="tw rv">Private equity bought five mid-size plumbing companies in Fresno and merged them. One owner. One budget. One playbook. <span class="a">Your market.</span></p>
+      <p class="tw soft rv">Haven't felt the squeeze yet? You will. That is not a threat. It is their business model.</p>
+      <p class="tw rv">You have five minutes to convert a lead. The next name is one thumb-scroll away.</p>
+      <p class="tw soft rv">Attention is engineered shorter every day. Budgets get tighter every quarter. The game changed while you were doing the work.</p>
+      <p class="tw rv">Could a kid who learned AI in school run this? He can make words appear. <span class="a">He cannot see the board.</span></p>
+      <p class="tw soft rv">Every move a rollup makes prices in your response. Having no counter is also a move. It is just a losing one.</p>
+    </div>
+    <p class="lead-in rv">SO BEFORE ANYTHING GETS BUILT, WE MAP YOUR POSITION</p>
     <div class="climb-grid">
       <div class="stage rv">
         <div class="art" aria-hidden="true"><svg viewBox="0 0 200 96"><path d="M30 20 L110 20 L82 52 L82 76 L58 84 L58 52 Z" fill="none" stroke="#14110A" stroke-width="4" stroke-linejoin="round"/><g fill="#FF4D1C"><circle cx="52" cy="12" r="4"/><circle cx="70" cy="8" r="3.4"/><circle cx="90" cy="12" r="4"/></g><path d="M132 42 L172 42 M158 28 L172 42 L158 56" stroke="#FF4D1C" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -356,7 +367,10 @@
         <p>What you build versus what you rent. Rankings, reviews, and AI answers compound while you sleep. Ad spend stops the second the card declines. We show you where your dollars sit today.</p>
       </div>
     </div>
-    <p class="rv" style="margin-top:34px">Then we answer the question underneath all three, the one a merged competitor with a corporate budget is already asking about you. That answer gets built by people who know how Fortune 500 teams think and how venture capital thinks when it wants to take a market fast. The mind you want in your corner is the one that can say: here is how they will come at you, and here is how we counter.</p>
+    <div class="thread" style="margin-top:38px">
+      <p class="tw rv">Their playbook is written by people who think like Fortune 500 operators and venture capital taking a market fast. <span class="a">So is ours.</span></p>
+      <p class="tw soft rv">Here is how they will come at you. Here is how we counter. That is the whole service.</p>
+    </div>
     <p class="punch rv">Why the hell should someone <span class="u">pick you?</span> That is the question we build your answer to.</p>
   </div>
 </section>
