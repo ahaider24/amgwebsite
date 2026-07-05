@@ -163,12 +163,19 @@
     *{animation:none!important;transition:none!important}
     .rv{opacity:1;transform:none}
   }
+  .logo .tword{position:relative;display:inline-block;width:92px;height:1em;overflow:hidden}
+  .logo .tword span{position:absolute;left:0;top:0;color:var(--accent);font-style:italic;opacity:0;transform:translateY(105%);white-space:nowrap}
+  .logo .tword span.in{animation:rollIn .55s cubic-bezier(.2,.8,.2,1) forwards}
+  .logo .tword span.out{animation:rollOut .55s cubic-bezier(.5,0,.7,.2) forwards}
+  @keyframes rollIn{from{opacity:0;transform:translateY(105%)}to{opacity:1;transform:translateY(0)}}
+  @keyframes rollOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-105%)}}
+  @media (max-width:640px){.logo .tword{width:80px}}
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="logo">AmirGets<span class="lw">Jobs</span></a>
+  <a href="index.html" class="logo" aria-label="AmirGetsJobs">AmirGets<span class="tword" id="tword"></span></a>
   <div class="nav-right">
     <a href="index.html" class="nav-back">← Back to home</a>
     <a href="index.html#audit" class="nav-cta">See your lead math</a>
@@ -507,6 +514,15 @@
     }
   }
 })();
+</script>
+<script>
+  (function(){
+    var tw=document.getElementById('tword'); if(!tw) return;
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var words=['Jobs','Found','Booked','AI','Scale','Cited','Calls','Ahead'],ti=0,cur=null;
+    function showWord(i){var s=document.createElement('span');s.textContent=words[i];s.classList.add('in');tw.appendChild(s);if(cur){var o=cur;o.classList.remove('in');o.classList.add('out');setTimeout(function(){o.remove();},600);}cur=s;}
+    showWord(0); if(!reduce) setInterval(function(){ti=(ti+1)%words.length;showWord(ti);},2200);
+  })();
 </script>
 </body>
 </html>
