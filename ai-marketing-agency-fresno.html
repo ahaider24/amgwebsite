@@ -72,7 +72,7 @@
   :root{
     --white:#FFFFFF;--paper:#FBF8F2;--paper-2:#F1EAD9;--paper-3:#E7DDC8;
     --ink:#14110A;--ink-soft:#574F40;--faint:#9A917B;
-    --accent:#FF4D1C;--accent-deep:#C8380E;--gold:#F2B01E;--good:#1E9B57;
+    --accent:#FF4D1C;--accent-deep:#C8380E;--gold:#F2B01E;--good:#1E9B57;--blue:#2596BE;
     --line:rgba(20,17,10,.12);--line-soft:rgba(20,17,10,.06);
     --shadow:0 1px 2px rgba(20,17,10,.04),0 12px 36px rgba(20,17,10,.07);
     --display:"Fraunces",Georgia,serif;--sans:"Archivo",-apple-system,sans-serif;--mono:"JetBrains Mono",monospace;
@@ -113,7 +113,7 @@
     .hero-film .fallback{display:block}
   }
   .hero{position:relative;padding:44px 0 10px;background:var(--paper)}
-  .hero .klabel{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .hero .klabel{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;display:flex;align-items:center;gap:10px}
   .hero .klabel .crumb{color:var(--faint)}
   .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,5.8vw,76px);line-height:1.0;letter-spacing:-.025em;margin-bottom:20px;max-width:14ch}
   .hero h1 em{font-style:italic;color:var(--accent)}
@@ -132,7 +132,7 @@
   /* ============ SECTIONS ============ */
   section{position:relative}
   .movement{padding:104px 0}
-  .movement .mnum{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent);font-weight:700;margin-bottom:14px}
+  .movement .mnum{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--blue);font-weight:700;margin-bottom:14px}
   .movement h2{font-family:var(--display);font-weight:430;font-size:clamp(30px,4.4vw,54px);line-height:1.03;letter-spacing:-.02em;margin-bottom:18px;max-width:22ch}
   .movement h2 em{font-style:italic;color:var(--accent)}
   .movement p{color:var(--ink-soft);font-size:17.5px;line-height:1.62;max-width:62ch}
@@ -169,7 +169,7 @@
   .day{position:relative;padding:0 0 34px 34px}
   .day:last-child{padding-bottom:0}
   .day::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--good);border:3px solid var(--paper)}
-  .day .t{font-family:var(--mono);font-size:13px;letter-spacing:.1em;color:var(--accent-deep);font-weight:700;margin-bottom:6px}
+  .day .t{font-family:var(--mono);font-size:13px;letter-spacing:.1em;color:var(--blue);font-weight:700;margin-bottom:6px}
   .day h3{font-family:var(--display);font-weight:540;font-size:21px;letter-spacing:-.01em;margin-bottom:6px}
   .day p{color:var(--ink-soft);font-size:16px;line-height:1.55;max-width:58ch}
   .wiring{margin-top:40px;font-family:var(--display);font-style:italic;font-size:clamp(19px,2.6vw,30px);color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
@@ -180,10 +180,10 @@
   .tw .a{color:var(--accent)}
   .tw .w{color:var(--good)}
   .tw.soft{font-weight:500;color:var(--ink-soft)}
-  .lead-in{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:6px}
+  .lead-in{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:6px}
   .scenarios{display:grid;gap:26px;margin-top:34px;max-width:62ch}
   .sc{border-left:3px solid var(--paper-3);padding-left:20px;display:grid;gap:10px}
-  .sc .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent-deep);font-weight:700}
+  .sc .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--blue);font-weight:700}
   .punch{margin-top:36px;font-family:var(--display);font-style:italic;font-size:clamp(21px,2.8vw,32px);line-height:1.25;color:var(--ink);letter-spacing:-.01em;max-width:26ch}
   .punch .u{border-bottom:3px solid var(--accent)}
   .deep-links{margin-top:18px;font-size:15.5px;color:var(--ink-soft)}
@@ -306,7 +306,7 @@
             <rect x="16" y="78" width="308" height="204" rx="9" fill="#FBF8F2"/>
             <rect x="26" y="88" width="288" height="184" rx="5" fill="none" stroke="#F2B01E" stroke-width="2.5"/>
             <!-- greetings script -->
-            <text x="52" y="130" font-family="Fraunces,Georgia,serif" font-style="italic" font-size="27" font-weight="500" fill="#C8380E">Greetings from</text>
+            <text x="52" y="130" font-family="Fraunces,Georgia,serif" font-style="italic" font-size="27" font-weight="500" fill="#2596BE">Greetings from</text>
             <!-- FRESNO big letters, vintage block shadow -->
             <text x="173" y="205" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="900" font-size="63" letter-spacing="2" fill="#14110A">FRESNO</text>
             <text x="170" y="202" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="900" font-size="63" letter-spacing="2" fill="#FF4D1C">FRESNO</text>
@@ -321,7 +321,7 @@
               <path d="M258 146 L292 146" stroke="#14110A" stroke-width="2"/>
             </g>
             <!-- postmark -->
-            <g stroke="#14110A" stroke-width="2" fill="none" opacity=".45">
+            <g stroke="#2596BE" stroke-width="2" fill="none" opacity=".6">
               <circle cx="228" cy="122" r="16"/>
               <path d="M186 112 q10 6 20 0 q10 -6 20 0 M186 124 q10 6 20 0 q10 -6 20 0 M186 136 q10 6 20 0 q10 -6 20 0"/>
             </g>
@@ -527,7 +527,7 @@
 <!-- ============ 06: QUESTIONS ============ -->
 <section class="faq">
   <div class="wrap">
-    <div class="mnum rv" style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent);font-weight:700;margin-bottom:14px">06 · FIRST-TIMER QUESTIONS</div>
+    <div class="mnum rv" style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--blue);font-weight:700;margin-bottom:14px">06 · FIRST-TIMER QUESTIONS</div>
     <h2 class="rv" style="font-family:var(--display);font-weight:430;font-size:clamp(30px,4.4vw,54px);line-height:1.03;letter-spacing:-.02em">You've never bought this before. <em style="font-style:italic;color:var(--accent)">Good.</em></h2>
     <div class="faq-list">
       <details class="faq-item rv">
