@@ -189,6 +189,12 @@
   @keyframes rollOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-105%)}}
   @media (max-width:640px){.logo .tword{width:80px}}
 </style>
+<style>
+/* mobile nav pass 2026-07-06: never wrap, breathe on small screens */
+.nav-back{white-space:nowrap}
+.logo .tword{transition:width .45s cubic-bezier(.2,.8,.2,1)}
+@media (max-width:640px){nav{padding:13px 18px}.nav-right{gap:10px}.nav-cta{padding:9px 14px;font-size:13px}.nav-back{font-size:11px}}
+</style>
 </head>
 <body>
 
@@ -532,8 +538,8 @@
     var tw=document.getElementById('tword'); if(!tw) return;
     var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var words=['Jobs','Found','Booked','AI','Scale','Cited','Calls','Ahead'],ti=0,cur=null;
-    function showWord(i){var s=document.createElement('span');s.textContent=words[i];s.classList.add('in');tw.appendChild(s);if(cur){var o=cur;o.classList.remove('in');o.classList.add('out');setTimeout(function(){o.remove();},600);}cur=s;}
-    showWord(0); if(!reduce) setInterval(function(){ti=(ti+1)%words.length;showWord(ti);},2200);
+    var meter=document.createElement('span');meter.style.cssText='position:absolute;visibility:hidden;white-space:nowrap;font-style:italic;opacity:0;transform:none';tw.appendChild(meter);function widthOf(w){meter.textContent=w;return Math.ceil(meter.getBoundingClientRect().width)+2;}function showWord(i){tw.style.width=widthOf(words[i])+'px';var s=document.createElement('span');s.textContent=words[i];s.classList.add('in');tw.appendChild(s);if(cur){var o=cur;o.classList.remove('in');o.classList.add('out');setTimeout(function(){o.remove();},600);}cur=s;}
+    showWord(0); if(!reduce) setInterval(function(){if(document.hidden)return;ti=(ti+1)%words.length;showWord(ti);},2400);
   })();
 </script>
 </body>

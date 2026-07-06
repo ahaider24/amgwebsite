@@ -102,6 +102,12 @@
   .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:12px;color:var(--faint);line-height:1.8}
   @media (max-width:820px){.cards{grid-template-columns:1fr}}
 </style>
+<style>
+/* mobile nav pass 2026-07-06: never wrap, breathe on small screens */
+.nav-back{white-space:nowrap}
+.logo .tword{transition:width .45s cubic-bezier(.2,.8,.2,1)}
+@media (max-width:640px){nav{padding:13px 18px}.nav-right{gap:10px}.nav-cta{padding:9px 14px;font-size:13px}.nav-back{font-size:11px}}
+</style>
 </head>
 <body>
 
@@ -187,9 +193,24 @@
     var tw=document.getElementById('tword'); if(!tw) return;
     var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var words=['Jobs','Found','Booked','AI','Scale','Cited','Calls','Ahead'],ti=0,cur=null;
-    function showWord(i){var s=document.createElement('span');s.textContent=words[i];s.classList.add('in');tw.appendChild(s);if(cur){var o=cur;o.classList.remove('in');o.classList.add('out');setTimeout(function(){o.remove();},600);}cur=s;}
-    showWord(0); if(!reduce) setInterval(function(){ti=(ti+1)%words.length;showWord(ti);},2200);
+    var meter=document.createElement('span');meter.style.cssText='position:absolute;visibility:hidden;white-space:nowrap;font-style:italic;opacity:0;transform:none';tw.appendChild(meter);function widthOf(w){meter.textContent=w;return Math.ceil(meter.getBoundingClientRect().width)+2;}function showWord(i){tw.style.width=widthOf(words[i])+'px';var s=document.createElement('span');s.textContent=words[i];s.classList.add('in');tw.appendChild(s);if(cur){var o=cur;o.classList.remove('in');o.classList.add('out');setTimeout(function(){o.remove();},600);}cur=s;}
+    showWord(0); if(!reduce) setInterval(function(){if(document.hidden)return;ti=(ti+1)%words.length;showWord(ti);},2400);
   })();
+</script>
+<style>
+.mrv{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.mrv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.mrv{opacity:1;transform:none;transition:none}}
+</style>
+<script>
+(function(){
+  var els=document.querySelectorAll('h2, h3, [class*="card"]');
+  Array.prototype.slice.call(els).forEach(function(el,i){ el.classList.add('mrv'); el.style.transitionDelay=(i%5)*60+'ms'; });
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.1});
+  document.querySelectorAll('.mrv').forEach(function(el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>
