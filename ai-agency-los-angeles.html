@@ -483,19 +483,78 @@ gtag('config', 'G-RSL1F8BX5J');
   </div>
 </footer>
 <script>
-(function(){
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.querySelectorAll('.faq-list').forEach(function(g){
-    Array.prototype.slice.call(g.querySelectorAll('.rv')).forEach(function(el,i){
-      el.style.transitionDelay=Math.min(i*70,420)+'ms';
+  (function(){
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* reveal with per-group stagger, so sections arrive as a sequence */
+    ['.thread','.climb-grid','.scenarios','.day-list','.faq-list','.receipts'].forEach(function(sel){
+      document.querySelectorAll(sel).forEach(function(g){
+        Array.prototype.slice.call(g.querySelectorAll('.rv')).forEach(function(el,i){
+          el.style.transitionDelay=Math.min(i*70,420)+'ms';
+        });
+      });
     });
-  });
-  if(reduce){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});return}
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
-  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
-})();
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.12});
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+    /* the Tuesday rail draws itself in */
+    var rail=document.querySelector('.day-list');
+    if(rail){
+      var rio=new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ rail.classList.add('drawn'); rio.disconnect(); } });
+      },{threshold:.05});
+      rio.observe(rail);
+    }
+
+    /* keep the film rolling on phones (iOS wants a nudge) */
+    var v=document.querySelector('.hero-film video');
+    if(v && !reduce){
+      var kick=function(){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); };
+      kick();
+      document.addEventListener('visibilitychange',function(){ if(!document.hidden) kick(); });
+      window.addEventListener('touchstart',function once(){ kick(); window.removeEventListener('touchstart',once); },{passive:true});
+    }
+
+    /* the header blends with whatever is underneath it */
+    var nav=document.querySelector('nav');
+    var darkEls=[];
+    ['.hero-film','.marquee','.home559'].forEach(function(s){
+      document.querySelectorAll(s).forEach(function(el){ darkEls.push(el); });
+    });
+    var ticking=false;
+    function paint(){
+      ticking=false;
+      var mid=34;
+      var overDark=darkEls.some(function(el){
+        var r=el.getBoundingClientRect(); return r.top<=mid && r.bottom>=mid;
+      });
+      nav.classList.toggle('nav-dark',overDark);
+      nav.classList.toggle('nav-top',window.scrollY<26);
+    }
+    function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(paint); } }
+    window.addEventListener('scroll',onScroll,{passive:true});
+    window.addEventListener('resize',onScroll,{passive:true});
+    paint();
+
+    /* rotating wordmark: width measured per word, one word at a time,
+       naps when the tab is hidden (the old version could double-render) */
+    var tw=document.getElementById('tword'); if(!tw) return;
+    var words=['Jobs','Found','Booked','AI','Scale','Cited','Calls','Ahead'],ti=0,cur=null;
+    var meter=document.createElement('span');
+    meter.style.cssText='position:absolute;visibility:hidden;white-space:nowrap;font-style:italic;opacity:0;transform:none';
+    tw.appendChild(meter);
+    function widthOf(word){ meter.textContent=word; return Math.ceil(meter.getBoundingClientRect().width)+2; }
+    function showWord(i){
+      tw.style.width=widthOf(words[i])+'px';
+      var s=document.createElement('span'); s.textContent=words[i]; s.classList.add('in'); tw.appendChild(s);
+      if(cur){ var o=cur; o.classList.remove('in'); o.classList.add('out'); setTimeout(function(){ o.remove(); },600); }
+      cur=s;
+    }
+    showWord(0);
+    if(!reduce) setInterval(function(){ if(document.hidden) return; ti=(ti+1)%words.length; showWord(ti); },2400);
+  })();
 </script>
 </body>
 </html>
