@@ -339,6 +339,19 @@ gtag('config', 'G-RSL1F8BX5J');
   @keyframes rollIn{from{opacity:0;transform:translateY(105%)}to{opacity:1;transform:translateY(0)}}
   @keyframes rollOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-105%)}}
 </style>
+<style>
+.screen-frame{position:relative;cursor:pointer;border:1px solid var(--line);overflow:hidden}
+.screen-frame img{width:100%;display:block;transition:transform .5s ease}
+.screen-frame:hover img{transform:scale(1.015)}
+.screen-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.screen-play span{width:76px;height:76px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(200,56,14,.35);transition:transform .25s ease}
+.screen-frame:hover .screen-play span{transform:scale(1.08)}
+.screen-play svg{margin-left:5px}
+.screen-frame video{width:100%;display:block}
+.mem-cap{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--ink-soft);margin-top:8px;text-transform:uppercase}
+.mem-cap em{display:block;font-style:normal;color:var(--faint);letter-spacing:.02em;text-transform:none;font-family:var(--sans);font-size:13.5px;margin-top:3px}
+.mem-inline{margin:26px 0 0}
+</style>
 </head>
 <body>
 
@@ -638,6 +651,19 @@ gtag('config', 'G-RSL1F8BX5J');
 </section>
 
 <!-- ============ 06: QUESTIONS ============ -->
+<section class="movement">
+  <div class="wrap">
+    <div class="mnum rv">THE FILM</div>
+<figure class="mem-inline rv">
+      <div class="screen-frame" id="screenframe" role="button" tabindex="0" aria-label="Play the AmirGetsJobs film">
+        <img src="amg-commercial-poster.v1.jpg" alt="Still from the AmirGetsJobs film" width="1920" height="1080" loading="lazy" decoding="async">
+        <span class="screen-play"><span><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></span>
+      </div>
+      <figcaption class="mem-cap">The film · 2:58<em>Directed by Eiza.</em></figcaption>
+    </figure>
+  </div>
+</section>
+
 <section class="faq">
   <div class="wrap">
     <div class="mnum rv" style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--blue);font-weight:700;margin-bottom:14px">06 · FIRST-TIMER QUESTIONS</div>
@@ -761,6 +787,19 @@ gtag('config', 'G-RSL1F8BX5J');
       kick();
       document.addEventListener('visibilitychange',function(){ if(!document.hidden) kick(); });
       window.addEventListener('touchstart',function once(){ kick(); window.removeEventListener('touchstart',once); },{passive:true});
+    }
+
+
+    var sf=document.getElementById('screenframe');
+    if(sf){
+      var playFilm=function(){
+        var vid=document.createElement('video');
+        vid.src='amg-commercial.v1.mp4';vid.controls=true;vid.autoplay=true;vid.playsInline=true;
+        sf.replaceChildren(vid);sf.style.cursor='default';
+        if(window.gtag)gtag('event','commercial_play',{page:location.pathname});
+      };
+      sf.addEventListener('click',playFilm,{once:true});
+      sf.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();playFilm()}},{once:true});
     }
 
     /* the header blends with whatever is underneath it */

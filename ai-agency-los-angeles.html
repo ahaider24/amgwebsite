@@ -308,9 +308,27 @@ gtag('config', 'G-RSL1F8BX5J');
   @keyframes rollOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-105%)}}
 </style>
 <style>
-.mem-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.screen-frame{position:relative;cursor:pointer;border:1px solid var(--line);overflow:hidden}
+.screen-frame img{width:100%;display:block;transition:transform .5s ease}
+.screen-frame:hover img{transform:scale(1.015)}
+.screen-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.screen-play span{width:76px;height:76px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(200,56,14,.35);transition:transform .25s ease}
+.screen-frame:hover .screen-play span{transform:scale(1.08)}
+.screen-play svg{margin-left:5px}
+.screen-frame video{width:100%;display:block}
+.mem-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 20px;margin-top:34px;padding-bottom:44px}
 @media(max-width:980px){.mem-strip{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.mem-strip{grid-template-columns:1fr}}
+@media(max-width:560px){.mem-strip{grid-template-columns:1fr;padding-bottom:10px}}
+.mem-strip figure{background:var(--white);padding:10px 10px 13px;box-shadow:var(--shadow);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.mem-strip figure:nth-child(1){transform:rotate(-1.4deg)}
+.mem-strip figure:nth-child(2){transform:rotate(.9deg) translateY(26px)}
+.mem-strip figure:nth-child(3){transform:rotate(-.7deg) translateY(10px)}
+.mem-strip figure:nth-child(4){transform:rotate(1.2deg) translateY(34px)}
+.mem-strip figure:hover{transform:rotate(0) translateY(0) scale(1.03);box-shadow:0 4px 8px rgba(20,17,10,.08),0 22px 48px rgba(20,17,10,.14);z-index:2;position:relative}
+@media(max-width:560px){.mem-strip figure:nth-child(n){transform:rotate(0) translateY(0)}.mem-strip figure:nth-child(odd){transform:rotate(-.8deg)}.mem-strip figure:nth-child(even){transform:rotate(.8deg)}}
+.mem-strip img{opacity:.9;filter:saturate(.82) contrast(.98)}
+.mem-strip figure:hover img{opacity:1;filter:none}
+.mem-strip .mem-cap{margin-top:10px;padding:0 2px}
 .mem-inline{margin:26px 0 0}
 .mem-inline img{width:100%;display:block;opacity:.85;filter:saturate(.8) contrast(.97);transition:opacity .4s ease,filter .4s ease;border:1px solid var(--line)}
 .mem-inline:hover img{opacity:1;filter:none}
@@ -357,8 +375,11 @@ gtag('config', 'G-RSL1F8BX5J');
     <p class="rv">I moved there at 19 to go to USC. As a kid, success had one picture: being one of those guys sitting courtside at a Lakers game. LA was the dream city, and I was lucky enough to get in the door.</p>
     <p class="rv">Which is why it crushes my soul to watch what the city has become for the people trying to run a small business in it.</p>
     <figure class="mem-inline rv">
-      <img src="la-mem-coliseum.jpg" alt="USC football at the Coliseum under the lights" width="1800" height="484" loading="lazy" decoding="async">
-      <figcaption class="mem-cap">The Coliseum · Saturdays<em>Where I learned what showing up looks like.</em></figcaption>
+      <div class="screen-frame" id="screenframe" role="button" tabindex="0" aria-label="Play the AmirGetsJobs film">
+        <img src="amg-commercial-poster.v1.jpg" alt="Still from the AmirGetsJobs film" width="1920" height="1080" loading="lazy" decoding="async">
+        <span class="screen-play"><span><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></span>
+      </div>
+      <figcaption class="mem-cap">The film · 2:58<em>Directed by Eiza.</em></figcaption>
     </figure>
   </div>
 </section>
@@ -368,10 +389,6 @@ gtag('config', 'G-RSL1F8BX5J');
     <div class="mnum rv">02 · WHAT I WATCHED</div>
     <h2 class="rv">I saw it happen, spot by <em>spot.</em></h2>
     <p class="rv">The Standard rooftop downtown, where USC kids went after an exam, gone. The comedy rooms that made the city funny, the Comedy Store, the Laugh Factory, the Improv, wrecked by covid and never really the same. Sherman Oaks losing its retail. Third Street Promenade dying in slow motion. The attorneys, consultants, and bankers who filled downtown either remote or moved out entirely.</p>
-    <figure class="mem-inline rv">
-      <img src="la-mem-improv.jpg" alt="Amir on stage at the Improv, mic in hand" width="1200" height="900" loading="lazy" decoding="async">
-      <figcaption class="mem-cap">The Improv · on stage<em>I did not just watch these rooms. I stood in them.</em></figcaption>
-    </figure>
     <p class="rv">And then the fires. Families in Malibu and Pasadena who lost everything, still fighting for permits, then fighting construction costs. Crews on those rebuilds charging more than they ever have and taking home less. That one stays with me, because those are exactly the businesses I work for.</p>
     <p class="rv">Add it up and the lesson is brutal: in this town, the margin for error in a small business is minute. You cannot afford an inexperienced marketer, and you cannot afford to be slow with an estimate. Ever.</p>
   </div>
@@ -515,6 +532,19 @@ gtag('config', 'G-RSL1F8BX5J');
       kick();
       document.addEventListener('visibilitychange',function(){ if(!document.hidden) kick(); });
       window.addEventListener('touchstart',function once(){ kick(); window.removeEventListener('touchstart',once); },{passive:true});
+    }
+
+
+    var sf=document.getElementById('screenframe');
+    if(sf){
+      var playFilm=function(){
+        var vid=document.createElement('video');
+        vid.src='amg-commercial.v1.mp4';vid.controls=true;vid.autoplay=true;vid.playsInline=true;
+        sf.replaceChildren(vid);sf.style.cursor='default';
+        if(window.gtag)gtag('event','commercial_play',{page:location.pathname});
+      };
+      sf.addEventListener('click',playFilm,{once:true});
+      sf.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();playFilm()}},{once:true});
     }
 
     /* the header blends with whatever is underneath it */
