@@ -307,6 +307,15 @@ gtag('config', 'G-RSL1F8BX5J');
   @keyframes rollIn{from{opacity:0;transform:translateY(105%)}to{opacity:1;transform:translateY(0)}}
   @keyframes rollOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-105%)}}
 </style>
+<style>
+.mem-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+@media(max-width:720px){.mem-strip{grid-template-columns:1fr}}
+.mem-strip figure{margin:0}
+.mem-strip img{width:100%;height:340px;object-fit:cover;display:block;opacity:.82;filter:saturate(.78) contrast(.97);transition:opacity .4s ease,filter .4s ease;border:1px solid var(--line)}
+.mem-strip figure:hover img{opacity:1;filter:none}
+.mem-cap{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--ink-soft);margin-top:8px;text-transform:uppercase}
+.mem-cap em{display:block;font-style:normal;color:var(--faint);letter-spacing:.02em;text-transform:none;font-family:var(--sans);font-size:13.5px;margin-top:3px}
+</style>
 </head>
 <body>
 <nav>
@@ -353,6 +362,26 @@ gtag('config', 'G-RSL1F8BX5J');
     <p class="rv">The Standard rooftop downtown, where USC kids went after an exam, gone. The comedy rooms that made the city funny, the Comedy Store, the Laugh Factory, the Improv, wrecked by covid and never really the same. Sherman Oaks losing its retail. Third Street Promenade dying in slow motion. The attorneys, consultants, and bankers who filled downtown either remote or moved out entirely.</p>
     <p class="rv">And then the fires. Families in Malibu and Pasadena who lost everything, still fighting for permits, then fighting construction costs. Crews on those rebuilds charging more than they ever have and taking home less. That one stays with me, because those are exactly the businesses I work for.</p>
     <p class="rv">Add it up and the lesson is brutal: in this town, the margin for error in a small business is minute. You cannot afford an inexperienced marketer, and you cannot afford to be slow with an estimate. Ever.</p>
+  </div>
+</section>
+
+<section class="movement">
+  <div class="wrap">
+    <div class="mnum rv">CARRIED WITH ME</div>
+    <div class="mem-strip">
+      <figure class="rv">
+        <img src="la-mem-runyon.jpg" alt="View from Runyon Canyon over the Hollywood Hills" width="825" height="1100" loading="lazy" decoding="async">
+        <figcaption class="mem-cap">Runyon Canyon · Every Sunday<em>Same trail, same hour. The city looks solvable from up there.</em></figcaption>
+      </figure>
+      <figure class="rv">
+        <img src="la-mem-kobe.jpg" alt="Memorial outside the arena, January 26, 2020" width="825" height="1100" loading="lazy" decoding="async">
+        <figcaption class="mem-cap">Outside the arena · Jan 26, 2020<em>I was there the day the city went quiet.</em></figcaption>
+      </figure>
+      <figure class="rv">
+        <img src="la-mem-whiteboard.jpg" alt="Hand-drawn growth systems on a whiteboard at the Playa Vista WeWork" width="825" height="1100" loading="lazy" decoding="async">
+        <figcaption class="mem-cap">Playa Vista WeWork · pre-AI<em>Growth systems drawn by hand: local pages, text re-engagement, chatbots. Now the machine runs them.</em></figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
