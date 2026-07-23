@@ -332,11 +332,13 @@ gtag('config', 'G-RSL1F8BX5J');
 .screen-frame:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(20,17,10,.13),0 44px 110px rgba(20,17,10,.2)}
 .film-credit{margin-top:16px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase}
 .film-credit a{color:inherit;border-bottom:1px solid rgba(87,79,64,.4)}
-.screen-frame img{width:100%;display:block}
-.screen-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.screen-play span{width:76px;height:76px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(200,56,14,.35);transition:transform .25s ease}
-.screen-frame:hover .screen-play span{transform:scale(1.08)}
-.screen-play svg{margin-left:5px}
+.screen-frame{aspect-ratio:20/9}
+.screen-frame img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:640px){.screen-frame{aspect-ratio:16/10;border-radius:14px}}
+.screen-pill{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:flex;align-items:center;gap:9px;background:var(--accent);color:#fff;font-family:var(--sans);font-weight:700;font-size:14.5px;letter-spacing:.02em;padding:12px 20px;border-radius:99px;box-shadow:0 8px 26px rgba(200,56,14,.4);transition:transform .25s ease,box-shadow .25s ease;white-space:nowrap}
+.screen-frame:hover .screen-pill{transform:translateX(-50%) scale(1.05);box-shadow:0 12px 34px rgba(200,56,14,.5)}
+.screen-frame:active .screen-pill{transform:translateX(-50%) scale(.97)}
+@media(max-width:640px){.screen-pill{bottom:14px;padding:11px 18px;font-size:13.5px}}
 .screen-frame video{width:100%;display:block}
 .mem-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 20px;margin-top:34px;padding-bottom:44px}
 @media(max-width:980px){.mem-strip{grid-template-columns:repeat(2,1fr)}}
@@ -403,7 +405,7 @@ gtag('config', 'G-RSL1F8BX5J');
     <div class="mnum rv">THE FILM · 2:58</div>
     <div class="screen-frame rv" id="screenframe" role="button" tabindex="0" aria-label="Play the AmirGetsJobs film">
       <img src="amg-commercial-poster.v2.jpg" alt="Still from the AmirGetsJobs film" width="1600" height="720" loading="lazy" decoding="async">
-      <span class="screen-play"><span><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></span>
+      <span class="screen-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>Watch the film · 2:58</span>
     </div>
     <div class="film-credit rv">Directed by superstar <a href="https://www.eizamurphy.com/" target="_blank" rel="noopener">Eiza Murphy</a>.</div>
   </div>
