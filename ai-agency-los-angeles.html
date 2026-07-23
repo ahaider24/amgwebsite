@@ -64,7 +64,23 @@ gtag('config', 'G-RSL1F8BX5J');
   ]
 }
 </script>
-<style>.bridge-dn{height:110px;background:linear-gradient(180deg,var(--ink),var(--paper))}
+<style>:root{--playred:#D92323}
+.pf-label{position:absolute;left:18px;bottom:16px;text-align:left;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.pf-label b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:#fff;background:var(--playred);padding:5px 10px;border-radius:4px;width:max-content;margin-bottom:6px}
+.pf-label i{font-style:normal;font-family:var(--sans);font-size:13px;opacity:.9}
+.pf-brackets{position:absolute;top:50%;left:50%;width:72px;height:72px;transform:translate(-50%,-50%);pointer-events:none;background:
+.screen-frame:hover .pf-brackets{transform:translate(-50%,-50%) scale(1.1)}
+.screen-frame:active{transform:scale(.985)}
+.screen-frame:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.pf-line{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--playred);transition:width .8s cubic-bezier(.22,1,.36,1)}
+.screen-frame:hover .pf-line,.screen-frame.inview .pf-line{width:100%}
+.film-morph{position:fixed;z-index:2001;background:#000;border-radius:18px;overflow:hidden;transition:all .55s cubic-bezier(.7,0,.2,1)}
+.film-morph iframe{width:100%;height:100%;border:0}
+.film-scrim{position:fixed;inset:0;z-index:2000;background:var(--ink);opacity:0;transition:opacity .45s ease}
+.film-scrim.on{opacity:.96}
+.film-x{position:fixed;top:20px;right:22px;z-index:2002;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:none;color:#fff;font-size:19px;cursor:pointer;opacity:0;transition:opacity .3s}
+.film-x.on{opacity:1}
+.bridge-dn{height:110px;background:linear-gradient(180deg,var(--ink),var(--paper))}
 .bridge-up{height:110px;background:linear-gradient(180deg,var(--paper),var(--ink))}
 .home559 .btn-ghost{color:var(--paper);border-color:rgba(251,248,242,.45)}
 .home559 .klabel{color:rgba(251,248,242,.55)}
@@ -403,9 +419,9 @@ gtag('config', 'G-RSL1F8BX5J');
 <section class="film-sec" style="padding-top:30px">
   <div class="wrap">
     <div class="mnum rv">THE FILM · 2:58</div>
-    <div class="screen-frame rv" id="screenframe" role="button" tabindex="0" aria-label="Play the AmirGetsJobs film">
+    <div class="screen-frame rv" id="screenframe" data-film="a153f30b878129684a80d39f6f645483" role="button" tabindex="0" aria-label="Play the AmirGetsJobs film">
       <img src="amg-commercial-poster.v2.jpg" alt="Still from the AmirGetsJobs film" width="1600" height="720" loading="lazy" decoding="async">
-      <span class="screen-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>Watch the film · 2:58</span>
+      <span class="pf-label"><b>PLAY · 2:58</b><i>Watch the brand film</i></span><span class="pf-brackets"></span><span class="pf-line"></span>
     </div>
     <div class="film-credit rv">Directed by superstar <a href="https://www.eizamurphy.com/" target="_blank" rel="noopener">Eiza Murphy</a>.</div>
   </div>
@@ -561,34 +577,53 @@ gtag('config', 'G-RSL1F8BX5J');
 
     var sf=document.getElementById('screenframe');
     if(sf){
-      var veil=null;
+      var uid=sf.getAttribute('data-film');
+      var scrim=null,morph=null,xbtn=null;
       var closeFilm=function(){
-        if(!veil)return;
-        veil.classList.remove('open');
-        
-        var gone=veil;veil=null;
-        setTimeout(function(){gone.remove()},380);
-        document.removeEventListener('keydown',onKey);
+        if(!morph)return;
+        var r=sf.getBoundingClientRect();
+        morph.querySelector('iframe') && morph.removeChild(morph.querySelector('iframe'));
+        morph.style.top=r.top+'px';morph.style.left=r.left+'px';morph.style.width=r.width+'px';morph.style.height=r.height+'px';
+        scrim.classList.remove('on');xbtn.classList.remove('on');
+        var m=morph,s=scrim,x=xbtn;morph=null;
+        setTimeout(function(){m.remove();s.remove();x.remove()},600);
+        document.documentElement.style.overflow='';
+        document.removeEventListener('keydown',onKey);sf.focus();
       };
       var onKey=function(e){if(e.key==='Escape')closeFilm()};
       var playFilm=function(){
-        veil=document.createElement('div');veil.className='film-veil';
-        var vid=document.createElement('iframe');
-        vid.src='https://customer-1dbaiqcmozq0dh9g.cloudflarestream.com/a153f30b878129684a80d39f6f645483/iframe?autoplay=true&primaryColor=%23FF4D1C&poster='+encodeURIComponent('https://amirgetsjobs.com/amg-commercial-poster.v2.jpg');
-        vid.allow='accelerometer; autoplay; encrypted-media; fullscreen; picture-in-picture';
-        vid.allowFullscreen=true;
-        var x=document.createElement('button');x.className='film-close';x.innerHTML='\u2715';x.setAttribute('aria-label','Close film');
-        x.addEventListener('click',closeFilm);
-        veil.addEventListener('click',function(e){if(e.target===veil)closeFilm()});
-        veil.appendChild(vid);veil.appendChild(x);
-        document.body.appendChild(veil);
-        requestAnimationFrame(function(){veil.classList.add('open')});
+        var r=sf.getBoundingClientRect();
+        scrim=document.createElement('div');scrim.className='film-scrim';document.body.appendChild(scrim);
+        morph=document.createElement('div');morph.className='film-morph';
+        morph.style.top=r.top+'px';morph.style.left=r.left+'px';morph.style.width=r.width+'px';morph.style.height=r.height+'px';
+        morph.style.backgroundImage='url('+sf.querySelector('img').src+')';morph.style.backgroundSize='cover';
+        document.body.appendChild(morph);
+        xbtn=document.createElement('button');xbtn.className='film-x';xbtn.innerHTML='\u2715';xbtn.setAttribute('aria-label','Close film');
+        xbtn.addEventListener('click',closeFilm);document.body.appendChild(xbtn);
+        document.documentElement.style.overflow='hidden';
+        requestAnimationFrame(function(){requestAnimationFrame(function(){
+          scrim.classList.add('on');xbtn.classList.add('on');
+          var vw=Math.min(window.innerWidth*.96,1200),vh=Math.min(vw*9/16,window.innerHeight*.86);
+          if(window.innerWidth<640){vw=window.innerWidth;vh=vw*9/16}
+          morph.style.top=((window.innerHeight-vh)/2)+'px';morph.style.left=((window.innerWidth-vw)/2)+'px';
+          morph.style.width=vw+'px';morph.style.height=vh+'px';
+        })});
+        var armed=false;
+        var inject=function(){if(armed)return;armed=true;
+          var ifr=document.createElement('iframe');
+          ifr.src='https://customer-1dbaiqcmozq0dh9g.cloudflarestream.com/'+uid+'/iframe?autoplay=true&primaryColor=%23D92323';
+          ifr.allow='accelerometer; autoplay; encrypted-media; fullscreen; picture-in-picture';ifr.allowFullscreen=true;
+          morph.appendChild(ifr)};
+        morph.addEventListener('transitionend',inject,{once:true});
+        setTimeout(inject,700);
+        scrim.addEventListener('click',closeFilm);
         document.addEventListener('keydown',onKey);
-        x.focus();
         if(window.gtag)gtag('event','commercial_play',{page:location.pathname});
       };
-      sf.addEventListener('click',playFilm);
-      sf.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();playFilm()}});
+      sf.addEventListener('click',function(){if(!morph)playFilm()});
+      sf.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();if(!morph)playFilm()}});
+      var fio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)sf.classList.add('inview')})},{threshold:.6});
+      fio.observe(sf);
     }
 
     /* the header blends with whatever is underneath it */

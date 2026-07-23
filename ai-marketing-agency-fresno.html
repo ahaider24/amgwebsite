@@ -96,7 +96,50 @@ gtag('config', 'G-RSL1F8BX5J');
   ]
 }
 </script>
-<style>.home559 .mem-cap{color:rgba(251,248,242,.6)}
+<style>:root{--playred:#D92323}
+.sunrise{height:200vh;position:relative;background:var(--ink)}
+.sunrise-fig{position:sticky;top:0;height:100vh;margin:0;overflow:hidden}
+.sunrise-fig img{width:100%;height:100%;object-fit:cover;display:block}
+.sunrise-veil{position:absolute;inset:0;background:var(--ink);opacity:.85;pointer-events:none}
+.sunrise-cap{position:absolute;left:26px;bottom:22px;color:#fff;z-index:2}
+.sunrise-cap em{color:rgba(255,255,255,.75)}
+.squeeze{margin-top:18px}
+.sq-line{font-family:var(--display);font-weight:430;font-size:clamp(20px,2.8vw,32px);line-height:1.3;margin:14px 0;color:var(--ink-soft);letter-spacing:.01em;transform-origin:left center}
+.sq-release{font-family:var(--display);font-size:clamp(20px,2.8vw,32px);color:var(--accent);margin-top:26px}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+@media(max-width:860px){.cases{grid-template-columns:1fr}}
+.case{border:1px solid var(--line);background:var(--white);padding:18px 17px;border-radius:12px}
+.case .ck{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--accent);font-weight:700}
+.case p{margin-top:9px;font-size:15px;line-height:1.5}
+.beats{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 18px}
+.beats span{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;border:1px solid var(--line);border-radius:99px;padding:7px 12px;color:var(--ink-soft);background:var(--paper-2)}
+.faq-list[data-progressive] .faq-item:nth-child(n+5){display:none}
+.faq-list[data-progressive].open .faq-item{display:block}
+.faq-more{margin-top:16px;font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;background:none;border:1px solid var(--line);border-radius:99px;padding:10px 18px;cursor:pointer;color:var(--ink-soft)}
+.faq-more:hover{border-color:var(--ink)}
+.pf-label{position:absolute;left:18px;bottom:16px;text-align:left;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.pf-label b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:#fff;background:var(--playred);padding:5px 10px;border-radius:4px;width:max-content;margin-bottom:6px}
+.pf-label i{font-style:normal;font-family:var(--sans);font-size:13px;opacity:.9}
+.pf-brackets{position:absolute;top:50%;left:50%;width:72px;height:72px;transform:translate(-50%,-50%);pointer-events:none;background:
+linear-gradient(#fff,#fff) top left/22px 2.5px no-repeat,linear-gradient(#fff,#fff) top left/2.5px 22px no-repeat,
+linear-gradient(#fff,#fff) top right/22px 2.5px no-repeat,linear-gradient(#fff,#fff) top right/2.5px 22px no-repeat,
+linear-gradient(#fff,#fff) bottom left/22px 2.5px no-repeat,linear-gradient(#fff,#fff) bottom left/2.5px 22px no-repeat,
+linear-gradient(#fff,#fff) bottom right/22px 2.5px no-repeat,linear-gradient(#fff,#fff) bottom right/2.5px 22px no-repeat;
+filter:drop-shadow(0 1px 6px rgba(0,0,0,.45));transition:transform .35s ease}
+.screen-frame:hover .pf-brackets{transform:translate(-50%,-50%) scale(1.1)}
+.screen-frame:active{transform:scale(.985)}
+.screen-frame:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.pf-line{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--playred);transition:width .8s cubic-bezier(.22,1,.36,1)}
+.screen-frame:hover .pf-line,.screen-frame.inview .pf-line{width:100%}
+.film-morph{position:fixed;z-index:2001;background:#000;border-radius:18px;overflow:hidden;transition:all .55s cubic-bezier(.7,0,.2,1)}
+.film-morph iframe{width:100%;height:100%;border:0}
+.film-scrim{position:fixed;inset:0;z-index:2000;background:var(--ink);opacity:0;transition:opacity .45s ease}
+.film-scrim.on{opacity:.96}
+.film-x{position:fixed;top:20px;right:22px;z-index:2002;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:none;color:#fff;font-size:19px;cursor:pointer;opacity:0;transition:opacity .3s}
+.film-x.on{opacity:1}
+@media (prefers-reduced-motion: reduce){.film-morph{transition:opacity .2s ease}.sq-line{transform:none!important;letter-spacing:.01em!important}.sunrise{height:auto}.sunrise-fig{position:static;height:70vh}.sunrise-veil{display:none}}
+
+.home559 .mem-cap{color:rgba(251,248,242,.6)}
 .home559 .mem-cap em{color:rgba(251,248,242,.45)}
 .bridge-dn{height:110px;background:linear-gradient(180deg,var(--ink),var(--paper))}
 .bridge-up{height:110px;background:linear-gradient(180deg,var(--paper),var(--ink))}
@@ -385,7 +428,6 @@ gtag('config', 'G-RSL1F8BX5J');
   </div>
 </nav>
 
-<!-- ============ HERO: FRESNO FROM THE AIR ============ -->
 <header class="hero-film" aria-label="Aerial view of downtown Fresno">
   <video autoplay muted loop playsinline preload="metadata" poster="fresno-aerial-poster.jpg">
     <source src="fresno-aerial.mp4" type="video/mp4">
@@ -397,274 +439,66 @@ gtag('config', 'G-RSL1F8BX5J');
   <div class="wrap">
     <div class="klabel rv">Locations <span class="crumb">/</span> Fresno, California <span class="crumb">/</span> HQ</div>
     <h1 class="rv">A Marketing Agency and an AI Agency in <em>Fresno</em></h1>
-    <p class="sub rv">Fresno's only marketing agency and AI agency built for the fight you are already in. Your competitors have departments. You have us. We map your position, wire your response time, and make your name the one AI surfaces first.</p>
+    <p class="sub rv">Local creative. AI that keeps working after you log off.</p>
     <div class="hero-ctas rv">
       <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-primary">Book a Fresno strategy call <span class="arr">→</span></a>
-      <a href="/what-ai-can-do" class="btn btn-ghost">See what your leads are costing you</a>
+      <a href="#film" class="btn btn-ghost">Watch the film</a>
     </div>
-    <figure class="mem-inline rv" style="max-width:720px;margin:36px auto 0">
-      <img src="tower-theatre-night.v1.jpg" alt="The Tower Theatre marquee lit at night in Fresno's Tower District" width="1100" height="1540" loading="lazy" decoding="async" style="max-height:500px;object-fit:cover;width:100%;border-radius:14px;border:none">
-      <figcaption class="mem-cap" style="text-align:center">Tower District · after dark<em>The city we work for does not clock out.</em></figcaption>
-    </figure>
   </div>
 </section>
 
-<!-- ============ NEIGHBORHOOD MARQUEE ============ -->
-<div class="marquee" aria-hidden="true">
-  <div class="track">
-    <div class="set">
-      <span class="nb">Tower District</span><span class="dot">·</span><span class="nb">Fig Garden</span><span class="dot">·</span><span class="nb">Woodward Park</span><span class="dot">·</span><span class="nb">Clovis</span><span class="dot">·</span><span class="nb">Shaw Ave</span><span class="dot">·</span><span class="nb">Sunnyside</span><span class="dot">·</span><span class="nb">River Park</span><span class="dot">·</span><span class="nb">Fulton Street</span><span class="dot">·</span><span class="nb">Old Town Clovis</span><span class="dot">·</span><span class="nb">The 41</span><span class="dot">·</span><span class="nb">The 99</span><span class="dot">·</span>
+<section class="film-sec movement home559" id="film">
+  <div class="wrap">
+    <div class="mnum rv">THE FILM · 2:58</div>
+    <h2 class="rv" style="color:#fff">Three minutes on who we are.<em style="color:var(--gold)"> Watch the film.</em></h2>
+    <div class="screen-frame rv" id="screenframe" data-film="573458682e65aff406132d2044068d3c" role="button" tabindex="0" aria-label="Play the AmirGetsJobs film">
+      <img src="amg-commercial-fresno-poster.v2.jpg" alt="Still from the AmirGetsJobs film" width="1920" height="864" loading="lazy" decoding="async">
+      <span class="pf-label"><b>PLAY · 2:58</b><i>Watch the brand film</i></span><span class="pf-brackets"></span><span class="pf-line"></span>
     </div>
-    <div class="set">
-      <span class="nb">Tower District</span><span class="dot">·</span><span class="nb">Fig Garden</span><span class="dot">·</span><span class="nb">Woodward Park</span><span class="dot">·</span><span class="nb">Clovis</span><span class="dot">·</span><span class="nb">Shaw Ave</span><span class="dot">·</span><span class="nb">Sunnyside</span><span class="dot">·</span><span class="nb">River Park</span><span class="dot">·</span><span class="nb">Fulton Street</span><span class="dot">·</span><span class="nb">Old Town Clovis</span><span class="dot">·</span><span class="nb">The 41</span><span class="dot">·</span><span class="nb">The 99</span><span class="dot">·</span>
-    </div>
+    <div class="film-credit rv">Directed by superstar <a href="https://www.eizamurphy.com/" target="_blank" rel="noopener">Eiza Murphy</a>.</div>
   </div>
+</section>
+
+<!-- SCENE 3: THE SUNRISE -->
+<div class="sunrise" id="sunrise">
+  <figure class="sunrise-fig">
+    <img src="fresno-stamp-mural.v1.jpg" alt="The Fresno postage stamp mural at sunrise, Pacific Southwest Building behind" width="1600" height="1067">
+    <div class="sunrise-veil"></div>
+    <figcaption class="mem-cap sunrise-cap">Fresno · the stamp mural<em>Built in the 559, run from the 559.</em></figcaption>
+  </figure>
 </div>
 
-<!-- ============ 01: THE VALLEY ALREADY KNOWS ============ -->
-<section class="movement home559">
+<!-- SCENE 4: THE WORK -->
+<section class="movement" id="work">
   <div class="wrap">
-    <div class="home-grid">
-      <div>
-        <div class="mnum rv">01 · THE LAST THIRTY DAYS</div>
-        <h2 class="rv">What a <em>marketing agency in Fresno</em> actually changed last month</h2>
-        <p class="rv">If you run a crew, a counter, a kitchen, or a practice in Fresno, this page was written for you. And it is not a pitch about what AI could theoretically do for a business like yours. This is what the last thirty days looked like from our shop.</p>
-        <div class="receipts">
-          <div class="rcpt rv">
-            <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6v11H3z"/><path d="M9 20V12h6v8"/></svg>DISTRIBUTOR · SINCE 1990</div>
-            <p>A Fresno business that has run on word of mouth and partner relationships since 1990 started getting found by people who had never heard its name. Fresno Distributing went from phone calls and a front counter to online ordering with will call pickup, so the contractors they supply can buy parts from wherever the job has them standing, and a downtown distributor can go toe to toe with multinational supply chains.</p>
-          </div>
-          <div class="rcpt rv">
-            <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7a2 2 0 0 0 4 0V3M9 10v11"/><path d="M17 3c-1.5 2-2 4-2 6 0 1.5 1 2 2 2s2-.5 2-2c0-2-.5-4-2-6zM17 11v10"/></svg>RESTAURANT</div>
-            <p>A physical therapy practice put up a real website and started drawing a more serious caliber of patient, because the care was never the problem.</p>
-          </div>
-          <div class="rcpt rv">
-            <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a5 5 0 0 0-6.6 6.6L3 18l3 3 5.1-5.1a5 5 0 0 0 6.6-6.6L14 12l-2-2z"/></svg>CONSTRUCTION</div>
-            <p>And a construction company now delivers estimates in minutes and answers customers in seconds, with AI doing both while every hand stays on the job.</p>
-          </div>
-        </div>
-        <div class="kicker rv">That was one month. <span class="g">We have only scratched the surface.</span></div>
-      </div>
-      <div class="field-art rv" aria-hidden="true">
-        <!-- homage to Fresno's Greetings-from postcard mural -->
-        <svg viewBox="0 0 340 360" role="presentation">
-          <!-- wall hints behind the card -->
-          <g stroke="rgba(251,248,242,.14)" stroke-width="2" stroke-linecap="round">
-            <path d="M20 40 L60 40 M74 40 L114 40 M240 26 L280 26"/>
-            <path d="M28 330 L68 330 M260 336 L300 336"/>
-          </g>
-          <g transform="rotate(-3 170 180)">
-            <!-- postcard -->
-            <rect x="16" y="78" width="308" height="204" rx="9" fill="#FBF8F2"/>
-            <rect x="26" y="88" width="288" height="184" rx="5" fill="none" stroke="#F2B01E" stroke-width="2.5"/>
-            <!-- greetings script -->
-            <text x="52" y="130" font-family="Fraunces,Georgia,serif" font-style="italic" font-size="27" font-weight="500" fill="#2596BE">Greetings from</text>
-            <!-- FRESNO big letters, vintage block shadow -->
-            <text x="173" y="205" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="900" font-size="63" letter-spacing="2" fill="#14110A">FRESNO</text>
-            <text x="170" y="202" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="900" font-size="63" letter-spacing="2" fill="#FF4D1C">FRESNO</text>
-            <!-- state line -->
-            <text x="170" y="240" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" letter-spacing="8" fill="#574F40">CALIFORNIA</text>
-            <!-- stamp -->
-            <g>
-              <rect x="252" y="98" width="46" height="56" fill="#FBF8F2" stroke="#14110A" stroke-width="2" stroke-dasharray="4 3"/>
-              <circle cx="275" cy="122" r="13" fill="#FF4D1C"/>
-              <rect x="258" y="124" width="34" height="3" fill="#FBF8F2"/>
-              <rect x="258" y="131" width="34" height="4.5" fill="#FBF8F2"/>
-              <path d="M258 146 L292 146" stroke="#14110A" stroke-width="2"/>
-            </g>
-            <!-- postmark -->
-            <g stroke="#2596BE" stroke-width="2" fill="none" opacity=".6">
-              <circle cx="228" cy="122" r="16"/>
-              <path d="M186 112 q10 6 20 0 q10 -6 20 0 M186 124 q10 6 20 0 q10 -6 20 0 M186 136 q10 6 20 0 q10 -6 20 0"/>
-            </g>
-          </g>
-          <!-- card shadow + bird -->
-          <ellipse cx="170" cy="300" rx="130" ry="10" fill="rgba(0,0,0,.35)"/>
-          <g stroke="rgba(251,248,242,.3)" stroke-width="2" fill="none" stroke-linecap="round">
-            <path d="M84 44 q6 -7 12 0 q6 -7 12 0"/>
-          </g>
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="bridge-dn"></div>
-<section class="movement" style="padding-bottom:6px">
-  <div class="wrap">
-    <figure class="mem-inline rv" style="margin-top:0">
-      <img src="fresno-stamp-mural.v1.jpg" alt="The Fresno postage stamp mural at sunrise, Pacific Southwest Building behind" width="1600" height="1067" loading="lazy" decoding="async" style="border-radius:14px;border:none">
-      <figcaption class="mem-cap">Downtown · first light<em>Built in the 559, run from the 559.</em></figcaption>
-    </figure>
-  </div>
-</section>
-
-
-<!-- ============ 02: THE CLIMB ============ -->
-<section class="movement">
-  <div class="wrap">
-    <div class="mnum rv">02 · THE SQUEEZE</div>
+    <div class="mnum rv">01 · THE SQUEEZE</div>
     <h2 class="rv">Your competition is not the shop across town <em>anymore.</em></h2>
-    <div class="thread">
-      <p class="tw rv">Private equity bought five mid-size plumbing companies in Fresno and merged them. One owner. One budget. One playbook. <span class="a">Your market.</span></p>
-      <p class="tw soft rv">Haven't felt the squeeze yet? You will. That is not a threat. It is their business model.</p>
-      <p class="tw rv">The question is not whether your marketing gets harder. The question is whether your business survives the next five years. <span class="a">That is what this work is actually about.</span></p>
-      <p class="tw rv">You have five minutes to convert a lead. The next name is one thumb-scroll away.</p>
-      <p class="tw soft rv">Attention is engineered shorter every day. Budgets get tighter every quarter. The game changed while you were doing the work.</p>
-      <p class="tw rv">Could a kid who learned AI in school run this? He can make words appear. <span class="a">He cannot see the board.</span></p>
-      <p class="tw soft rv">Every move a rollup makes prices in your response. Having no counter is also a move. It is just a losing one.</p>
-      <p class="tw rv">The squeeze is not a question of whether. It is a question of whether you are still standing when it is done.</p>
+    <div class="squeeze" id="squeeze">
+      <p class="sq-line">Private equity bought five Fresno plumbing companies and merged them.</p>
+      <p class="sq-line">One owner. One budget. One playbook. Your market.</p>
+      <p class="sq-line">Five minutes to convert a lead. The next name is one thumb-scroll away.</p>
     </div>
-    <p class="lead-in rv">SO BEFORE ANYTHING GETS BUILT, WE MAP YOUR POSITION</p>
-    <div class="climb-grid">
-      <div class="stage rv">
-        <div class="art" aria-hidden="true"><svg viewBox="0 0 200 96"><path d="M30 20 L110 20 L82 52 L82 76 L58 84 L58 52 Z" fill="none" stroke="#14110A" stroke-width="4" stroke-linejoin="round"/><g fill="#FF4D1C"><circle cx="52" cy="12" r="4"/><circle cx="70" cy="8" r="3.4"/><circle cx="90" cy="12" r="4"/></g><path d="M132 42 L172 42 M158 28 L172 42 L158 56" stroke="#FF4D1C" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="sn">LENS 1</div>
-        <h3>How you acquire</h3>
-        <p>Where sales actually come from: referral, repeat, search, partners. What each channel costs you, what it quietly misses, and which one disappears the day a rollup outspends it.</p>
-      </div>
-      <div class="stage rv">
-        <div class="art" aria-hidden="true"><svg viewBox="0 0 200 96"><circle cx="72" cy="52" r="34" fill="none" stroke="#14110A" stroke-width="4"/><path d="M72 52 L72 30 M72 52 L88 60" stroke="#FF4D1C" stroke-width="5" stroke-linecap="round"/><path d="M62 12 L82 12" stroke="#14110A" stroke-width="4" stroke-linecap="round"/><g fill="none" stroke="#E7DDC8" stroke-width="4" stroke-linecap="round"><path d="M126 36 L176 36 M126 52 L164 52 M126 68 L152 68"/></g></svg></div>
-        <div class="sn">LENS 2</div>
-        <h3>How fast you convert</h3>
-        <p>The clock between a lead raising a hand and your first response. Five minutes is the window before they call the next name. We measure yours to the second.</p>
-      </div>
-      <div class="stage rv">
-        <div class="art" aria-hidden="true"><svg viewBox="0 0 200 96"><g fill="#14110A"><rect x="24" y="62" width="18" height="20"/><rect x="48" y="48" width="18" height="34"/><rect x="72" y="32" width="18" height="50"/></g><path d="M118 30 L178 30 L170 42 M178 30 L166 22" stroke="#C8380E" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="rotate(24 148 36)"/><g fill="#FF4D1C"><circle cx="140" cy="66" r="5"/><circle cx="158" cy="74" r="4"/><circle cx="174" cy="82" r="3.2"/></g></svg></div>
-        <div class="sn">LENS 3</div>
-        <h3>Marketing vs ads</h3>
-        <p>What you build versus what you rent. Rankings, reviews, and AI answers compound while you sleep. Ad spend stops the second the card declines. We show you where your dollars sit today.</p>
-      </div>
-      <div class="stage rv">
-        <div class="art" aria-hidden="true"><svg viewBox="0 0 200 96"><g fill="none" stroke="#14110A" stroke-width="4" stroke-linejoin="round"><rect x="14" y="30" width="40" height="36" rx="8"/><rect x="80" y="30" width="40" height="36" rx="8"/><rect x="146" y="30" width="40" height="36" rx="8"/></g><path d="M56 48 L78 48 M122 48 L144 48" stroke="#FF4D1C" stroke-width="4" stroke-linecap="round"/><path d="M158 42 L165 52 L176 38" stroke="#1E9B57" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M34 20 L30 10 M100 20 L104 10" stroke="#E7DDC8" stroke-width="3" stroke-linecap="round"/></svg></div>
-        <div class="sn">LENS 4</div>
-        <h3>Operations</h3>
-        <p>Everything after the job is won: quotes, paperwork, follow-ups, reactivation, reporting. The hours you burn here are exactly what the AI workflows in the Tuesday below take off your back.</p>
-      </div>
-    </div>
-    <div class="thread" style="margin-top:38px">
-      <p class="tw rv">Their playbook is written by people who think like Fortune 500 operators and venture capital taking a market fast. <span class="w">So is ours.</span> Four openings they run, and the counter for each:</p>
-    </div>
-    <div class="scenarios">
-      <div class="sc rv">
-        <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 8h14v9H1zM15 11h4l3 3v3h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>DISTRIBUTION</div>
-        <p class="tw soft">A national supplier opens same-day will call in your county and trains buyers to reorder online. They do not need to beat your service. They only need to match your speed and bury your name in search.</p>
-        <p class="tw"><span class="w">The counter:</span> Fresno Distributing went online-first. Contractors find them at midnight from the job site. The chain still ships. They do not own the query.</p>
-      </div>
-      <div class="sc rv">
-        <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7a2 2 0 0 0 4 0V3M9 10v11"/><path d="M17 3c-1.5 2-2 4-2 6 0 1.5 1 2 2 2s2-.5 2-2c0-2-.5-4-2-6zM17 11v10"/></svg>RESTAURANT</div>
-        <p class="tw soft">A corporate group buys three local spots, assigns one brand manager and one national ad budget, and pushes a loyalty app while you wait on word of mouth.</p>
-        <p class="tw"><span class="w">The counter:</span> Your digital presence finally matches your kitchen. Reviews compound. Reservations flow direct. The chain rents attention. The local owns the search.</p>
-      </div>
-      <div class="sc rv">
-        <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="15" rx="2"/><path d="M12 10v7M8.5 13.5h7M9 6V3h6v3"/></svg>MEDICAL OFFICE</div>
-        <p class="tw soft">A national dermatology group opens in north Fresno, buys every local search term, and routes new patients to a booking center that answers in two rings.</p>
-        <p class="tw"><span class="w">The counter:</span> Your practice owns the AI answer for the specific condition in the specific neighborhood. The chain gets the ad click. You get the patient who asked the question out loud.</p>
-      </div>
-      <div class="sc rv">
-        <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a5 5 0 0 0-6.6 6.6L3 18l3 3 5.1-5.1a5 5 0 0 0 6.6-6.6L14 12l-2-2z"/></svg>TRADES</div>
-        <p class="tw soft">The rollup unifies five shops under one brand and runs one budget against your whole category overnight.</p>
-        <p class="tw"><span class="w">The counter:</span> Your shop texts back before the lead cools, follows up every estimate automatically, and reactivates the customers of 2023 without a single sticky note.</p>
-      </div>
-    </div>
-    <p class="punch rv">Why the hell should someone <span class="u">pick you?</span> That is the question we build your answer to.</p>
-  </div>
-</section>
+    <p class="rv sq-release">Having no counter is also a move. It is just a losing one.</p>
 
-<!-- ============ 03: WHAT CHANGED ============ -->
-<section class="movement changed">
-  <div class="wrap">
-    <div class="changed-grid">
-      <div>
-        <div class="mnum rv">03 · WHAT CHANGED</div>
-        <h2 class="rv">When a water heater bursts in Clovis at 9pm, <em>nobody reads ten links.</em></h2>
-        <p class="rv">They pick up their phone and ask. The AI answers with one name, maybe two. If your business is not named, you do not exist in that moment. Not third place. Not runner-up. The customer never sees your website, your reviews, your menu, your inventory, or your twenty years of work.</p>
-        <p class="rv">The burst water heater is one version. The diner picking tonight's table, the patient whose question cannot wait until Monday, and the contractor hunting a part before sunrise are the same story.</p>
-        <p class="rv">This is where our two halves stop being separate conversations. The marketing agency half gets you named: the SEO, the content, the reviews, the local authority signals that search engines and AI models read when they decide whose name to surface. The AI agency half handles what happens after: the missed call texted back before the lead goes cold, the estimate that follows itself up, the 2023 customer nudged at the right time.</p>
-        <p class="rv pull">One side carries the water to the field. The other keeps it moving through the rows. Neither half works as well alone. Together they behave like irrigation: <span class="u">the system runs whether or not the farmer is standing at the gate.</span></p>
-      </div>
-      <div class="phone-art rv" aria-hidden="true">
-        <svg viewBox="0 0 360 320" role="presentation">
-          <rect x="104" y="14" width="152" height="292" rx="26" fill="none" stroke="#14110A" stroke-width="5"/>
-          <path d="M158 30 L202 30" stroke="#14110A" stroke-width="5" stroke-linecap="round"/>
-          <rect x="122" y="58" width="116" height="64" rx="12" fill="#FF4D1C"/>
-          <g fill="#FBF8F2">
-            <rect x="134" y="72" width="70" height="9" rx="4.5"/>
-            <rect x="134" y="90" width="48" height="9" rx="4.5" opacity=".8"/>
-          </g>
-          <circle cx="224" cy="90" r="10" fill="#FBF8F2"/>
-          <path d="M220 90 L223 94 L229 85" stroke="#FF4D1C" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-          <g opacity=".28" fill="#14110A">
-            <rect x="122" y="140" width="116" height="12" rx="6"/>
-            <rect x="122" y="162" width="98" height="12" rx="6"/>
-            <rect x="122" y="184" width="108" height="12" rx="6"/>
-            <rect x="122" y="206" width="86" height="12" rx="6"/>
-          </g>
-          <g stroke="#F2B01E" stroke-width="3.4" stroke-linecap="round" opacity=".9">
-            <path d="M84 66 Q70 80 84 94"/>
-            <path d="M70 54 Q46 80 70 106"/>
-            <path d="M276 66 Q290 80 276 94"/>
-            <path d="M290 54 Q314 80 290 106"/>
-          </g>
-        </svg>
-      </div>
+    <div class="mnum rv" style="margin-top:64px;color:var(--accent)">WHEN A WATER HEATER BURSTS IN CLOVIS AT 9PM, NOBODY READS TESTIMONIALS.</div>
+    <h2 class="rv">What a marketing agency in Fresno actually changed <em>last month.</em></h2>
+    <p class="rv">If you run a crew, a counter, a caseload, or a practice in Fresno, this is what the last thirty days looked like from our shop. Receipts, not theory.</p>
+    <div class="cases rv">
+      <div class="case"><span class="ck">DISTRIBUTOR · SINCE 1990</span><p>Ran on phone calls and a front counter for thirty-five years. Now takes online orders with will-call pickup, and contractors buy from wherever the job has them standing.</p></div>
+      <div class="case"><span class="ck">MEDICAL · PT PRACTICE</span><p>Put up a real website and started drawing a more serious caliber of patient, because the care was never the problem.</p></div>
+      <div class="case"><span class="ck">CONSTRUCTION</span><p>Delivers estimates in minutes and answers customers in seconds, with AI doing both while every hand stays on the job.</p></div>
     </div>
-  </div>
-</section>
 
-<!-- ============ 04: A TUESDAY, WIRED ============ -->
-<section class="movement">
-  <div class="wrap">
-    <div class="mnum rv">04 · A TUESDAY, WIRED</div>
-    <h2 class="rv">Six AM to six PM. <em>What your AI agency does while you work.</em></h2>
-    <p class="rv">Not features. A day. Here is yours with the wiring underneath it.</p>
-    <ul class="day-list">
-      <li class="day rv">
-        <div class="t">6:04 AM</div>
-        <h3>A part is needed before the first job</h3>
-        <p>A contractor asks his phone who stocks the fitting he needs in Fresno. It says your name and your number. He never sees the three competitors, and your counter had not even opened yet.</p>
-      </li>
-      <li class="day rv">
-        <div class="t">9:41 AM</div>
-        <h3>The call you couldn't take</h3>
-        <p>The phone rings out while your hands are full on a job site in Clovis. Inside a minute the caller has a personal text back, and by the time you are off the ladder, Thursday 8am is booked on your calendar.</p>
-      </li>
-      <li class="day rv">
-        <div class="t">11:20 AM</div>
-        <h3>An order books itself while the counter is busy</h3>
-        <p>A will-call request flows in online, payment verified, pickup slot held, confirmation sent. You stayed at the counter. No one had to stop. Nothing fell through.</p>
-      </li>
-      <li class="day rv">
-        <div class="t">12:30 PM</div>
-        <h3>Yesterday's estimate follows itself up</h3>
-        <p>The quote you sent Monday nudges the customer politely while you eat. Signed before you finish. No sticky note, no awkward check-in, no lost job to whoever remembered to call back first.</p>
-      </li>
-      <li class="day rv">
-        <div class="t">3:15 PM</div>
-        <h3>The afternoon of office work that stops existing</h3>
-        <p>Invoices, intake forms, and supplier docs get read, filed, and routed without you. Two to three hours of admin, priced at whatever you pay the person who used to stay latest, gone.</p>
-      </li>
-      <li class="day rv">
-        <div class="t">4:50 PM</div>
-        <h3>A past customer hears from you</h3>
-        <p>A name already in your list gets the right nudge at the right moment. Booked. No ad spend. Revenue you already earned once, collected again.</p>
-      </li>
-      <li class="day rv">
-        <div class="t">6:00 PM</div>
-        <h3>One text: calls, jobs, dollars</h3>
-        <p>Everything the day moved gets compressed into plain English and sent to your phone. No dashboard, no login, no end-of-day guesswork.</p>
-      </li>
-    </ul>
-    <p class="wiring rv">We don't hand you a tool. <span class="u">We do the wiring.</span></p>
-    <p class="deep-links rv">The long versions live on our <a href="/ai-workflows">AI workflows</a> and <a href="/seo-geo-playbook">SEO &amp; GEO playbook</a> pages, if you want the detail.</p>
-  </div>
-</section>
-
-<!-- ============ 05: RECEIPTS ============ -->
-<section class="movement proof">
-  <div class="wrap">
-    <div class="mnum rv">05 · RECEIPTS</div>
-    <h2 class="rv">We measure what AI says about our clients. <em>Weekly.</em></h2>
-    <p class="rv">AI visibility is not a feeling or a theory. It can be checked, tracked, and improved, so we check it every week for every client: who the AI recommends, who it skips, and why. And we hold ourselves to the same test we sell:</p>
+    <h2 class="rv" style="margin-top:64px">We measure what AI says about our clients. <em>Weekly.</em></h2>
+    <h3 class="rv" style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 8px">Six AM to six PM: what your AI agency does while you work</h3>
+    <div class="beats rv">
+      <span>6:04a · AI names you before your counter opens</span>
+      <span>9:41a · The missed call texts itself back</span>
+      <span>11:20a · An order books while the counter is busy</span>
+      <span>12:30p · Monday's estimate follows itself up</span>
+      <span>3:15p · The admin afternoon stops existing</span>
+      <span>4:50p · A past customer hears from you</span>
+    </div>
     <div class="proof-stat rv">
       <div class="big">Ask AI.</div>
       <div class="exp">Do not take a marketing agency's word for anything. Pull out your phone and ask ChatGPT or Google's AI about AmirGetsJobs in Fresno. Read what comes back: who we are, what we do, who we do it for. Nobody wrote that answer. We earned it, the same way we earn it for clients. The next name the machines learn could be yours.</div>
@@ -683,27 +517,20 @@ gtag('config', 'G-RSL1F8BX5J');
       <a href="https://smallbizleader.com/qa/social-media-content-planning-for-local-businesses" target="_blank" rel="noopener"><span class="mk">Small Biz Leader</span></a>
       <a href="https://marketermagazine.co/qa/how-to-personalize-content-for-different-audiences" target="_blank" rel="noopener"><span class="mk">Marketer Magazine</span></a>
     </div>
+
   </div>
 </section>
 
-<!-- ============ 06: QUESTIONS ============ -->
-<section class="film-sec">
+<!-- SCENE 5: THE CLOSE -->
+<section class="faq" id="close">
   <div class="wrap">
-    <div class="mnum rv">THE FILM · 2:58</div>
-    <h2 class="rv">Watch the <em>film.</em></h2>
-    <div class="screen-frame rv" id="screenframe" role="button" tabindex="0" aria-label="Play the AmirGetsJobs film">
-      <img src="amg-commercial-fresno-poster.v2.jpg" alt="Still from the AmirGetsJobs film" width="1920" height="864" loading="lazy" decoding="async">
-      <span class="screen-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>Watch the film · 2:58</span>
-    </div>
-    <div class="film-credit rv">Directed by superstar <a href="https://www.eizamurphy.com/" target="_blank" rel="noopener">Eiza Murphy</a>.</div>
-  </div>
-</section>
-
-<section class="faq">
-  <div class="wrap">
-    <div class="mnum rv" style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--blue);font-weight:700;margin-bottom:14px">06 · FIRST-TIMER QUESTIONS</div>
+    <div class="mnum rv" style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--blue);font-weight:700;margin-bottom:14px">02 · STRAIGHT ANSWERS</div>
     <h2 class="rv" style="font-family:var(--display);font-weight:430;font-size:clamp(30px,4.4vw,54px);line-height:1.03;letter-spacing:-.02em">You've never bought this before. <em style="font-style:italic;color:var(--accent)">Good.</em></h2>
-    <div class="faq-list">
+    <div class="faq-list" data-progressive>
+      <details class="faq-item rv">
+        <summary>Do you work with law firms? <span class="fx">+</span></summary>
+        <div class="fa">Yes. Legal is one of our four lanes, alongside B2B, home service, and medical. PI, family, and business attorneys live and die on intake speed and being the name AI recommends, which is exactly what we build. Ask for the law firm playbook.</div>
+      </details>
       <details class="faq-item rv">
         <summary>Do I actually need AI? <span class="fx">+</span></summary>
         <div class="fa">Yes. Your customers already use it to decide who to call. The only question is whether it says your name or your competitor's. That is not a future problem. It is a today problem.</div>
@@ -753,27 +580,21 @@ gtag('config', 'G-RSL1F8BX5J');
         <div class="fa">Fresno first, Central Valley wide, and the same systems run for businesses in Los Angeles and Phoenix. Being from the 559 is the point.</div>
       </details>
     </div>
+    <button class="faq-more rv" id="faqmore" type="button">More questions +</button>
+    <p class="rv" style="margin-top:44px;max-width:640px"><b>Who this is not for:</b> businesses that want a logo and a vibe, want to go viral, or want marketing that cannot be measured. We build machines that get local businesses found, chosen, and paid. If that is you, we should talk.</p>
   </div>
 </section>
 
-<!-- ============ WHO THIS IS NOT FOR ============ -->
-<section class="movement" style="padding:70px 0">
+<div class="bridge-up"></div>
+<section class="movement home559" style="padding:64px 0 72px;text-align:center">
   <div class="wrap">
-    <div class="mnum rv">BEFORE YOU BOOK</div>
-    <h2 class="rv">Who this is <em>not</em> for</h2>
-    <div class="thread">
-      <p class="tw soft rv">Not for the owner shopping for a cheaper logo.</p>
-      <p class="tw soft rv">Not for anyone planning to hand this to a nephew with a login and hope.</p>
-      <p class="tw soft rv">Not for businesses that would rather wait and see. The squeeze does not wait with you.</p>
-      <p class="tw rv">If you read the Tuesday above and felt your own week in it, <span class="w">keep going.</span></p>
-    </div>
-    <div class="hero-ctas rv" style="margin-top:34px">
-      <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-primary">Book a Fresno strategy call <span class="arr">→</span></a>
-      <a href="/what-ai-can-do" class="btn btn-ghost">See what your leads are costing you</a>
+    <h2 class="rv" style="font-family:var(--display);font-weight:430;font-size:clamp(32px,4.8vw,56px);letter-spacing:-.02em;color:#fff">Built in the 559. <em style="color:var(--gold)">Run from the 559.</em></h2>
+    <div class="hero-ctas rv" style="justify-content:center;margin-top:22px">
+      <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-primary">Start a project <span class="arr">→</span></a>
+      <a href="tel:+15595505474" class="btn btn-ghost">Or just call: (559) 550-5474</a>
     </div>
   </div>
 </section>
-
 
 <footer>
   <div class="wrap">
@@ -827,35 +648,84 @@ gtag('config', 'G-RSL1F8BX5J');
 
     var sf=document.getElementById('screenframe');
     if(sf){
-      var veil=null;
+      var uid=sf.getAttribute('data-film');
+      var scrim=null,morph=null,xbtn=null;
       var closeFilm=function(){
-        if(!veil)return;
-        veil.classList.remove('open');
-        
-        var gone=veil;veil=null;
-        setTimeout(function(){gone.remove()},380);
-        document.removeEventListener('keydown',onKey);
+        if(!morph)return;
+        var r=sf.getBoundingClientRect();
+        morph.querySelector('iframe') && morph.removeChild(morph.querySelector('iframe'));
+        morph.style.top=r.top+'px';morph.style.left=r.left+'px';morph.style.width=r.width+'px';morph.style.height=r.height+'px';
+        scrim.classList.remove('on');xbtn.classList.remove('on');
+        var m=morph,s=scrim,x=xbtn;morph=null;
+        setTimeout(function(){m.remove();s.remove();x.remove()},600);
+        document.documentElement.style.overflow='';
+        document.removeEventListener('keydown',onKey);sf.focus();
       };
       var onKey=function(e){if(e.key==='Escape')closeFilm()};
       var playFilm=function(){
-        veil=document.createElement('div');veil.className='film-veil';
-        var vid=document.createElement('iframe');
-        vid.src='https://customer-1dbaiqcmozq0dh9g.cloudflarestream.com/573458682e65aff406132d2044068d3c/iframe?autoplay=true&primaryColor=%23FF4D1C&poster='+encodeURIComponent('https://amirgetsjobs.com/amg-commercial-fresno-poster.v2.jpg');
-        vid.allow='accelerometer; autoplay; encrypted-media; fullscreen; picture-in-picture';
-        vid.allowFullscreen=true;
-        var x=document.createElement('button');x.className='film-close';x.innerHTML='\u2715';x.setAttribute('aria-label','Close film');
-        x.addEventListener('click',closeFilm);
-        veil.addEventListener('click',function(e){if(e.target===veil)closeFilm()});
-        veil.appendChild(vid);veil.appendChild(x);
-        document.body.appendChild(veil);
-        requestAnimationFrame(function(){veil.classList.add('open')});
+        var r=sf.getBoundingClientRect();
+        scrim=document.createElement('div');scrim.className='film-scrim';document.body.appendChild(scrim);
+        morph=document.createElement('div');morph.className='film-morph';
+        morph.style.top=r.top+'px';morph.style.left=r.left+'px';morph.style.width=r.width+'px';morph.style.height=r.height+'px';
+        morph.style.backgroundImage='url('+sf.querySelector('img').src+')';morph.style.backgroundSize='cover';
+        document.body.appendChild(morph);
+        xbtn=document.createElement('button');xbtn.className='film-x';xbtn.innerHTML='\u2715';xbtn.setAttribute('aria-label','Close film');
+        xbtn.addEventListener('click',closeFilm);document.body.appendChild(xbtn);
+        document.documentElement.style.overflow='hidden';
+        requestAnimationFrame(function(){requestAnimationFrame(function(){
+          scrim.classList.add('on');xbtn.classList.add('on');
+          var vw=Math.min(window.innerWidth*.96,1200),vh=Math.min(vw*9/16,window.innerHeight*.86);
+          if(window.innerWidth<640){vw=window.innerWidth;vh=vw*9/16}
+          morph.style.top=((window.innerHeight-vh)/2)+'px';morph.style.left=((window.innerWidth-vw)/2)+'px';
+          morph.style.width=vw+'px';morph.style.height=vh+'px';
+        })});
+        var armed=false;
+        var inject=function(){if(armed)return;armed=true;
+          var ifr=document.createElement('iframe');
+          ifr.src='https://customer-1dbaiqcmozq0dh9g.cloudflarestream.com/'+uid+'/iframe?autoplay=true&primaryColor=%23D92323';
+          ifr.allow='accelerometer; autoplay; encrypted-media; fullscreen; picture-in-picture';ifr.allowFullscreen=true;
+          morph.appendChild(ifr)};
+        morph.addEventListener('transitionend',inject,{once:true});
+        setTimeout(inject,700);
+        scrim.addEventListener('click',closeFilm);
         document.addEventListener('keydown',onKey);
-        x.focus();
         if(window.gtag)gtag('event','commercial_play',{page:location.pathname});
       };
-      sf.addEventListener('click',playFilm);
-      sf.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();playFilm()}});
+      sf.addEventListener('click',function(){if(!morph)playFilm()});
+      sf.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();if(!morph)playFilm()}});
+      var fio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)sf.classList.add('inview')})},{threshold:.6});
+      fio.observe(sf);
     }
+
+    var sun=document.getElementById('sunrise');
+    if(sun && !reduce){
+      var veil=sun.querySelector('.sunrise-veil');
+      var onScr=function(){
+        var r=sun.getBoundingClientRect();
+        var prog=Math.min(1,Math.max(0,(-r.top)/(r.height-window.innerHeight)));
+        veil.style.opacity=(0.85*(1-prog)).toFixed(3);
+      };
+      window.addEventListener('scroll',onScr,{passive:true});onScr();
+    }
+    var sq=document.getElementById('squeeze');
+    if(sq && !reduce){
+      var lines=sq.querySelectorAll('.sq-line');
+      var onSq=function(){
+        var r=sq.getBoundingClientRect();
+        var p=Math.min(1,Math.max(0,(window.innerHeight-r.top)/(window.innerHeight*.9)));
+        lines.forEach(function(el,i){
+          var t=Math.min(1,Math.max(0,p*1.4-i*0.18));
+          el.style.letterSpacing=(0.06-0.05*t).toFixed(3)+'em';
+          el.style.transform='scaleX('+(1.04-0.04*t).toFixed(3)+')';
+          el.style.opacity=(0.35+0.65*t).toFixed(2);
+        });
+      };
+      window.addEventListener('scroll',onSq,{passive:true});onSq();
+    }
+    var fm=document.getElementById('faqmore');
+    if(fm){fm.addEventListener('click',function(){
+      document.querySelector('.faq-list').classList.add('open');fm.remove();
+    })}
 
     /* the header blends with whatever is underneath it */
     var nav=document.querySelector('nav');
