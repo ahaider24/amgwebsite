@@ -121,13 +121,9 @@ gtag('config', 'G-RSL1F8BX5J');
 .pf-label{position:absolute;left:18px;bottom:16px;text-align:left;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}
 .pf-label b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:#fff;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 12px;border-radius:6px;width:max-content;margin-bottom:6px}
 .pf-label i{font-style:normal;font-family:var(--sans);font-size:13px;opacity:.9}
-.pf-brackets{position:absolute;top:50%;left:50%;width:72px;height:72px;transform:translate(-50%,-50%);pointer-events:none;background:
-linear-gradient(#fff,#fff) top left/22px 2.5px no-repeat,linear-gradient(#fff,#fff) top left/2.5px 22px no-repeat,
-linear-gradient(#fff,#fff) top right/22px 2.5px no-repeat,linear-gradient(#fff,#fff) top right/2.5px 22px no-repeat,
-linear-gradient(#fff,#fff) bottom left/22px 2.5px no-repeat,linear-gradient(#fff,#fff) bottom left/2.5px 22px no-repeat,
-linear-gradient(#fff,#fff) bottom right/22px 2.5px no-repeat,linear-gradient(#fff,#fff) bottom right/2.5px 22px no-repeat;
-filter:drop-shadow(0 1px 6px rgba(0,0,0,.45));transition:transform .35s ease}
-.screen-frame:hover .pf-brackets{transform:translate(-50%,-50%) scale(1.1)}
+.pf-play{position:absolute;top:50%;left:50%;width:78px;height:78px;transform:translate(-50%,-50%);border-radius:50%;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,.35);transition:transform .3s ease,background .3s ease}
+.pf-play svg{margin-left:5px}
+.screen-frame:hover .pf-play{transform:translate(-50%,-50%) scale(1.08);background:rgba(0,0,0,.7)}
 .screen-frame:active{transform:scale(.985)}
 .screen-frame:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .pf-line{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--playred);transition:width .8s cubic-bezier(.22,1,.36,1)}
@@ -454,7 +450,7 @@ filter:drop-shadow(0 1px 6px rgba(0,0,0,.45));transition:transform .35s ease}
     <h2 class="rv" style="color:#fff">Three minutes on who we are.<em style="color:var(--gold)"> Watch the film.</em></h2>
     <div class="screen-frame rv" id="screenframe" data-film="573458682e65aff406132d2044068d3c" role="button" tabindex="0" aria-label="Play the AmirGetsJobs film">
       <img src="amg-commercial-fresno-poster.v2.jpg" alt="Still from the AmirGetsJobs film" width="1920" height="864" loading="lazy" decoding="async">
-      <span class="pf-label"><b>PLAY · 2:58</b><i>Watch the brand film</i></span><span class="pf-brackets"></span><span class="pf-line"></span>
+      <span class="pf-label"><b>PLAY · 2:58</b><i>Watch the brand film</i></span><span class="pf-play"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span><span class="pf-line"></span>
     </div>
     <div class="film-credit rv">Directed by superstar <a href="https://www.eizamurphy.com/" target="_blank" rel="noopener">Eiza Murphy</a>.</div>
   </div>
