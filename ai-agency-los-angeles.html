@@ -68,8 +68,9 @@ gtag('config', 'G-RSL1F8BX5J');
 .pf-label{position:absolute;left:18px;bottom:16px;text-align:left;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}
 .pf-label b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:#fff;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 12px;border-radius:6px;width:max-content;margin-bottom:6px}
 .pf-label i{font-style:normal;font-family:var(--sans);font-size:13px;opacity:.9}
-.pf-brackets{position:absolute;top:50%;left:50%;width:72px;height:72px;transform:translate(-50%,-50%);pointer-events:none;background:
-.screen-frame:hover .pf-brackets{transform:translate(-50%,-50%) scale(1.1)}
+.pf-play{position:absolute;top:50%;left:50%;width:78px;height:78px;transform:translate(-50%,-50%);border-radius:50%;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,.35);transition:transform .3s ease,background .3s ease}
+.pf-play svg{margin-left:5px}
+.screen-frame:hover .pf-play{transform:translate(-50%,-50%) scale(1.08);background:rgba(0,0,0,.7)}
 .screen-frame:active{transform:scale(.985)}
 .screen-frame:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .pf-line{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--playred);transition:width .8s cubic-bezier(.22,1,.36,1)}
@@ -402,7 +403,7 @@ gtag('config', 'G-RSL1F8BX5J');
     <p class="sub rv">LA stopped forgiving inefficiency. Margins are minute, trust is everything, and a slow estimate is a lost job. We build the trust and the speed.</p>
     <div class="hero-ctas rv">
       <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-primary">Book an LA strategy call <span class="arr">→</span></a>
-      <a href="/what-ai-can-do" class="btn btn-ghost">See what your leads are costing you</a>
+      <a href="#film" class="btn btn-ghost">Watch the film</a>
     </div>
   </div>
 </section>
@@ -416,12 +417,13 @@ gtag('config', 'G-RSL1F8BX5J');
   </div>
 </section>
 
-<section class="film-sec" style="padding-top:30px">
+<section class="film-sec" id="film" style="padding-top:30px">
   <div class="wrap">
     <div class="mnum rv">THE FILM · 2:58</div>
+    <h2 class="rv" style="font-family:var(--display);font-weight:430;font-size:clamp(30px,4.4vw,54px);line-height:1.03;letter-spacing:-.02em">Three minutes on who we are. <em style="font-style:italic;color:var(--accent)">Watch the film.</em></h2>
     <div class="screen-frame rv" id="screenframe" data-film="a153f30b878129684a80d39f6f645483" role="button" tabindex="0" aria-label="Play the AmirGetsJobs film">
       <img src="amg-commercial-poster.v2.jpg" alt="Still from the AmirGetsJobs film" width="1600" height="720" loading="lazy" decoding="async">
-      <span class="pf-label"><b>PLAY · 2:58</b><i>Watch the brand film</i></span><span class="pf-brackets"></span><span class="pf-line"></span>
+      <span class="pf-label"><b>PLAY · 2:58</b><i>Watch the brand film</i></span><span class="pf-play"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span><span class="pf-line"></span>
     </div>
     <div class="film-credit rv">Directed by superstar <a href="https://www.eizamurphy.com/" target="_blank" rel="noopener">Eiza Murphy</a>.</div>
   </div>
