@@ -340,6 +340,12 @@ gtag('config', 'G-RSL1F8BX5J');
   @keyframes rollOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-105%)}}
 </style>
 <style>
+.film-veil{position:fixed;inset:0;z-index:2000;background:rgba(10,9,6,.94);display:flex;align-items:center;justify-content:center;padding:4vw;opacity:0;transition:opacity .35s ease}
+.film-veil.open{opacity:1}
+.film-veil video{width:min(1200px,100%);max-height:86vh;display:block;box-shadow:0 30px 90px rgba(0,0,0,.55)}
+.film-close{position:absolute;top:22px;right:26px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:none;color:#fff;font-size:20px;cursor:pointer;font-family:var(--sans);transition:border-color .2s}
+.film-close:hover{border-color:#fff}
+@media (prefers-reduced-motion: reduce){.film-veil{transition:none}}
 .screen-frame{position:relative;cursor:pointer;border:1px solid var(--line);overflow:hidden}
 .screen-frame img{width:100%;display:block;transition:transform .5s ease}
 .screen-frame:hover img{transform:scale(1.015)}
@@ -792,14 +798,32 @@ gtag('config', 'G-RSL1F8BX5J');
 
     var sf=document.getElementById('screenframe');
     if(sf){
+      var veil=null;
+      var closeFilm=function(){
+        if(!veil)return;
+        veil.classList.remove('open');
+        var v=veil.querySelector('video');if(v){v.pause();v.removeAttribute('src');v.load()}
+        var gone=veil;veil=null;
+        setTimeout(function(){gone.remove()},380);
+        document.removeEventListener('keydown',onKey);
+      };
+      var onKey=function(e){if(e.key==='Escape')closeFilm()};
       var playFilm=function(){
+        veil=document.createElement('div');veil.className='film-veil';
         var vid=document.createElement('video');
         vid.src='amg-commercial.v1.mp4';vid.controls=true;vid.autoplay=true;vid.playsInline=true;
-        sf.replaceChildren(vid);sf.style.cursor='default';
+        var x=document.createElement('button');x.className='film-close';x.innerHTML='\u2715';x.setAttribute('aria-label','Close film');
+        x.addEventListener('click',closeFilm);
+        veil.addEventListener('click',function(e){if(e.target===veil)closeFilm()});
+        veil.appendChild(vid);veil.appendChild(x);
+        document.body.appendChild(veil);
+        requestAnimationFrame(function(){veil.classList.add('open')});
+        document.addEventListener('keydown',onKey);
+        x.focus();
         if(window.gtag)gtag('event','commercial_play',{page:location.pathname});
       };
-      sf.addEventListener('click',playFilm,{once:true});
-      sf.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();playFilm()}},{once:true});
+      sf.addEventListener('click',playFilm);
+      sf.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();playFilm()}});
     }
 
     /* the header blends with whatever is underneath it */
