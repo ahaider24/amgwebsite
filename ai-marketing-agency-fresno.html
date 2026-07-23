@@ -342,6 +342,7 @@ gtag('config', 'G-RSL1F8BX5J');
 <style>
 .film-veil{position:fixed;inset:0;z-index:2000;background:rgba(10,9,6,.94);display:flex;align-items:center;justify-content:center;padding:4vw;opacity:0;transition:opacity .35s ease}
 .film-veil.open{opacity:1}
+.film-veil iframe{width:min(1200px,100%);aspect-ratio:16/9;border:0;display:block;box-shadow:0 30px 90px rgba(0,0,0,.55)}
 .film-veil video{width:min(1200px,100%);max-height:86vh;display:block;box-shadow:0 30px 90px rgba(0,0,0,.55)}
 .film-close{position:absolute;top:22px;right:26px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:none;color:#fff;font-size:20px;cursor:pointer;font-family:var(--sans);transition:border-color .2s}
 .film-close:hover{border-color:#fff}
@@ -662,7 +663,7 @@ gtag('config', 'G-RSL1F8BX5J');
     <div class="mnum rv">THE FILM</div>
 <figure class="mem-inline rv">
       <div class="screen-frame" id="screenframe" role="button" tabindex="0" aria-label="Play the AmirGetsJobs film">
-        <img src="amg-commercial-poster.v1.jpg" alt="Still from the AmirGetsJobs film" width="1920" height="1080" loading="lazy" decoding="async">
+        <img src="amg-commercial-fresno-poster.v1.jpg" alt="Still from the AmirGetsJobs film" width="1920" height="1080" loading="lazy" decoding="async">
         <span class="screen-play"><span><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></span>
       </div>
       <figcaption class="mem-cap">The film · 2:58<em>Directed by Eiza.</em></figcaption>
@@ -802,7 +803,7 @@ gtag('config', 'G-RSL1F8BX5J');
       var closeFilm=function(){
         if(!veil)return;
         veil.classList.remove('open');
-        var v=veil.querySelector('video');if(v){v.pause();v.removeAttribute('src');v.load()}
+        
         var gone=veil;veil=null;
         setTimeout(function(){gone.remove()},380);
         document.removeEventListener('keydown',onKey);
@@ -810,8 +811,10 @@ gtag('config', 'G-RSL1F8BX5J');
       var onKey=function(e){if(e.key==='Escape')closeFilm()};
       var playFilm=function(){
         veil=document.createElement('div');veil.className='film-veil';
-        var vid=document.createElement('video');
-        vid.src='amg-commercial.v1.mp4';vid.controls=true;vid.autoplay=true;vid.playsInline=true;
+        var vid=document.createElement('iframe');
+        vid.src='https://customer-1dbaiqcmozq0dh9g.cloudflarestream.com/573458682e65aff406132d2044068d3c/iframe?autoplay=true&primaryColor=%23FF4D1C&poster='+encodeURIComponent('https://amirgetsjobs.com/amg-commercial-fresno-poster.v1.jpg');
+        vid.allow='accelerometer; autoplay; encrypted-media; fullscreen; picture-in-picture';
+        vid.allowFullscreen=true;
         var x=document.createElement('button');x.className='film-close';x.innerHTML='\u2715';x.setAttribute('aria-label','Close film');
         x.addEventListener('click',closeFilm);
         veil.addEventListener('click',function(e){if(e.target===veil)closeFilm()});
