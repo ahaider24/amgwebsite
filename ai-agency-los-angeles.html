@@ -64,7 +64,16 @@ gtag('config', 'G-RSL1F8BX5J');
   ]
 }
 </script>
-<style>
+<style>.bridge-dn{height:110px;background:linear-gradient(180deg,var(--ink),var(--paper))}
+.bridge-up{height:110px;background:linear-gradient(180deg,var(--paper),var(--ink))}
+.home559 .btn-ghost{color:var(--paper);border-color:rgba(251,248,242,.45)}
+.home559 .klabel{color:rgba(251,248,242,.55)}
+.home559 .sub{color:rgba(251,248,242,.78)}
+.litany p{font-family:var(--display);font-weight:430;font-size:clamp(21px,2.9vw,33px);line-height:1.3;margin:16px 0;color:var(--ink-soft);letter-spacing:-.01em}
+.litany p b{color:var(--ink);font-weight:600}
+.litany .thesis{color:var(--accent);margin-top:30px}
+.bigzero{font-family:var(--display);font-size:clamp(90px,14vw,180px);line-height:.9;color:var(--gold);font-weight:600}
+
   :root{
     --white:#FFFFFF;--paper:#FBF8F2;--paper-2:#F1EAD9;--paper-3:#E7DDC8;
     --ink:#14110A;--ink-soft:#574F40;--faint:#9A917B;
@@ -361,7 +370,6 @@ gtag('config', 'G-RSL1F8BX5J');
   </div>
 </nav>
 
-<!-- ============ HERO: LA FROM THE AIR ============ -->
 <header class="hero-film" aria-label="Aerial view of Los Angeles">
   <video autoplay muted loop playsinline preload="metadata" poster="la-aerial-poster.jpg">
     <source src="la-aerial.mp4" type="video/mp4">
@@ -369,32 +377,30 @@ gtag('config', 'G-RSL1F8BX5J');
   <img class="fallback" src="la-aerial-poster.jpg" alt="Aerial view of Dodger Stadium and downtown Los Angeles">
 </header>
 
-<section class="hero">
+<section class="hero movement home559" style="padding-bottom:56px">
   <div class="wrap">
     <div class="klabel rv">Locations <span class="crumb">/</span> Los Angeles, California</div>
     <h1 class="rv">An AI Agency for Los Angeles. Here to rebuild the <em>LA dream</em>.</h1>
-    <p class="sub rv">LA stopped forgiving inefficiency. Rent is too high, the internet took the walk-ins, and the margin for error in a small business is now minute. That means two things decide who survives: trust, and how fast you can put a number in a customer's hand. We build both.</p>
+    <p class="sub rv">LA stopped forgiving inefficiency. Margins are minute, trust is everything, and a slow estimate is a lost job. We build the trust and the speed.</p>
     <div class="hero-ctas rv">
       <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-primary">Book an LA strategy call <span class="arr">→</span></a>
       <a href="/what-ai-can-do" class="btn btn-ghost">See what your leads are costing you</a>
     </div>
   </div>
 </section>
+<div class="bridge-dn"></div>
 
-<section class="movement">
+<section class="movement" style="padding-top:26px">
   <div class="wrap">
     <div class="mnum rv">01 · THE CITY</div>
     <h2 class="rv">Los Angeles <em>raised</em> me.</h2>
-    <p class="rv">I moved there at 19 to go to USC. As a kid, success had one picture: being one of those guys sitting courtside at a Lakers game. LA was the dream city, and I was lucky enough to get in the door.</p>
-    <p class="rv">Which is why it crushes my soul to watch what the city has become for the people trying to run a small business in it.</p>
-    
+    <p class="rv">USC at 19. Success looked like courtside at a Lakers game. The city gave me my dream, which is why watching what it has become for small business crushes my soul.</p>
   </div>
 </section>
 
-<section class="film-sec">
+<section class="film-sec" style="padding-top:30px">
   <div class="wrap">
     <div class="mnum rv">THE FILM · 2:58</div>
-    <h2 class="rv">Watch the <em>film.</em></h2>
     <div class="screen-frame rv" id="screenframe" role="button" tabindex="0" aria-label="Play the AmirGetsJobs film">
       <img src="amg-commercial-poster.v2.jpg" alt="Still from the AmirGetsJobs film" width="1600" height="720" loading="lazy" decoding="async">
       <span class="screen-play"><span><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></span>
@@ -406,14 +412,18 @@ gtag('config', 'G-RSL1F8BX5J');
 <section class="movement">
   <div class="wrap">
     <div class="mnum rv">02 · WHAT I WATCHED</div>
-    <h2 class="rv">I saw it happen, spot by <em>spot.</em></h2>
-    <p class="rv">The Standard rooftop downtown, where USC kids went after an exam, gone. The comedy rooms that made the city funny, the Comedy Store, the Laugh Factory, the Improv, wrecked by covid and never really the same. Sherman Oaks losing its retail. Third Street Promenade dying in slow motion. The attorneys, consultants, and bankers who filled downtown either remote or moved out entirely.</p>
-    <p class="rv">And then the fires. Families in Malibu and Pasadena who lost everything, still fighting for permits, then fighting construction costs. Crews on those rebuilds charging more than they ever have and taking home less. That one stays with me, because those are exactly the businesses I work for.</p>
-    <p class="rv">Add it up and the lesson is brutal: in this town, the margin for error in a small business is minute. You cannot afford an inexperienced marketer, and you cannot afford to be slow with an estimate. Ever.</p>
+    <div class="litany">
+      <p class="rv">The Standard rooftop, where USC kids landed after finals. <b>Gone.</b></p>
+      <p class="rv">The Comedy Store. The Laugh Factory. The Improv. <b>Never the same.</b></p>
+      <p class="rv">Third Street Promenade, <b>dying in slow motion.</b></p>
+      <p class="rv">Downtown's attorneys and bankers, <b>remote or moved out.</b></p>
+      <p class="rv">The fire families of Malibu and Pasadena fighting for permits, while rebuild crews <b>charge more and take home less.</b></p>
+      <p class="rv thesis">In this town, the margin for error is minute.</p>
+    </div>
   </div>
 </section>
 
-<section class="movement">
+<section class="movement" style="padding-top:10px">
   <div class="wrap">
     <div class="mnum rv">CARRIED WITH ME</div>
     <div class="mem-strip">
@@ -435,32 +445,26 @@ gtag('config', 'G-RSL1F8BX5J');
       </figure>
     </div>
   </div>
+  </div>
 </section>
 
-<section class="movement">
+<div class="bridge-up"></div>
+<section class="movement home559" style="padding:56px 0 64px">
   <div class="wrap">
     <div class="mnum rv">03 · THE LOS ANGELES MEASUREMENT</div>
-    <h2 class="rv">We asked the AIs to name the best AI agency in Los Angeles. The answers should <em>worry</em> the incumbents.</h2>
-    <p class="rv">Before writing this page we ran our measurement engine on this exact market: sixteen checks across ChatGPT, Claude, Google's AI Overviews and AI Mode, asking the questions a business owner actually asks when they need an AI agency in Los Angeles. What came back was national directories, a couple of thin sites, and one out-of-state operator being recommended in cities it has never worked in. Not one answer cited measured results, for anyone.</p>
-    <p class="rv">In a metro of four million people, the seat for a proven operator is sitting empty. We measure this weekly for every client, the same instrument we pointed at ourselves. That is the whole pitch: <a href="/seo-geo-playbook">we make you the name the machines say</a>, and we show you the receipts while it happens.</p>
+    <h2 class="rv">We asked the AIs to name the best AI agency in Los Angeles.</h2>
+    <div class="bigzero rv">0</div>
+    <p class="rv" style="max-width:620px">Sixteen answers across ChatGPT, Claude, and Google's AI. Zero cited a measured result, for anyone. Directories and thin sites hold the seat a proven operator should own. <a href="/seo-geo-playbook" style="color:var(--gold);font-weight:700">We make you the name the machines say</a>, and we show receipts while it happens.</p>
   </div>
 </section>
+<div class="bridge-dn"></div>
 
-<section class="movement">
+<section class="movement" style="padding-top:30px">
   <div class="wrap">
-    <div class="mnum rv">04 · WHO THIS IS FOR</div>
-    <h2 class="rv">The crews rebuilding this city, and every business that cannot afford a slow <em>quote.</em></h2>
-    <p class="rv">If you are a contractor working the rebuilds, from Pasadena to Malibu to the Valley, you already know the math: charging more, netting less, and every wasted lead comes straight out of your side of it. If you run a restaurant, a med spa, a shop, anything where the phone going quiet for a week is an emergency, same math, different trade.</p>
-    <p class="rv">What we wire is exactly the two things LA punishes you for not having. Trust: your name in the AI answers, your reviews compounding, a dashboard of receipts your customers and your own doubts can check. Speed: <a href="/ai-workflows">AI workflows</a> that answer the missed call, qualify the lead, and get an estimate moving in minutes, not days, because the second call a customer makes in this city is to your competitor.</p>
-  </div>
-</section>
-
-<section class="movement">
-  <div class="wrap">
-    <div class="mnum rv">05 · THE DISTANCE QUESTION</div>
-    <h2 class="rv">An AI marketing agency for Los Angeles, run from the Central Valley. Measured <em>everywhere.</em></h2>
-    <p class="rv">No, we do not have an LA office, and we will not rent a fake address to pretend otherwise. Here is what we have instead: an engine that checks every client's visibility weekly, publishes the numbers, and archives every AI answer so nobody has to take our word for anything. A distributor client went from invisible to page one of Google in days, and appears in over 80 percent of AI answers for its core searches. Our own profile moved four map positions in a single day of doing the work we sell. <a href="/ai-marketing-agency-fresno">Fresno is headquarters</a>; the receipts travel fine.</p>
-    <p class="rv">Ask AI about AmirGetsJobs. Read what comes back. Then ask it about whoever else is pitching you.</p>
+    <div class="mnum rv">04 · THE WORK</div>
+    <h2 class="rv">An AI marketing agency for Los Angeles, run from the Central Valley. <em>Measured everywhere.</em></h2>
+    <p class="rv">If you are a contractor on the rebuilds or a business where a quiet phone is an emergency, we wire the two things LA punishes you for lacking. Trust: your name in the AI answers, reviews compounding, a dashboard of receipts. Speed: <a href="/ai-workflows">AI workflows</a> that answer the missed call and get an estimate moving in minutes.</p>
+    <p class="rv">No LA office, and no rented fake address. A distributor client went from invisible to page one in days and over 80 percent of AI answers for its core searches. <a href="/ai-marketing-agency-fresno">Fresno is headquarters</a>; the receipts travel fine. Ask AI about AmirGetsJobs, then ask it about whoever else is pitching you.</p>
   </div>
 </section>
 
@@ -493,12 +497,12 @@ gtag('config', 'G-RSL1F8BX5J');
   </div>
 </section>
 
-<section class="movement">
+<div class="bridge-up"></div>
+<section class="movement home559" style="padding:70px 0 78px;text-align:center">
   <div class="wrap">
-    <div class="mnum rv">06 · THE POINT</div>
-    <h2 class="rv">I am here to rebuild the LA <em>dream.</em></h2>
-    <p class="rv">The city gave me mine. The least I can do is help the people who make it run get theirs back: one business that shows up in the answers, answers in minutes, and takes home what it charges.</p>
-    <div class="hero-ctas rv">
+    <h2 class="rv" style="font-family:var(--display);font-weight:430;font-size:clamp(34px,5vw,60px);letter-spacing:-.02em">I am here to rebuild the LA <em style="color:var(--gold)">dream.</em></h2>
+    <p class="sub rv" style="max-width:560px;margin:14px auto 0">The city gave me mine. The least I can do is help the people who make it run get theirs back.</p>
+    <div class="hero-ctas rv" style="justify-content:center">
       <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-primary">Book an LA strategy call <span class="arr">→</span></a>
       <a href="tel:+15595505474" class="btn btn-ghost">Or just call: (559) 550-5474</a>
     </div>
