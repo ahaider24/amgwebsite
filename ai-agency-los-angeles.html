@@ -315,9 +315,15 @@ gtag('config', 'G-RSL1F8BX5J');
 .film-close{position:absolute;top:22px;right:26px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:none;color:#fff;font-size:20px;cursor:pointer;font-family:var(--sans);transition:border-color .2s}
 .film-close:hover{border-color:#fff}
 @media (prefers-reduced-motion: reduce){.film-veil{transition:none}}
-.screen-frame{position:relative;cursor:pointer;border:1px solid var(--line);overflow:hidden}
-.screen-frame img{width:100%;display:block;transition:transform .5s ease}
-.screen-frame:hover img{transform:scale(1.015)}
+.film-sec{padding:74px 0 30px;text-align:center}
+.film-sec .mnum{margin-bottom:10px}
+.film-sec h2{font-family:var(--display);font-weight:430;font-size:clamp(32px,4.6vw,56px);line-height:1.02;letter-spacing:-.02em}
+.film-sec h2 em{font-style:italic;color:var(--accent)}
+.screen-frame{position:relative;cursor:pointer;max-width:980px;margin:30px auto 0;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(20,17,10,.10),0 34px 90px rgba(20,17,10,.16);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.screen-frame:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(20,17,10,.13),0 44px 110px rgba(20,17,10,.2)}
+.film-credit{margin-top:16px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase}
+.film-credit a{color:inherit;border-bottom:1px solid rgba(87,79,64,.4)}
+.screen-frame img{width:100%;display:block}
 .screen-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
 .screen-play span{width:76px;height:76px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(200,56,14,.35);transition:transform .25s ease}
 .screen-frame:hover .screen-play span{transform:scale(1.08)}
@@ -381,13 +387,19 @@ gtag('config', 'G-RSL1F8BX5J');
     <h2 class="rv">Los Angeles <em>raised</em> me.</h2>
     <p class="rv">I moved there at 19 to go to USC. As a kid, success had one picture: being one of those guys sitting courtside at a Lakers game. LA was the dream city, and I was lucky enough to get in the door.</p>
     <p class="rv">Which is why it crushes my soul to watch what the city has become for the people trying to run a small business in it.</p>
-    <figure class="mem-inline rv">
-      <div class="screen-frame" id="screenframe" role="button" tabindex="0" aria-label="Play the AmirGetsJobs film">
-        <img src="amg-commercial-poster.v2.jpg" alt="Still from the AmirGetsJobs film" width="1600" height="720" loading="lazy" decoding="async">
-        <span class="screen-play"><span><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></span>
-      </div>
-      <figcaption class="mem-cap">The film · 2:58<em>Directed by <a href="https://www.eizamurphy.com/" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(87,79,64,.4)">Eiza Murphy</a>.</em></figcaption>
-    </figure>
+    
+  </div>
+</section>
+
+<section class="film-sec">
+  <div class="wrap">
+    <div class="mnum rv">THE FILM · 2:58</div>
+    <h2 class="rv">Watch the <em>film.</em></h2>
+    <div class="screen-frame rv" id="screenframe" role="button" tabindex="0" aria-label="Play the AmirGetsJobs film">
+      <img src="amg-commercial-poster.v2.jpg" alt="Still from the AmirGetsJobs film" width="1600" height="720" loading="lazy" decoding="async">
+      <span class="screen-play"><span><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></span>
+    </div>
+    <div class="film-credit rv">Directed by superstar <a href="https://www.eizamurphy.com/" target="_blank" rel="noopener">Eiza Murphy</a>.</div>
   </div>
 </section>
 
