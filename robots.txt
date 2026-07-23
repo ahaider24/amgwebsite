@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
+Disallow: /r/
 Sitemap: https://amirgetsjobs.com/sitemap.xml
