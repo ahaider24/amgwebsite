@@ -684,13 +684,14 @@ gtag('config', 'G-RSL1F8BX5J');
     tw.appendChild(meter);
     function widthOf(word){ meter.textContent=word; return Math.ceil(meter.getBoundingClientRect().width)+2; }
     function showWord(i){
-      tw.style.width=widthOf(words[i])+'px';
       var s=document.createElement('span'); s.textContent=words[i]; s.classList.add('in'); tw.appendChild(s);
       if(cur){ var o=cur; o.classList.remove('in'); o.classList.add('out'); setTimeout(function(){ o.remove(); },600); }
       cur=s;
     }
+    var twMax=0;for(var wi=0;wi<words.length;wi++){twMax=Math.max(twMax,widthOf(words[wi]));}
+    tw.style.width=twMax+'px';
     showWord(0);
-    if(!reduce) setInterval(function(){ if(document.hidden) return; ti=(ti+1)%words.length; showWord(ti); },2400);
+    if(!reduce) setInterval(function(){ var nm=document.getElementById('navMenu'); if(document.hidden||(nm&&nm.classList.contains('open'))) return; ti=(ti+1)%words.length; showWord(ti); },2400);
   })();
 </script>
 <script defer src="/amg-pack.v1.js" data-amg-pack="v1"></script>

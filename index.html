@@ -152,9 +152,9 @@ gtag('config', 'G-RSL1F8BX5J');
   .drop-link b{font-family:var(--display);font-weight:560;font-size:15px;letter-spacing:-.01em;color:var(--ink)}
   .drop-link span{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.02em}
   .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:14px}
-  .nav-burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
+  .nav-burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s ease .06s,opacity .1s ease}
   .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .nav-burger.open span:nth-child(2){opacity:0}
+  .nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
   .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
   .btn{font-weight:700;font-size:16px;padding:15px 25px;border-radius:100px;display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s,background .2s;font-family:var(--sans)}
@@ -1215,8 +1215,8 @@ gtag('config', 'G-RSL1F8BX5J');
   /* turnstile logo */
   var words=['Jobs','Found','Booked','AI','Scale','Cited','Calls','Ahead'];
   var tw=document.getElementById('tword'),ti=0,cur=null;
-  var meter=document.createElement('span');meter.style.cssText='position:absolute;visibility:hidden;white-space:nowrap;font-style:italic;opacity:0;transform:none';tw.appendChild(meter);function widthOf(w){meter.textContent=w;return Math.ceil(meter.getBoundingClientRect().width)+2;}function showWord(i){tw.style.width=widthOf(words[i])+'px';var s=document.createElement('span');s.textContent=words[i];s.classList.add('in');tw.appendChild(s);if(cur){var o=cur;o.classList.remove('in');o.classList.add('out');setTimeout(function(){o.remove();},600);}cur=s;}
-  showWord(0); if(!reduce) setInterval(function(){if(document.hidden)return;ti=(ti+1)%words.length;showWord(ti);},2400);
+  var meter=document.createElement('span');meter.style.cssText='position:absolute;visibility:hidden;white-space:nowrap;font-style:italic;opacity:0;transform:none';tw.appendChild(meter);function widthOf(w){meter.textContent=w;return Math.ceil(meter.getBoundingClientRect().width)+2;}function showWord(i){var s=document.createElement('span');s.textContent=words[i];s.classList.add('in');tw.appendChild(s);if(cur){var o=cur;o.classList.remove('in');o.classList.add('out');setTimeout(function(){o.remove();},600);}cur=s;}
+  var twMax=0;for(var wi=0;wi<words.length;wi++){twMax=Math.max(twMax,widthOf(words[wi]));}tw.style.width=twMax+'px';showWord(0); if(!reduce) setInterval(function(){var nm=document.getElementById('navMenu');if(document.hidden||(nm&&nm.classList.contains('open')))return;ti=(ti+1)%words.length;showWord(ti);},2400);
 
   /* reveals */
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.16,rootMargin:'0px 0px -7% 0px'});

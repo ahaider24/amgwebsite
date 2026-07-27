@@ -222,8 +222,8 @@ gtag('config', 'G-RSL1F8BX5J');
     var tw=document.getElementById('tword'); if(!tw) return;
     var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var words=['Jobs','Found','Booked','AI','Scale','Cited','Calls','Ahead'],ti=0,cur=null;
-    var meter=document.createElement('span');meter.style.cssText='position:absolute;visibility:hidden;white-space:nowrap;font-style:italic;opacity:0;transform:none';tw.appendChild(meter);function widthOf(w){meter.textContent=w;return Math.ceil(meter.getBoundingClientRect().width)+2;}function showWord(i){tw.style.width=widthOf(words[i])+'px';var s=document.createElement('span');s.textContent=words[i];s.classList.add('in');tw.appendChild(s);if(cur){var o=cur;o.classList.remove('in');o.classList.add('out');setTimeout(function(){o.remove();},600);}cur=s;}
-    showWord(0); if(!reduce) setInterval(function(){if(document.hidden)return;ti=(ti+1)%words.length;showWord(ti);},2400);
+    var meter=document.createElement('span');meter.style.cssText='position:absolute;visibility:hidden;white-space:nowrap;font-style:italic;opacity:0;transform:none';tw.appendChild(meter);function widthOf(w){meter.textContent=w;return Math.ceil(meter.getBoundingClientRect().width)+2;}function showWord(i){var s=document.createElement('span');s.textContent=words[i];s.classList.add('in');tw.appendChild(s);if(cur){var o=cur;o.classList.remove('in');o.classList.add('out');setTimeout(function(){o.remove();},600);}cur=s;}
+    var twMax=0;for(var wi=0;wi<words.length;wi++){twMax=Math.max(twMax,widthOf(words[wi]));}tw.style.width=twMax+'px';showWord(0); if(!reduce) setInterval(function(){var nm=document.getElementById('navMenu');if(document.hidden||(nm&&nm.classList.contains('open')))return;ti=(ti+1)%words.length;showWord(ti);},2400);
   })();
 </script>
 <style>
