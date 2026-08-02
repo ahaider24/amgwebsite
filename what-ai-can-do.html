@@ -347,38 +347,18 @@ gtag('config', 'G-RSL1F8BX5J');
   </div>
 
   <div class="leadcard" id="leadcard">
-    <div class="lead-eyebrow">Get your number</div>
-    <h3 class="lead-h">Want the exact math for <em>your</em> business?</h3>
-    <p class="lead-p">Tell us where to reach you. We'll build an ROI specific to your shop, your trade, your market, your numbers, and walk you through it. No spam, no obligation.</p>
-    <div class="lead-form">
-      <div class="lf-grid">
-        <input type="text" id="lfFirst" placeholder="First name" autocomplete="given-name">
-        <input type="text" id="lfLast" placeholder="Last name" autocomplete="family-name">
-      </div>
-      <input type="text" id="lfCompany" placeholder="Company" autocomplete="organization">
-      <input type="email" id="lfEmail" placeholder="Email" autocomplete="email">
-      <input type="tel" id="lfPhone" placeholder="Phone" autocomplete="tel">
-      <div class="lf-trade">
-        <span class="ctl-lbl">Your trade</span>
-        <div class="chips" id="lfTradeChips">
-          <button class="chip on" data-t="HVAC">HVAC</button>
-          <button class="chip" data-t="Plumbing">Plumbing</button>
-          <button class="chip" data-t="Roofing">Roofing</button>
-          <button class="chip" data-t="Electrical">Electrical</button>
-          <button class="chip" data-t="Other">Other</button>
-        </div>
-      </div>
-      <button class="lead-submit" id="leadSubmit">Build my ROI &nbsp;→</button>
-      <div class="lead-note" id="leadNote">Takes 20 seconds. We'll reach out within one business day.</div>
-    </div>
+    <div class="lead-eyebrow">Get your real number</div>
+    <h3 class="lead-h">This is the shape of the math. <em>Want it run on your business?</em></h3>
+    <p class="lead-p">The numbers above are trade benchmarks. The diagnostic runs the real math on you: where you show up across six AI surfaces, which competitors get named instead of you, and what the gap costs you every month. You keep the findings whether you hire us or not, and if you engage within 30 days the $499 credits in full toward the work.</p>
+    <a href="/diagnostic" class="btn btn-primary" style="margin-top:6px">See the diagnostic <span>→</span></a>
   </div>
 
   <div class="cta-final">
     <h2>That gap is the whole job.</h2>
-    <p>Closing it is what we do. The how is a conversation, and it starts with a quick call.</p>
-    <a href="#" class="btn btn-primary" id="bookBtn">Book a call <span>→</span></a>
+    <p>Closing it starts with the diagnostic: your real numbers, the competitors named, and the plan. Or talk it through first.</p>
+    <a href="/diagnostic" class="btn btn-primary">See the diagnostic <span>→</span></a>
     <br>
-    <a href="/" class="btn btn-ghost">See how it works</a>
+    <a href="#" class="btn btn-ghost" id="bookBtn">Book a call</a>
     <div class="cta-sub"><a href="tel:+15595505474" style="color:inherit;text-decoration:none">(559) 550-5474</a> · Fresno, Los Angeles &amp; Phoenix</div>
   </div>
 </div>
@@ -492,38 +472,8 @@ gtag('config', 'G-RSL1F8BX5J');
     b.classList.add('on');
   });
 
-  // lead form submit (placeholder until wired to Airtable CRM)
-  document.getElementById('leadSubmit').addEventListener('click',function(){
-    var first=document.getElementById('lfFirst').value.trim();
-    var last=document.getElementById('lfLast').value.trim();
-    var company=document.getElementById('lfCompany').value.trim();
-    var email=document.getElementById('lfEmail').value.trim();
-    var phone=document.getElementById('lfPhone').value.trim();
-    var tradeSel=(document.querySelector('#lfTradeChips .chip.on')||{}).dataset;
-    var note=document.getElementById('leadNote');
-    if(!first||!last||!email||!phone){
-      note.textContent='Please fill in your name, email, and phone.';
-      note.style.color='var(--lose)';
-      return;
-    }
-    var payload={firstName:first,lastName:last,company:company,email:email,phone:phone,trade:tradeSel?tradeSel.t:''};
-    var btn=document.getElementById('leadSubmit');
-    var label=btn.textContent;
-    btn.disabled=true; btn.textContent='Sending...';
-    note.textContent='Building your numbers...';
-    note.style.color='';
-    fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-      .then(function(r){if(!r.ok)throw new Error('status '+r.status);})
-      .then(function(){
-        document.getElementById('leadcard').classList.add('sent');
-        document.getElementById('leadcard').innerHTML='<div class="lead-eyebrow">Got it</div><h3 class="lead-h">We\u2019re on it, '+first+'.</h3><p class="lead-p">We\u2019ll build your numbers and reach out within one business day. Talk soon.</p>';
-      })
-      .catch(function(){
-        btn.disabled=false; btn.textContent=label;
-        note.textContent='Something went wrong sending that. Call or text <a href="tel:+15595505474" style="color:inherit;text-decoration:none">(559) 550-5474</a> and we\u2019ll sort it.';
-        note.style.color='var(--lose)';
-      });
-  });
+  // lead form removed: the calculator now routes to the paid diagnostic
+  // instead of promising a free custom ROI build (2026-08-01)
 
   document.getElementById('bookBtn').addEventListener('click',function(ev){
     ev.preventDefault();

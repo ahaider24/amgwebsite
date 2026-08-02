@@ -571,7 +571,7 @@ gtag('config', 'G-RSL1F8BX5J');
       </div>
     </div>
   </div>
-  <a href="/what-ai-can-do" class="nav-cta">See your lead math</a>
+  <a href="#pricing" class="nav-cta">See where you stand</a>
   <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
@@ -585,8 +585,8 @@ gtag('config', 'G-RSL1F8BX5J');
         <p class="hero-deck rv in d1">Bring your business into the AI era. And beyond.</p>
         <p class="sub rv in d2">We're a marketing agency and an AI agency in Fresno for home service businesses and a few select industries. World-class SEO and AI workflows, wired into how you already work.</p>
         <div class="hero-ctas rv in d3">
-          <a href="/what-ai-can-do" class="btn btn-primary">See what your leads cost you <span class="arr">→</span></a>
-          <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-ghost">Talk to us</a>
+          <a href="#pricing" class="btn btn-primary">Get started <span class="arr">→</span></a>
+          <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-ghost">Book a call</a>
         </div>
       </div>
       <div class="rv in d2">
@@ -1037,62 +1037,78 @@ gtag('config', 'G-RSL1F8BX5J');
       <span class="mk">Fresno D</span>
       <span class="mk">Amassii Construction</span>
       <span class="mk">Quality Beverage</span>
-      <span class="mk">Beach Cities Black Car</span>
     </div>
   </div>
 </section>
 
 <!-- ============ PRICING ============ -->
-<section class="pricing">
+<style>
+  .disc{padding:120px 0;background:var(--paper)}
+  .disc-head{text-align:center;max-width:680px;margin:0 auto 56px}
+  .disc-head h2{font-family:var(--display);font-weight:430;font-size:clamp(32px,4.4vw,54px);line-height:1.02;letter-spacing:-.025em;margin:14px 0 16px}
+  .disc-head p{color:var(--ink-soft);font-size:18px;line-height:1.55;max-width:56ch;margin:0 auto}
+  .disc-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:22px;max-width:960px;margin:0 auto;align-items:stretch}
+  .oc{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:26px;padding:44px 40px;display:flex;flex-direction:column}
+  .oc.feat{background:#fff;border:1.5px solid rgba(20,17,10,.12);box-shadow:0 24px 70px rgba(20,17,10,.09)}
+  .oc .lab{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .oc .oname{font-family:var(--display);font-weight:500;font-size:25px;letter-spacing:-.01em;line-height:1.12;margin-bottom:22px;min-height:56px}
+  .oc-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .oc-price{font-family:var(--display);font-size:46px;font-weight:500;line-height:1}
+  .oc-price small{font-family:var(--sans);font-size:14px;font-weight:500;color:var(--faint);margin-left:7px}
+  .oc-btn{display:inline-block;padding:13px 32px;border-radius:100px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .2s,background .2s,color .2s;white-space:nowrap;cursor:pointer}
+  .oc-btn.primary{background:var(--accent);color:#fff}
+  .oc-btn.primary:hover{transform:scale(1.04)}
+  .oc-btn.ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(20,17,10,.22)}
+  .oc-btn.ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .oc-credit{font-family:var(--mono);font-size:12px;color:var(--accent-deep);margin:14px 0 4px}
+  .oc-note{font-size:14.5px;color:var(--ink-soft);line-height:1.5;margin:16px 0 4px}
+  .oc-feat{list-style:none;margin-top:22px}
+  .oc-feat li{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-top:1px solid var(--line-soft);font-size:14.5px;line-height:1.45;color:var(--ink)}
+  .oc-feat li svg{flex-shrink:0;width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-top:1px}
+  .disc-fine{text-align:center;font-family:var(--mono);font-size:12px;color:var(--faint);margin:36px auto 0;line-height:1.7;max-width:64ch}
+  @media(max-width:820px){.disc-grid{grid-template-columns:1fr;max-width:520px}.oc .oname{min-height:0}}
+</style>
+<section class="disc" id="pricing">
   <div class="wrap">
-    <span class="eyebrow rv">Pricing</span>
-    <h2 class="rv d1 lead">Priced like infrastructure. Built to pay for itself.</h2>
-    <p class="sub rv d1">No free site builds. No "if your phone doesn't ring you don't pay." That was the old game. Each tier aims more of the arsenal at your market.</p>
-    <div class="tiers">
-      <div class="tier rv">
-        <div class="tname">T1 · Get Found</div>
-        <div class="tbig">Be the answer.</div>
-        <div class="price">$1,499<small>/mo</small></div>
-        <div class="setup">$2,500 setup · 6-month term</div>
-        <ul>
-          <li><span class="ck">→</span> Full local SEO, GEO &amp; AI Overview optimization</li>
-          <li><span class="ck">→</span> Expert content built to get cited, not ignored</li>
-          <li><span class="ck">→</span> Speed-to-Lead SMS + foundation reporting</li>
+    <div class="disc-head rv">
+      <span class="eyebrow">Where to start</span>
+      <h2>Two ways in. Both honest.</h2>
+      <p>Talk to us first, or skip the small talk and buy the diagnostic that shows you exactly where you stand. No tiers, no mystery quote.</p>
+    </div>
+    <div class="disc-grid">
+      <div class="oc rv">
+        <div class="lab">Talk first</div>
+        <div class="oname">Discovery Call</div>
+        <div class="oc-top">
+          <span class="oc-price">Free</span>
+          <a class="oc-btn ghost" href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener">Book a call</a>
+        </div>
+        <p class="oc-note">A 30-minute call with the operator who runs the work, not an account manager reading a script.</p>
+        <ul class="oc-feat">
+          <li><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg> A straight read on whether your market is winnable</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg> The one or two moves we would make first</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> No pitch, no pressure, no obligation</li>
         </ul>
-        <div class="tnote">Run your own ads at a 0% management take.</div>
-        <div class="tbtn">Start with a free audit</div>
       </div>
-      <div class="tier pop rv d1">
-        <div class="pop-tag">Most chosen</div>
-        <div class="tname">T2 · Get Busy</div>
-        <div class="tbig">Fill the pipeline.</div>
-        <div class="price">$2,499<small>/mo</small></div>
-        <div class="setup">$5,000 setup · 6-month term</div>
-        <ul>
-          <li><span class="ck">✓</span> Everything in Get Found, plus:</li>
-          <li><span class="ck">→</span> Your first AI workflow: full multi-channel Speed to Lead + follow-up</li>
-          <li><span class="ck">→</span> Expanded content engine across search and social</li>
-          <li><span class="ck">→</span> Managed Google Ads when you're ready to scale</li>
+      <div class="oc feat rv d1">
+        <div class="lab">Start here</div>
+        <div class="oname">AI Visibility &amp; Revenue Diagnostic</div>
+        <div class="oc-top">
+          <span class="oc-price">$499<small>one time</small></span>
+          <a class="oc-btn primary" href="https://buy.stripe.com/00w9AL0JC48r8Yd504bAs01" target="_blank" rel="noopener">Buy</a>
+        </div>
+        <div class="oc-credit">Credited in full toward your engagement if you start within 30 days.</div>
+        <ul class="oc-feat">
+          <li><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg> Where you show up across six AI surfaces plus the local map pack</li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg> Named-competitor citation share: who AI names instead of you, and why</li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg> Google Business Profile, category, and technical audit</li>
+          <li><svg viewBox="0 0 24 24"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg> Where your leads leak, and the AI workflows that plug them first</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="2"/><circle cx="18" cy="17" r="2"/><path d="M6 9v4a4 4 0 004 4h4"/></svg> A monthly cost-of-problem model and a 90-day roadmap, on a live call</li>
         </ul>
-        <div class="tnote">Ad management: 12% of spend, only above $2,000/mo. Below that, you run them free.</div>
-        <div class="tbtn">Start with a free audit</div>
-      </div>
-      <div class="tier rv d2">
-        <div class="tname">T3 · Get Unstoppable</div>
-        <div class="tbig">Run itself.</div>
-        <div class="price">$3,999<small>/mo</small></div>
-        <div class="setup">$7,500 setup · 12-month term</div>
-        <ul>
-          <li><span class="ck">✓</span> Everything in Get Busy, plus:</li>
-          <li><span class="ck">→</span> All five AI workflows, rolled out over a staged 90-day build</li>
-          <li><span class="ck">→</span> Quote &amp; document automation + database reactivation</li>
-          <li><span class="ck">→</span> Unified weekly dashboard + quarterly strategy</li>
-        </ul>
-        <div class="tnote">Ad management: 10% of spend above $2,000/mo. Lower rate, more firepower.</div>
-        <div class="tbtn" data-cal>Book a fit call</div>
       </div>
     </div>
-    <p class="price-foot rv">Ad management is a transparent fee on top of your spend, never a markup of it. Setup can be split (T1 in 2, T2 &amp; T3 in 3), or save 7% paying upfront.</p>
+    <p class="disc-fine rv">A real diagnostic is the work, not a sales call in disguise. The findings are yours to keep whether we work together or not. Ongoing engagements are scoped to your market and start at $1,500/mo.</p>
+    <p class="disc-fine rv" style="margin-top:14px">Not ready for either? <a href="/what-ai-can-do" style="color:var(--accent-deep);text-decoration:underline;text-underline-offset:3px">See what your leads cost you</a> first. Free, takes a minute.</p>
   </div>
 </section>
 
@@ -1107,6 +1123,10 @@ gtag('config', 'G-RSL1F8BX5J');
       <div class="faq-item rv">
         <button class="faq-q">Does this actually work?<span class="faq-x">+</span></button>
         <div class="faq-a"><p>Yes, and not because of magic. It works because the fundamentals work: show up where people search, answer every lead fast, follow up without fail, and publish something worth finding. We didn't invent that. We run it consistently on your accounts, with AI doing the heavy lifting so it actually gets done. You measure it the way you measure everything else, by the phone ringing more.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <button class="faq-q">Why would I pay $499 before you've done anything?<span class="faq-x">+</span></button>
+        <div class="faq-a"><p>Because the diagnostic <em>is</em> the something. It's real work: where you show up across six AI surfaces, which competitors get named instead of you, what your Google profile and site are doing wrong, and a model of what the gap costs you every month. You keep all of it whether you hire us or not. And if you start within 30 days, the $499 comes off your first invoice, so it costs you nothing. We stopped doing this part free because free work attracts people who aren't buying anything.</p></div>
       </div>
       <div class="faq-item rv">
         <button class="faq-q">How long before I see results?<span class="faq-x">+</span></button>
@@ -1126,21 +1146,9 @@ gtag('config', 'G-RSL1F8BX5J');
       </div>
       <div class="faq-item rv">
         <button class="faq-q">What's the commitment, and do I own what we build?<span class="faq-x">+</span></button>
-        <div class="faq-a"><p>Pricing is right here on this page, in plain numbers, no mystery quote. And everything runs on your accounts and your data from day one, so it's all yours: your profile, your content, your customer records. If we ever part ways, you keep all of it. No lock-in, no login held over your head.</p></div>
+        <div class="faq-a"><p>The front door is a fixed number, right here: $499, credited in full if you start within 30 days. The ongoing work is scoped, because a plumber in Clovis fighting three competitors and a roofer covering four counties don't have the same problem and shouldn't pay the same price. Engagements start at $1,500 a month, and you'll see your exact number before anyone asks you to commit. Everything runs on your accounts and your data from day one, so it's all yours: your profile, your content, your customer records. If we ever part ways, you keep all of it. No lock-in, no login held over your head.</p></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ FINAL ============ -->
-<section class="final" id="audit">
-  <div class="wrap">
-    <h2 class="rv">See what your leads <em>actually</em> cost you.</h2>
-    <p class="rv d1">Most contractors have no idea what a real customer costs them. Pick your trade, see the honest math, and watch what we'd save you. Two minutes, no email required.</p>
-    <div class="final-cta rv d1">
-      <a href="/what-ai-can-do" class="btn btn-primary">See what AI can do for you <span class="arr">→</span></a>
-    </div>
-    <div class="final-micro rv d2">Your trade · your numbers · zero commitment</div>
   </div>
 </section>
 
@@ -1187,7 +1195,7 @@ gtag('config', 'G-RSL1F8BX5J');
       <a href="/field-notes" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Field Notes</a>
       <a href="/about" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">About Amir</a>
     </div>
-    <div class="foot-meta" style="margin-top:14px;font-size:.75rem;opacity:.7">AmirGetsJobs &middot; Fresno, CA &middot; <a href="https://www.yelp.com/biz/amir-gets-jobs-fresno" style="color:inherit">Yelp</a> &middot; <a href="tel:+15595505474" style="color:inherit;text-decoration:none">(559) 550-5474</a></div>
+    <div class="foot-meta" style="margin-top:14px;font-size:.75rem;opacity:.7">AmirGetsJobs &middot; Fresno, CA &middot; <a href="https://www.yelp.com/biz/amir-gets-jobs-fresno" style="color:inherit">Yelp</a> &middot; <a href="tel:+15595505474" style="color:inherit;text-decoration:none">(559) 550-5474</a> &middot; <a href="/terms" style="color:inherit">Terms</a> &middot; <a href="/privacy" style="color:inherit">Privacy</a></div>
   </div>
 </footer>
 
