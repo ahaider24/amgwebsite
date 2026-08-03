@@ -298,7 +298,10 @@ gtag('config', 'G-RSL1F8BX5J');
 
   /* INDUSTRIES */
   .industries{padding:108px 0;background:var(--paper-2)}
-  .ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  .ind-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px}
+  @media(max-width:1040px){.ind-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:680px){.ind-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:440px){.ind-grid{grid-template-columns:1fr}}
   .ind{border-radius:18px;padding:30px 26px;min-height:248px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;border:1px solid var(--line-soft);background:#fff;transition:transform .35s}
   .ind:hover{transform:translateY(-6px)}
   .ind .badge{position:absolute;top:24px;left:26px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep)}
@@ -467,7 +470,7 @@ gtag('config', 'G-RSL1F8BX5J');
     .scene.flip .scene-grid{direction:ltr}
     .scene .vizbox{order:2}
     .vs{grid-template-columns:1fr}
-    .moves,.tiers,.ind-grid{grid-template-columns:1fr}
+    .moves,.tiers{grid-template-columns:1fr}
     .stats-grid{grid-template-columns:1fr 1fr}
     .flow-list{grid-template-columns:repeat(2,1fr)}
     .flows-inner{padding:38px 26px}
@@ -988,25 +991,37 @@ gtag('config', 'G-RSL1F8BX5J');
 <section class="industries">
   <div class="wrap">
     <span class="eyebrow rv">Industries</span>
-    <h2 class="rv d1" style="font-family:var(--display);font-weight:430;font-size:clamp(29px,4vw,50px);line-height:1.03;letter-spacing:-.02em;margin-top:14px">Built for three worlds we know cold.</h2>
+    <h2 class="rv d1" style="font-family:var(--display);font-weight:430;font-size:clamp(29px,4vw,50px);line-height:1.03;letter-spacing:-.02em;margin-top:14px">Built for five worlds we know cold.</h2>
     <div class="ind-grid">
       <div class="ind rv">
         <span class="badge">Trades</span>
         <svg class="ind-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M30 70 L70 30 M55 15 L85 45 L70 60 L40 30 Z"/></svg>
         <h3>Trades</h3>
-        <p>HVAC, plumbing, electrical, construction, B2B supply. Phone-driven work where speed and visibility decide the job.</p>
+        <p>HVAC, plumbing, electrical, construction, cranes. Phone-driven work where speed and visibility decide the job.</p>
       </div>
       <div class="ind rv d1">
+        <span class="badge">Health</span>
+        <svg class="ind-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M50 22 V78 M22 50 H78"/></svg>
+        <h3>Health</h3>
+        <p>Dentists, doctors, med spas, clinics. Patients vet you online before they book, so reviews and a trusted name fill the schedule.</p>
+      </div>
+      <div class="ind rv d2">
         <span class="badge">Finance</span>
         <svg class="ind-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 75 L40 50 L55 62 L80 25 M70 25 L80 25 L80 35"/></svg>
         <h3>Finance</h3>
         <p>Private lending, mortgage brokers, advisors. Trust-driven work where being the cited, credible name is the game.</p>
       </div>
-      <div class="ind rv d2">
+      <div class="ind rv d3">
         <span class="badge">Legal</span>
         <svg class="ind-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M50 20 V75 M30 75 H70 M25 35 H75 M35 35 L25 55 H45 Z M65 35 L55 55 H75 Z"/></svg>
         <h3>Legal</h3>
         <p>Personal injury, family, business attorneys. High-value cases where one missed lead is a five-figure loss.</p>
+      </div>
+      <div class="ind rv d4">
+        <span class="badge">B2B</span>
+        <svg class="ind-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 30 h26 v26 h-26 Z M54 44 h26 v26 h-26 Z M46 57 h8"/></svg>
+        <h3>B2B</h3>
+        <p>Distributors, suppliers, manufacturers, B2B supply. Long sales cycles where buyers research first and the shortlist is set before they call.</p>
       </div>
     </div>
   </div>
@@ -1035,6 +1050,7 @@ gtag('config', 'G-RSL1F8BX5J');
     <div class="lbl rv">Trusted across Central California and beyond</div>
     <div class="marks rv d1">
       <span class="mk">Fresno D</span>
+      <span class="mk">Patriot Crane</span>
       <span class="mk">Amassii Construction</span>
       <span class="mk">Quality Beverage</span>
     </div>
