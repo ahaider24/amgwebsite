@@ -32,31 +32,41 @@ gtag('config', 'G-RSL1F8BX5J');
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://amirgetsjobs.com/#business",
-  "name": "AmirGetsJobs",
-  "description": "A marketing agency and an AI agency in one: SEO, AI visibility, web design and development, paid advertising, and AI workflow automation for home service businesses, plus select finance, legal, B2B, and dental and medical practices.",
-  "url": "https://amirgetsjobs.com",
-  "telephone": "+1-559-550-5474",
-  "image": "https://amirgetsjobs.com/og-image.png",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Fresno",
-    "addressRegion": "CA",
-    "addressCountry": "US"
-  },
-  "areaServed": ["Fresno", "Los Angeles", "Phoenix"],
-  "knowsAbout": ["Local SEO", "Generative Engine Optimization", "AI Overviews", "AI workflow automation", "Web design", "Web development", "Google Ads", "Local Services Ads", "Paid advertising", "Lead response", "Content marketing"],
-  "founder": {
-    "@type": "Person",
-    "name": "Amir Haider",
-    "sameAs": ["https://www.linkedin.com/in/amhaider"]
-  },
-  "sameAs": [
-    "https://www.linkedin.com/in/amhaider",
-    "https://www.fastcompany.com/91530813/11-ways-to-signal-ai-fluency-on-your-resume-resumes-ai-fluenc"
-  ],
-  "slogan": "Go from winging it to winning it."
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://amirgetsjobs.com/#business",
+      "name": "AmirGetsJobs",
+      "description": "A marketing agency and an AI agency in one: SEO, AI visibility, web design and development, paid advertising, and AI workflow automation for home service businesses, plus select finance, legal, B2B, and dental and medical practices.",
+      "url": "https://amirgetsjobs.com",
+      "telephone": "+1-559-550-5474",
+      "image": "https://amirgetsjobs.com/og-image.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Fresno",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "areaServed": ["Fresno", "Los Angeles", "Phoenix"],
+      "knowsAbout": ["Local SEO", "Generative Engine Optimization", "AI Overviews", "AI workflow automation", "Web design", "Web development", "Google Ads", "Local Services Ads", "Paid advertising", "Lead response", "Content marketing"],
+      "founder": { "@id": "https://amirgetsjobs.com/#founder" },
+      "sameAs": [],
+      "slogan": "Go from winging it to winning it."
+    },
+    {
+      "@type": "Person",
+      "@id": "https://amirgetsjobs.com/#founder",
+      "name": "Amir Haider",
+      "jobTitle": "Founder",
+      "worksFor": { "@id": "https://amirgetsjobs.com/#business" },
+      "url": "https://amirgetsjobs.com/about",
+      "knowsAbout": ["Local SEO", "Generative Engine Optimization", "AI Overviews", "AI visibility", "AI workflow automation"],
+      "sameAs": [
+        "https://www.linkedin.com/in/amhaider",
+        "https://www.fastcompany.com/91530813/11-ways-to-signal-ai-fluency-on-your-resume-resumes-ai-fluenc"
+      ]
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
