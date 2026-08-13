@@ -843,74 +843,92 @@ gtag('config', 'G-RSL1F8BX5J');
   .margins .m5-lede{color:var(--ink-soft);font-size:18px;line-height:1.6;max-width:50ch;margin:0 auto}
   .margins .m5-lede p{margin:0 0 8px}
   .margins .m5-lede p:last-child{margin-bottom:0}
-  /* the same job, two years apart */
-  .inv-fig{margin:66px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,290px));justify-content:center;align-items:start;gap:26px}
-  .inv{font-family:var(--mono);font-size:12.5px;line-height:1.55;font-variant-numeric:tabular-nums;background:#FCFAF4;color:#1A1712;border:1px solid rgba(20,17,10,.15);border-radius:3px;padding:22px 20px 48px;text-align:left;position:relative}
-  .inv--then{background:#F1EADC;transform:rotate(-1.6deg) translateY(16px);box-shadow:0 2px 6px rgba(20,17,10,.09);z-index:1}
-  .inv--now{transform:rotate(1.1deg);z-index:2;box-shadow:0 24px 52px -16px rgba(20,17,10,.34),0 3px 9px rgba(20,17,10,.09)}
-  .inv-head{display:flex;justify-content:space-between;gap:14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#8b8271}
-  .inv-item{margin:14px 0 15px;padding-bottom:14px;border-bottom:1px solid rgba(20,17,10,.13);font-size:13.5px;color:#1A1712}
-  .inv-rows{margin:0}
-  .inv-row,.inv-total{display:flex;align-items:baseline;gap:8px;margin:0 0 8px}
-  .inv-row dt,.inv-total dt{margin:0;color:#6c6353;white-space:nowrap}
-  .inv-row .lead,.inv-total .lead{flex:1 1 auto;border-bottom:1px dotted rgba(20,17,10,.28);transform:translateY(-3px)}
-  .inv-row dd,.inv-total dd{margin:0;color:#1A1712}
-  .inv-total{margin-top:14px;padding-top:13px;border-top:1px solid #1A1712;font-size:14px}
-  .inv-total dt{text-transform:uppercase;font-size:10.5px;letter-spacing:.1em;color:#1A1712}
-  .inv--now .inv-total dd{color:var(--accent);font-size:27px;font-weight:700;line-height:.9}
-  .inv-stamp{position:absolute;left:20px;bottom:15px;margin:0;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#8b8271;border:1px solid currentColor;border-radius:2px;padding:5px 9px;transform:rotate(-3deg)}
-  .inv--now .inv-stamp{border-style:dashed;transform:rotate(2deg)}
-  .inv-note{position:absolute;right:-16px;bottom:-42px;margin:0;width:12ch;color:var(--accent);font-family:var(--display);font-style:italic;font-size:19px;line-height:1.15;text-align:left}
-  .inv-cap{grid-column:1/-1;margin-top:58px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
-  .m5-kicker{font-family:var(--display);font-weight:420;font-size:clamp(20px,2.5vw,29px);line-height:1.3;max-width:24ch;margin:88px auto 0;color:var(--ink)}
+  /* the calculator: what one customer leaves you, then vs now */
+  .calc-fig{margin:56px 0 0}
+  .calc{margin:0 auto;width:min(444px,100%);background:#FCFAF4;color:#1A1712;border:1px solid rgba(20,17,10,.15);border-radius:6px;box-shadow:0 26px 54px -20px rgba(20,17,10,.3),0 3px 9px rgba(20,17,10,.07);padding:28px 30px 26px;text-align:left;font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .calc-head{display:flex;justify-content:space-between;gap:12px;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:#8b8271;padding-bottom:15px;border-bottom:1px solid rgba(20,17,10,.14)}
+  .calc-lines{margin-top:6px}
+  .calc-line{display:flex;align-items:baseline;gap:10px;padding:9px 0;font-size:14px}
+  .calc-line dt{margin:0;color:#3a352c;white-space:nowrap}
+  .calc-line .lead{flex:1 1 auto;border-bottom:1px dotted rgba(20,17,10,.22);transform:translateY(-3px)}
+  .calc-line dd{margin:0;color:#1A1712;white-space:nowrap}
+  .calc-line .op{color:#a99f8b;margin-right:3px}
+  .calc-line .was{font-size:10.5px;color:#a99f8b;margin-left:8px;letter-spacing:.02em}
+  .calc-total{display:flex;align-items:center;gap:12px;margin-top:6px;padding-top:16px;border-top:1.5px solid #1A1712}
+  .calc-total dt{margin:0;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1A1712;white-space:nowrap}
+  .calc-total .lead{flex:1 1 auto;border:0}
+  .calc-sum{margin:0;font-family:var(--display);font-weight:600;font-size:46px;line-height:.85;color:var(--accent);white-space:nowrap}
+  .calc-was{margin:16px 0 0;font-size:12.5px;color:#6c6353;line-height:1.5}
+  .calc-was b{color:#1A1712;font-weight:600}
+  .calc-cap{margin:26px auto 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  .m5-kicker{font-family:var(--display);font-weight:420;font-size:clamp(20px,2.5vw,29px);line-height:1.3;max-width:24ch;margin:80px auto 0;color:var(--ink)}
+  /* motion: the numbers tally in, the total falls */
+  .calc.anim .calc-line,.calc.anim .calc-total,.calc.anim .calc-was{opacity:0;transform:translateY(9px);transition:opacity .46s ease,transform .46s ease}
+  .calc.anim.play .calc-line,.calc.anim.play .calc-total,.calc.anim.play .calc-was{opacity:1;transform:none}
+  .calc.anim.play .calc-line:nth-child(1){transition-delay:.02s}
+  .calc.anim.play .calc-line:nth-child(2){transition-delay:.15s}
+  .calc.anim.play .calc-line:nth-child(3){transition-delay:.28s}
+  .calc.anim.play .calc-line:nth-child(4){transition-delay:.41s}
+  .calc.anim.play .calc-total{transition-delay:.58s}
+  .calc.anim.play .calc-was{transition-delay:1.75s}
+  @media (prefers-reduced-motion:reduce){.calc.anim .calc-line,.calc.anim .calc-total,.calc.anim .calc-was{opacity:1;transform:none;transition:none}}
   @media (max-width:720px){
     .margins{padding:76px 0 92px}
-    .inv-fig{grid-template-columns:minmax(0,340px);gap:46px}
-    .inv{transform:none !important;margin:0 !important}
-    .inv-note{position:static;width:auto;margin-top:16px;text-align:center}
-    .inv-cap{margin-top:34px}
+    .calc-fig{margin-top:44px}
+    .calc{padding:24px 22px 22px}
+    .calc-sum{font-size:40px}
     .m5-kicker{margin-top:60px}
   }
   </style>
   <div class="wrap">
     <div class="m5-eyebrow rv"><span class="bar"></span>05 / In your margins</div>
-    <h2 class="rv d1">You're busier than last year. <em>The math got worse, not you.</em></h2>
+    <h2 class="rv d1">You're working harder than ever. <em>The math turned, not you.</em></h2>
     <div class="m5-lede rv d1">
-      <p>None of the four above sends you an invoice.</p>
-      <p>They just make each job cost more to win, and leave less behind when it's done.</p>
+      <p>None of the four above shows up on your books.</p>
+      <p>They just make every new customer cost more to win, and worth less once you've won them.</p>
       <p>You feel it as tight months and long days. The competitor who's easy to find is paying less than you for the same customer.</p>
     </div>
-    <figure class="inv-fig rv d2">
-      <p class="sr-only">Two invoices for the same job. Two years ago: ticket price $2,400, cost to win the job $180, no discount, parts and labor $1,540, profit $680, from a repeat customer on their third visit. This month: ticket price $2,650, cost to win the job $410, discount to close $150, parts and labor $1,760, profit $330, from a first-time customer. Figures are illustrative.</p>
-      <article class="inv inv--then" aria-hidden="true">
-        <div class="inv-head"><span>Invoice 1042</span><span>March, two years ago</span></div>
-        <p class="inv-item">Water heater replacement, 50 gal</p>
-        <dl class="inv-rows">
-          <div class="inv-row"><dt>Ticket price</dt><span class="lead"></span><dd>$2,400</dd></div>
-          <div class="inv-row"><dt>Cost to win the job</dt><span class="lead"></span><dd>$180</dd></div>
-          <div class="inv-row"><dt>Discount to close</dt><span class="lead"></span><dd>$0</dd></div>
-          <div class="inv-row"><dt>Parts and labor</dt><span class="lead"></span><dd>$1,540</dd></div>
-        </dl>
-        <div class="inv-total"><dt>Profit on this job</dt><span class="lead"></span><dd>$680</dd></div>
-        <p class="inv-stamp">Repeat customer &middot; 3rd visit</p>
-      </article>
-      <article class="inv inv--now" aria-hidden="true">
-        <div class="inv-head"><span>Invoice 3318</span><span>Last Tuesday</span></div>
-        <p class="inv-item">Water heater replacement, 50 gal</p>
-        <dl class="inv-rows">
-          <div class="inv-row"><dt>Ticket price</dt><span class="lead"></span><dd>$2,650</dd></div>
-          <div class="inv-row"><dt>Cost to win the job</dt><span class="lead"></span><dd>$410</dd></div>
-          <div class="inv-row"><dt>Discount to close</dt><span class="lead"></span><dd>$150</dd></div>
-          <div class="inv-row"><dt>Parts and labor</dt><span class="lead"></span><dd>$1,760</dd></div>
-        </dl>
-        <div class="inv-total"><dt>Profit on this job</dt><span class="lead"></span><dd>$330</dd></div>
-        <p class="inv-stamp">First-time customer</p>
-        <p class="inv-note">Same job. Half the profit.</p>
-      </article>
-      <figcaption class="inv-cap">Illustrative. Your numbers are your own.</figcaption>
+    <figure class="calc-fig">
+      <p class="sr-only">What one customer leaves you today: they paid $2,650, minus $410 to win them, up from $180 two years ago, minus a $150 discount to close, minus $1,760 to serve them, which leaves $330. Two years ago the same customer left $680. Figures are illustrative.</p>
+      <div class="calc" aria-hidden="true">
+        <div class="calc-head"><span>What one customer leaves you</span><span>Today</span></div>
+        <div class="calc-lines">
+          <div class="calc-line"><dt>What they paid you</dt><span class="lead"></span><dd>$2,650</dd></div>
+          <div class="calc-line"><dt>Cost to win them</dt><span class="lead"></span><dd><span class="op">&minus;</span>$410<span class="was">was $180</span></dd></div>
+          <div class="calc-line"><dt>Discount to close</dt><span class="lead"></span><dd><span class="op">&minus;</span>$150<span class="was">new</span></dd></div>
+          <div class="calc-line"><dt>Cost to serve them</dt><span class="lead"></span><dd><span class="op">&minus;</span>$1,760</dd></div>
+        </div>
+        <div class="calc-total"><dt>What's left</dt><span class="lead"></span><dd class="calc-sum">$330</dd></div>
+        <div class="calc-was">Two years ago, the same customer left you <b>$680</b>.</div>
+      </div>
+      <figcaption class="calc-cap">Illustrative. Your numbers are your own.</figcaption>
     </figure>
     <p class="m5-kicker rv d2">A business like yours doesn't close in an afternoon. It thins out first.</p>
   </div>
+<script>
+(function(){
+  var calc=document.querySelector('#chapter5 .calc');
+  if(!calc)return;
+  var sum=calc.querySelector('.calc-sum');
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){calc.classList.add('play');return;}
+  calc.classList.add('anim');
+  if(sum)sum.textContent='$680';
+  function fall(){
+    var from=680,to=330,steps=48,i=0;
+    var t=setInterval(function(){
+      i++;
+      var p=i/steps,e=1-Math.pow(1-p,3);
+      sum.textContent='$'+Math.round(from+(to-from)*e);
+      if(i>=steps){sum.textContent='$330';clearInterval(t);}
+    },20);
+  }
+  var done=false;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting&&!done){done=true;calc.classList.add('play');if(sum)setTimeout(fall,760);io.disconnect();}
+  });},{threshold:.32});
+  io.observe(calc);
+})();
+</script>
 </section>
 
 <!-- ============ PROOF STATS ============ -->
