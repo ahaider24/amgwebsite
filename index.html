@@ -833,45 +833,83 @@ gtag('config', 'G-RSL1F8BX5J');
 <!-- ============ 05 / IN YOUR MARGINS (INTELLIGENCE LAYER) ============ -->
 <section class="margins" id="chapter5">
   <style>
-  .margins{padding:104px 0;background:var(--paper)}
-  .margins .m5-eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);display:flex;align-items:center;gap:12px;margin-bottom:20px}
+  .margins{padding:118px 0 148px;background:var(--paper);text-align:center}
+  .margins .wrap{display:flex;flex-direction:column;align-items:center}
+  .margins .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .margins .m5-eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:22px}
   .margins .m5-eyebrow .bar{width:26px;height:2px;background:var(--accent)}
-  .margins h2{font-family:var(--display);font-weight:420;font-size:clamp(30px,4.4vw,54px);line-height:1.05;letter-spacing:-.02em;max-width:20ch;margin-bottom:20px}
+  .margins h2{font-family:var(--display);font-weight:420;font-size:clamp(31px,4.7vw,58px);line-height:1.04;letter-spacing:-.02em;max-width:19ch;margin:0 auto 22px}
   .margins h2 em{font-style:italic;color:var(--accent)}
-  .margins .m5-lede{color:var(--ink-soft);font-size:18px;line-height:1.55;max-width:58ch;margin-bottom:0}
-  .il5{background:var(--white);border:1px solid var(--line-soft);border-radius:18px;padding:30px 28px;margin-top:34px}
-  .il5 .il-tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:20px}
-  .il-flow{display:flex;align-items:stretch;flex-wrap:wrap;gap:10px}
-  .il-node{flex:1 1 130px;min-width:118px;background:var(--paper-2);border:1px solid var(--line-soft);border-radius:12px;padding:26px 14px 14px;font-size:13.5px;line-height:1.3;color:var(--ink);display:flex;align-items:center;font-weight:500;position:relative}
-  .il-node .il-k{font-family:var(--mono);font-size:10px;color:var(--faint);position:absolute;top:10px;left:14px;letter-spacing:.12em}
-  .il-arrow{display:flex;align-items:center;color:var(--accent);font-weight:700;font-size:17px}
-  .il-hub{flex:1 1 158px;background:var(--ink);color:#fff;border-color:var(--ink);font-weight:600}
-  .il-hub .il-k{color:rgba(255,255,255,.5)}
-  .il-loop{font-family:var(--mono);font-size:11.5px;color:var(--faint);letter-spacing:.02em;margin-top:16px;display:flex;align-items:center;gap:9px}
-  .il-loop .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:ilpulse 2.4s ease-in-out infinite}
-  @keyframes ilpulse{0%,100%{opacity:.28;transform:scale(1)}50%{opacity:1;transform:scale(1.6)}}
-  @media (max-width:720px){.il-flow{flex-direction:column}.il-arrow{transform:rotate(90deg);justify-content:center;padding:2px 0}.il-node,.il-hub{flex:1 1 auto}.margins{padding:72px 0}}
-  @media (prefers-reduced-motion:reduce){.il-loop .dot{animation:none}}
+  .margins .m5-lede{color:var(--ink-soft);font-size:18px;line-height:1.6;max-width:50ch;margin:0 auto}
+  .margins .m5-lede p{margin:0 0 8px}
+  .margins .m5-lede p:last-child{margin-bottom:0}
+  /* the same job, two years apart */
+  .inv-fig{margin:66px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,290px));justify-content:center;align-items:start;gap:26px}
+  .inv{font-family:var(--mono);font-size:12.5px;line-height:1.55;font-variant-numeric:tabular-nums;background:#FCFAF4;color:#1A1712;border:1px solid rgba(20,17,10,.15);border-radius:3px;padding:22px 20px 48px;text-align:left;position:relative}
+  .inv--then{background:#F1EADC;transform:rotate(-1.6deg) translateY(16px);box-shadow:0 2px 6px rgba(20,17,10,.09);z-index:1}
+  .inv--now{transform:rotate(1.1deg);z-index:2;box-shadow:0 24px 52px -16px rgba(20,17,10,.34),0 3px 9px rgba(20,17,10,.09)}
+  .inv-head{display:flex;justify-content:space-between;gap:14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#8b8271}
+  .inv-item{margin:14px 0 15px;padding-bottom:14px;border-bottom:1px solid rgba(20,17,10,.13);font-size:13.5px;color:#1A1712}
+  .inv-rows{margin:0}
+  .inv-row,.inv-total{display:flex;align-items:baseline;gap:8px;margin:0 0 8px}
+  .inv-row dt,.inv-total dt{margin:0;color:#6c6353;white-space:nowrap}
+  .inv-row .lead,.inv-total .lead{flex:1 1 auto;border-bottom:1px dotted rgba(20,17,10,.28);transform:translateY(-3px)}
+  .inv-row dd,.inv-total dd{margin:0;color:#1A1712}
+  .inv-total{margin-top:14px;padding-top:13px;border-top:1px solid #1A1712;font-size:14px}
+  .inv-total dt{text-transform:uppercase;font-size:10.5px;letter-spacing:.1em;color:#1A1712}
+  .inv--now .inv-total dd{color:var(--accent);font-size:27px;font-weight:700;line-height:.9}
+  .inv-stamp{position:absolute;left:20px;bottom:15px;margin:0;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#8b8271;border:1px solid currentColor;border-radius:2px;padding:5px 9px;transform:rotate(-3deg)}
+  .inv--now .inv-stamp{border-style:dashed;transform:rotate(2deg)}
+  .inv-note{position:absolute;right:-16px;bottom:-42px;margin:0;width:12ch;color:var(--accent);font-family:var(--display);font-style:italic;font-size:19px;line-height:1.15;text-align:left}
+  .inv-cap{grid-column:1/-1;margin-top:58px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  .m5-kicker{font-family:var(--display);font-weight:420;font-size:clamp(20px,2.5vw,29px);line-height:1.3;max-width:24ch;margin:88px auto 0;color:var(--ink)}
+  @media (max-width:720px){
+    .margins{padding:76px 0 92px}
+    .inv-fig{grid-template-columns:minmax(0,340px);gap:46px}
+    .inv{transform:none !important;margin:0 !important}
+    .inv-note{position:static;width:auto;margin-top:16px;text-align:center}
+    .inv-cap{margin-top:34px}
+    .m5-kicker{margin-top:60px}
+  }
   </style>
   <div class="wrap">
     <div class="m5-eyebrow rv"><span class="bar"></span>05 / In your margins</div>
-    <h2 class="rv d1">The last place you're losing is <em>inside your own walls.</em></h2>
-    <p class="m5-lede rv d2">The other four are out in the market. This one is at your own desk: leads in one app, calls in another, your schedule in a third, none of them talking. Every handoff leaks time, and time is margin. The fix is not another tool, it is wiring the ones you already run into a single system.</p>
-    <div class="il5 rv d2">
-      <div class="il-tag">The fix: one intelligence</div>
-      <div class="il-flow" aria-hidden="true">
-        <div class="il-node"><span class="il-k">01</span>Found by AI</div>
-        <div class="il-arrow">&rarr;</div>
-        <div class="il-node"><span class="il-k">02</span>Answered instantly</div>
-        <div class="il-arrow">&rarr;</div>
-        <div class="il-node"><span class="il-k">03</span>Booked, selling 24/7</div>
-        <div class="il-arrow">&rarr;</div>
-        <div class="il-node"><span class="il-k">04</span>Synced to your docs</div>
-        <div class="il-arrow">&rarr;</div>
-        <div class="il-node il-hub"><span class="il-k">05</span>One centralized intelligence</div>
-      </div>
-      <div class="il-loop"><span class="dot"></span> And it compounds, every job makes the system smarter.</div>
+    <h2 class="rv d1">You're busier than last year. <em>The math got worse, not you.</em></h2>
+    <div class="m5-lede rv d1">
+      <p>None of the four above sends you an invoice.</p>
+      <p>They just make each job cost more to win, and leave less behind when it's done.</p>
+      <p>You feel it as tight months and long days. The competitor who's easy to find is paying less than you for the same customer.</p>
     </div>
+    <figure class="inv-fig rv d2">
+      <p class="sr-only">Two invoices for the same job. Two years ago: ticket price $2,400, cost to win the job $180, no discount, parts and labor $1,540, profit $680, from a repeat customer on their third visit. This month: ticket price $2,650, cost to win the job $410, discount to close $150, parts and labor $1,760, profit $330, from a first-time customer. Figures are illustrative.</p>
+      <article class="inv inv--then" aria-hidden="true">
+        <div class="inv-head"><span>Invoice 1042</span><span>March, two years ago</span></div>
+        <p class="inv-item">Water heater replacement, 50 gal</p>
+        <dl class="inv-rows">
+          <div class="inv-row"><dt>Ticket price</dt><span class="lead"></span><dd>$2,400</dd></div>
+          <div class="inv-row"><dt>Cost to win the job</dt><span class="lead"></span><dd>$180</dd></div>
+          <div class="inv-row"><dt>Discount to close</dt><span class="lead"></span><dd>$0</dd></div>
+          <div class="inv-row"><dt>Parts and labor</dt><span class="lead"></span><dd>$1,540</dd></div>
+        </dl>
+        <div class="inv-total"><dt>Profit on this job</dt><span class="lead"></span><dd>$680</dd></div>
+        <p class="inv-stamp">Repeat customer &middot; 3rd visit</p>
+      </article>
+      <article class="inv inv--now" aria-hidden="true">
+        <div class="inv-head"><span>Invoice 3318</span><span>Last Tuesday</span></div>
+        <p class="inv-item">Water heater replacement, 50 gal</p>
+        <dl class="inv-rows">
+          <div class="inv-row"><dt>Ticket price</dt><span class="lead"></span><dd>$2,650</dd></div>
+          <div class="inv-row"><dt>Cost to win the job</dt><span class="lead"></span><dd>$410</dd></div>
+          <div class="inv-row"><dt>Discount to close</dt><span class="lead"></span><dd>$150</dd></div>
+          <div class="inv-row"><dt>Parts and labor</dt><span class="lead"></span><dd>$1,760</dd></div>
+        </dl>
+        <div class="inv-total"><dt>Profit on this job</dt><span class="lead"></span><dd>$330</dd></div>
+        <p class="inv-stamp">First-time customer</p>
+        <p class="inv-note">Same job. Half the profit.</p>
+      </article>
+      <figcaption class="inv-cap">Illustrative. Your numbers are your own.</figcaption>
+    </figure>
+    <p class="m5-kicker rv d2">A business like yours doesn't close in an afternoon. It thins out first.</p>
   </div>
 </section>
 
