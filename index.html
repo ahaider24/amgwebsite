@@ -843,90 +843,162 @@ gtag('config', 'G-RSL1F8BX5J');
   .margins .m5-lede{color:var(--ink-soft);font-size:18px;line-height:1.6;max-width:50ch;margin:0 auto}
   .margins .m5-lede p{margin:0 0 8px}
   .margins .m5-lede p:last-child{margin-bottom:0}
-  /* the calculator: what one customer leaves you, then vs now */
-  .calc-fig{margin:56px 0 0}
-  .calc{margin:0 auto;width:min(444px,100%);background:#FCFAF4;color:#1A1712;border:1px solid rgba(20,17,10,.15);border-radius:6px;box-shadow:0 26px 54px -20px rgba(20,17,10,.3),0 3px 9px rgba(20,17,10,.07);padding:28px 30px 26px;text-align:left;font-family:var(--mono);font-variant-numeric:tabular-nums}
-  .calc-head{display:flex;justify-content:space-between;gap:12px;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:#8b8271;padding-bottom:15px;border-bottom:1px solid rgba(20,17,10,.14)}
-  .calc-lines{margin-top:6px}
-  .calc-line{display:flex;align-items:baseline;gap:10px;padding:9px 0;font-size:14px}
-  .calc-line dt{margin:0;color:#3a352c;white-space:nowrap}
-  .calc-line .lead{flex:1 1 auto;border-bottom:1px dotted rgba(20,17,10,.22);transform:translateY(-3px)}
-  .calc-line dd{margin:0;color:#1A1712;white-space:nowrap}
-  .calc-line .op{color:#a99f8b;margin-right:3px}
-  .calc-line .was{font-size:10.5px;color:#a99f8b;margin-left:8px;letter-spacing:.02em}
-  .calc-total{display:flex;align-items:center;gap:12px;margin-top:6px;padding-top:16px;border-top:1.5px solid #1A1712}
-  .calc-total dt{margin:0;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1A1712;white-space:nowrap}
-  .calc-total .lead{flex:1 1 auto;border:0}
-  .calc-sum{margin:0;font-family:var(--display);font-weight:600;font-size:46px;line-height:.85;color:var(--accent);white-space:nowrap}
-  .calc-was{margin:16px 0 0;font-size:12.5px;color:#6c6353;line-height:1.5}
-  .calc-was b{color:#1A1712;font-weight:600}
-  .calc-cap{margin:26px auto 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
-  .m5-kicker{font-family:var(--display);font-weight:420;font-size:clamp(20px,2.5vw,29px);line-height:1.3;max-width:24ch;margin:80px auto 0;color:var(--ink)}
-  /* motion: the numbers tally in, the total falls */
-  .calc.anim .calc-line,.calc.anim .calc-total,.calc.anim .calc-was{opacity:0;transform:translateY(9px);transition:opacity .46s ease,transform .46s ease}
-  .calc.anim.play .calc-line,.calc.anim.play .calc-total,.calc.anim.play .calc-was{opacity:1;transform:none}
-  .calc.anim.play .calc-line:nth-child(1){transition-delay:.02s}
-  .calc.anim.play .calc-line:nth-child(2){transition-delay:.15s}
-  .calc.anim.play .calc-line:nth-child(3){transition-delay:.28s}
-  .calc.anim.play .calc-line:nth-child(4){transition-delay:.41s}
-  .calc.anim.play .calc-total{transition-delay:.58s}
-  .calc.anim.play .calc-was{transition-delay:1.75s}
-  @media (prefers-reduced-motion:reduce){.calc.anim .calc-line,.calc.anim .calc-total,.calc.anim .calc-was{opacity:1;transform:none;transition:none}}
+  /* the worksheet: what one customer leaves you, eroded factor by factor */
+  .wk-fig-wrap{margin:52px 0 0}
+  .wk{margin:0 auto;width:min(470px,100%);background:#FCFAF4;color:#1A1712;border:1px solid rgba(20,17,10,.15);border-radius:6px;box-shadow:0 26px 54px -20px rgba(20,17,10,.3),0 3px 9px rgba(20,17,10,.07);padding:26px 28px 24px;text-align:left;font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .wk-head{padding-bottom:13px;border-bottom:1px solid rgba(20,17,10,.14)}
+  .wk-title{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#1A1712;font-weight:600}
+  .wk-title span:last-child{color:#8b8271;font-weight:400}
+  .wk-sub2{margin:7px 0 0;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#a99f8b;line-height:1.5}
+  .wk-rows{margin:2px 0 0;padding:0;list-style:none}
+  .wk-row{padding:10px 0 8px;border-top:1px solid rgba(20,17,10,.08)}
+  .wk-row:first-child{border-top:0}
+  .wk-row--found{box-shadow:inset 2px 0 0 var(--accent);padding-left:10px;margin-left:-10px}
+  .wk-line{display:flex;align-items:baseline;gap:9px}
+  .wk-label{color:#3a352c;font-size:12.5px}
+  .wk-lead{flex:1 1 auto;border-bottom:1px dotted rgba(20,17,10,.22);transform:translateY(-3px);min-width:16px}
+  .wk-fig{color:#1A1712;white-space:nowrap;font-size:14px;text-align:right}
+  .wk-row--found .wk-fig{font-size:15.5px}
+  .wk-note{display:flex;justify-content:flex-end;align-items:baseline;gap:8px;margin-top:5px;font-size:10px;color:#8b8271;line-height:1.4;text-align:right}
+  .wk-note .txt{max-width:36ch}
+  .wk-chip{flex:none;font-size:8.5px;letter-spacing:.06em;text-transform:uppercase;color:#8b8271;border:1px solid rgba(20,17,10,.22);border-radius:3px;padding:2px 5px}
+  .wk-row--found .wk-chip{color:var(--accent);border-color:var(--accent)}
+  .wk-subtotal{display:flex;align-items:baseline;gap:9px;padding:10px 0;margin-top:2px;border-top:1px solid rgba(20,17,10,.16)}
+  .wk-subtotal .wk-label{color:#1A1712;text-transform:uppercase;font-size:10.5px;letter-spacing:.09em;font-weight:600}
+  .wk-subtotal .wk-fig{font-weight:600}
+  .wk-total{display:flex;align-items:center;gap:10px;margin-top:6px;padding-top:15px;border-top:1.5px solid #1A1712}
+  .wk-tl{margin:0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#1A1712;white-space:nowrap;flex:none}
+  .wk-tspace{flex:1 1 auto}
+  .wk-dchip{flex:none;font-size:9px;letter-spacing:.06em;color:var(--accent);border:1px solid var(--accent);border-radius:3px;padding:3px 6px}
+  .wk-sum{margin:0;font-family:var(--display);font-weight:600;font-size:44px;line-height:.85;color:var(--accent);white-space:nowrap}
+  .wk-then{margin:15px 0 0;font-size:12.5px;color:#6c6353;line-height:1.55}
+  .wk-then b{color:#1A1712;font-weight:600}
+  .wk-cap{margin:24px auto 0;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  .m5-payoff{font-family:var(--display);font-weight:420;font-style:italic;font-size:clamp(19px,2.2vw,27px);line-height:1.32;max-width:27ch;margin:56px auto 0;color:var(--ink)}
+  .m5-kicker{font-family:var(--display);font-weight:420;font-size:clamp(20px,2.5vw,29px);line-height:1.3;max-width:24ch;margin:24px auto 0;color:var(--ink)}
+  /* erosion motion: each factor lands, then the total is eaten */
+  .wk.anim .wk-row,.wk.anim .wk-subtotal,.wk.anim .wk-total,.wk.anim .wk-then{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
+  .wk.anim .wk-row.is-in,.wk.anim .wk-subtotal.is-in,.wk.anim .wk-total.is-in,.wk.anim .wk-then.is-in{opacity:1;transform:none}
+  .wk.anim .wk-note{opacity:0;transition:opacity .45s ease}
+  .wk.anim .wk-row.is-note .wk-note{opacity:1}
+  .wk.anim .wk-dchip{opacity:0;transition:opacity .5s ease}
+  .wk.anim.is-final .wk-dchip{opacity:1}
+  @media (prefers-reduced-motion:reduce){.wk.anim .wk-row,.wk.anim .wk-subtotal,.wk.anim .wk-total,.wk.anim .wk-then,.wk.anim .wk-note,.wk.anim .wk-dchip{opacity:1;transform:none;transition:none}}
   @media (max-width:720px){
     .margins{padding:76px 0 92px}
-    .calc-fig{margin-top:44px}
-    .calc{padding:24px 22px 22px}
-    .calc-sum{font-size:40px}
-    .m5-kicker{margin-top:60px}
+    .wk-fig-wrap{margin-top:40px}
+    .wk{padding:22px 18px 20px}
+    .wk-sum{font-size:38px}
+    .wk-note .txt{max-width:26ch}
+    .m5-payoff{margin-top:44px}
   }
   </style>
   <div class="wrap">
     <div class="m5-eyebrow rv"><span class="bar"></span>05 / In your margins</div>
-    <h2 class="rv d1">You're working harder than ever. <em>The math turned, not you.</em></h2>
+    <h2 class="rv d1">You charged more. <em>You kept less.</em></h2>
     <div class="m5-lede rv d1">
-      <p>None of the four above shows up on your books.</p>
-      <p>They just make every new customer cost more to win, and worth less once you've won them.</p>
-      <p>You feel it as tight months and long days. The competitor who's easy to find is paying less than you for the same customer.</p>
+      <p>Whether it be stagflation, rising customer acquisition costs, decreased returning clients, or increased competition, the disparity between your margins and your growth is tangible.</p>
     </div>
-    <figure class="calc-fig">
-      <p class="sr-only">What one customer leaves you today: they paid $2,650, minus $410 to win them, up from $180 two years ago, minus a $150 discount to close, minus $1,760 to serve them, which leaves $330. Two years ago the same customer left $680. Figures are illustrative.</p>
-      <div class="calc" aria-hidden="true">
-        <div class="calc-head"><span>What one customer leaves you</span><span>Today</span></div>
-        <div class="calc-lines">
-          <div class="calc-line"><dt>What they paid you</dt><span class="lead"></span><dd>$2,650</dd></div>
-          <div class="calc-line"><dt>Cost to win them</dt><span class="lead"></span><dd><span class="op">&minus;</span>$410<span class="was">was $180</span></dd></div>
-          <div class="calc-line"><dt>Discount to close</dt><span class="lead"></span><dd><span class="op">&minus;</span>$150<span class="was">new</span></dd></div>
-          <div class="calc-line"><dt>Cost to serve them</dt><span class="lead"></span><dd><span class="op">&minus;</span>$1,760</dd></div>
+    <figure class="wk-fig-wrap">
+      <p class="sr-only">What one customer leaves you, today versus two years ago. What they paid you the first time: $2,400, up from $2,200. What they came back for: $250, down from $800. What comes in: $2,650, down from $3,000. To be found and chosen: minus $410, up from $180. What you gave up to close: minus $150, new. Cost to do the work: minus $1,760, up from $1,520. What's left today: $330. Two years ago the same customer left you $1,300. Figures are illustrative.</p>
+      <div class="wk" aria-hidden="true">
+        <div class="wk-head">
+          <div class="wk-title"><span>What one customer leaves you</span><span>Today</span></div>
+          <p class="wk-sub2">One customer. Client, patient, case, contract. Same arithmetic.</p>
         </div>
-        <div class="calc-total"><dt>What's left</dt><span class="lead"></span><dd class="calc-sum">$330</dd></div>
-        <div class="calc-was">Two years ago, the same customer left you <b>$680</b>.</div>
+        <ul class="wk-rows">
+          <li class="wk-row">
+            <div class="wk-line"><span class="wk-label">What they paid you the first time</span><span class="wk-lead"></span><span class="wk-fig">$2,400</span></div>
+            <div class="wk-note"><span class="wk-chip">+9%</span><span class="txt">was $2,200. You raised your price. That part worked.</span></div>
+          </li>
+          <li class="wk-row">
+            <div class="wk-line"><span class="wk-label">What they came back for</span><span class="wk-lead"></span><span class="wk-fig">$250</span></div>
+            <div class="wk-note"><span class="wk-chip">&minus;69%</span><span class="txt">was $800. They re-shop every time now.</span></div>
+          </li>
+        </ul>
+        <div class="wk-subtotal"><span class="wk-label">What comes in</span><span class="wk-lead"></span><span class="wk-fig">$2,650</span></div>
+        <ul class="wk-rows">
+          <li class="wk-row wk-row--found">
+            <div class="wk-line"><span class="wk-label">To be found and chosen</span><span class="wk-lead"></span><span class="wk-fig">&minus;$410</span></div>
+            <div class="wk-note"><span class="wk-chip">2.3&times;</span><span class="txt">was $180. More than double, for the same customer.</span></div>
+          </li>
+          <li class="wk-row">
+            <div class="wk-line"><span class="wk-label">What you gave up to close</span><span class="wk-lead"></span><span class="wk-fig">&minus;$150</span></div>
+            <div class="wk-note"><span class="wk-chip">New</span><span class="txt">This line did not exist. There is always another quote now.</span></div>
+          </li>
+          <li class="wk-row">
+            <div class="wk-line"><span class="wk-label">Cost to do the work</span><span class="wk-lead"></span><span class="wk-fig">&minus;$1,760</span></div>
+            <div class="wk-note"><span class="wk-chip">+16%</span><span class="txt">was $1,520. Wages, insurance, software, fuel.</span></div>
+          </li>
+        </ul>
+        <div class="wk-total"><span class="wk-tl">What's left</span><span class="wk-tspace"></span><span class="wk-dchip">&minus;75%</span><span class="wk-sum">$330</span></div>
+        <p class="wk-then">Two years ago, the same customer left you <b>$1,300</b>. You need four of them now to land where one used to.</p>
       </div>
-      <figcaption class="calc-cap">Illustrative. Your numbers are your own.</figcaption>
+      <figcaption class="wk-cap">Illustrative. Your numbers are your own.</figcaption>
     </figure>
+    <p class="m5-payoff rv d2">You are not bleeding out in a day. You lose it one customer at a time.</p>
     <p class="m5-kicker rv d2">A business like yours doesn't close in an afternoon. It thins out first.</p>
   </div>
 <script>
 (function(){
-  var calc=document.querySelector('#chapter5 .calc');
-  if(!calc)return;
-  var sum=calc.querySelector('.calc-sum');
-  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){calc.classList.add('play');return;}
-  calc.classList.add('anim');
-  if(sum)sum.textContent='$680';
-  function fall(){
-    var from=680,to=330,steps=48,i=0;
-    var t=setInterval(function(){
-      i++;
-      var p=i/steps,e=1-Math.pow(1-p,3);
-      sum.textContent='$'+Math.round(from+(to-from)*e);
-      if(i>=steps){sum.textContent='$330';clearInterval(t);}
-    },20);
+  var wk=document.querySelector('#chapter5 .wk');
+  if(!wk)return;
+  var rows=[].slice.call(wk.querySelectorAll('.wk-row'));
+  var sub=wk.querySelector('.wk-subtotal');
+  var total=wk.querySelector('.wk-total');
+  var sumEl=wk.querySelector('.wk-sum');
+  var tl=wk.querySelector('.wk-tl');
+  var then=wk.querySelector('.wk-then');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function fin(){
+    rows.forEach(function(r){r.classList.add('is-in','is-note');});
+    if(sub)sub.classList.add('is-in');
+    if(total)total.classList.add('is-in');
+    if(then)then.classList.add('is-in');
+    wk.classList.add('is-final');
+    if(sumEl)sumEl.textContent='$330';
+    if(tl)tl.textContent="What's left";
+  }
+  if(reduce){fin();return;}
+  wk.classList.add('anim');
+  if(tl)tl.textContent="What's left so far";
+  if(sumEl)sumEl.textContent='$2,650';
+  function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function count(from,to,ms){
+    if(!sumEl)return;
+    var steps=Math.max(1,Math.round(ms/22)),i=0;
+    var t=setInterval(function(){i++;var p=i/steps,e=1-Math.pow(1-p,3);
+      sumEl.textContent=money(from+(to-from)*e);
+      if(i>=steps){sumEl.textContent=money(to);clearInterval(t);}
+    },22);
+  }
+  function inn(el){if(el)el.classList.add('is-in');}
+  function note(el){if(el)el.classList.add('is-note');}
+  function run(){
+    [[200,function(){inn(rows[0]);}],
+     [700,function(){note(rows[0]);}],
+     [1900,function(){inn(rows[1]);}],
+     [2400,function(){note(rows[1]);}],
+     [3600,function(){inn(sub);}],
+     [4300,function(){inn(total);}],
+     [4700,function(){inn(rows[2]);}],
+     [4900,function(){count(2650,2240,900);}],
+     [5250,function(){note(rows[2]);}],
+     [6600,function(){inn(rows[3]);}],
+     [6800,function(){count(2240,2090,800);}],
+     [7150,function(){note(rows[3]);}],
+     [8400,function(){inn(rows[4]);}],
+     [8950,function(){note(rows[4]);}],
+     [9100,function(){count(2090,330,1600);}],
+     [11200,function(){wk.classList.add('is-final');if(tl)tl.textContent="What's left";}],
+     [11700,function(){inn(then);}]
+    ].forEach(function(s){setTimeout(s[1],s[0]);});
   }
   var done=false;
   var io=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting&&!done){done=true;calc.classList.add('play');if(sum)setTimeout(fall,760);io.disconnect();}
-  });},{threshold:.32});
-  io.observe(calc);
+    if(e.isIntersecting&&!done){done=true;run();io.disconnect();}
+  });},{threshold:.4});
+  io.observe(wk);
 })();
 </script>
 </section>
