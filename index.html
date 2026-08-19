@@ -174,14 +174,23 @@ gtag('config', 'G-RSL1F8BX5J');
   .btn-ghost:hover{border-color:var(--ink);transform:translateY(-3px)}
   .btn .arr{transition:transform .25s}.btn:hover .arr{transform:translateX(4px)}
 
-  /* HERO */
-  .hero{position:relative;overflow:hidden;padding:150px 0 92px;background:linear-gradient(180deg,#fff,var(--paper) 72%)}
-  .hero-grid{max-width:860px;margin:0 auto;text-align:left}
-  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(36px,5vw,68px);line-height:1.0;letter-spacing:-.025em;margin:18px 0 22px}
+  /* HERO — "The Through-Line" (panel-designed) */
+  .hero{position:relative;overflow:clip;padding:162px 0 120px;background:radial-gradient(118% 86% at 85% 4%,#ffffff 0%,rgba(255,255,255,0) 44%),radial-gradient(96% 82% at 4% 104%,rgba(255,77,28,.055),rgba(255,77,28,0) 52%),linear-gradient(180deg,#FCFAF4,#F6F0E6 82%,#F1EBDF 100%)}
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(20,17,10,.08);z-index:1}
+  .hero-grain{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .hero-thread{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
+  .hero-thread path,.hero-thread circle{fill:none;stroke:var(--accent);stroke-width:2.5;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+  .hero-thread path{stroke-dasharray:1;stroke-dashoffset:1;animation:thread-draw 1.7s cubic-bezier(.62,0,.2,1) .2s forwards}
+  .hero-thread circle{opacity:0;animation:thread-dot .5s ease 1.55s forwards}
+  @keyframes thread-draw{to{stroke-dashoffset:0}}
+  @keyframes thread-dot{to{opacity:1}}
+  .hero-grid{position:relative;z-index:2;max-width:620px;text-align:left}
+  .hero h1{font-family:var(--display);font-weight:560;font-size:clamp(45px,6.4vw,92px);line-height:.98;letter-spacing:-.028em;margin:22px 0 24px}
   .hero h1 em{font-style:italic;color:var(--accent)}
-  .hero .hero-deck{font-family:var(--display);font-style:italic;font-size:clamp(20px,2.4vw,27px);color:var(--ink-soft);margin:-6px 0 20px;letter-spacing:-.01em}
-  .hero .sub{font-size:19px;color:var(--ink-soft);max-width:46ch;line-height:1.5}
-  .hero-ctas{display:flex;gap:13px;margin-top:30px;flex-wrap:wrap;justify-content:flex-start}
+  .hero .hero-deck{font-family:var(--display);font-style:italic;font-weight:420;font-size:clamp(21px,2.6vw,30px);color:var(--ink-soft);margin:0 0 22px;letter-spacing:-.01em;max-width:22ch}
+  .hero .sub{font-size:19px;color:var(--ink-soft);max-width:42ch;line-height:1.5}
+  .hero-ctas{display:flex;gap:13px;margin-top:38px;flex-wrap:wrap;justify-content:flex-start}
+  @media(prefers-reduced-motion:reduce){.hero-thread path{stroke-dashoffset:0;animation:none}.hero-thread circle{opacity:1;animation:none}}
   /* hero chapter index */
   .index-card{background:var(--white);border:1px solid var(--line-soft);border-radius:18px;box-shadow:var(--shadow);padding:10px}
   .index-card .ihead{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);padding:12px 14px 10px}
@@ -598,6 +607,11 @@ gtag('config', 'G-RSL1F8BX5J');
 
 <!-- ============ HERO ============ -->
 <header class="hero">
+  <div class="hero-grain"></div>
+  <svg class="hero-thread" viewBox="0 0 1160 560" preserveAspectRatio="none" aria-hidden="true">
+    <path pathLength="1" d="M-40,150 C 170,60 380,80 500,185 C 610,285 690,300 840,270 C 1010,238 1075,110 985,70 C 930,47 872,110 916,180 C 952,238 1030,250 1070,372"/>
+    <circle cx="1082" cy="384" r="8"/>
+  </svg>
   <div class="wrap">
     <div class="hero-grid">
       <div>
