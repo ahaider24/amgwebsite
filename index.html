@@ -299,12 +299,14 @@ gtag('config', 'G-RSL1F8BX5J');
   .services h2{font-family:var(--display);font-weight:430;font-size:clamp(28px,4vw,48px);line-height:1.03;letter-spacing:-.02em;margin-top:14px}
   .services .svc-answer{max-width:820px;color:var(--ink-soft);font-size:17px;line-height:1.62;margin-top:16px}
   .services .svc-answer b{color:var(--ink);font-weight:600}
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:42px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:18px;overflow:hidden}
-  .svc{background:var(--white);padding:28px 26px;transition:background .3s}
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:42px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:18px;overflow:hidden}
+  .svc{background:var(--white);padding:24px 22px;transition:background .3s}
   .svc:hover{background:var(--paper)}
-  .svc .kw{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent-deep);display:block;margin-bottom:12px}
-  .svc h3{font-family:var(--display);font-weight:540;font-size:21px;letter-spacing:-.01em;margin-bottom:9px;line-height:1.1}
-  .svc p{color:var(--ink-soft);font-size:14.5px;line-height:1.52}
+  .svc .kw{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent-deep);display:block;margin-bottom:11px}
+  .svc h3{font-family:var(--display);font-weight:540;font-size:19px;letter-spacing:-.01em;margin-bottom:8px;line-height:1.12}
+  .svc p{color:var(--ink-soft);font-size:14px;line-height:1.5}
+  @media(max-width:960px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
 
   /* FIVE WORKFLOWS */
   .flows{padding:0 0 114px}
@@ -1239,49 +1241,6 @@ gtag('config', 'G-RSL1F8BX5J');
   </div>
 </section>
 
-<!-- ============ SERVICES (crawlable, keyword-named) ============ -->
-<section class="services" id="services">
-  <div class="wrap">
-    <div class="head rv">
-      <span class="eyebrow">Services</span>
-      <h2>Everything an AI marketing agency should do, run as one system.</h2>
-      <p class="svc-answer"><b>AmirGetsJobs is an AI marketing agency in Fresno, Los Angeles, and Phoenix.</b> We combine local SEO, AI search optimization, Google Ads, lead generation, AI automation, and web design into one system that gets your business found in both Google and AI answers, and booked without chasing.</p>
-    </div>
-    <div class="svc-grid">
-      <div class="svc rv">
-        <span class="kw">Local SEO agency</span>
-        <h3>Local SEO</h3>
-        <p>Rank in the Google map pack and local search so nearby customers find you first. Reviews, categories, and proximity signals, handled.</p>
-      </div>
-      <div class="svc rv d1">
-        <span class="kw">Generative engine optimization</span>
-        <h3>AI Search Optimization</h3>
-        <p>Get cited when customers ask ChatGPT, Google AI Overviews, Gemini, and Perplexity who to hire. Most agencies still do not do this.</p>
-      </div>
-      <div class="svc rv d2">
-        <span class="kw">AI automation agency</span>
-        <h3>AI Automation</h3>
-        <p>Speed to lead, quote automation, document processing, and follow-up built into how you already work, running after you log off.</p>
-      </div>
-      <div class="svc rv">
-        <span class="kw">Google Ads agency</span>
-        <h3>Paid Advertising</h3>
-        <p>Google Ads, Local Services Ads, Meta, and YouTube, run the way each channel actually works and judged in booked jobs, not clicks.</p>
-      </div>
-      <div class="svc rv d1">
-        <span class="kw">Lead generation agency</span>
-        <h3>Lead Generation &amp; Response</h3>
-        <p>Capture and answer every call, text, and form in under 60 seconds, then revive old customers who already know you.</p>
-      </div>
-      <div class="svc rv d2">
-        <span class="kw">Web design &amp; development</span>
-        <h3>Web Design &amp; Development</h3>
-        <p>Fast, conversion-built websites that turn traffic into booked work, wired to the same system that finds and follows up.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ FIVE AI WORKFLOWS ============ -->
 <section class="flows">
   <div class="wrap">
@@ -1470,6 +1429,27 @@ gtag('config', 'G-RSL1F8BX5J');
     <p class="disc-fine rv" style="font-size:15px;color:var(--ink);margin-top:30px"><strong>Or just call me.</strong> <a href="tel:+15595505474" style="color:var(--accent-deep);text-decoration:none;font-weight:700">(559) 550-5474</a> &middot; it rings my phone.</p>
     <p class="disc-fine rv">A real diagnostic is the work, not a sales call in disguise. The findings are yours to keep whether we work together or not. Ongoing engagements are scoped to your market and start at $2,000/mo.</p>
     <p class="disc-fine rv" style="margin-top:14px">Not ready for either? <a href="/what-ai-can-do" style="color:var(--accent-deep);text-decoration:underline;text-underline-offset:3px">See what your leads cost you</a> first. Free, takes a minute.</p>
+  </div>
+</section>
+
+<!-- ============ SERVICES (crawlable, keyword-named) ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Services</span>
+      <h2>Everything an AI marketing agency should do, run as one system.</h2>
+      <p class="svc-answer"><b>AmirGetsJobs is an AI marketing agency in Fresno, Los Angeles, and Phoenix.</b> We combine local SEO, AI search optimization, social media and content, paid ads, web design, and AI automation into one system that gets your business found in both Google and AI answers, and booked without chasing.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc rv"><span class="kw">Local SEO agency</span><h3>Local SEO</h3><p>Rank in the Google map pack and local search so nearby customers find you first.</p></div>
+      <div class="svc rv d1"><span class="kw">Generative engine optimization</span><h3>AI Search Optimization</h3><p>Get cited when customers ask ChatGPT, AI Overviews, and Perplexity who to hire.</p></div>
+      <div class="svc rv d2"><span class="kw">Social media marketing agency</span><h3>Social &amp; Content</h3><p>Short-form video and posts built to convert the human watching and get cited by the AI summarizing.</p></div>
+      <div class="svc rv d3"><span class="kw">Web design agency</span><h3>Web Design &amp; Development</h3><p>Fast, conversion-built websites that turn traffic into booked work.</p></div>
+      <div class="svc rv"><span class="kw">Google Ads agency</span><h3>Paid Advertising</h3><p>Google Ads, Local Services Ads, Meta, and YouTube, judged in booked jobs, not clicks.</p></div>
+      <div class="svc rv d1"><span class="kw">Lead generation agency</span><h3>Lead Generation &amp; Response</h3><p>Every call, text, and form answered in under 60 seconds, then old customers revived.</p></div>
+      <div class="svc rv d2"><span class="kw">AI automation agency</span><h3>AI Automation</h3><p>Quotes, follow-up, and document processing built into how you already work.</p></div>
+      <div class="svc rv d3"><span class="kw">Reputation management</span><h3>Reputation &amp; Reviews</h3><p>Steady review velocity and fast replies that build the ratings Google and AI models trust.</p></div>
+    </div>
   </div>
 </section>
 
