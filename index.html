@@ -581,10 +581,10 @@ gtag('config', 'G-RSL1F8BX5J');
       <button class="nav-trigger" aria-expanded="false">Industries we serve <span class="chev">⌄</span></button>
       <div class="nav-drop">
         <a href="/home-services-marketing" class="drop-link"><b>Trades &amp; Home Service</b><span>HVAC, plumbing, roofing, construction</span></a>
-        <a href="#" class="drop-link"><b>Finance</b><span>Private lending, mortgage, advisors</span></a>
+        <a href="/finance-marketing" class="drop-link"><b>Finance</b><span>Private lending, mortgage, advisors</span></a>
         <a href="/law-firm-marketing" class="drop-link"><b>Legal</b><span>PI, family, business attorneys</span></a>
-        <a href="#" class="drop-link"><b>Dental &amp; Medical</b><span>Dentists, medical &amp; dermatology practices</span></a>
-        <a href="#" class="drop-link"><b>B2B</b><span>Suppliers and service firms</span></a>
+        <a href="/healthcare-marketing" class="drop-link"><b>Dental &amp; Medical</b><span>Dentists, medical &amp; dermatology practices</span></a>
+        <a href="/b2b-marketing" class="drop-link"><b>B2B</b><span>Suppliers and service firms</span></a>
       </div>
     </div>
     <div class="nav-item">
@@ -1120,22 +1120,21 @@ gtag('config', 'G-RSL1F8BX5J');
   <h2 class="rv">You are not behind. You are just running the business <em>by hand</em>.<span class="cur">_</span></h2>
 </section>
 
-<section class="taxo">
+<!-- ============ FILM BRIDGE: the turn's navy flows into the film's dark ============ -->
+<section class="film-bridge">
   <style>
-  .taxo{background:var(--paper);text-align:center;padding:60px 24px 6px}
-  .taxo p{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin:0;line-height:1.9}
-  .taxo b{color:var(--ink-soft);font-weight:500}
+  .film-bridge{background:linear-gradient(180deg,#0C1B24 0%,#101720 34%,#15120D 100%);text-align:center;padding:clamp(72px,12vh,140px) 24px clamp(84px,14vh,160px);position:relative}
+  .film-bridge .fb-tax{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(244,238,226,.42);margin:0 0 clamp(26px,4vh,44px);line-height:2}
+  .film-bridge .fb-tax b{color:rgba(244,238,226,.78);font-weight:500}
+  .film-bridge h2{font-family:var(--display);font-weight:400;font-size:clamp(32px,4.6vw,58px);line-height:1.06;letter-spacing:-.02em;color:#FBF8F2;margin:0 auto;max-width:18ch;text-wrap:balance}
+  .film-bridge h2 em{font-style:italic;color:var(--accent)}
+  .film-bridge .fb-cue{display:block;margin:clamp(30px,5vh,52px) auto 0;color:rgba(244,238,226,.5);font-size:20px;animation:fbFloat 2.2s ease-in-out infinite;width:fit-content}
+  @keyframes fbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+  @media(prefers-reduced-motion:reduce){.film-bridge .fb-cue{animation:none}}
   </style>
-  <p class="rv">Built for <b>Home Service</b> &middot; <b>Legal</b> &middot; <b>Healthcare</b> &middot; <b>Finance</b> &middot; <b>B2B</b></p>
-</section>
-
-<!-- ============ FILM LEAD-IN ============ -->
-<section class="film-leadin">
-  <style>
-  .film-leadin{background:var(--paper);text-align:center;padding:clamp(40px,7vh,90px) 24px clamp(48px,9vh,110px)}
-  .film-leadin p{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(22px,2.8vw,34px);line-height:1.3;color:var(--ink);margin:0 auto;max-width:26ch}
-  </style>
-  <p class="rv">Now see what the other side looks like.</p>
+  <p class="fb-tax rv">Built for <b>Home Service</b> &middot; <b>Legal</b> &middot; <b>Healthcare</b> &middot; <b>Finance</b> &middot; <b>B2B</b></p>
+  <h2 class="rv d1">Now see what <em>the other side</em> looks like.</h2>
+  <span class="fb-cue rv d2" aria-hidden="true">↓</span>
 </section>
 
 <!-- ============ [ SCROLL WORLD ] the clay film, inline pinned scroll-scrub ============ -->
@@ -1304,25 +1303,25 @@ gtag('config', 'G-RSL1F8BX5J');
         <h3>Trades</h3>
         <p>HVAC, plumbing, electrical, construction, cranes. Phone-driven work where speed and visibility decide the job.</p>
       </a>
-      <div class="ind rv d1">
+      <a class="ind rv d1" href="/healthcare-marketing" style="color:inherit">
         <span class="badge">Health</span>
         <svg class="ind-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M50 22 V78 M22 50 H78"/></svg>
         <h3>Health</h3>
         <p>Dentists, doctors, med spas, clinics. Patients vet you online before they book, so reviews and a trusted name fill the schedule.</p>
-      </div>
-      <div class="ind rv d2">
+      </a>
+      <a class="ind rv d2" href="/finance-marketing" style="color:inherit">
         <span class="badge">Finance</span>
         <svg class="ind-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 75 L40 50 L55 62 L80 25 M70 25 L80 25 L80 35"/></svg>
         <h3>Finance</h3>
         <p>Private lending, mortgage brokers, advisors. Trust-driven work where being the cited, credible name is the game.</p>
-      </div>
+      </a>
       <a class="ind rv d3" href="/law-firm-marketing" style="color:inherit">
         <span class="badge">Legal</span>
         <svg class="ind-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M50 20 V75 M30 75 H70 M25 35 H75 M35 35 L25 55 H45 Z M65 35 L55 55 H75 Z"/></svg>
         <h3>Legal</h3>
         <p>Personal injury, family, business attorneys. High-value cases where one missed lead is a five-figure loss.</p>
       </a>
-      <div class="ind rv d4">
+      <a class="ind rv d4" href="/b2b-marketing" style="color:inherit">
         <span class="badge">B2B</span>
         <svg class="ind-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 30 h26 v26 h-26 Z M54 44 h26 v26 h-26 Z M46 57 h8"/></svg>
         <h3>B2B</h3>
@@ -1534,6 +1533,9 @@ gtag('config', 'G-RSL1F8BX5J');
       <a href="/hvac-marketing" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">HVAC Marketing</a>
       <a href="/contractor-marketing" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Contractor Marketing</a>
       <a href="/law-firm-marketing" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Law Firm Marketing</a>
+      <a href="/healthcare-marketing" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Dental & Healthcare Marketing</a>
+      <a href="/finance-marketing" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Financial Services Marketing</a>
+      <a href="/b2b-marketing" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">B2B Marketing</a>
       <a href="/seo-geo-playbook" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">SEO & GEO for Local Business</a>
       <a href="/paid-ads" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Paid Ads Management</a>
       <a href="/web-design-development" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Web Design & Development</a>
