@@ -30,7 +30,7 @@ gtag('config', 'G-RSL1F8BX5J');
     "@id": "https://amirgetsjobs.com/#founder",
     "name": "Amir Haider",
     "jobTitle": "Founder",
-    "description": "Amir Haider is the founder of AmirGets (AmirGetsJobs), an AI-native marketing and SEO agency based in Fresno, California, serving home service businesses in Fresno, Los Angeles, and Phoenix. He previously worked in product on Mercedes-Benz dealer programs and at Daimler-backed startups, and studied neuroscience at USC. His work has been featured in Fast Company, TechBullion, and Marketer Magazine.",
+    "description": "Amir Haider is the founder of AmirGets (AmirGetsJobs), an AI-native marketing and SEO agency based in Fresno, California, serving home service businesses in Fresno, Los Angeles, and Phoenix. He previously worked in product on Mercedes-Benz dealer programs and at Daimler-backed startups, and graduated with honors in neuroscience from USC. His work has been featured in Fast Company, TechBullion, and Marketer Magazine.",
     "image": "https://amirgetsjobs.com/amir-haider.jpg",
     "url": "https://amirgetsjobs.com/about",
     "worksFor": { "@id": "https://amirgetsjobs.com/#business" },
@@ -94,12 +94,23 @@ gtag('config', 'G-RSL1F8BX5J');
   .btn-ghost:hover{border-color:var(--ink);transform:translateY(-3px)}
   .btn .arr{transition:transform .25s}.btn:hover .arr{transform:translateX(4px)}
 
-  .hero{padding:150px 0 70px;background:linear-gradient(180deg,#fff,var(--paper) 80%)}
-  .hero .klabel{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:18px;display:flex;align-items:center;gap:10px}
-  .hero .klabel .crumb{color:var(--faint)}
-  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(38px,5.4vw,72px);line-height:1.0;letter-spacing:-.025em;margin-bottom:22px;max-width:16ch}
-  .hero h1 em{font-style:italic;color:var(--accent)}
-  .hero .sub{font-size:20px;color:var(--ink-soft);max-width:56ch;line-height:1.5}
+  .hero{position:relative;min-height:88svh;display:flex;align-items:flex-end;color:#fff;background-image:url("fresno-aerial-poster.jpg");background-size:cover;background-position:center 30%;isolation:isolate}
+  @media (hover:hover) and (min-width:900px){.hero{background-attachment:fixed}}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,5,.38) 0%,rgba(10,8,5,.10) 45%,rgba(10,8,5,.72) 100%);z-index:-1}
+  .hero .wrap{width:100%;box-sizing:border-box;padding-top:18vh;padding-bottom:9vh}
+  .hero .klabel{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#fff;opacity:.9;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .hero .klabel .crumb{color:rgba(255,255,255,.55)}
+  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(42px,6.4vw,86px);line-height:1.0;letter-spacing:-.025em;margin-bottom:22px;max-width:16ch;text-wrap:balance}
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero .sub{font-size:clamp(17px,1.7vw,20px);color:rgba(255,255,255,.86);max-width:52ch;line-height:1.55}
+  .hero .scene-note{position:absolute;right:26px;bottom:9vh;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);writing-mode:vertical-rl}
+  @media (max-width:900px){.hero .scene-note{display:none}}
+  .route{background:var(--ink);color:var(--paper);padding:22px 0;overflow-x:auto}
+  .route .wrap{display:flex;align-items:center;gap:14px;white-space:nowrap}
+  .route .rt-label{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);flex-shrink:0}
+  .route .rt-step{font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:rgba(251,248,242,.85);flex-shrink:0}
+  .route .rt-arrow{color:var(--accent);flex-shrink:0}
+  .route .rt-step.home{color:#fff;border:1px solid rgba(251,248,242,.35);border-radius:100px;padding:5px 14px}
 
   .operator{padding:30px 0 0}
   .op-card{display:grid;grid-template-columns:300px 1fr;gap:50px;align-items:center}
@@ -112,7 +123,9 @@ gtag('config', 'G-RSL1F8BX5J');
   .op-press .fp{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--faint);text-transform:uppercase}
   .op-press .fp.fc{font-family:var(--display);font-size:17px;font-weight:600;letter-spacing:-.01em;color:var(--ink);text-transform:none;opacity:.6}
 
-  .dossier{margin-top:56px;background:var(--white);border:1px solid var(--line-soft);border-radius:18px;padding:36px 40px;box-shadow:var(--shadow)}
+  .dossier{position:relative;margin-top:56px;background:var(--white);border:1px solid var(--line-soft);border-radius:18px;padding:36px 40px;box-shadow:var(--shadow)}
+  .dossier .stamp{position:absolute;top:26px;right:30px;transform:rotate(6deg);font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);border:1.5px solid var(--accent-deep);border-radius:6px;padding:7px 11px;opacity:.55;pointer-events:none}
+  @media (max-width:640px){.dossier .stamp{position:static;display:inline-block;transform:rotate(-2deg);margin-bottom:12px}}
   .dossier-lede{font-family:var(--display);font-size:clamp(19px,2.2vw,24px);font-weight:430;line-height:1.35;letter-spacing:-.01em;margin:14px 0 26px;max-width:56ch}
   .dossier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px 34px;border-top:1px solid var(--line-soft);padding-top:24px}
   .dossier-grid dt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:5px}
@@ -153,7 +166,7 @@ gtag('config', 'G-RSL1F8BX5J');
   @media(max-width:600px){
     body{font-size:17px}.wrap{padding:0 18px}
     nav{padding:12px 18px}.logo{font-size:18px}.nav-back{display:none}
-    .hero{padding:108px 0 50px}.beliefs,.cta{padding:74px 0}
+    .hero{min-height:72svh}.beliefs,.cta{padding:74px 0}
   }
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
   .logo{display:inline-flex;align-items:flex-end;gap:2px;line-height:1}
@@ -196,14 +209,29 @@ gtag('config', 'G-RSL1F8BX5J');
   </div>
 </nav>
 
-<!-- ============ HERO ============ -->
+<!-- ============ HERO (scene) ============ -->
 <header class="hero">
   <div class="wrap">
     <div class="klabel rv in"><span>About</span><span class="crumb">/ AmirGets</span></div>
     <h1 class="rv in d1">Built by an operator, <em>for operators</em>.</h1>
     <p class="sub rv in d2">AmirGets is an AI-native marketing and SEO agency for home service businesses. It's built by someone who spent a decade shipping these exact systems at scale, then brought them home to Fresno to do it for the people he grew up around.</p>
   </div>
+  <span class="scene-note">Fresno, California · from above</span>
 </header>
+
+<!-- ============ THE ROUTE ============ -->
+<div class="route" aria-label="The route home">
+  <div class="wrap">
+    <span class="rt-label">The route</span>
+    <span class="rt-step">Mercedes-Benz dealer programs</span>
+    <span class="rt-arrow">→</span>
+    <span class="rt-step">Daimler-backed startups</span>
+    <span class="rt-arrow">→</span>
+    <span class="rt-step">Prediction markets &amp; content feeds</span>
+    <span class="rt-arrow">→</span>
+    <span class="rt-step home">Home. Fresno.</span>
+  </div>
+</div>
 
 <!-- ============ THE OPERATOR ============ -->
 <section class="operator">
@@ -224,6 +252,7 @@ gtag('config', 'G-RSL1F8BX5J');
       </div>
     </div>
     <div class="dossier rv d2">
+      <span class="stamp">Filed · Fresno, CA</span>
       <span class="eyebrow">For the record</span>
       <p class="dossier-lede">There are a lot of people named Amir Haider. This is the one who builds AI-native marketing for home service businesses in Fresno and Los Angeles. If a machine told you about him, it meant this one.</p>
       <dl class="dossier-grid">
@@ -231,7 +260,7 @@ gtag('config', 'G-RSL1F8BX5J');
         <div><dt>Home base</dt><dd>Fresno, California</dd></div>
         <div><dt>Serves</dt><dd>Fresno · Los Angeles · Phoenix</dd></div>
         <div><dt>Before this</dt><dd>Product, Mercedes-Benz dealer programs &amp; Daimler-backed startups</dd></div>
-        <div><dt>Studied</dt><dd>Neuroscience, USC</dd></div>
+        <div><dt>Studied</dt><dd>Neuroscience, USC · with honors</dd></div>
         <div><dt>Press</dt><dd>Fast Company · TechBullion · Marketer Magazine</dd></div>
         <div><dt>Find him</dt><dd><a href="https://www.linkedin.com/in/amhaider" target="_blank" rel="noopener">LinkedIn ↗</a> · <a href="https://www.fastcompany.com/91530813/11-ways-to-signal-ai-fluency-on-your-resume-resumes-ai-fluenc" target="_blank" rel="noopener">Fast Company ↗</a></dd></div>
       </dl>
