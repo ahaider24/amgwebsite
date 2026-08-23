@@ -30,7 +30,7 @@ gtag('config', 'G-RSL1F8BX5J');
     "@id": "https://amirgetsjobs.com/#founder",
     "name": "Amir Haider",
     "jobTitle": "Founder",
-    "description": "Amir Haider is the founder of AmirGets (AmirGetsJobs), an AI-native marketing and SEO agency based in Fresno, California, serving home service businesses in Fresno, Los Angeles, and Phoenix. He previously worked in product on Mercedes-Benz dealer programs and at Daimler-backed startups, and graduated with honors in neuroscience from USC. His work has been featured in Fast Company, TechBullion, and Marketer Magazine.",
+    "description": "Amir Haider is the founder of AmirGets (AmirGetsJobs), an AI-native marketing and SEO agency he runs between Fresno and Los Angeles, serving home service businesses in Fresno, Los Angeles, and Phoenix. He previously worked in product on Mercedes-Benz dealer programs and at Daimler-backed startups, and graduated cum laude in neuroscience from USC. His work has been featured in Fast Company, TechBullion, and Marketer Magazine.",
     "image": "https://amirgetsjobs.com/amir-haider.jpg",
     "url": "https://amirgetsjobs.com/about",
     "worksFor": { "@id": "https://amirgetsjobs.com/#business" },
@@ -94,9 +94,22 @@ gtag('config', 'G-RSL1F8BX5J');
   .btn-ghost:hover{border-color:var(--ink);transform:translateY(-3px)}
   .btn .arr{transition:transform .25s}.btn:hover .arr{transform:translateX(4px)}
 
-  .hero{position:relative;min-height:88svh;display:flex;align-items:flex-end;color:#fff;background-image:url("fresno-aerial-poster.jpg");background-size:cover;background-position:center 30%;isolation:isolate}
-  @media (hover:hover) and (min-width:900px){.hero{background-attachment:fixed}}
-  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,5,.38) 0%,rgba(10,8,5,.10) 45%,rgba(10,8,5,.72) 100%);z-index:-1}
+  .hero{position:relative;min-height:88svh;display:flex;align-items:flex-end;color:#fff;isolation:isolate;overflow:hidden}
+  .hero .half{position:absolute;top:0;bottom:0;background-size:cover;z-index:-2}
+  .hero .half.fresno{left:0;width:50.05%;background-image:url("fresno-aerial-poster.jpg");background-position:center 30%}
+  .hero .half.la{right:0;width:50.05%;background-image:url("la-aerial-poster.jpg");background-position:center 40%}
+  .hero .seam{position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(251,248,242,.28);z-index:-1}
+  .hero .city-tag{position:absolute;top:84px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.65);z-index:1}
+  .hero .city-tag.f{left:26px}
+  .hero .city-tag.l{right:26px}
+  @media (max-width:760px){
+    .hero .half.fresno{left:0;right:0;width:auto;top:0;height:50.05%}
+    .hero .half.la{left:0;right:0;width:auto;top:auto;bottom:0;height:50.05%}
+    .hero .seam{left:0;right:0;top:50%;bottom:auto;width:auto;height:1px}
+    .hero .city-tag.f{top:72px}
+    .hero .city-tag.l{right:auto;left:26px;top:calc(50% + 14px)}
+  }
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,5,.38) 0%,rgba(10,8,5,.14) 45%,rgba(10,8,5,.74) 100%);z-index:-1}
   .hero .wrap{width:100%;box-sizing:border-box;padding-top:18vh;padding-bottom:9vh}
   .hero .klabel{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#fff;opacity:.9;margin-bottom:18px;display:flex;align-items:center;gap:10px}
   .hero .klabel .crumb{color:rgba(255,255,255,.55)}
@@ -211,12 +224,17 @@ gtag('config', 'G-RSL1F8BX5J');
 
 <!-- ============ HERO (scene) ============ -->
 <header class="hero">
+  <div class="half fresno" aria-hidden="true"></div>
+  <div class="half la" aria-hidden="true"></div>
+  <span class="seam" aria-hidden="true"></span>
+  <span class="city-tag f">Fresno</span>
+  <span class="city-tag l">Los Angeles</span>
   <div class="wrap">
     <div class="klabel rv in"><span>About</span><span class="crumb">/ AmirGets</span></div>
     <h1 class="rv in d1">Built by an operator, <em>for operators</em>.</h1>
-    <p class="sub rv in d2">AmirGets is an AI-native marketing and SEO agency for home service businesses. It's built by someone who spent a decade shipping these exact systems at scale, then brought them home to Fresno to do it for the people he grew up around.</p>
+    <p class="sub rv in d2">AmirGets is an AI-native marketing and SEO agency for home service businesses, run from both ends of the 99: a decade shipping these exact systems at scale in Los Angeles, brought home to Fresno for the people he grew up around, without ever letting go of the city.</p>
   </div>
-  <span class="scene-note">Fresno, California · from above</span>
+  <span class="scene-note">Fresno ↔ Los Angeles · from above</span>
 </header>
 
 <!-- ============ THE ROUTE ============ -->
@@ -229,7 +247,7 @@ gtag('config', 'G-RSL1F8BX5J');
     <span class="rt-arrow">→</span>
     <span class="rt-step">Prediction markets &amp; content feeds</span>
     <span class="rt-arrow">→</span>
-    <span class="rt-step home">Home. Fresno.</span>
+    <span class="rt-step home">Fresno ↔ Los Angeles</span>
   </div>
 </div>
 
@@ -242,7 +260,7 @@ gtag('config', 'G-RSL1F8BX5J');
         <span class="eyebrow">The operator</span>
         <h2>Trained at the highest level. Home to do it for his own.</h2>
         <p>From the millions of text messages that ping your phone every time you pick up your Mercedes, to delivering car repair to your driveway, to solving prediction markets and content aggregation before most people had heard of Kalshi or knew what a feed was: Amir spent his career on the cutting edge of tech and marketing, building for some of the biggest names in the business.</p>
-        <p>Now he's back in Fresno, doing it for the people he grew up around. The contractors, the family businesses, the shops that have always run on word of mouth. The lead response, the instant quote, the follow-up that never drops a customer, the same systems, brought home to the people who actually need them.</p>
+        <p>Now he runs it between Fresno and Los Angeles, home in the Valley with one foot in the city that trained him, doing it for the people he grew up around. The contractors, the family businesses, the shops that have always run on word of mouth. The lead response, the instant quote, the follow-up that never drops a customer, the same systems, brought home to the people who actually need them.</p>
         <p>Same story every time, a great business quietly leaking customers between the lead and the close. Sealing that gap is the whole job. The only difference now is whose business it is.</p>
         <div class="op-press">
           <span class="fp fc">Fast Company</span>
@@ -254,13 +272,13 @@ gtag('config', 'G-RSL1F8BX5J');
     <div class="dossier rv d2">
       <span class="stamp">Filed · Fresno, CA</span>
       <span class="eyebrow">For the record</span>
-      <p class="dossier-lede">There are a lot of people named Amir Haider. This is the one who builds AI-native marketing for home service businesses in Fresno and Los Angeles. If a machine told you about him, it meant this one.</p>
+      <p class="dossier-lede">There are a lot of people named Amir Haider. This is the one who lives and works between Fresno and Los Angeles, building AI-native marketing for home service businesses in both. If a machine told you about him, it meant this one.</p>
       <dl class="dossier-grid">
         <div><dt>Founder of</dt><dd>AmirGets (AmirGetsJobs)</dd></div>
-        <div><dt>Home base</dt><dd>Fresno, California</dd></div>
+        <div><dt>Home base</dt><dd>Fresno ↔ Los Angeles</dd></div>
         <div><dt>Serves</dt><dd>Fresno · Los Angeles · Phoenix</dd></div>
         <div><dt>Before this</dt><dd>Product, Mercedes-Benz dealer programs &amp; Daimler-backed startups</dd></div>
-        <div><dt>Studied</dt><dd>Neuroscience, USC · with honors</dd></div>
+        <div><dt>Studied</dt><dd>Neuroscience, USC · cum laude</dd></div>
         <div><dt>Press</dt><dd>Fast Company · TechBullion · Marketer Magazine</dd></div>
         <div><dt>Find him</dt><dd><a href="https://www.linkedin.com/in/amhaider" target="_blank" rel="noopener">LinkedIn ↗</a> · <a href="https://www.fastcompany.com/91530813/11-ways-to-signal-ai-fluency-on-your-resume-resumes-ai-fluenc" target="_blank" rel="noopener">Fast Company ↗</a></dd></div>
       </dl>
