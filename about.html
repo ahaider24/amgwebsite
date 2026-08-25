@@ -358,6 +358,12 @@ gtag('config', 'G-RSL1F8BX5J');
 (function(){
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14,rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.rv:not(.in)').forEach(function(el){io.observe(el);});
+  // Failsafe: IO misses on anchor jumps and some iOS scroll patterns left
+  // sections invisible (blank pricing cards on mobile, 2026-08-24). Reveal
+  // anything actually in the viewport, on a timer and on scroll.
+  function rvSweep(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight*.98&&r.bottom>0)el.classList.add('in');});}
+  setTimeout(rvSweep,900);setTimeout(rvSweep,2500);
+  var rvTick=false;window.addEventListener('scroll',function(){if(rvTick)return;rvTick=true;requestAnimationFrame(function(){rvSweep();rvTick=false;});},{passive:true});
 })();
 </script>
 <script>
