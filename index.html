@@ -494,10 +494,13 @@ gtag('config', 'G-RSL1F8BX5J');
   .foot-logo{font-family:var(--display);font-weight:600;font-size:22px}
   .foot-meta{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.03em;line-height:1.8}
 
-  .rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
-  .rv.in{opacity:1;transform:none}
-  .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
-  .an{opacity:0;transition:opacity .55s ease}.an.play{opacity:1}
+  .rv,.an{opacity:1;transform:none}
+  @media (hover:hover) and (pointer:fine){
+    .rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+    .rv.in{opacity:1;transform:none}
+    .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+    .an{opacity:0;transition:opacity .55s ease}.an.play{opacity:1}
+  }
 
   @media(max-width:900px){
     .hero{padding:84px 0 54px}
@@ -1140,7 +1143,7 @@ gtag('config', 'G-RSL1F8BX5J');
 
 <!-- ============ [ SCROLL WORLD ] the clay film, inline pinned scroll-scrub ============ -->
 <section id="filmSection"></section>
-<script src="film/film-inline.js?v=3"></script>
+<script src="film/film-inline.js?v=4"></script>
 <script>
   mountInlineFilm(document.getElementById('filmSection'), {
     accent:'#2596BE', diveScroll:1.7, crossfade:0.2,
@@ -1327,7 +1330,7 @@ gtag('config', 'G-RSL1F8BX5J');
         <svg class="ind-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 30 h26 v26 h-26 Z M54 44 h26 v26 h-26 Z M46 57 h8"/></svg>
         <h3>B2B</h3>
         <p>Distributors, suppliers, manufacturers, B2B supply. Long sales cycles where buyers research first and the shortlist is set before they call.</p>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -1867,27 +1870,29 @@ gtag('config', 'G-RSL1F8BX5J');
 <script defer src="/amg-pack.v1.js" data-amg-pack="v1"></script>
 <script>
 (function(){
-  if(!/[?&]amgdebug=1/.test(location.search)) return;window.__amgErrs=[];window.addEventListener('error',function(e){window.__amgErrs.push((e.message||'?')+' @'+(e.filename||'').split('/').pop()+':'+e.lineno);});
+  if(!/[?&]amgdebug=1/.test(location.search)) return;window.__amgErrs=[];window.addEventListener('error',function(e){window.__amgErrs.push((e.message||'?')+' @'+(e.filename||'').split('/').pop()+':'+e.lineno);});window.addEventListener('unhandledrejection',function(e){window.__amgErrs.push('promise: '+((e.reason&&e.reason.message)||e.reason||'?'));});
   function line(k,v){return '<div><b>'+k+':</b> '+v+'</div>';}
-  setTimeout(function(){
+  var d=document.createElement('div');
+  d.style.cssText='position:fixed;left:8px;bottom:8px;z-index:99999;background:#000;color:#0f0;font:11px/1.6 monospace;padding:10px 12px;border-radius:8px;max-width:90vw;opacity:.95';
+  document.body.appendChild(d);
+  function render(){
     var fs=document.getElementById('filmSection');
     var branch='none';
     if(fs){ if(fs.querySelector('.ifilm-pin')) branch='DESKTOP pin'; else if(fs.querySelector('.ifilm-m')) branch='MOBILE stacked'; }
     var revealed=document.querySelectorAll('.ifilm-mscene.in').length, total=document.querySelectorAll('.ifilm-mscene').length;
     var rv=document.querySelectorAll('.rv').length, rvin=document.querySelectorAll('.rv.in').length;
-    var d=document.createElement('div');
-    d.style.cssText='position:fixed;left:8px;bottom:8px;z-index:99999;background:#000;color:#0f0;font:11px/1.6 monospace;padding:10px 12px;border-radius:8px;max-width:90vw;opacity:.95';
     d.innerHTML=line('innerW x innerH',window.innerWidth+' x '+window.innerHeight)
       +line('dpr',window.devicePixelRatio)
       +line('vv scale/width',(window.visualViewport?window.visualViewport.scale.toFixed(2)+' / '+Math.round(window.visualViewport.width):'n/a'))
+      +line('scrollY',Math.round(window.scrollY||window.pageYOffset||0))
       +line('mq max-860',window.matchMedia('(max-width:860px)').matches)
       +line('mq coarse',window.matchMedia('(hover:none) and (pointer:coarse)').matches)
       +line('film branch',branch)
       +line('mscenes in/total',revealed+'/'+total)
       +line('rv in/total',rvin+'/'+rv)
-      +line('build','IOSFIX-2')+line('errors',(window.__amgErrs&&window.__amgErrs.length?window.__amgErrs.slice(0,3).join(' | '):'none'))+line('UA',navigator.userAgent.slice(0,60));
-    document.body.appendChild(d);
-  },1500);
+      +line('build','IOSFIX-3')+line('errors',(window.__amgErrs&&window.__amgErrs.length?window.__amgErrs.slice(0,3).join(' | '):'none'))+line('UA',navigator.userAgent.slice(0,60));
+  }
+  setTimeout(render,250);setInterval(render,1000);
 })();
 </script>
 </body>

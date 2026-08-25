@@ -43,11 +43,14 @@
     .ifilm-route__label{position:absolute;right:24px;top:50%;transform:translateY(-50%) translateX(6px);white-space:nowrap;font:600 .74rem var(--sans,system-ui);color:#14110A;background:rgba(251,248,242,.92);padding:5px 11px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;}
     .ifilm-route__dot:hover .ifilm-route__label,.ifilm-route__dot.is-active .ifilm-route__label{opacity:1;transform:translateY(-50%);}
     /* ---- mobile stacked ---- */
-    .ifilm-m{position:relative;padding:2vh 0 4vh;}
-    .ifilm-mscene{position:relative;padding:5vh 20px 0 20px;opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);}
-    .ifilm-mscene.in{opacity:1;transform:none;}
+    .ifilm-m{position:relative;padding:2vh 0 4vh;overflow:clip;}
+    .ifilm-mscene{position:relative;padding:5vh 20px 0 20px;opacity:1;transform:none;}
+    @media (hover:hover) and (pointer:fine){.ifilm-mscene{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);}.ifilm-mscene.in{opacity:1;transform:none;}}
     .ifilm-mcard{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:#1a1610;box-shadow:0 20px 50px rgba(20,17,10,.18);}
-    .ifilm-mcard video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;}
+    .ifilm-mcard img,.ifilm-mcard video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;}
+    .ifilm-mcard video{opacity:0;pointer-events:none;}
+    .ifilm-mcard.is-playing video{opacity:1;}
+    .ifilm-mcard.is-playing img{opacity:0;}
     .ifilm-mcopy{padding:18px 4px 0;}
     .ifilm-meyebrow{font-family:var(--mono,monospace);font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#2596BE;}
     .ifilm-mtitle{font-family:var(--display,Georgia,serif);font-weight:450;font-size:clamp(1.6rem,6vw,2rem);line-height:1.1;letter-spacing:-.01em;color:#14110A;margin:10px 0 0;max-width:18ch;}
@@ -58,14 +61,19 @@
   }
 
   function isMobile() {
-    if (window.__ifilmForce === 'desktop') return false;
+    if (isTouchLike()) return true;
     if (window.__ifilmForce === 'mobile') return true;
+    if (window.__ifilmForce === 'desktop') return false;
     return window.matchMedia('(max-width:860px)').matches || window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  }
+  function isTouchLike() {
+    return window.matchMedia('(hover:none)').matches || window.matchMedia('(pointer:coarse)').matches || navigator.maxTouchPoints > 0;
   }
 
   function mountInlineFilm(section, config) {
     injectCSS();
     section.classList.add('ifilm');
+    section.innerHTML = '';
     var SECTIONS = config.sections || [];
     var N = SECTIONS.length; if (!N) return;
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -183,33 +191,41 @@
     var m = el('div', 'ifilm-m'); var html = '';
     SECTIONS.forEach(function (s) {
       html += '<section class="ifilm-mscene" data-clip="' + (s.clipMobile || s.clip) + '">' +
-        '<div class="ifilm-mcard"><video muted loop playsinline preload="none" poster="' + s.still + '"></video></div>' +
+        '<div class="ifilm-mcard"><img src="' + s.still + '" alt="" decoding="async"><video muted loop playsinline webkit-playsinline preload="none" poster="' + s.still + '"></video></div>' +
         '<div class="ifilm-mcopy"><div class="ifilm-meyebrow">' + esc(s.eyebrow || '') + '</div>' +
         '<h3 class="ifilm-mtitle">' + esc(s.title || '') + '</h3>' +
         '<p class="ifilm-mbody">' + esc(s.body || '') + '</p></div></section>';
     });
     m.innerHTML = html; section.appendChild(m);
+    var canUseVideo = !reduce && !isTouchLike();
+    function startScene(n) {
+      n.classList.add('in');
+      if (!canUseVideo) return;
+      var v = n.querySelector('video');
+      if (v) {
+        v.controls = false;
+        v.removeAttribute('controls');
+        v.disableRemotePlayback = true;
+        if (!v.src) v.src = n.getAttribute('data-clip');
+        var p = v.play();
+        if (p && p.then) p.then(function () {
+          var card = v.closest('.ifilm-mcard');
+          if (card) card.classList.add('is-playing');
+        }).catch(function () {});
+      }
+    }
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         var v = e.target.querySelector('video');
-        if (e.isIntersecting) { e.target.classList.add('in'); if (v && !v.src) v.src = e.target.getAttribute('data-clip'); if (v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
-        else if (v) { try { v.pause(); } catch (x) {} }
+        if (e.isIntersecting) { startScene(e.target); }
+        else if (v) { try { v.pause(); } catch (x) {} var card = v.closest('.ifilm-mcard'); if (card) card.classList.remove('is-playing'); }
       });
     }, { rootMargin: '-8% 0px -12% 0px', threshold: 0.14 });
     m.querySelectorAll('.ifilm-mscene').forEach(function (n) { io.observe(n); });
-    // Failsafe: on iOS the body can become the scroll container (overflow-x
-    // side effect), starving both window scroll events and IO callbacks;
-    // scenes then sit invisible while holding layout space. Sweep on a timer
-    // and on capture-phase document scroll, mirroring the page's rv sweep.
     function mSweep() {
       m.querySelectorAll('.ifilm-mscene:not(.in)').forEach(function (n) {
         var r = n.getBoundingClientRect();
-        if (r.top < window.innerHeight * 0.98 && r.bottom > 0) {
-          n.classList.add('in');
-          var v = n.querySelector('video');
-          if (v && !v.src) v.src = n.getAttribute('data-clip');
-          if (v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-        }
+        if (r.top < window.innerHeight * 0.98 && r.bottom > 0) startScene(n);
       });
     }
     setTimeout(mSweep, 900); setInterval(mSweep, 800);
