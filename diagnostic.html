@@ -130,7 +130,45 @@ gtag('config', 'G-RSL1F8BX5J');
   @keyframes rollIn{from{opacity:0;transform:translateY(105%)}to{opacity:1;transform:translateY(0)}}
   @keyframes rollOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-105%)}}
   @media (max-width:640px){.logo .tword{width:80px}}
-</style>
+
+  /* UNIFIED-NAV CSS */
+  .nav-menu{display:flex;align-items:center;gap:6px;margin-left:auto;margin-right:18px}
+  .nav-item{position:relative}
+  .nav-trigger{font-family:var(--sans,-apple-system,sans-serif);font-weight:600;font-size:14px;color:var(--ink,#14110A);background:none;border:none;cursor:pointer;padding:9px 14px;border-radius:10px;display:inline-flex;align-items:center;gap:6px;transition:background .2s,color .35s ease}
+  .nav-trigger:hover{background:rgba(20,17,10,.06)}
+  .nav-trigger .chev{font-size:12px;color:var(--faint,#8A8273);transition:transform .25s}
+  .nav-item:hover .nav-trigger .chev{transform:rotate(180deg)}
+  .nav-drop{position:absolute;top:calc(100% + 8px);left:0;min-width:268px;background:#fff;border:1px solid var(--line-soft,rgba(20,17,10,.1));border-radius:14px;box-shadow:var(--shadow-lg,0 24px 60px rgba(20,17,10,.14));padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .22s,transform .22s,visibility .22s}
+  .nav-item:hover .nav-drop,.nav-item:focus-within .nav-drop{opacity:1;visibility:visible;transform:none}
+  .drop-link{display:flex;flex-direction:column;gap:2px;padding:11px 13px;border-radius:10px;transition:background .2s;text-decoration:none}
+  .drop-link:hover{background:var(--paper,#FBF8F2)}
+  .drop-link b{font-family:var(--display,Georgia,serif);font-weight:560;font-size:15px;letter-spacing:-.01em;color:var(--ink,#14110A)}
+  .drop-link span{font-family:var(--mono,monospace);font-size:11px;color:var(--faint,#8A8273);letter-spacing:.02em}
+  .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:14px}
+  .nav-burger span{width:22px;height:2px;background:var(--ink,#14110A);border-radius:2px;transition:transform .25s ease .06s,opacity .1s ease}
+  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  @media(min-width:601px){
+    nav.nav-top .nav-trigger{color:#fff;text-shadow:0 1px 14px rgba(0,0,0,.45)}
+    nav.nav-top .nav-trigger .chev{color:rgba(255,255,255,.75)}
+    nav.nav-top .nav-trigger:hover{background:rgba(255,255,255,.12)}
+    nav.nav-dark .nav-trigger{color:var(--paper,#FBF8F2)}
+    nav.nav-dark .nav-trigger .chev{color:rgba(251,248,242,.6)}
+    nav.nav-dark .nav-trigger:hover{background:rgba(251,248,242,.12)}
+  }
+  nav.nav-top .nav-burger span,nav.nav-dark .nav-burger span{background:#fff;box-shadow:0 1px 10px rgba(0,0,0,.5)}
+  @media(max-width:600px){
+    .nav-menu{position:fixed;top:60px;left:14px;right:14px;flex-direction:column;align-items:stretch;gap:2px;background:#fff;border:1px solid var(--line-soft,rgba(20,17,10,.1));border-radius:16px;box-shadow:var(--shadow-lg,0 24px 60px rgba(20,17,10,.14));padding:10px;margin:0;max-height:0;overflow:hidden;opacity:0;visibility:hidden;transition:max-height .3s,opacity .25s,visibility .25s}
+    .nav-menu.open{max-height:80vh;overflow:auto;opacity:1;visibility:visible}
+    .nav-item{width:100%}
+    .nav-trigger{width:100%;justify-content:space-between;font-size:16px;padding:13px 14px}
+    .nav-drop{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;min-width:0;padding:0 0 6px 6px;display:none}
+    .nav-item.open .nav-drop{display:block}
+    .nav-item.open .nav-trigger .chev{transform:rotate(180deg)}
+    .nav-burger{display:flex}
+  }
+  </style>
 <style>
 /* mobile nav pass 2026-07-06: never wrap, breathe on small screens */
 .nav-back{white-space:nowrap}
@@ -154,12 +192,57 @@ gtag('config', 'G-RSL1F8BX5J');
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="logo" aria-label="AmirGetsJobs">AmirGets<span class="tword" id="tword"></span></a>
-  <div class="nav-right">
-    <a href="index.html" class="nav-back">← Back to home</a>
-    <a href="index.html#pricing" class="nav-cta">See where you stand</a>
+<nav id="nav">
+  <a href="/" class="logo" aria-label="AmirGetsJobs">AmirGets<span class="tword" id="tword"></span></a>
+  <div class="nav-menu" id="navMenu"><!-- UNIFIED-NAV MENU -->
+    <div class="nav-item">
+      <button class="nav-trigger" aria-expanded="false">Industries we serve <span class="chev">⌄</span></button>
+      <div class="nav-drop">
+        <a href="/home-services-marketing" class="drop-link"><b>Trades &amp; Home Service</b><span>HVAC, plumbing, roofing, construction</span></a>
+        <a href="/finance-marketing" class="drop-link"><b>Finance</b><span>Private lending, mortgage, advisors</span></a>
+        <a href="/law-firm-marketing" class="drop-link"><b>Legal</b><span>PI, family, business attorneys</span></a>
+        <a href="/healthcare-marketing" class="drop-link"><b>Dental &amp; Medical</b><span>Dentists, medical &amp; dermatology practices</span></a>
+        <a href="/b2b-marketing" class="drop-link"><b>B2B</b><span>Suppliers and service firms</span></a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-trigger" aria-expanded="false">Services <span class="chev">⌄</span></button>
+      <div class="nav-drop">
+        <a href="/seo-geo-playbook" class="drop-link"><b>SEO &amp; GEO</b><span>Rank on Google, get cited by AI</span></a>
+        <a href="/ai-agents" class="drop-link"><b>AI Agents</b><span>Custom agents that do real work</span></a>
+        <a href="/ai-workflows" class="drop-link"><b>AI Workflows</b><span>How we wire AI into your business</span></a>
+        <a href="/paid-ads" class="drop-link"><b>Paid Ads &amp; LSA</b><span>Google Ads and Local Services, managed</span></a>
+        <a href="/web-design-development" class="drop-link"><b>Web Design &amp; Development</b><span>Standalone builds, no retainer required</span></a>
+        <a href="/content-strategy" class="drop-link"><b>Content Strategy</b><span>One content engine for organic and paid</span></a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-trigger" aria-expanded="false">Locations <span class="chev">⌄</span></button>
+      <div class="nav-drop">
+        <a href="/ai-marketing-agency-fresno" class="drop-link"><b>Fresno · HQ</b><span>Marketing agency &amp; AI agency in the 559</span></a>
+        <a href="/ai-agency-los-angeles" class="drop-link"><b>Los Angeles</b><span>Here to rebuild the LA dream</span></a>
+        <span class="drop-link" style="opacity:.55;cursor:default"><b>Phoenix</b><span>Coming soon</span></span>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-trigger" aria-expanded="false">Insights <span class="chev">⌄</span></button>
+      <div class="nav-drop">
+        <a href="/ai-search-shift" class="drop-link"><b>The AI search shift</b><span>What changed and why it matters</span></a>
+        <a href="/field-notes" class="drop-link"><b>Field notes</b><span>What's working right now</span></a>
+        <a href="/about" class="drop-link"><b>About us</b><span>The operator behind your account</span></a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-trigger" aria-expanded="false">Why us <span class="chev">⌄</span></button>
+      <div class="nav-drop">
+        <a href="/what-ai-can-do" class="drop-link"><b>AI-native, not AI-powered</b><span>The difference that wins</span></a>
+        <a href="/about" class="drop-link"><b>The operator</b><span>Who actually runs your account</span></a>
+        <a href="/#press" class="drop-link"><b>Featured in</b><span>Fast Company &amp; more</span></a>
+      </div>
+    </div>
   </div>
+  <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="nav-cta">Book</a>
+  <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- ============ HERO ============ -->
@@ -294,5 +377,21 @@ gtag('config', 'G-RSL1F8BX5J');
   })();
 </script>
 <script defer src="/amg-pack.v1.js" data-amg-pack="v1"></script>
+<script>/* UNIFIED-NAV JS */
+(function(){
+  var burger=document.getElementById('navBurger'),navMenu=document.getElementById('navMenu');
+  if(!burger||!navMenu)return;
+  burger.addEventListener('click',function(){var o=navMenu.classList.toggle('open');burger.classList.toggle('open',o);});
+  navMenu.querySelectorAll('.nav-trigger').forEach(function(t){
+    t.addEventListener('click',function(){
+      if(window.innerWidth>600)return;
+      var item=t.closest('.nav-item');var wasOpen=item.classList.contains('open');
+      navMenu.querySelectorAll('.nav-item').forEach(function(i){i.classList.remove('open');});
+      if(!wasOpen)item.classList.add('open');
+    });
+  });
+  navMenu.querySelectorAll('.drop-link').forEach(function(l){l.addEventListener('click',function(){navMenu.classList.remove('open');burger.classList.remove('open');});});
+})();
+</script>
 </body>
 </html>
