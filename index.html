@@ -1865,5 +1865,30 @@ gtag('config', 'G-RSL1F8BX5J');
 })();
 </script>
 <script defer src="/amg-pack.v1.js" data-amg-pack="v1"></script>
+<script>
+(function(){
+  if(!/[?&]amgdebug=1/.test(location.search)) return;
+  function line(k,v){return '<div><b>'+k+':</b> '+v+'</div>';}
+  setTimeout(function(){
+    var fs=document.getElementById('filmSection');
+    var branch='none';
+    if(fs){ if(fs.querySelector('.ifilm-pin')) branch='DESKTOP pin'; else if(fs.querySelector('.ifilm-m')) branch='MOBILE stacked'; }
+    var revealed=document.querySelectorAll('.ifilm-mscene.in').length, total=document.querySelectorAll('.ifilm-mscene').length;
+    var rv=document.querySelectorAll('.rv').length, rvin=document.querySelectorAll('.rv.in').length;
+    var d=document.createElement('div');
+    d.style.cssText='position:fixed;left:8px;bottom:8px;z-index:99999;background:#000;color:#0f0;font:11px/1.6 monospace;padding:10px 12px;border-radius:8px;max-width:90vw;opacity:.95';
+    d.innerHTML=line('innerW x innerH',window.innerWidth+' x '+window.innerHeight)
+      +line('dpr',window.devicePixelRatio)
+      +line('vv scale/width',(window.visualViewport?window.visualViewport.scale.toFixed(2)+' / '+Math.round(window.visualViewport.width):'n/a'))
+      +line('mq max-860',window.matchMedia('(max-width:860px)').matches)
+      +line('mq coarse',window.matchMedia('(hover:none) and (pointer:coarse)').matches)
+      +line('film branch',branch)
+      +line('mscenes in/total',revealed+'/'+total)
+      +line('rv in/total',rvin+'/'+rv)
+      +line('UA',navigator.userAgent.slice(0,60));
+    document.body.appendChild(d);
+  },1500);
+})();
+</script>
 </body>
 </html>
