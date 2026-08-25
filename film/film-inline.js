@@ -197,6 +197,23 @@
       });
     }, { rootMargin: '-8% 0px -12% 0px', threshold: 0.14 });
     m.querySelectorAll('.ifilm-mscene').forEach(function (n) { io.observe(n); });
+    // Failsafe: on iOS the body can become the scroll container (overflow-x
+    // side effect), starving both window scroll events and IO callbacks;
+    // scenes then sit invisible while holding layout space. Sweep on a timer
+    // and on capture-phase document scroll, mirroring the page's rv sweep.
+    function mSweep() {
+      m.querySelectorAll('.ifilm-mscene:not(.in)').forEach(function (n) {
+        var r = n.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.98 && r.bottom > 0) {
+          n.classList.add('in');
+          var v = n.querySelector('video');
+          if (v && !v.src) v.src = n.getAttribute('data-clip');
+          if (v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        }
+      });
+    }
+    setTimeout(mSweep, 900); setInterval(mSweep, 800);
+    document.addEventListener('scroll', mSweep, { capture: true, passive: true });
   }
 
   window.mountInlineFilm = mountInlineFilm;
