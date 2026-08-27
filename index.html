@@ -127,8 +127,9 @@ gtag('config', 'G-RSL1F8BX5J');
     body::after{mix-blend-mode:screen;opacity:.06}
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%;color-scheme:light}
-  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+  html{overflow-x:hidden;overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%;color-scheme:light}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:multiply}
   ::selection{background:var(--accent);color:#fff}
   a{color:inherit;text-decoration:none}
@@ -1143,7 +1144,7 @@ gtag('config', 'G-RSL1F8BX5J');
 
 <!-- ============ [ SCROLL WORLD ] the clay film, inline pinned scroll-scrub ============ -->
 <section id="filmSection"></section>
-<script src="film/film-inline.js?v=5"></script>
+<script src="film/film-inline.js?v=6"></script>
 <script>
   mountInlineFilm(document.getElementById('filmSection'), {
     accent:'#2596BE', diveScroll:1.7, crossfade:0.2,
@@ -1559,15 +1560,17 @@ gtag('config', 'G-RSL1F8BX5J');
 (function(){
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var nav=document.getElementById('nav');
-  addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>40);});
+  if(nav)addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>40);});
 
   /* mobile nav */
   var burger=document.getElementById('navBurger'),navMenu=document.getElementById('navMenu');
   if(burger&&navMenu){
-    burger.addEventListener('click',function(){var o=navMenu.classList.toggle('open');burger.classList.toggle('open',o);});
+    burger.setAttribute('aria-expanded','false');
+    burger.addEventListener('click',function(){var o=navMenu.classList.toggle('open');burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',o?'true':'false');});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&navMenu.classList.contains('open')){navMenu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');}});
     navMenu.querySelectorAll('.nav-trigger').forEach(function(t){
       t.addEventListener('click',function(){
-        if(window.innerWidth>600) return; // desktop uses hover
+        if(window.innerWidth>600&&window.matchMedia('(hover:hover)').matches) return; // desktop uses hover; hoverless tablets tap
         var item=t.closest('.nav-item');var wasOpen=item.classList.contains('open');
         navMenu.querySelectorAll('.nav-item').forEach(function(i){i.classList.remove('open');});
         if(!wasOpen) item.classList.add('open');
@@ -1579,8 +1582,11 @@ gtag('config', 'G-RSL1F8BX5J');
   /* turnstile logo */
   var words=['Jobs','Found','Busy','Cited','Calls','Booked','Ahead','Scale'];
   var tw=document.getElementById('tword'),ti=0,cur=null;
+  if(tw&&!tw.dataset.mounted){tw.dataset.mounted='1';
   var meter=document.createElement('span');meter.style.cssText='position:absolute;visibility:hidden;white-space:nowrap;font-style:italic;opacity:0;transform:none';tw.appendChild(meter);function widthOf(w){meter.textContent=w;return Math.ceil(meter.getBoundingClientRect().width)+2;}function showWord(i){var s=document.createElement('span');s.textContent=words[i];s.classList.add('in');tw.appendChild(s);if(cur){var o=cur;o.classList.remove('in');o.classList.add('out');setTimeout(function(){o.remove();},600);}cur=s;}
   var twMax=0;for(var wi=0;wi<words.length;wi++){twMax=Math.max(twMax,widthOf(words[wi]));}tw.style.width=twMax+'px';showWord(0); if(!reduce && words.length>1) setInterval(function(){var nm=document.getElementById('navMenu');if(document.hidden||(nm&&nm.classList.contains('open')))return;ti=(ti+1)%words.length;showWord(ti);},2400);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){var m2=0;for(var wj=0;wj<words.length;wj++){m2=Math.max(m2,widthOf(words[wj]));}tw.style.width=m2+'px';});
+  }
 
   /* reveals */
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.16,rootMargin:'0px 0px -7% 0px'});
@@ -1588,7 +1594,7 @@ gtag('config', 'G-RSL1F8BX5J');
   // Failsafe: IO misses on anchor jumps and some iOS scroll patterns left
   // sections invisible (blank pricing cards on mobile, 2026-08-24). Reveal
   // anything actually in the viewport, on a timer and on scroll.
-  function rvSweep(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight*.98&&r.bottom>0)el.classList.add('in');});}
+  function rvSweep(){if(document.hidden)return;document.querySelectorAll('.rv:not(.in)').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight*.98&&r.bottom>0)el.classList.add('in');});}
   setTimeout(rvSweep,900);setTimeout(rvSweep,2500);
   var rvTick=false;function rvOnScroll(){if(rvTick)return;rvTick=true;requestAnimationFrame(function(){rvSweep();rvTick=false;});}window.addEventListener('scroll',rvOnScroll,{passive:true});document.addEventListener('scroll',rvOnScroll,{capture:true,passive:true});setInterval(rvSweep,800);
 
@@ -1601,7 +1607,7 @@ gtag('config', 'G-RSL1F8BX5J');
     var q="best hvac company in fresno",tEl=document.getElementById('s1type');
     onPlay(s1,function(){
       document.getElementById('s1box').classList.add('play');
-      if(reduce){tEl.textContent=q;['s1card','sk1','sk2','sk3','srcLbl','src1','src2','src3','s1ghost'].forEach(function(id){document.getElementById(id).style.opacity=1;});return;}
+      if(reduce){tEl.textContent=q;['s1card','sk1','sk2','sk3','srcLbl','src1','src2','src3','s1ghost'].forEach(function(id){var e=document.getElementById(id);if(e)e.style.opacity=1;});return;}
       var i=0;var t=setInterval(function(){tEl.textContent=q.slice(0,i+1)+(i<q.length-1?'|':'');i++;if(i>=q.length){clearInterval(t);tEl.textContent=q;
         document.getElementById('s1card').style.opacity=1;
         staggerShow(['sk1','sk2','sk3'],110,250);
@@ -1617,7 +1623,7 @@ gtag('config', 'G-RSL1F8BX5J');
   if(s2){
     ['mp1','mp2','mp3','ml1','ml2','ml3','mdiv','mmore','myou'].forEach(function(id){var e=document.getElementById(id);if(e)e.style.transition='opacity .5s ease, transform .5s cubic-bezier(.2,1.25,.4,1)';});
     onPlay(s2,function(){
-      if(reduce){['mp1','mp2','mp3','ml1','ml2','ml3','mdiv','mmore','myou'].forEach(function(id){document.getElementById(id).style.opacity=1;});return;}
+      if(reduce){['mp1','mp2','mp3','ml1','ml2','ml3','mdiv','mmore','myou'].forEach(function(id){var e=document.getElementById(id);if(e)e.style.opacity=1;});return;}
       staggerShow(['mp1','mp2','mp3'],170,120);
       staggerShow(['ml1','ml2','ml3'],200,680);
       staggerShow(['mdiv','mmore'],120,1380);
@@ -1890,7 +1896,7 @@ gtag('config', 'G-RSL1F8BX5J');
       +line('film branch',branch)
       +line('mscenes in/total',revealed+'/'+total)
       +line('rv in/total',rvin+'/'+rv)
-      +line('build','FILMFIX-1')+line('errors',(window.__amgErrs&&window.__amgErrs.length?window.__amgErrs.slice(0,3).join(' | '):'none'))+line('UA',navigator.userAgent.slice(0,60));
+      +line('build','HARDEN-1')+line('errors',(window.__amgErrs&&window.__amgErrs.length?window.__amgErrs.slice(0,3).join(' | '):'none'))+line('UA',navigator.userAgent.slice(0,60));
   }
   setTimeout(render,250);setInterval(render,1000);
 })();

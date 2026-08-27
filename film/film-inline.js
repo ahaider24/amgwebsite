@@ -3,10 +3,15 @@
    releases into the next section. Mobile: a clean stacked scroll (no scroll-jack),
    each scene autoplaying as it enters view. Namespaced .ifilm-*; never touches
    html/body. mountInlineFilm(sectionEl, {sections:[{id,label,still,clip,clipMobile,
-   accent,title,body,scroll,linger}], accent, diveScroll}). */
+   accent,title,body,scroll,linger}], accent, diveScroll}).
+   HARDEN-1 (panel review 2026-08-27): forced-mode override honored first, touch
+   laptops keep desktop mode, fetch failure backoff, object-URL revocation +
+   pagehide/pageshow lifecycle, seek-deadlock timeout, priming seeks, cadence-aware
+   layout invalidation (height/orientation/fonts/content-above), mobile start/stop
+   symmetry, hidden-tab idling, a11y on dots and copy layers. Visuals unchanged. */
 (function () {
   function el(t, c) { var n = document.createElement(t); if (c) n.className = c; return n; }
-  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   var clamp = function (x, a, b) { a = a == null ? 0 : a; b = b == null ? 1 : b; return Math.min(b, Math.max(a, x)); };
   var smooth = function (x) { x = clamp(x); return x * x * (3 - 2 * x); };
   var lingerEase = function (x, L) { L = clamp(L); var c = x - 0.5; return (1 - L) * x + L * (4 * c * c * c + 0.5); };
@@ -43,7 +48,7 @@
     .ifilm-route__label{position:absolute;right:24px;top:50%;transform:translateY(-50%) translateX(6px);white-space:nowrap;font:600 .74rem var(--sans,system-ui);color:#14110A;background:rgba(251,248,242,.92);padding:5px 11px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;}
     .ifilm-route__dot:hover .ifilm-route__label,.ifilm-route__dot.is-active .ifilm-route__label{opacity:1;transform:translateY(-50%);}
     /* ---- mobile stacked ---- */
-    .ifilm-m{position:relative;padding:2vh 0 4vh;overflow:clip;}
+    .ifilm-m{position:relative;padding:2vh 0 4vh;overflow:hidden;overflow:clip;}
     .ifilm-mscene{position:relative;padding:5vh 20px 0 20px;opacity:1;transform:none;}
     @media (hover:hover) and (pointer:fine){.ifilm-mscene{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);}.ifilm-mscene.in{opacity:1;transform:none;}}
     .ifilm-mcard{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:#1a1610;box-shadow:0 20px 50px rgba(20,17,10,.18);}
@@ -61,28 +66,33 @@
   }
 
   function isMobile() {
-    if (isTouchLike()) return true;
+    /* Forced mode wins outright: it must not be shadowed by capability
+       checks or it is untestable on touch hardware (panel finding). */
     if (window.__ifilmForce === 'mobile') return true;
     if (window.__ifilmForce === 'desktop') return false;
-    return window.matchMedia('(max-width:860px)').matches || window.matchMedia('(hover:none) and (pointer:coarse)').matches;
-  }
-  function isTouchLike() {
-    return window.matchMedia('(hover:none)').matches || window.matchMedia('(pointer:coarse)').matches || navigator.maxTouchPoints > 0;
+    /* A bare maxTouchPoints check misclassifies touch laptops and iPads in
+       desktop mode. Mobile = small viewport, or genuinely coarse-and-
+       hoverless primary input. */
+    return window.matchMedia('(max-width:860px)').matches ||
+           window.matchMedia('(hover:none) and (pointer:coarse)').matches;
   }
 
   function mountInlineFilm(section, config) {
+    var SECTIONS = (config && config.sections) || [];
+    if (!SECTIONS.length) return;                  /* bail BEFORE wiping */
+    if (section.dataset.ifilmMounted) return;      /* double-mount guard */
+    section.dataset.ifilmMounted = '1';
     injectCSS();
     section.classList.add('ifilm');
     section.innerHTML = '';
-    var SECTIONS = config.sections || [];
-    var N = SECTIONS.length; if (!N) return;
+    var N = SECTIONS.length;
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (isMobile()) { buildMobile(section, SECTIONS); return; }
+    if (isMobile()) { buildMobile(section, SECTIONS, reduce); return; }
 
     /* ---------- DESKTOP: pinned scrub ---------- */
     var DIVE_W = config.diveScroll || 1.7;
-    var CROSS = (config.crossfade != null) ? config.crossfade : 0.2;
+    var CROSS = Math.max(0.02, (config.crossfade != null) ? config.crossfade : 0.2);
     var pin = el('div', 'ifilm-pin');
     var stage = el('div', 'ifilm-stage');
     var grade = el('div', 'ifilm-grade');
@@ -98,7 +108,10 @@
       var img = el('img', 'ifilm-scene__still'); img.alt = ''; img.decoding = 'async';
       if (s.still) img.src = s.still;
       scene.appendChild(img); stage.appendChild(scene);
-      return { s: s, i: i, el: scene, img: img, video: null, hasClip: false, loading: false, ready: false, cur: 0, target: 0, visible: false, w: s.scroll || DIVE_W, linger: s.linger || 0 };
+      return { s: s, i: i, el: scene, img: img, video: null, blobUrl: null,
+               hasClip: false, loading: false, ready: false, fails: 0,
+               cur: 0, target: 0, visible: false, seekAt: 0, lastPrime: 0,
+               w: s.scroll || DIVE_W, linger: s.linger || 0 };
     });
 
     var copies = [], dots = [];
@@ -109,18 +122,23 @@
         (s.eyebrow ? '<span class="ifilm-copy__eyebrow">' + esc(s.eyebrow) + '</span>' : '') +
         (s.title ? '<h3 class="ifilm-copy__title">' + esc(s.title) + '</h3>' : '') +
         (s.body ? '<p class="ifilm-copy__body">' + esc(s.body) + '</p>' : '');
+      c.setAttribute('aria-hidden', 'true');
       copylayer.appendChild(c); copies.push(c);
       var dot = el('button', 'ifilm-route__dot');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', 'Go to scene ' + (i + 1) + (s.label ? ': ' + s.label : ''));
       dot.innerHTML = '<span class="ifilm-route__label">' + esc(s.label || '') + '</span><i></i>';
       dot.addEventListener('click', function () { jumpTo(i); });
       route.appendChild(dot); dots.push(dot);
     });
 
     function pad(n) { return String(n).padStart(2, '0'); }
-    var vh = window.innerHeight, totalW = 0, sectionTop = 0, activeIndex = -1, ticking = false, laidW = window.innerWidth;
+    var vh = window.innerHeight, totalW = 0, sectionTop = 0, activeIndex = -1,
+        ticking = false, laidW = window.innerWidth, laidH = window.innerHeight,
+        nearFilm = true, lastBodyH = 0;
 
     function layout() {
-      vh = window.innerHeight; laidW = window.innerWidth;
+      vh = window.innerHeight; laidW = window.innerWidth; laidH = window.innerHeight;
       var off = 0;
       segs.forEach(function (g) { g.start = off * vh; off += g.w; g.end = off * vh; });
       totalW = off;
@@ -129,27 +147,39 @@
       read();
     }
     function jumpTo(i) {
-      var g = segs[i]; window.scrollTo({ top: sectionTop + g.start + (g.end - g.start) * 0.5, behavior: reduce ? 'auto' : 'smooth' });
+      var g = segs[i]; window.scrollTo({ top: sectionTop + g.start + (g.end - g.start) * 0.5, behavior: reduce ? 'instant' : 'smooth' });
+    }
+    function detachClip(g) {
+      if (g.video) { try { g.video.removeAttribute('src'); g.video.load(); } catch (e) {} g.video.remove(); }
+      if (g.blobUrl) { try { URL.revokeObjectURL(g.blobUrl); } catch (e) {} }
+      g.video = null; g.blobUrl = null; g.hasClip = false; g.ready = false;
+      g.el.classList.remove('has-clip');
     }
     function loadClip(g) {
-      if (reduce || g.loading || !g.s.clip) return; g.loading = true;
+      /* Two failures = permanent still (no per-scroll-frame retry storm). */
+      if (reduce || g.loading || g.hasClip || !g.s.clip || g.fails >= 2) return;
+      g.loading = true;
       fetch(g.s.clip).then(function (r) { return r.ok ? r.blob() : Promise.reject(0); }).then(function (blob) {
         var v = document.createElement('video'); v.className = 'ifilm-scene__video';
         v.muted = true; v.playsInline = true; v.preload = 'auto'; v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
-        v.src = URL.createObjectURL(blob);
+        g.blobUrl = URL.createObjectURL(blob);
+        v.src = g.blobUrl;
         v.addEventListener('loadedmetadata', function () { g.ready = true; read(); });
-        v.addEventListener('seeked', function () { g.el.classList.add('has-clip'); }, { once: true });
+        v.addEventListener('seeked', function () { if (g.video === v) g.el.classList.add('has-clip'); }, { once: true });
         v.addEventListener('loadeddata', function () { try { v.pause(); } catch (e) {} });
-        g.el.appendChild(v); g.video = v; g.hasClip = true;
-      }).catch(function () { g.loading = false; });
+        v.addEventListener('error', function () { g.fails = 2; detachClip(g); });
+        g.el.appendChild(v); g.video = v; g.hasClip = true; g.loading = false;
+      }).catch(function () { g.loading = false; g.fails++; });
     }
     function read() {
-      var y = clamp((window.scrollY || window.pageYOffset) - sectionTop, 0, totalW * vh);
+      var sy = window.scrollY || window.pageYOffset;
+      nearFilm = sy > sectionTop - 2 * vh && sy < sectionTop + (totalW + 1) * vh + vh;
+      var y = clamp(sy - sectionTop, 0, totalW * vh);
       var fade = CROSS * vh, ci = 0;
       for (var i = 0; i < segs.length; i++) if (y >= segs[i].start) ci = i;
       for (i = 0; i < segs.length; i++) {
         var g = segs[i];
-        if (y > g.start - 1.6 * vh && y < g.end + 1.6 * vh) loadClip(g);
+        if (nearFilm && y > g.start - 1.6 * vh && y < g.end + 1.6 * vh) loadClip(g);
         var local = clamp((y - g.start) / (g.end - g.start), 0, 1);
         g.target = g.linger ? lingerEase(local, g.linger) : local;
         var outside = 0; if (y < g.start) outside = g.start - y; else if (y > g.end) outside = y - g.end;
@@ -165,35 +195,80 @@
         else if (i === N - 1) cop = before ? 0 : smooth(pr / 0.45);
         else cop = (before || after) ? 0 : smooth(1 - Math.abs(pr - 0.5) / 0.5);
         copies[i].style.opacity = cop;
+        copies[i].setAttribute('aria-hidden', cop < 0.5 ? 'true' : 'false');
         copies[i].style.transform = reduce ? 'none' : 'translateY(' + ((0.5 - pr) * 3) + 'vh)';
       }
       var near = clamp(ci, 0, N - 1);
-      if (near !== activeIndex) { activeIndex = near; dots.forEach(function (d, k) { d.classList.toggle('is-active', k === near); }); }
+      if (near !== activeIndex) {
+        activeIndex = near;
+        dots.forEach(function (d, k) {
+          d.classList.toggle('is-active', k === near);
+          if (k === near) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+        });
+      }
       ticking = false;
     }
+    function seekTo(g, t, now) {
+      try { g.video.currentTime = t; g.seekAt = now; } catch (e) {}
+    }
     function raf() {
+      requestAnimationFrame(raf);
+      if (document.hidden || !nearFilm) return;   /* idle when irrelevant */
+      var now = performance.now();
       for (var i = 0; i < segs.length; i++) {
         var g = segs[i]; if (!g.hasClip || !g.ready || !g.video) continue;
-        if (!g.visible) { g.cur = g.target; continue; }
-        if (g.video.seeking) continue;
+        var dur = g.video.duration || 1;
+        if (!g.visible) {
+          /* Snap the scrub model without a per-frame seek, but issue ONE
+             throttled priming seek so re-entry starts on the right frame. */
+          g.cur = g.target;
+          if (!g.video.seeking && now - g.lastPrime > 400 &&
+              Math.abs(g.video.currentTime - g.cur * dur) > 0.2) {
+            g.lastPrime = now; seekTo(g, clamp(g.cur, 0, 0.999) * dur, now);
+          }
+          continue;
+        }
+        /* seeking-guard with a deadlock timeout: Safari can drop a seeked
+           event across bfcache/background transitions. */
+        if (g.video.seeking && now - g.seekAt < 600) continue;
         g.cur += (g.target - g.cur) * (reduce ? 1 : 0.18);
-        var dur = g.video.duration || 1, t = clamp(g.cur, 0, 0.999) * dur;
-        if (Math.abs(g.video.currentTime - t) > 0.033) { try { g.video.currentTime = t; } catch (e) {} }
+        var t = clamp(g.cur, 0, 0.999) * dur;
+        if (Math.abs(g.video.currentTime - t) > 0.033) seekTo(g, t, now);
       }
-      requestAnimationFrame(raf);
     }
     window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(read); } }, { passive: true });
-    window.addEventListener('resize', function () { if (window.innerWidth !== laidW) layout(); });
-    window.addEventListener('load', layout);
+    window.addEventListener('resize', function () { if (window.innerWidth !== laidW || window.innerHeight !== laidH) layout(); });
+    window.addEventListener('orientationchange', function () { setTimeout(layout, 120); });
+    if (window.visualViewport) window.visualViewport.addEventListener('resize', function () { if (window.innerHeight !== laidH) layout(); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { layout(); });
+    /* Content growth ABOVE the film (late reveals, font swap) shifts
+       sectionTop; watch the body and relayout when its height changes. */
+    if (window.ResizeObserver) {
+      var bro = new ResizeObserver(function () {
+        var h = document.body.getBoundingClientRect().height;
+        if (Math.abs(h - lastBodyH) > 4) { lastBodyH = h; layout(); }
+      });
+      bro.observe(document.body);
+    }
+    window.addEventListener('pagehide', function (e) {
+      segs.forEach(function (g) { if (g.video) { try { g.video.pause(); } catch (x) {} } });
+      if (!e.persisted) segs.forEach(function (g) { if (g.blobUrl) { try { URL.revokeObjectURL(g.blobUrl); } catch (x) {} } });
+    });
+    window.addEventListener('pageshow', function (e) { if (e.persisted) layout(); });
+    if (document.readyState === 'complete') layout();
+    else window.addEventListener('load', layout);
     layout(); requestAnimationFrame(raf);
   }
 
-  function buildMobile(section, SECTIONS) {
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function buildMobile(section, SECTIONS, reduce) {
     var m = el('div', 'ifilm-m'); var html = '';
     SECTIONS.forEach(function (s) {
-      html += '<section class="ifilm-mscene" data-clip="' + (s.clipMobile || s.clip) + '">' +
-        '<div class="ifilm-mcard"><img src="' + s.still + '" alt="" decoding="async"><video muted loop playsinline webkit-playsinline preload="none" poster="' + s.still + '"></video></div>' +
+      var clip = s.clipMobile || s.clip || '';
+      var still = s.still || '';
+      html += '<section class="ifilm-mscene" data-clip="' + esc(clip) + '">' +
+        '<div class="ifilm-mcard"><img src="' + esc(still) + '" alt="" decoding="async" loading="lazy">' +
+        (clip && !reduce ? '<video muted loop playsinline webkit-playsinline preload="none" poster="' + esc(still) + '"></video>' : '') +
+        '</div>' +
         '<div class="ifilm-mcopy"><div class="ifilm-meyebrow">' + esc(s.eyebrow || '') + '</div>' +
         '<h3 class="ifilm-mtitle">' + esc(s.title || '') + '</h3>' +
         '<p class="ifilm-mbody">' + esc(s.body || '') + '</p></div></section>';
@@ -202,29 +277,39 @@
     var canUseVideo = !reduce;
     function startScene(n) {
       n.classList.add('in');
-      if (!canUseVideo) return;
+      if (!canUseVideo || n.dataset.starting === '1') return;
       var v = n.querySelector('video');
       if (v) {
+        n.dataset.starting = '1';
         v.controls = false;
         v.removeAttribute('controls');
         v.disableRemotePlayback = true;
+        v.muted = true;               /* property, not just the attribute */
         if (!v.src) v.src = n.getAttribute('data-clip');
         var p = v.play();
         if (p && p.then) p.then(function () {
+          n.dataset.starting = '';
           var card = v.closest('.ifilm-mcard');
           if (card) card.classList.add('is-playing');
-        }).catch(function () {});
+        }).catch(function () { n.dataset.starting = ''; });
+        else n.dataset.starting = '';
       }
     }
+    function stopScene(n) {
+      var v = n.querySelector('video');
+      if (v) { try { v.pause(); } catch (x) {} var card = v.closest('.ifilm-mcard'); if (card) card.classList.remove('is-playing'); }
+    }
+    /* threshold [0, .14]: a card that only peeked in (never crossing .14)
+       still gets an exit callback, so every start has a guaranteed stop. */
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
-        var v = e.target.querySelector('video');
-        if (e.isIntersecting) { startScene(e.target); }
-        else if (v) { try { v.pause(); } catch (x) {} var card = v.closest('.ifilm-mcard'); if (card) card.classList.remove('is-playing'); }
+        if (e.isIntersecting && e.intersectionRatio >= 0.14) { startScene(e.target); }
+        else if (!e.isIntersecting) { stopScene(e.target); }
       });
-    }, { rootMargin: '-8% 0px -12% 0px', threshold: 0.14 });
+    }, { rootMargin: '-8% 0px -12% 0px', threshold: [0, 0.14] });
     m.querySelectorAll('.ifilm-mscene').forEach(function (n) { io.observe(n); });
     function mSweep() {
+      if (document.hidden) return;
       m.querySelectorAll('.ifilm-mscene:not(.in)').forEach(function (n) {
         var r = n.getBoundingClientRect();
         if (r.top < window.innerHeight * 0.98 && r.bottom > 0) startScene(n);
@@ -232,6 +317,10 @@
     }
     setTimeout(mSweep, 900); setInterval(mSweep, 800);
     document.addEventListener('scroll', mSweep, { capture: true, passive: true });
+    window.addEventListener('pagehide', function () {
+      m.querySelectorAll('.ifilm-mscene').forEach(stopScene);
+    });
+    window.addEventListener('pageshow', function (e) { if (e.persisted) setTimeout(mSweep, 60); });
   }
 
   window.mountInlineFilm = mountInlineFilm;
