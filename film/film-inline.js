@@ -173,11 +173,12 @@
     }
     function raf() {
       for (var i = 0; i < segs.length; i++) {
-        var g = segs[i]; if (!g.hasClip || !g.ready || !g.video || g.video.seeking) continue;
-        if (!g.visible && Math.abs(g.cur - g.target) < 0.002) continue;
+        var g = segs[i]; if (!g.hasClip || !g.ready || !g.video) continue;
+        if (!g.visible) { g.cur = g.target; continue; }
+        if (g.video.seeking) continue;
         g.cur += (g.target - g.cur) * (reduce ? 1 : 0.18);
         var dur = g.video.duration || 1, t = clamp(g.cur, 0, 0.999) * dur;
-        if (Math.abs(g.video.currentTime - t) > 0.008) { try { g.video.currentTime = t; } catch (e) {} }
+        if (Math.abs(g.video.currentTime - t) > 0.033) { try { g.video.currentTime = t; } catch (e) {} }
       }
       requestAnimationFrame(raf);
     }
@@ -188,6 +189,7 @@
   }
 
   function buildMobile(section, SECTIONS) {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var m = el('div', 'ifilm-m'); var html = '';
     SECTIONS.forEach(function (s) {
       html += '<section class="ifilm-mscene" data-clip="' + (s.clipMobile || s.clip) + '">' +
@@ -197,7 +199,7 @@
         '<p class="ifilm-mbody">' + esc(s.body || '') + '</p></div></section>';
     });
     m.innerHTML = html; section.appendChild(m);
-    var canUseVideo = !reduce && !isTouchLike();
+    var canUseVideo = !reduce;
     function startScene(n) {
       n.classList.add('in');
       if (!canUseVideo) return;
