@@ -1,16 +1,12 @@
-// Vercel serverless function: receives the lead-capture POST from
-// what-ai-can-do.html and writes the lead to Airtable, server-side.
+// Vercel serverless function: lead-capture POST -> AMG engine webhook.
 //
-// Required Vercel env vars (Project Settings > Environment Variables).
-// Never put these in client code:
-//   AIRTABLE_TOKEN    personal access token with data.records:write on the base
-//   AIRTABLE_BASE_ID  the base id, e.g. appXXXXXXXXXXXXXX
-//   AIRTABLE_TABLE    table name or id (optional, defaults to "Leads")
-//
-// The target Airtable table needs these columns (typecast is on, so single
-// selects can be created on the fly, but the column names must match):
-//   First Name (text), Last Name (text), Company (text), Email (email),
-//   Phone (phone), Trade (single select or text), Source (text)
+// History: the original version wrote straight to Airtable and needed
+// AIRTABLE_* env vars that were never set on this Vercel project, so it
+// returned 500 for ~2 months (flagged July 5, fixed Sep 2). This version
+// needs NO env vars: it forwards to the engine's droplet endpoint, which
+// holds credentials server-side and alerts Slack + stores the lead.
+
+const ENGINE_LEAD_URL = 'https://n8n.amirgetsjobs.com/hooks/lead';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -18,62 +14,30 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const token = process.env.AIRTABLE_TOKEN;
-  const baseId = process.env.AIRTABLE_BASE_ID;
-  const table = process.env.AIRTABLE_TABLE || 'Leads';
-  if (!token || !baseId) {
-    return res.status(500).json({ error: 'Lead capture is not configured yet.' });
-  }
-
-  // Vercel parses JSON bodies automatically, but guard for string bodies too.
   let body = req.body;
   if (typeof body === 'string') {
     try { body = JSON.parse(body); } catch { body = {}; }
   }
   body = body || {};
 
-  const firstName = (body.firstName || '').toString().trim();
-  const lastName = (body.lastName || '').toString().trim();
-  const company = (body.company || '').toString().trim();
   const email = (body.email || '').toString().trim();
   const phone = (body.phone || '').toString().trim();
-  const trade = (body.trade || '').toString().trim();
-
-  if (!firstName || !lastName || !email || !phone) {
-    return res.status(400).json({ error: 'Missing required fields.' });
+  if (!email && !phone) {
+    return res.status(400).json({ error: 'Email or phone required.' });
   }
 
-  const url = 'https://api.airtable.com/v0/' + baseId + '/' + encodeURIComponent(table);
-  const record = {
-    fields: {
-      'First Name': firstName,
-      'Last Name': lastName,
-      Company: company,
-      Email: email,
-      Phone: phone,
-      Trade: trade,
-      Source: 'what-ai-can-do',
-    },
-    typecast: true,
-  };
-
   try {
-    const r = await fetch(url, {
+    const r = await fetch(ENGINE_LEAD_URL, {
       method: 'POST',
-      headers: {
-        Authorization: 'Bearer ' + token,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(record),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...body, source: body.source || 'api/lead' }),
     });
-    if (!r.ok) {
-      const detail = await r.text();
-      console.error('Airtable error', r.status, detail);
-      return res.status(502).json({ error: 'Could not save the lead.' });
-    }
-    return res.status(200).json({ ok: true });
+    const text = await r.text();
+    res.status(r.status);
+    res.setHeader('Content-Type', 'application/json');
+    return res.send(text);
   } catch (err) {
-    console.error('Lead handler error', err);
-    return res.status(500).json({ error: 'Unexpected error.' });
+    console.error('Lead forward error', err);
+    return res.status(502).json({ error: 'Could not save the lead.' });
   }
 }
