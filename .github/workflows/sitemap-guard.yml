@@ -1,0 +1,42 @@
+name: sitemap-guard
+# Panel-prescribed (2026-09-02): settle availability disputes with a log,
+# not litigation. Asserts status AND body content, because the dangerous
+# failure is a 200 serving garbage. Evidence retained on failure.
+on:
+  schedule:
+    - cron: '7 * * * *'
+  deployment_status:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    if: github.event_name != 'deployment_status' || github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - url: https://amirgetsjobs.com/sitemap.xml
+            expect: "200"
+          - url: https://www.amirgetsjobs.com/sitemap.xml
+            expect: "308"
+    steps:
+      - name: probe
+        run: |
+          code=$(curl -sS -o body.xml -D headers.txt -w '%{http_code}' --max-time 30 "${{ matrix.url }}" || echo 000)
+          echo "ts=$(date -u +%FT%TZ) url=${{ matrix.url }} status=$code bytes=$(wc -c < body.xml)"
+          grep -iE 'x-vercel-id|x-vercel-cache|^location' headers.txt || true
+          test "$code" = "${{ matrix.expect }}"
+          if [ "$code" = "200" ]; then
+            grep -q '</urlset>' body.xml
+            test "$(grep -c '<loc>' body.xml)" -ge 20
+          fi
+      - name: retain evidence on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sitemap-failure-${{ github.run_id }}-${{ strategy.job-index }}
+          path: |
+            body.xml
+            headers.txt
+          retention-days: 90
