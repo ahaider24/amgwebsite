@@ -365,7 +365,7 @@ gtag('config', 'G-RSL1F8BX5J');
     </div>
   </div>
   <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="nav-cta">Book</a>
-  <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- ============ HERO ============ -->
@@ -586,9 +586,9 @@ gtag('config', 'G-RSL1F8BX5J');
 <section class="cta">
   <div class="wrap">
     <h2 class="rv">Want to see what we'd <em>take off your plate</em>?</h2>
-    <p class="rv d1">Start with a free audit, or just tell us where your week is getting eaten. We'll show you what could run itself.</p>
+    <p class="rv d1">Start with the $499 diagnostic, or just tell us where your week is getting eaten. We'll show you what could run itself.</p>
     <div class="cta-row rv d1">
-      <a href="index.html#pricing" class="btn btn-primary">See where you stand <span class="arr">→</span></a>
+      <a href="/diagnostic" class="btn btn-primary">See where you stand <span class="arr">→</span></a>
       <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-ghost">Talk to us</a>
     </div>
   </div>
@@ -611,7 +611,7 @@ gtag('config', 'G-RSL1F8BX5J');
       <a href="/ai-marketing-agency-fresno" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Marketing Agency & AI Agency in Fresno</a>
       <a href="/ai-agency-los-angeles" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">AI Agency in Los Angeles</a>
       <a href="/pricing" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Pricing</a>
-      <a href="/ai-seo" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">SEO & GEO for Local Business</a>
+      <a href="/ai-seo" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">AI SEO &amp; GEO services</a>
       <a href="/paid-ads" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Paid Ads Management</a>
       <a href="/web-design-development" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Web Design & Development</a>
       <a href="/content-strategy" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Content Strategy</a>
@@ -964,16 +964,16 @@ gtag('config', 'G-RSL1F8BX5J');
 (function(){
   var burger=document.getElementById('navBurger'),navMenu=document.getElementById('navMenu');
   if(!burger||!navMenu)return;
-  burger.addEventListener('click',function(){var o=navMenu.classList.toggle('open');burger.classList.toggle('open',o);});
+  burger.addEventListener('click',function(){var o=navMenu.classList.toggle('open');burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',String(o));});
   navMenu.querySelectorAll('.nav-trigger').forEach(function(t){
     t.addEventListener('click',function(){
       if(window.innerWidth>600)return;
       var item=t.closest('.nav-item');var wasOpen=item.classList.contains('open');
       navMenu.querySelectorAll('.nav-item').forEach(function(i){i.classList.remove('open');});
-      if(!wasOpen)item.classList.add('open');
+      if(!wasOpen)item.classList.add('open');navMenu.querySelectorAll('.nav-trigger').forEach(function(b){b.setAttribute('aria-expanded',String(b.closest('.nav-item').classList.contains('open')));});
     });
   });
-  navMenu.querySelectorAll('.drop-link').forEach(function(l){l.addEventListener('click',function(){navMenu.classList.remove('open');burger.classList.remove('open');});});
+  navMenu.querySelectorAll('.drop-link').forEach(function(l){l.addEventListener('click',function(){navMenu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');});});
 })();
 </script>
 </body>

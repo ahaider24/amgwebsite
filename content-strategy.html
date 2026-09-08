@@ -254,7 +254,7 @@ gtag('config', 'G-RSL1F8BX5J');
     </div>
   </div>
   <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="nav-cta">Book</a>
-  <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- SCENE 1 · HOOK -->
@@ -338,7 +338,7 @@ gtag('config', 'G-RSL1F8BX5J');
       </details>
     </div>
 
-    <p class="xlinks srv">Start with the piece you need most: <a href="/ai-seo">SEO &amp; GEO</a>, <a href="/ai-agents">AI agents</a>, or a <a href="/web-design-development">website built to be found</a>.</p>
+    <p class="xlinks srv">Start with the piece you need most: <a href="/ai-seo">AI SEO &amp; GEO</a>, <a href="/ai-agents">AI agents</a>, or a <a href="/web-design-development">website built to be found</a>.</p>
   </div>
 </section>
 
@@ -362,7 +362,7 @@ gtag('config', 'G-RSL1F8BX5J');
       <a href="/finance-marketing" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Financial Services Marketing</a>
       <a href="/b2b-marketing" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">B2B Marketing</a>
       <a href="/pricing" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Pricing</a>
-      <a href="/ai-seo" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">SEO & GEO for Local Business</a>
+      <a href="/ai-seo" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">AI SEO &amp; GEO services</a>
       <a href="/paid-ads" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Paid Ads Management</a>
       <a href="/web-design-development" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Web Design & Development</a>
       <a href="/ai-agents" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">AI Agent Development</a>
@@ -394,16 +394,16 @@ gtag('config', 'G-RSL1F8BX5J');
 (function(){
   var burger=document.getElementById('navBurger'),navMenu=document.getElementById('navMenu');
   if(!burger||!navMenu)return;
-  burger.addEventListener('click',function(){var o=navMenu.classList.toggle('open');burger.classList.toggle('open',o);});
+  burger.addEventListener('click',function(){var o=navMenu.classList.toggle('open');burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',String(o));});
   navMenu.querySelectorAll('.nav-trigger').forEach(function(t){
     t.addEventListener('click',function(){
       if(window.innerWidth>600)return;
       var item=t.closest('.nav-item');var wasOpen=item.classList.contains('open');
       navMenu.querySelectorAll('.nav-item').forEach(function(i){i.classList.remove('open');});
-      if(!wasOpen)item.classList.add('open');
+      if(!wasOpen)item.classList.add('open');navMenu.querySelectorAll('.nav-trigger').forEach(function(b){b.setAttribute('aria-expanded',String(b.closest('.nav-item').classList.contains('open')));});
     });
   });
-  navMenu.querySelectorAll('.drop-link').forEach(function(l){l.addEventListener('click',function(){navMenu.classList.remove('open');burger.classList.remove('open');});});
+  navMenu.querySelectorAll('.drop-link').forEach(function(l){l.addEventListener('click',function(){navMenu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');});});
   var un=document.getElementById('nav');
   if(un&&un.classList.contains('nav-dark')&&!un.dataset.navState){addEventListener('scroll',function(){un.classList.toggle('scrolled',scrollY>40);},{passive:true});}
 })();

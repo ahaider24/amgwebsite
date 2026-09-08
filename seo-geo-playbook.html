@@ -256,8 +256,8 @@ gtag('config', 'G-RSL1F8BX5J');
       </div>
     </div>
   </div>
-  <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="nav-cta">Book</a>
-  <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a href="/ai-seo" class="nav-cta">AI SEO</a>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- SCENE 1 · HOOK -->
@@ -329,7 +329,7 @@ gtag('config', 'G-RSL1F8BX5J');
     <div class="eyebrow srv" style="color:var(--blue)">How we run it</div>
     <h2 class="srv">Audit, build, maintain. <em>You never touch a dashboard.</em></h2>
     <p class="line srv">We audit where you stand, build the foundation, and maintain the lead. Map fixes can land in weeks, AI citations build over months. Everything lives on your accounts. Yours, no lock-in.</p>
-    <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-primary srv">Book a call with Amir →</a>
+    <a href="/ai-seo" class="btn btn-primary srv">Explore AI SEO →</a>
 
     <div class="faq-list">
       <details class="faq-item">
@@ -354,7 +354,7 @@ gtag('config', 'G-RSL1F8BX5J');
       </details>
     </div>
 
-    <p class="xlinks srv">Keep going: <a href="/ai-seo">AI SEO, the deep dive</a>, <a href="/results">the dated receipts</a>, <a href="/ai-agents">AI agents</a>, a <a href="/web-design-development">website built to be found</a>, or the full <a href="/home-services-marketing">home service marketing</a> playbook.</p>
+    <p class="xlinks srv">Keep going: <a href="/ai-seo">AI SEO services</a>, <a href="/results">the dated receipts</a>, <a href="/ai-agents">AI agents</a>, a <a href="/web-design-development">website built to be found</a>, or the full <a href="/home-services-marketing">home service marketing</a> playbook.</p>
   </div>
 </section>
 
@@ -410,16 +410,16 @@ gtag('config', 'G-RSL1F8BX5J');
 (function(){
   var burger=document.getElementById('navBurger'),navMenu=document.getElementById('navMenu');
   if(!burger||!navMenu)return;
-  burger.addEventListener('click',function(){var o=navMenu.classList.toggle('open');burger.classList.toggle('open',o);});
+  burger.addEventListener('click',function(){var o=navMenu.classList.toggle('open');burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',String(o));});
   navMenu.querySelectorAll('.nav-trigger').forEach(function(t){
     t.addEventListener('click',function(){
       if(window.innerWidth>600)return;
       var item=t.closest('.nav-item');var wasOpen=item.classList.contains('open');
       navMenu.querySelectorAll('.nav-item').forEach(function(i){i.classList.remove('open');});
-      if(!wasOpen)item.classList.add('open');
+      if(!wasOpen)item.classList.add('open');navMenu.querySelectorAll('.nav-trigger').forEach(function(b){b.setAttribute('aria-expanded',String(b.closest('.nav-item').classList.contains('open')));});
     });
   });
-  navMenu.querySelectorAll('.drop-link').forEach(function(l){l.addEventListener('click',function(){navMenu.classList.remove('open');burger.classList.remove('open');});});
+  navMenu.querySelectorAll('.drop-link').forEach(function(l){l.addEventListener('click',function(){navMenu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');});});
   var un=document.getElementById('nav');
   if(un&&un.classList.contains('nav-dark')&&!un.dataset.navState){addEventListener('scroll',function(){un.classList.toggle('scrolled',scrollY>40);},{passive:true});}
 })();

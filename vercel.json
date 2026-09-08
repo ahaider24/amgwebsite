@@ -22,6 +22,16 @@
       "source": "/resources",
       "destination": "/field-notes",
       "permanent": true
+    },
+    {
+      "source": "/ASTRA_SITE_STRATEGY_REPORT.md",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/ASTRA_RESULTS_REPORT.md",
+      "destination": "/",
+      "permanent": false
     }
   ]
 }

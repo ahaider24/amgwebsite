@@ -1,4 +1,4 @@
-/* film-inline.js — embeds the scroll-scrub clay film INSIDE a normal page.
+/* film-inline.js : embeds the scroll-scrub clay film INSIDE a normal page.
    Desktop: a sticky-pinned section that scrubs the clips by scroll position, then
    releases into the next section. Mobile: a clean stacked scroll (no scroll-jack),
    each scene autoplaying as it enters view. Namespaced .ifilm-*; never touches

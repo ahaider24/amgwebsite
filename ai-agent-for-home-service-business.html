@@ -239,7 +239,7 @@ gtag('config', 'G-RSL1F8BX5J');
     </div>
   </div>
   <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="nav-cta">Book</a>
-  <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
 </nav>
 
 <article>
@@ -285,7 +285,7 @@ gtag('config', 'G-RSL1F8BX5J');
       <h2>If someone's selling you one, ask these three questions.</h2>
       <p>One: show me the log. A real agent keeps a record of every single thing it did, and a vendor who can't show you one is selling a story. Two: what happens when it fails? The honest answer involves an alert to a human, not a promise that it won't. Three: who approves? Anything a customer will see should wait for a yes until the agent has earned trust, the same way you'd treat a new hire.</p>
 
-      <p>That's the whole picture. If you want to see the specific flows we build, <a href="ai-agents.html">the agent walkthroughs are here</a>, drawn the way we actually wire them: what triggers them, what they do, and where the human hand-off happens.</p>
+      <p>That's the whole picture. If you want to see the specific flows we build, <a href="/ai-agents">the agent walkthroughs are here</a>, drawn the way we actually wire them: what triggers them, what they do, and where the human hand-off happens.</p>
 
       <div class="art-end rv">A.H.</div>
 
@@ -301,10 +301,10 @@ gtag('config', 'G-RSL1F8BX5J');
         <h3>Want to know which of your chores <em>pass the test</em>?</h3>
         <p>Start with the diagnostic. We'll show you where the leaks are and which ones an agent should be catching.</p>
         <div class="row">
-          <a href="index.html#pricing" class="btn btn-primary">See where you stand <span class="arr">→</span></a>
+          <a href="/diagnostic" class="btn btn-primary">See where you stand <span class="arr">→</span></a>
           <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-ghost">Talk to us</a>
         </div>
-        <div class="more-link">More in this series: <a href="field-notes.html">the machine is the new mouth →</a> · <a href="ai-agents.html">the agent flows →</a></div>
+        <div class="more-link">More in this series: <a href="/field-notes">the machine is the new mouth →</a> · <a href="/ai-agents">the agent flows →</a></div>
       </div>
     </div>
   </div>
@@ -325,7 +325,7 @@ gtag('config', 'G-RSL1F8BX5J');
       <a href="/ai-marketing-agency-fresno" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Marketing Agency & AI Agency in Fresno</a>
       <a href="/ai-agency-los-angeles" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">AI Agency in Los Angeles</a>
       <a href="/pricing" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Pricing</a>
-      <a href="/ai-seo" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">SEO & GEO for Local Business</a>
+      <a href="/ai-seo" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">AI SEO &amp; GEO services</a>
       <a href="/paid-ads" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Paid Ads Management</a>
       <a href="/web-design-development" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Web Design & Development</a>
       <a href="/ai-workflows" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">AI Workflows & Automation</a>
@@ -364,16 +364,16 @@ gtag('config', 'G-RSL1F8BX5J');
 (function(){
   var burger=document.getElementById('navBurger'),navMenu=document.getElementById('navMenu');
   if(!burger||!navMenu)return;
-  burger.addEventListener('click',function(){var o=navMenu.classList.toggle('open');burger.classList.toggle('open',o);});
+  burger.addEventListener('click',function(){var o=navMenu.classList.toggle('open');burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',String(o));});
   navMenu.querySelectorAll('.nav-trigger').forEach(function(t){
     t.addEventListener('click',function(){
       if(window.innerWidth>600)return;
       var item=t.closest('.nav-item');var wasOpen=item.classList.contains('open');
       navMenu.querySelectorAll('.nav-item').forEach(function(i){i.classList.remove('open');});
-      if(!wasOpen)item.classList.add('open');
+      if(!wasOpen)item.classList.add('open');navMenu.querySelectorAll('.nav-trigger').forEach(function(b){b.setAttribute('aria-expanded',String(b.closest('.nav-item').classList.contains('open')));});
     });
   });
-  navMenu.querySelectorAll('.drop-link').forEach(function(l){l.addEventListener('click',function(){navMenu.classList.remove('open');burger.classList.remove('open');});});
+  navMenu.querySelectorAll('.drop-link').forEach(function(l){l.addEventListener('click',function(){navMenu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');});});
 })();
 </script>
 </body>

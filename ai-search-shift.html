@@ -309,7 +309,7 @@ gtag('config', 'G-RSL1F8BX5J');
     </div>
   </div>
   <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="nav-cta">Book</a>
-  <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- ============ HERO ============ -->
@@ -437,17 +437,17 @@ gtag('config', 'G-RSL1F8BX5J');
       <div class="step rv">
         <div class="sn">01</div>
         <h3>Get cited, not just ranked</h3>
-        <p>Build the clear, specific, quotable content and the local proof that makes an AI confident enough to put your name in the answer. That's the <a href="seo-geo-playbook.html" style="color:var(--accent-deep);font-weight:600">SEO &amp; GEO playbook</a>.</p>
+        <p>Build the clear, specific, quotable content and the local proof that makes an AI confident enough to put your name in the answer. That's the <a href="/seo-geo-playbook" style="color:var(--accent-deep);font-weight:600">SEO &amp; GEO playbook</a>.</p>
       </div>
       <div class="step rv d1">
         <div class="sn">02</div>
         <h3>Publish what only you know</h3>
-        <p>Original, on-brand content from your real expertise gives the model something worth quoting and gives people a reason to remember you. That's <a href="content-strategy.html" style="color:var(--accent-deep);font-weight:600">content strategy</a>.</p>
+        <p>Original, on-brand content from your real expertise gives the model something worth quoting and gives people a reason to remember you. That's <a href="/content-strategy" style="color:var(--accent-deep);font-weight:600">content strategy</a>.</p>
       </div>
       <div class="step rv d2">
         <div class="sn">03</div>
         <h3>Catch the leads it sends</h3>
-        <p>AI-referred customers convert better, but only if you answer fast. The workflows make sure the lead the answer sends you never sits in a voicemail. That's <a href="ai-workflows.html" style="color:var(--accent-deep);font-weight:600">AI workflows</a>.</p>
+        <p>AI-referred customers convert better, but only if you answer fast. The workflows make sure the lead the answer sends you never sits in a voicemail. That's <a href="/ai-workflows" style="color:var(--accent-deep);font-weight:600">AI workflows</a>.</p>
       </div>
     </div>
   </div>
@@ -487,7 +487,7 @@ gtag('config', 'G-RSL1F8BX5J');
     <h2 class="rv">Find out what the AI <em>says about you</em>.</h2>
     <p class="rv d1">See what your leads actually cost you today, then we'll show you where the answer engines leave you out, and how to fix it.</p>
     <div class="cta-row rv d1">
-      <a href="index.html#pricing" class="btn btn-primary">See where you stand <span class="arr">→</span></a>
+      <a href="/diagnostic" class="btn btn-primary">See where you stand <span class="arr">→</span></a>
       <a href="https://calendly.com/amir-amirgetsjobs/30min" target="_blank" rel="noopener" class="btn btn-ghost">Talk to us</a>
     </div>
   </div>
@@ -510,7 +510,7 @@ gtag('config', 'G-RSL1F8BX5J');
       <a href="/ai-marketing-agency-fresno" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Marketing Agency & AI Agency in Fresno</a>
       <a href="/ai-agency-los-angeles" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">AI Agency in Los Angeles</a>
       <a href="/pricing" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Pricing</a>
-      <a href="/ai-seo" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">SEO & GEO for Local Business</a>
+      <a href="/ai-seo" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">AI SEO &amp; GEO services</a>
       <a href="/paid-ads" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Paid Ads Management</a>
       <a href="/web-design-development" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Web Design & Development</a>
       <a href="/ai-workflows" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">AI Workflows & Automation</a>
@@ -675,16 +675,16 @@ gtag('config', 'G-RSL1F8BX5J');
 (function(){
   var burger=document.getElementById('navBurger'),navMenu=document.getElementById('navMenu');
   if(!burger||!navMenu)return;
-  burger.addEventListener('click',function(){var o=navMenu.classList.toggle('open');burger.classList.toggle('open',o);});
+  burger.addEventListener('click',function(){var o=navMenu.classList.toggle('open');burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',String(o));});
   navMenu.querySelectorAll('.nav-trigger').forEach(function(t){
     t.addEventListener('click',function(){
       if(window.innerWidth>600)return;
       var item=t.closest('.nav-item');var wasOpen=item.classList.contains('open');
       navMenu.querySelectorAll('.nav-item').forEach(function(i){i.classList.remove('open');});
-      if(!wasOpen)item.classList.add('open');
+      if(!wasOpen)item.classList.add('open');navMenu.querySelectorAll('.nav-trigger').forEach(function(b){b.setAttribute('aria-expanded',String(b.closest('.nav-item').classList.contains('open')));});
     });
   });
-  navMenu.querySelectorAll('.drop-link').forEach(function(l){l.addEventListener('click',function(){navMenu.classList.remove('open');burger.classList.remove('open');});});
+  navMenu.querySelectorAll('.drop-link').forEach(function(l){l.addEventListener('click',function(){navMenu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');});});
 })();
 </script>
 </body>
