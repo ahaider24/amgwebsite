@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- OpenAI Ads pixel (one per page) -->
+<script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"4VzPsDMSaQ3CEpe8ySyHy1",debug:false});</script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSL1F8BX5J"></script>
 <script>
@@ -196,6 +199,9 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "y0yh53jvaa");
 </script>
+
+<!-- OpenAI Ads intent events: the Book and Buy buttons leave the site -->
+<script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href")||"";try{if(h.indexOf("calendly.com")>-1)oaiq("measure","book_call_click");else if(h.indexOf("buy.stripe.com")>-1)oaiq("measure","buy_diagnostic_click",{value:499,currency:"USD"});}catch(_){}});</script>
 </head>
 <body>
 
