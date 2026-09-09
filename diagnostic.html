@@ -201,7 +201,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
 </script>
 
 <!-- OpenAI Ads intent events: the Book and Buy buttons leave the site -->
-<script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href")||"";try{if(h.indexOf("calendly.com")>-1)oaiq("measure","book_call_click");else if(h.indexOf("buy.stripe.com")>-1)oaiq("measure","buy_diagnostic_click",{value:499,currency:"USD"});}catch(_){}});</script>
+<script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href")||"";try{if(h.indexOf("calendly.com")>-1)oaiq("measure","custom",{type:"custom"},{custom_event_name:"book_call_click"});else if(h.indexOf("buy.stripe.com")>-1)oaiq("measure","custom",{type:"custom",amount:49900,currency:"USD"},{custom_event_name:"buy_diagnostic_click"});}catch(_){}});</script>
 </head>
 <body>
 
