@@ -26,7 +26,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 
-ALTERNATE_NAMES = ["Amir Gets Jobs", "AMG"]
+# Three strings are in the wild. The site writes AmirGetsJobs. Fast Company,
+# Fast Company Brasil, Marketer Magazine and Yelp write "Amir Gets Jobs".
+# Google's own search result for the brand renders "AMG Creative Agency",
+# which was the internal name and is still cached as the home page title.
+# All three have to resolve to one entity.
+ALTERNATE_NAMES = ["Amir Gets Jobs", "AMG", "AMG Creative Agency"]
 
 ORG_SAMEAS = [
     "https://www.yelp.com/biz/amir-gets-jobs-fresno",
