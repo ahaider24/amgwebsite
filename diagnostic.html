@@ -91,6 +91,8 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .receipt .ask{font-family:var(--mono);font-size:.8125rem;line-height:1.6;margin-top:1rem;max-width:44ch}
   .receipt blockquote{font-size:clamp(1.5rem,3.2vw,2.1875rem);margin-top:.875rem;max-width:30ch}
   .receipt em{font-style:italic}
+  .receipt-shot{display:block;margin-top:2rem;max-width:17.5rem}
+  .receipt-shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:.75rem}
   .chapter{padding-block:4.5rem;border-bottom:1px solid var(--line)}
   .chapter .label{margin-bottom:1.5rem}
   .chapter-copy{margin-top:1.75rem;max-width:43ch}
@@ -123,6 +125,8 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
     .chapter{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:5rem;padding-block:6rem}
     .chapter-copy{margin-top:2.5rem}
     .final{padding-block:6rem}
+    .receipt{display:grid;grid-template-columns:minmax(0,1fr) 17.5rem;gap:4rem;align-items:center}
+    .receipt-shot{margin-top:0}
   }
   @media(max-width:24rem){.wrap{width:calc(100% - 2rem)}h1{font-size:2.65rem}.btn{gap:1rem}}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
@@ -182,10 +186,17 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
       </div>
     </div>
     <figure class="receipt rv">
-      <p class="label">What being chosen looks like</p>
-      <p class="ask">Asked: “I need Coca Cola syrup in Fresno. Who to call?”</p>
-      <blockquote><p>“I'd call <em>Quality Beverage &amp; Paper Distribution</em> first.”</p></blockquote>
-      <figcaption>ChatGPT, September 12, 2026. A client of ours, named first and named alone. Asked in a temporary chat, so nothing personalized the answer.</figcaption>
+      <div class="receipt-copy">
+        <p class="label">What being chosen looks like</p>
+        <p class="ask">Asked: “I need Coca Cola syrup in Fresno. Who to call?”</p>
+        <blockquote><p>“I'd call <em>Quality Beverage &amp; Paper Distribution</em> first.”</p></blockquote>
+        <figcaption>ChatGPT, September 12, 2026. A client of ours, named first and named alone. Asked in a temporary chat, so nothing personalized the answer.</figcaption>
+      </div>
+      <picture class="receipt-shot">
+        <source srcset="/receipt-chatgpt-qb.webp" type="image/webp">
+        <img src="/receipt-chatgpt-qb.jpg" width="760" height="1400" loading="lazy" decoding="async"
+             alt="ChatGPT on iPhone answering “I need Coca Cola syrup in Fresno. Who to call?” with a map pin on Quality Beverage and Paper Distribution and the reply “For Coca-Cola fountain syrup in Fresno, I'd call Quality Beverage &amp; Paper Distribution first.”">
+      </picture>
     </figure>
   </section>
 
