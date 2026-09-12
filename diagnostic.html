@@ -70,14 +70,13 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .hero-copy{margin-top:1.5rem;max-width:37ch;font-size:1.125rem}
   .purchase{display:flex;align-items:center;flex-wrap:wrap;gap:1rem 1.5rem;margin-top:1.75rem}
   .price{font-family:var(--mono);font-size:.8125rem;color:var(--ink-soft)}
-  .btn{display:inline-flex;align-items:center;justify-content:space-between;gap:2rem;max-width:100%;min-height:3.5rem;padding:.875rem 1.375rem;border-radius:.25rem;background:linear-gradient(135deg,var(--cta-1) 0%,var(--cta-2) 100%);color:#fff;text-decoration:none;font-size:.9375rem;font-weight:700;line-height:1.5;transition:transform .2s,filter .2s}
+  .btn{display:inline-flex;align-items:center;justify-content:space-between;gap:2rem;max-width:100%;min-height:3.5rem;padding:.875rem 1.375rem;border-radius:.25rem;background:linear-gradient(135deg,var(--cta-1),var(--cta-2));color:#fff;text-decoration:none;font-size:.9375rem;font-weight:700;line-height:1.5;transition:transform .2s,filter .2s}
   .btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
   .btn:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
   .btn .arr{font-size:1.375rem;font-weight:400;line-height:1}
-  .self-check{margin-top:2.75rem;padding-top:1.5rem;border-top:1px solid var(--line)}
-  .self-check h2{font-family:var(--sans);font-size:1rem;font-weight:600;line-height:1.5;letter-spacing:-.02em;text-wrap:initial}
-  .self-check p{font-size:.875rem;margin-top:.75rem;max-width:34ch}
-  .self-check .prompt{font-size:1.75rem;line-height:1.25;color:var(--ink);margin-block:1rem;max-width:22ch}
+  .hero-receipt{margin-top:1.5rem;max-width:22rem}
+  .self-check{font-family:var(--mono);font-size:.6875rem;line-height:1.7;margin-top:.75rem;color:var(--ink-soft)}
+  .self-check span{display:block;color:var(--ink)}
   .proof{border-block:1px solid var(--line);padding-block:1.75rem 2.5rem}
   .op-press{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 2rem;margin-top:1rem}
   .op-press .mk{font-family:var(--display);font-weight:600;font-size:1.1875rem;letter-spacing:-.025em;color:var(--ink-soft)}
@@ -87,25 +86,25 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   blockquote p{color:var(--ink)}
   figcaption{font-size:.75rem;color:var(--ink-soft);margin-top:1rem}
   .credentials{margin-top:1.5rem;font-size:.75rem;line-height:1.8;color:var(--ink-soft)}
-  .receipt{margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid var(--line)}
-  .receipt .ask{font-family:var(--mono);font-size:.8125rem;line-height:1.6;margin-top:1rem;max-width:44ch}
-  .receipt blockquote{font-size:clamp(1.5rem,3.2vw,2.1875rem);margin-top:.875rem;max-width:30ch}
-  .receipt em{font-style:italic}
+  .receipts{padding-block:4.5rem;border-bottom:1px solid var(--line)}
+  .receipts-heading{font-family:var(--mono);font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.75rem}
+  .receipt-pair{display:grid;gap:2.5rem;max-width:54rem;margin-inline:auto}
+  .receipt figcaption{line-height:1.6}
+  .receipt .ask{display:block;font-family:var(--mono);font-size:.75rem;color:var(--ink);margin-bottom:.5rem}
   .press-quote{margin-top:1.25rem;font-family:var(--display);font-size:1.125rem;line-height:1.45;letter-spacing:-.02em;color:var(--ink);max-width:46ch}
   .press-quote a{display:block;margin-top:.375rem;font-family:var(--mono);font-size:.6875rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:.125rem;width:fit-content}
   .press-quote a:hover{color:var(--ink);border-color:var(--ink)}
   .press-quote a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
-  .receipt-shot{display:block;margin-top:2rem;max-width:17.5rem}
-  .receipt-shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:.75rem}
+  .receipt-shot{display:block}
+  .receipt-shot img{display:block;width:100%;height:auto;border:1px solid var(--line)}
   .chapter{padding-block:4.5rem;border-bottom:1px solid var(--line)}
   .chapter .label{margin-bottom:1.5rem}
   .chapter-copy{margin-top:1.75rem;max-width:43ch}
   .shift h2 span{display:block}
   .shift h2 span+span{margin-top:.3rem}
   .old-win{color:var(--ink-soft)}
-  .evidence{margin-top:2rem;padding-block:1.25rem;border-block:1px solid var(--line);font-size:.8125rem;line-height:1.9;color:var(--ink-soft)}
-  .evidence span{display:inline}
-  .evidence span:not(:last-child)::after{content:" / ";white-space:pre;color:var(--ink-soft)}
+  .evidence{display:grid;grid-template-columns:1fr 1fr;gap:0 1.25rem;margin-top:1.5rem;color:var(--ink)}
+  .evidence span{font-family:var(--display);font-size:clamp(1.125rem,2vw,1.625rem);letter-spacing:-.035em;line-height:1.3;padding-block:.75rem;border-top:1px solid var(--line)}
   .deliverable{margin-top:1.5rem;max-width:43ch}
   .final{padding-block:4.5rem;text-align:center}
   .final h2{max-width:19ch;margin-inline:auto}
@@ -113,15 +112,17 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   footer{border-top:1px solid var(--line);padding-block:1.75rem}
   .foot-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem 2rem}
   .foot-meta{font-size:.6875rem;line-height:1.8;color:var(--ink-soft)}
-  .phone{font-size:.8125rem;color:var(--ink-soft);white-space:nowrap}
   .rv{opacity:0;transform:translateY(16px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
   .rv.in{opacity:1;transform:none}
   .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}
   @media(min-width:55rem){
     .wrap{width:min(100% - 7rem,75rem)}
     .masthead{padding-block:2rem}
-    .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,19rem);gap:4rem;align-items:end;padding-block:4.5rem 4rem}
-    .self-check{margin:0 0 .25rem;padding-top:1.5rem}
+    .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,22rem);gap:4rem;align-items:center;padding-block:3rem 4rem}
+    .hero-receipt{margin:0}
+    .receipt-pair{grid-template-columns:1fr 1fr;gap:4rem}
+    .receipts{padding-block:6rem}
+    .receipt:nth-child(2){margin-top:5rem}
     .proof{padding-block:2rem 2.75rem}
     .press-row{display:flex;align-items:center;gap:3rem}.op-press{margin-top:0;gap:2.5rem}
     .review-row{display:grid;grid-template-columns:minmax(0,1fr) 15rem;gap:5rem;align-items:end}
@@ -129,10 +130,18 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
     .chapter{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:5rem;padding-block:6rem}
     .chapter-copy{margin-top:2.5rem}
     .final{padding-block:6rem}
-    .receipt{display:grid;grid-template-columns:minmax(0,1fr) 17.5rem;gap:4rem;align-items:center}
-    .receipt-shot{margin-top:0}
   }
-  @media(max-width:24rem){.wrap{width:calc(100% - 2rem)}h1{font-size:2.65rem}.btn{gap:1rem}}
+  @media(max-width:54.999rem){
+    .masthead{padding-block:1rem}
+    .hero{padding-block:1.5rem 3rem}
+    .hero .label{margin-bottom:.75rem}
+    h1{font-size:clamp(2.25rem,8.9vw,4rem);line-height:1.06;max-width:20ch}
+    .hero-copy{font-size:1rem;line-height:1.5;margin-top:1rem}
+    .hero .purchase{margin-top:1.125rem;gap:.5rem 1rem}
+    .hero .btn{flex:1;gap:1rem}
+    .hero .price{font-size:.6875rem}
+  }
+  @media(max-width:24rem){.wrap{width:calc(100% - 2rem)}h1{font-size:2.125rem}.btn{gap:1rem}}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 <noscript><style>.rv{opacity:1;transform:none}</style></noscript>
@@ -164,12 +173,14 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
       <p class="hero-copy rv in d1">Find out who AI recommends instead of you, and what needs to change.</p>
       <div class="purchase rv in d2"><a href="https://buy.stripe.com/00w9AL0JC48r8Yd504bAs01" target="_blank" rel="noopener" class="btn">Buy the diagnostic <span class="arr" aria-hidden="true">↗</span></a><p class="price">$499 · Two weeks</p></div>
     </div>
-    <aside class="self-check rv in" aria-labelledby="self-check-title">
-      <h2 id="self-check-title">See who AI chooses. In ten seconds.</h2>
-      <p>Ask ChatGPT:</p>
-      <p class="prompt">“Who should I hire for [your trade] in [your city]?”</p>
-      <p>Is your business the recommendation?</p>
-    </aside>
+    <div class="hero-receipt">
+      <picture class="receipt-shot">
+        <source srcset="/receipt-chatgpt-qb.webp" type="image/webp">
+        <img src="/receipt-chatgpt-qb.jpg" width="760" height="1400" loading="eager" fetchpriority="high" decoding="async"
+             alt="ChatGPT recommends Quality Beverage &amp; Paper Distribution first for Coca-Cola fountain syrup in Fresno.">
+      </picture>
+      <p class="self-check">Ask ChatGPT: “Who should I hire for [trade] in [city]?” <span>Is it you?</span></p>
+    </div>
   </section>
 
   <section class="proof wrap" aria-label="Client review and credentials">
@@ -185,26 +196,13 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
       <a href="https://thebusinessjournal.com/fresno-ai-agency-chatbot-referrals-amir-haider/" target="_blank" rel="noopener">The Business Journal, August 28, 2026 ↗</a></p>
     <div class="review-row">
       <figure class="review rv">
-        <blockquote><p>“Amir got our firm to the top of chat gpt. Initially we were reluctant... but we're seeing more new customers who found us from AI and Google.”</p></blockquote>
+        <blockquote><p>“Amir got our firm to the top of chat gpt... we’re seeing more new customers who found us from AI and Google.”</p></blockquote>
         <figcaption>Verified Google review · Five stars · September 11, 2026</figcaption>
       </figure>
       <div class="credentials rv">
         <p>10 five-star Google reviews</p>
       </div>
     </div>
-    <figure class="receipt rv">
-      <div class="receipt-copy">
-        <p class="label">What being chosen looks like</p>
-        <p class="ask">Asked: “I need Coca Cola syrup in Fresno. Who to call?”</p>
-        <blockquote><p>“I'd call <em>Quality Beverage &amp; Paper Distribution</em> first.”</p></blockquote>
-        <figcaption>ChatGPT, September 12, 2026. A client of ours, named first and named alone. Asked in a temporary chat, so nothing personalized the answer.</figcaption>
-      </div>
-      <picture class="receipt-shot">
-        <source srcset="/receipt-chatgpt-qb.webp" type="image/webp">
-        <img src="/receipt-chatgpt-qb.jpg" width="760" height="1400" loading="lazy" decoding="async"
-             alt="ChatGPT on iPhone answering “I need Coca Cola syrup in Fresno. Who to call?” with a map pin on Quality Beverage and Paper Distribution and the reply “For Coca-Cola fountain syrup in Fresno, I'd call Quality Beverage &amp; Paper Distribution first.”">
-      </picture>
-    </figure>
   </section>
 
   <section class="chapter shift wrap" aria-labelledby="shift-title">
@@ -213,7 +211,29 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
       <h2 id="shift-title"><span class="old-win">Found is the old win.</span><span><em>Chosen</em> is the new one.</span></h2>
     </div>
     <div class="chapter-copy rv">
-      <p>Ten blue links made being on the list enough. AI makes a recommendation. Being findable is the starting point. Being the business it picks is the advantage.</p>
+      <p>AI makes a recommendation. Being findable is a start. Being the business it picks is the advantage.</p>
+    </div>
+  </section>
+
+  <section class="receipts wrap" aria-labelledby="receipts-title">
+    <h2 id="receipts-title" class="receipts-heading rv">Two industries. Two temporary chats.</h2>
+    <div class="receipt-pair">
+      <figure class="receipt rv">
+        <picture class="receipt-shot">
+          <source srcset="/receipt-chatgpt-qb-co2.webp" type="image/webp">
+          <img src="/receipt-chatgpt-qb-co2.jpg" width="760" height="1408" loading="lazy" decoding="async"
+               alt="ChatGPT lists Quality Beverage &amp; Paper Distribution first for beverage-grade CO2 in Fresno.">
+        </picture>
+        <figcaption><span class="ask">Query: Where can I get co2 in Fresno</span>Named first. 2026-09-12. Temporary chat, nothing personalized.</figcaption>
+      </figure>
+      <figure class="receipt rv">
+        <picture class="receipt-shot">
+          <source srcset="/receipt-chatgpt-fd.webp" type="image/webp">
+          <img src="/receipt-chatgpt-fd.jpg" width="760" height="1412" loading="lazy" decoding="async"
+               alt="ChatGPT names Fresno Distributing Company as its first stop for general plumbing parts in Fresno.">
+        </picture>
+        <figcaption><span class="ask">Query: Plumbing parts in Fresno</span>Named first. 2026-09-12. Temporary chat, nothing personalized.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -224,15 +244,15 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
       <div class="purchase"><a href="https://buy.stripe.com/00w9AL0JC48r8Yd504bAs01" target="_blank" rel="noopener" class="btn">Buy the diagnostic <span class="arr" aria-hidden="true">↗</span></a></div>
     </div>
     <div class="chapter-copy rv">
-      <p>We test who gets named across six surfaces, identify the competitors chosen over you, and explain the gaps.</p>
+      <p>Six surfaces. Your competitors. The gaps.</p>
       <p class="evidence"><span>Google AI Overviews</span><span>AI Mode</span><span>ChatGPT</span><span>Claude</span><span>Perplexity</span><span>Local map pack</span></p>
-      <p class="deliverable">In two weeks: your scoreboard, named competitors, and a 90-day roadmap, walked through live. Yours to keep, whether you hire us or not.</p>
+      <p class="deliverable">In two weeks: a scoreboard and 90-day roadmap, walked through live. Yours to keep.</p>
     </div>
   </section>
 
   <section class="final wrap" aria-labelledby="final-title">
     <h2 id="final-title" class="rv">Being found was enough.<br>Now, be <em>chosen.</em></h2>
-    <p class="rv">Your diagnostic is credited in full toward your engagement if you start within 30 days.</p>
+    <p class="rv">Credited in full toward your engagement if you start within 30 days.</p>
     <div class="rv"><a href="https://buy.stripe.com/00w9AL0JC48r8Yd504bAs01" target="_blank" rel="noopener" class="btn">Buy the diagnostic <span class="arr" aria-hidden="true">↗</span></a></div>
   </section>
 </main>
@@ -240,7 +260,6 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   <div class="wrap foot-row">
     <div class="wordmark">AmirGetsJobs</div>
     <p class="foot-meta">Fresno, California · AmirGets, an Amir Gets LLC company</p>
-    <p class="phone">(559) 550-5474</p>
   </div>
 </footer>
 <script>
