@@ -91,6 +91,10 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .receipt .ask{font-family:var(--mono);font-size:.8125rem;line-height:1.6;margin-top:1rem;max-width:44ch}
   .receipt blockquote{font-size:clamp(1.5rem,3.2vw,2.1875rem);margin-top:.875rem;max-width:30ch}
   .receipt em{font-style:italic}
+  .press-quote{margin-top:1.25rem;font-family:var(--display);font-size:1.125rem;line-height:1.45;letter-spacing:-.02em;color:var(--ink);max-width:46ch}
+  .press-quote a{display:block;margin-top:.375rem;font-family:var(--mono);font-size:.6875rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:.125rem;width:fit-content}
+  .press-quote a:hover{color:var(--ink);border-color:var(--ink)}
+  .press-quote a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
   .receipt-shot{display:block;margin-top:2rem;max-width:17.5rem}
   .receipt-shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:.75rem}
   .chapter{padding-block:4.5rem;border-bottom:1px solid var(--line)}
@@ -174,8 +178,11 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
       <div class="op-press">
         <span class="mk fc">Fast Company</span><span class="mk">TechBullion</span>
         <span class="mk">Small Biz Leader</span><span class="mk">Marketer Magazine</span>
+        <span class="mk">The Business Journal</span>
       </div>
     </div>
+    <p class="press-quote rv">“Fresno agency bets AI chatbots are the new word of mouth.”
+      <a href="https://thebusinessjournal.com/fresno-ai-agency-chatbot-referrals-amir-haider/" target="_blank" rel="noopener">The Business Journal, August 28, 2026 ↗</a></p>
     <div class="review-row">
       <figure class="review rv">
         <blockquote><p>“Amir got our firm to the top of chat gpt. Initially we were reluctant... but we're seeing more new customers who found us from AI and Google.”</p></blockquote>
