@@ -89,6 +89,11 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .guarantee .label{margin:0}
   .guarantee .g-limit{font-size:.8125rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:.75rem;margin-top:1rem}
   .final .risk{margin-inline:auto}
+  .phone{position:relative;width:100%;max-width:17.5rem;border:2.5px solid rgba(20,17,10,.22);border-radius:2.75rem;padding:.55rem;background:#fff;overflow:hidden}
+  .phone picture,.phone img{display:block;width:100%;height:auto;border-radius:2.2rem}
+  .phone-island{position:absolute;top:.9rem;left:50%;transform:translateX(-50%);width:4.75rem;height:1.375rem;border-radius:.7rem;background:var(--ink);z-index:2}
+  .shots{margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid var(--line)}
+  .shot-pair{display:grid;grid-template-columns:1fr;gap:2rem;margin-top:1.5rem;justify-items:start}
   .proof{border-block:1px solid var(--line);padding-block:1.75rem 2.5rem}
   .op-press{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 2rem;margin-top:1rem}
   .op-press .mk{font-family:var(--display);font-weight:600;font-size:1.1875rem;letter-spacing:-.025em;color:var(--ink-soft)}
@@ -102,7 +107,6 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .press-quote a{display:block;margin-top:.375rem;font-family:var(--mono);font-size:.6875rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:.125rem;width:fit-content}
   .press-quote a:hover{color:var(--ink);border-color:var(--ink)}
   .press-quote a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
-  .ask-phone{width:100%;max-width:17.5rem;height:auto;display:block;font-family:var(--sans)}
   .receipt-shot{display:block}
   .receipt-shot img{display:block;width:100%;height:auto;border:1px solid var(--line)}
   .chapter{padding-block:4.5rem;border-bottom:1px solid var(--line)}
@@ -131,6 +135,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
     .proof{padding-block:2rem 2.75rem}
     .press-row{display:flex;align-items:center;gap:3rem}.op-press{margin-top:0;gap:2.5rem}
     .rev-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 3rem}
+    .shot-pair{grid-template-columns:repeat(2,minmax(0,17.5rem));gap:3rem}
     .chapter{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:5rem;padding-block:6rem}
     .chapter-copy{margin-top:2.5rem}
     .final{padding-block:6rem}
@@ -179,28 +184,33 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
       <p class="risk rv">If it does not show you who AI names instead of you, say so within 7 days and you get the $499 back.</p>
     </div>
     <div class="hero-receipt">
-      <svg class="ask-phone" viewBox="0 0 320 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A phone with the question: who should I hire for your trade in your city, and the answer still loading.">
-          <rect x="1.25" y="1.25" width="317.5" height="557.5" rx="45" fill="#FFFFFF" stroke="#14110A" stroke-opacity=".22" stroke-width="2.5"/>
-          <rect x="-1" y="140" width="3" height="32" rx="1.5" fill="#14110A" fill-opacity=".18"/>
-          <rect x="-1" y="188" width="3" height="52" rx="1.5" fill="#14110A" fill-opacity=".18"/>
-          <rect x="318" y="180" width="3" height="70" rx="1.5" fill="#14110A" fill-opacity=".18"/>
-          <rect x="122" y="24" width="76" height="22" rx="11" fill="#14110A"/>
-          <text x="36" y="41" font-size="13" font-weight="600" fill="#14110A">9:41</text>
-          <g fill="#14110A"><rect x="238" y="33" width="3" height="5" rx="1"/><rect x="244" y="30" width="3" height="8" rx="1"/><rect x="250" y="27" width="3" height="11" rx="1"/><rect x="256" y="25" width="3" height="13" rx="1"/></g>
-          <rect x="266" y="26" width="18" height="11" rx="3" stroke="#14110A" stroke-opacity=".45" stroke-width="1.2"/>
-          <rect x="268" y="28" width="11" height="7" rx="1.5" fill="#14110A"/>
-          <rect x="66" y="112" width="220" height="104" rx="20" fill="#14110A" fill-opacity=".07"/>
-          <text font-size="15.5" fill="#14110A" x="86" y="144">Who should I hire for</text>
-          <text font-size="15.5" fill="#14110A" x="86" y="168">[your trade] in</text>
-          <text font-size="15.5" fill="#14110A" x="86" y="192">[your city]?</text>
-          <g fill="#14110A" fill-opacity=".28"><circle cx="42" cy="254" r="4.5"/><circle cx="59" cy="254" r="4.5"/><circle cx="76" cy="254" r="4.5"/></g>
-          <rect x="26" y="474" width="268" height="46" rx="23" fill="#14110A" fill-opacity=".05"/>
-          <text font-size="14" fill="#14110A" fill-opacity=".42" x="50" y="503">Ask anything</text>
-          <circle cx="268" cy="497" r="15" fill="#14110A"/>
-          <path d="M268 491.5v11M263.5 496l4.5-4.5 4.5 4.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="118" y="536" width="84" height="4.5" rx="2.25" fill="#14110A" fill-opacity=".5"/>
-        </svg>
-      <p class="self-check">Ask it right now. <span>Is the answer your name?</span></p>
+      <div class="phone">
+          <span class="phone-island" aria-hidden="true"></span>
+          <picture>
+            <source srcset="/shot-qb.webp" type="image/webp">
+            <img src="/shot-qb.jpg" width="760" height="1282" loading="eager" fetchpriority="high" decoding="async" alt="ChatGPT answering a request for Coca Cola syrup in Fresno by naming Quality Beverage and Paper Distribution first.">
+          </picture>
+        </div>
+      <p class="self-check">A client, named first. Temporary chat, nothing personalized. <span>Every client we track gets named by AI.</span></p>
+    </div>
+    <div class="shots rv">
+      <p class="label">Two more, two industries, same day</p>
+      <div class="shot-pair">
+        <div class="phone">
+          <span class="phone-island" aria-hidden="true"></span>
+          <picture>
+            <source srcset="/shot-qbco2.webp" type="image/webp">
+            <img src="/shot-qbco2.jpg" width="760" height="1290" loading="lazy" decoding="async" alt="ChatGPT listing Quality Beverage and Paper Distribution first for beverage grade CO2 in Fresno.">
+          </picture>
+        </div>
+        <div class="phone">
+          <span class="phone-island" aria-hidden="true"></span>
+          <picture>
+            <source srcset="/shot-fd.webp" type="image/webp">
+            <img src="/shot-fd.jpg" width="760" height="1294" loading="lazy" decoding="async" alt="ChatGPT naming Fresno Distributing Company as its first stop for general plumbing parts in Fresno.">
+          </picture>
+        </div>
+      </div>
     </div>
   </section>
 
