@@ -77,18 +77,25 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .hero-receipt{margin-top:1.5rem;max-width:22rem}
   .self-check{font-family:var(--mono);font-size:.6875rem;line-height:1.7;margin-top:.75rem;color:var(--ink-soft)}
   .self-check span{display:block;color:var(--ink)}
+  .risk{font-size:.8125rem;line-height:1.55;max-width:42ch;margin-top:1rem;color:var(--ink-soft)}
+  .rev-wall{margin-top:2.25rem;padding-top:1.75rem;border-top:1px solid var(--line)}
+  .rev-grid{display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:1.5rem}
+  .rev{border-left:2px solid var(--line);padding-left:1rem}
+  .rev p{font-size:.875rem;line-height:1.5;color:var(--ink)}
+  .rev figcaption{margin-top:.5rem;font-family:var(--mono);font-size:.625rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+  .rev figcaption span{opacity:.6}
+  .guarantee{max-width:46ch;border:1px solid var(--line);border-radius:.5rem;padding:1.5rem;margin:2rem 0}
+  .guarantee p{font-size:.9375rem;line-height:1.55;margin-top:.75rem}
+  .guarantee .label{margin:0}
+  .guarantee .g-limit{font-size:.8125rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:.75rem;margin-top:1rem}
+  .final .risk{margin-inline:auto}
   .proof{border-block:1px solid var(--line);padding-block:1.75rem 2.5rem}
   .op-press{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 2rem;margin-top:1rem}
   .op-press .mk{font-family:var(--display);font-weight:600;font-size:1.1875rem;letter-spacing:-.025em;color:var(--ink-soft)}
   .op-press .fc{font-size:1.375rem}
-  .review{margin-top:2rem}
   blockquote{font-size:clamp(1.625rem,2.45vw,2.1875rem);line-height:1.35;max-width:48ch}
   blockquote p{color:var(--ink)}
   figcaption{font-size:.75rem;color:var(--ink-soft);margin-top:1rem}
-  .credentials{margin-top:1.5rem;font-size:.75rem;line-height:1.8;color:var(--ink-soft)}
-  .receipts{padding-block:4.5rem;border-bottom:1px solid var(--line)}
-  .receipts-heading{font-family:var(--mono);font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.75rem}
-  .receipt-pair{display:grid;gap:2.5rem;max-width:54rem;margin-inline:auto}
   .receipt figcaption{line-height:1.6}
   .receipt .ask{display:block;font-family:var(--mono);font-size:.75rem;color:var(--ink);margin-bottom:.5rem}
   .press-quote{margin-top:1.25rem;font-family:var(--display);font-size:1.125rem;line-height:1.45;letter-spacing:-.02em;color:var(--ink);max-width:46ch}
@@ -121,13 +128,9 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
     .masthead{padding-block:2rem}
     .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,22rem);gap:4rem;align-items:center;padding-block:3rem 4rem}
     .hero-receipt{margin:0}
-    .receipt-pair{grid-template-columns:1fr 1fr;gap:4rem}
-    .receipts{padding-block:6rem}
-    .receipt:nth-child(2){margin-top:5rem}
     .proof{padding-block:2rem 2.75rem}
     .press-row{display:flex;align-items:center;gap:3rem}.op-press{margin-top:0;gap:2.5rem}
-    .review-row{display:grid;grid-template-columns:minmax(0,1fr) 15rem;gap:5rem;align-items:end}
-    .credentials{border-left:1px solid var(--line);padding-left:1.5rem;margin-bottom:.125rem}
+    .rev-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 3rem}
     .chapter{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:5rem;padding-block:6rem}
     .chapter-copy{margin-top:2.5rem}
     .final{padding-block:6rem}
@@ -170,9 +173,10 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   <section class="hero wrap" aria-labelledby="headline">
     <div>
       <p class="label rv in">AI Visibility Diagnostic</p>
-      <h1 id="headline" class="rv in">AI is how businesses will not only be found, but <em>chosen.</em></h1>
+      <h1 id="headline" class="rv in">Find out which competitor AI names <em>instead of you.</em></h1>
       <p class="hero-copy rv in d1">Find out who AI recommends instead of you, and what needs to change.</p>
       <div class="purchase rv in d2"><a href="https://buy.stripe.com/00w9AL0JC48r8Yd504bAs01" target="_blank" rel="noopener" class="btn">Buy the diagnostic <span class="arr" aria-hidden="true">↗</span></a><p class="price">$499 · Two weeks</p></div>
+      <p class="risk rv">If it does not show you who AI names instead of you, say so within 7 days and you get the $499 back.</p>
     </div>
     <div class="hero-receipt">
       <svg class="ask-phone" viewBox="0 0 320 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A phone with the question: who should I hire for your trade in your city, and the answer still loading.">
@@ -211,13 +215,19 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
     </div>
     <p class="press-quote rv">“Fresno agency bets AI chatbots are the new word of mouth.”
       <a href="https://thebusinessjournal.com/fresno-ai-agency-chatbot-referrals-amir-haider/" target="_blank" rel="noopener">The Business Journal, August 28, 2026 ↗</a></p>
-    <div class="review-row">
-      <figure class="review rv">
-        <blockquote><p>“Amir got our firm to the top of chat gpt... we’re seeing more new customers who found us from AI and Google.”</p></blockquote>
-        <figcaption>Verified Google review · Five stars · September 11, 2026</figcaption>
-      </figure>
-      <div class="credentials rv">
-        <p>10 five-star Google reviews</p>
+    <div class="rev-wall rv">
+      <p class="label">Ten reviews. Ten five stars. All on Google.</p>
+      <div class="rev-grid">
+        <figure class="rev"><p>“Amir got our firm to the top of chat gpt.”</p><figcaption>H <span>Sep 2026</span></figcaption></figure>
+        <figure class="rev"><p>“They designed an AI-native system tailored to the high volume of public interaction we face daily.”</p><figcaption>Yazan Amireh <span>Aug 2026</span></figcaption></figure>
+        <figure class="rev"><p>“A person who genuinely wants to help people do better... a total professional.”</p><figcaption>Rafael Ramirez <span>Jul 2026</span></figcaption></figure>
+        <figure class="rev"><p>“We hardly had to lift a finger as he did everything.”</p><figcaption>Gracie Pavelski <span>Jul 2026</span></figcaption></figure>
+        <figure class="rev"><p>“He was able to use AI technology to solve the problem and have the program up and running again.”</p><figcaption>Hien <span>Jul 2026</span></figcaption></figure>
+        <figure class="rev"><p>“Amir gave a great audit of our site, and how we can use the SEO front to optimize for our meta traffic.”</p><figcaption>Yasin Araim <span>Jul 2026</span></figcaption></figure>
+        <figure class="rev"><p>“Amir helped me actually see a clear path to growth... with dashboards to see my progress.”</p><figcaption>Taran Matson <span>Jul 2026</span></figcaption></figure>
+        <figure class="rev"><p>“Some people TRY to make things happen, he MAKES things happen.”</p><figcaption>Sarkis Khatchikian <span>Jul 2026</span></figcaption></figure>
+        <figure class="rev"><p>“The way he uses AI and automation for local marketing is genuinely different from anything I’ve seen.”</p><figcaption>Ahsan K <span>Mar 2026</span></figcaption></figure>
+        <figure class="rev"><p>“Since it went up I’ve been getting a completely different caliber of patient reaching out. More serious, more qualified.”</p><figcaption>Noman Naqvi <span>Mar 2026</span></figcaption></figure>
       </div>
     </div>
   </section>
@@ -232,16 +242,16 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
     </div>
   </section>
 
-  <section class="receipts wrap" aria-labelledby="receipts-title">
-    <h2 id="receipts-title" class="receipts-heading rv">Two industries. Two temporary chats.</h2>
-    <div class="receipt-pair">
-    </div>
-  </section>
-
   <section class="chapter wrap" aria-labelledby="diagnostic-title">
     <div class="rv">
       <p class="label">Your diagnostic</p>
       <h2 id="diagnostic-title">Know who gets chosen.<br>Know what to change.</h2>
+      <div class="guarantee rv">
+        <p class="label">Our guarantee</p>
+        <p>You will finish the walkthrough knowing which businesses AI names when a buyer in your area asks who to hire, whether you are one of them, and what would have to change for you to be. That is what the $499 buys and that is what we are on the hook for.</p>
+        <p>If it did not do that, say so within 7 days and we return the $499 in full. One email, no form, no questions.</p>
+        <p class="g-limit">We do not promise what ChatGPT will say about your business. Nobody controls that. We promise you will know what it says now, who it names instead of you, and what we would do about it.</p>
+      </div>
       <div class="purchase"><a href="https://buy.stripe.com/00w9AL0JC48r8Yd504bAs01" target="_blank" rel="noopener" class="btn">Buy the diagnostic <span class="arr" aria-hidden="true">↗</span></a></div>
     </div>
     <div class="chapter-copy rv">
@@ -255,6 +265,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
     <h2 id="final-title" class="rv">Being found was enough.<br>Now, be <em>chosen.</em></h2>
     <p class="rv">Credited in full toward your engagement if you start within 30 days.</p>
     <div class="rv"><a href="https://buy.stripe.com/00w9AL0JC48r8Yd504bAs01" target="_blank" rel="noopener" class="btn">Buy the diagnostic <span class="arr" aria-hidden="true">↗</span></a></div>
+    <p class="risk rv">If it does not show you who AI names instead of you, say so within 7 days and you get the $499 back.</p>
   </section>
 </main>
 <footer>
