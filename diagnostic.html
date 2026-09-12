@@ -87,6 +87,10 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   blockquote p{color:var(--ink)}
   figcaption{font-size:.75rem;color:var(--ink-soft);margin-top:1rem}
   .credentials{margin-top:1.5rem;font-size:.75rem;line-height:1.8;color:var(--ink-soft)}
+  .receipt{margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid var(--line)}
+  .receipt .ask{font-family:var(--mono);font-size:.8125rem;line-height:1.6;margin-top:1rem;max-width:44ch}
+  .receipt blockquote{font-size:clamp(1.5rem,3.2vw,2.1875rem);margin-top:.875rem;max-width:30ch}
+  .receipt em{font-style:italic}
   .chapter{padding-block:4.5rem;border-bottom:1px solid var(--line)}
   .chapter .label{margin-bottom:1.5rem}
   .chapter-copy{margin-top:1.75rem;max-width:43ch}
@@ -177,6 +181,12 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
         <p>10 five-star Google reviews</p>
       </div>
     </div>
+    <figure class="receipt rv">
+      <p class="label">What being chosen looks like</p>
+      <p class="ask">Asked: “I need Coca Cola syrup in Fresno. Who to call?”</p>
+      <blockquote><p>“I'd call <em>Quality Beverage &amp; Paper Distribution</em> first.”</p></blockquote>
+      <figcaption>ChatGPT, September 12, 2026. A client of ours, named first and named alone. Asked in a temporary chat, so nothing personalized the answer.</figcaption>
+    </figure>
   </section>
 
   <section class="chapter shift wrap" aria-labelledby="shift-title">
