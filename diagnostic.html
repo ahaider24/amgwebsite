@@ -95,6 +95,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .press-quote a{display:block;margin-top:.375rem;font-family:var(--mono);font-size:.6875rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:.125rem;width:fit-content}
   .press-quote a:hover{color:var(--ink);border-color:var(--ink)}
   .press-quote a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+  .ask-phone{width:100%;max-width:17.5rem;height:auto;display:block;font-family:var(--sans)}
   .receipt-shot{display:block}
   .receipt-shot img{display:block;width:100%;height:auto;border:1px solid var(--line)}
   .chapter{padding-block:4.5rem;border-bottom:1px solid var(--line)}
@@ -174,12 +175,28 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
       <div class="purchase rv in d2"><a href="https://buy.stripe.com/00w9AL0JC48r8Yd504bAs01" target="_blank" rel="noopener" class="btn">Buy the diagnostic <span class="arr" aria-hidden="true">↗</span></a><p class="price">$499 · Two weeks</p></div>
     </div>
     <div class="hero-receipt">
-      <picture class="receipt-shot">
-        <source srcset="/receipt-chatgpt-qb.webp" type="image/webp">
-        <img src="/receipt-chatgpt-qb.jpg" width="760" height="1400" loading="eager" fetchpriority="high" decoding="async"
-             alt="ChatGPT recommends Quality Beverage &amp; Paper Distribution first for Coca-Cola fountain syrup in Fresno.">
-      </picture>
-      <p class="self-check">Ask ChatGPT: “Who should I hire for [trade] in [city]?” <span>Is it you?</span></p>
+      <svg class="ask-phone" viewBox="0 0 320 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A phone with the question: who should I hire for your trade in your city, and the answer still loading.">
+          <rect x="1.25" y="1.25" width="317.5" height="557.5" rx="45" fill="#FFFFFF" stroke="#14110A" stroke-opacity=".22" stroke-width="2.5"/>
+          <rect x="-1" y="140" width="3" height="32" rx="1.5" fill="#14110A" fill-opacity=".18"/>
+          <rect x="-1" y="188" width="3" height="52" rx="1.5" fill="#14110A" fill-opacity=".18"/>
+          <rect x="318" y="180" width="3" height="70" rx="1.5" fill="#14110A" fill-opacity=".18"/>
+          <rect x="122" y="24" width="76" height="22" rx="11" fill="#14110A"/>
+          <text x="36" y="41" font-size="13" font-weight="600" fill="#14110A">9:41</text>
+          <g fill="#14110A"><rect x="238" y="33" width="3" height="5" rx="1"/><rect x="244" y="30" width="3" height="8" rx="1"/><rect x="250" y="27" width="3" height="11" rx="1"/><rect x="256" y="25" width="3" height="13" rx="1"/></g>
+          <rect x="266" y="26" width="18" height="11" rx="3" stroke="#14110A" stroke-opacity=".45" stroke-width="1.2"/>
+          <rect x="268" y="28" width="11" height="7" rx="1.5" fill="#14110A"/>
+          <rect x="66" y="112" width="220" height="104" rx="20" fill="#14110A" fill-opacity=".07"/>
+          <text font-size="15.5" fill="#14110A" x="86" y="144">Who should I hire for</text>
+          <text font-size="15.5" fill="#14110A" x="86" y="168">[your trade] in</text>
+          <text font-size="15.5" fill="#14110A" x="86" y="192">[your city]?</text>
+          <g fill="#14110A" fill-opacity=".28"><circle cx="42" cy="254" r="4.5"/><circle cx="59" cy="254" r="4.5"/><circle cx="76" cy="254" r="4.5"/></g>
+          <rect x="26" y="474" width="268" height="46" rx="23" fill="#14110A" fill-opacity=".05"/>
+          <text font-size="14" fill="#14110A" fill-opacity=".42" x="50" y="503">Ask anything</text>
+          <circle cx="268" cy="497" r="15" fill="#14110A"/>
+          <path d="M268 491.5v11M263.5 496l4.5-4.5 4.5 4.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="118" y="536" width="84" height="4.5" rx="2.25" fill="#14110A" fill-opacity=".5"/>
+        </svg>
+      <p class="self-check">Ask it right now. <span>Is the answer your name?</span></p>
     </div>
   </section>
 
@@ -218,22 +235,6 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   <section class="receipts wrap" aria-labelledby="receipts-title">
     <h2 id="receipts-title" class="receipts-heading rv">Two industries. Two temporary chats.</h2>
     <div class="receipt-pair">
-      <figure class="receipt rv">
-        <picture class="receipt-shot">
-          <source srcset="/receipt-chatgpt-qb-co2.webp" type="image/webp">
-          <img src="/receipt-chatgpt-qb-co2.jpg" width="760" height="1408" loading="lazy" decoding="async"
-               alt="ChatGPT lists Quality Beverage &amp; Paper Distribution first for beverage-grade CO2 in Fresno.">
-        </picture>
-        <figcaption><span class="ask">Query: Where can I get co2 in Fresno</span>Named first. 2026-09-12. Temporary chat, nothing personalized.</figcaption>
-      </figure>
-      <figure class="receipt rv">
-        <picture class="receipt-shot">
-          <source srcset="/receipt-chatgpt-fd.webp" type="image/webp">
-          <img src="/receipt-chatgpt-fd.jpg" width="760" height="1412" loading="lazy" decoding="async"
-               alt="ChatGPT names Fresno Distributing Company as its first stop for general plumbing parts in Fresno.">
-        </picture>
-        <figcaption><span class="ask">Query: Plumbing parts in Fresno</span>Named first. 2026-09-12. Temporary chat, nothing personalized.</figcaption>
-      </figure>
     </div>
   </section>
 
