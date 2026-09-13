@@ -31,7 +31,12 @@ ROOT = Path(__file__).resolve().parent
 # Google's own search result for the brand renders "AMG Creative Agency",
 # which was the internal name and is still cached as the home page title.
 # All three have to resolve to one entity.
-ALTERNATE_NAMES = ["Amir Gets Jobs", "AMG", "AMG Creative Agency"]
+# 2026-09-13: renamed to AmirGetsLeads. The OLD names stay here forever.
+# alternateName is the bridge that teaches a resolver the old string is us;
+# dropping it strands every citation, review and press mention that predates
+# the rename.
+ALTERNATE_NAMES = ["AmirGetsJobs", "Amir Gets Jobs", "Amir Gets Leads",
+                   "AMG", "AMG Creative Agency"]
 
 ORG_SAMEAS = [
     "https://www.yelp.com/biz/amir-gets-jobs-fresno",
