@@ -173,7 +173,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
      thing we can see. 2026-09-13: this fired into the OpenAI Ads pixel only,
      which is why the diagnostic funnel was invisible in our own analytics.
      Same oaiq payloads as before, now mirrored to GA4 and Plausible. -->
-<script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href")||"";var n=h.indexOf("calendly.com")>-1?"book_call_click":h.indexOf("buy.stripe.com")>-1?"buy_diagnostic_click":"";if(!n)return;var buy=n==="buy_diagnostic_click";try{oaiq("measure","custom",buy?{type:"custom",amount:49900,currency:"USD"}:{type:"custom"},{custom_event_name:n});}catch(_){}try{gtag("event",n,buy?{currency:"USD",value:499}:{});}catch(_){}try{window.plausible(n);}catch(_){}});</script>
+<script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href")||"";var n=h.indexOf("calendar.app.google")>-1?"book_call_click":h.indexOf("buy.stripe.com")>-1?"buy_diagnostic_click":"";if(!n)return;var buy=n==="buy_diagnostic_click";try{oaiq("measure","custom",buy?{type:"custom",amount:49900,currency:"USD"}:{type:"custom"},{custom_event_name:n});}catch(_){}try{gtag("event",n,buy?{currency:"USD",value:499}:{});}catch(_){}try{window.plausible(n);}catch(_){}});</script>
 </head>
 <body>
 <header class="masthead wrap"><div class="wordmark">AmirGetsLeads</div></header>

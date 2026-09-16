@@ -24,15 +24,8 @@ document.addEventListener('click',function(e){
  var h=a.getAttribute('href')||'';
  if(h.indexOf('tel:')===0){fire('phone_call_click')}
  else if(h.indexOf('sms:')===0){fire('sms_click')}
- else if(h.indexOf('calendly.com')>-1){fire('booking_click')}
+ else if(h.indexOf('calendar.app.google')>-1){fire('booking_click')}
 },true);
-document.querySelectorAll('a[href*="calendly.com"]').forEach(function(a){
- try{var u=new URL(a.href);
-  u.searchParams.set('utm_source',ft.utm_source||ft.ref||'website');
-  u.searchParams.set('utm_medium',ft.utm_medium||(ft.ref?'referral':'direct'));
-  u.searchParams.set('utm_content',location.pathname);
-  a.href=u.toString()}catch(e){}
-});
 document.querySelectorAll('form').forEach(function(f){
  var vals={page:location.pathname,session_id:SID,landing:ft.landing||'',
   source:ft.utm_source||ft.ref||'direct',medium:ft.utm_medium||'',gclid:ft.gclid||''};
