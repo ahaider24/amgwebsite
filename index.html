@@ -607,6 +607,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   }
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
+    .logo .tword span.in{opacity:1;transform:none}
     .rv,.an{opacity:1!important;transform:none!important}
     .split{grid-template-columns:1fr;gap:14px;margin:34px 0}
     .split-arrow{transform:rotate(90deg);justify-self:center}
@@ -632,12 +633,12 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "y0yh53jvaa");
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://amirgetsleads.com/#website","url":"https://amirgetsleads.com/","name":"AmirGetsLeads","legalName":"Amir Gets LLC","alternateName":["AmirGetsJobs","Amir Gets Jobs","AMG"],"publisher":{"@id":"https://amirgetsleads.com/#business"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://amirgetsleads.com/#website","url":"https://amirgetsleads.com/","name":"AmirGetsLeads","legalName":"Amir Gets LLC","alternateName":["AmirGetsJobs","Amir Gets Jobs","Amir Gets Leads","AMG"],"publisher":{"@id":"https://amirgetsleads.com/#business"}}</script>
 </head>
 <body>
 
 <nav id="nav">
-  <a href="/" class="logo">AmirGets<span class="tword" id="tword"></span></a>
+  <a href="/" class="logo" aria-label="AmirGetsLeads">AmirGets<span class="tword" id="tword"><span class="in">Leads</span></span></a>
   <div class="nav-menu" id="navMenu">
     <div class="nav-item">
       <button class="nav-trigger" aria-expanded="false">Industries we serve <span class="chev">⌄</span></button>
@@ -1583,7 +1584,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
         <div class="foot-meta">Central California's AI-native SEO &amp; marketing agency.<br><a href="/ai-marketing-agency-fresno" style="color:inherit;border-bottom:1px solid rgba(20,17,10,.25)">Marketing agency &amp; AI agency in Fresno</a></div>
       </div>
       <div class="foot-meta" style="text-align:right">
-        Serving Fresno, Los Angeles & California<br><a href="tel:+15595505474" style="color:inherit;text-decoration:none">(559) 550-5474</a><br><a href="mailto:outreach@amirgetsjobs.com" style="color:inherit;text-decoration:none">outreach@amirgetsjobs.com</a><br>AmirGets, an Amir Gets LLC company
+        Serving Fresno, Los Angeles & California<br><a href="tel:+15595505474" style="color:inherit;text-decoration:none">(559) 550-5474</a><br><a href="mailto:outreach@amirgetsleads.com" style="color:inherit;text-decoration:none">outreach@amirgetsleads.com</a><br>AmirGetsLeads, an Amir Gets LLC company
       </div>
     </div>
   </div>
@@ -1616,7 +1617,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
       <a href="/field-notes" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">Field Notes</a>
       <a href="/about" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)">About Amir</a>
     </div>
-    <div class="foot-meta" style="margin-top:14px;font-size:.75rem;color:var(--ink-soft)">AmirGetsLeads, formerly AmirGetsJobs &middot; Fresno, CA &middot; <a href="https://www.yelp.com/biz/amir-gets-jobs-fresno" style="color:inherit">Yelp</a> &middot; <a href="tel:+15595505474" style="color:inherit;text-decoration:none">(559) 550-5474</a> &middot; <a href="mailto:outreach@amirgetsjobs.com" style="color:inherit;text-decoration:none">outreach@amirgetsjobs.com</a> &middot; <a href="/terms" style="color:inherit">Terms</a> &middot; <a href="/privacy" style="color:inherit">Privacy</a></div>
+    <div class="foot-meta" style="margin-top:14px;font-size:.75rem;color:var(--ink-soft)">AmirGetsLeads, formerly AmirGetsJobs &middot; Fresno, CA &middot; <a href="https://www.yelp.com/biz/amir-gets-jobs-fresno" style="color:inherit">Yelp</a> &middot; <a href="tel:+15595505474" style="color:inherit;text-decoration:none">(559) 550-5474</a> &middot; <a href="mailto:outreach@amirgetsleads.com" style="color:inherit;text-decoration:none">outreach@amirgetsleads.com</a> &middot; <a href="/terms" style="color:inherit">Terms</a> &middot; <a href="/privacy" style="color:inherit">Privacy</a></div>
   </div>
 </footer>
 
@@ -1645,10 +1646,10 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
 
   /* turnstile logo */
   var words=['Leads','Found','Busy','Margins','Media','Booked','It','Scale'];
-  var tw=document.getElementById('tword'),ti=0,cur=null;
+  var tw=document.getElementById('tword'),ti=0,cur=tw?tw.querySelector('span.in'):null;
   if(tw&&!tw.dataset.mounted){tw.dataset.mounted='1';
   var meter=document.createElement('span');meter.style.cssText='position:absolute;visibility:hidden;white-space:nowrap;font-style:italic;opacity:0;transform:none';tw.appendChild(meter);function widthOf(w){meter.textContent=w;return Math.ceil(meter.getBoundingClientRect().width)+2;}function showWord(i){var s=document.createElement('span');s.textContent=words[i];s.classList.add('in');tw.appendChild(s);if(cur){var o=cur;o.classList.remove('in');o.classList.add('out');setTimeout(function(){o.remove();},600);}cur=s;}
-  var twMax=0;for(var wi=0;wi<words.length;wi++){twMax=Math.max(twMax,widthOf(words[wi]));}tw.style.width=twMax+'px';showWord(0); if(!reduce && words.length>1) setInterval(function(){var nm=document.getElementById('navMenu');if(document.hidden||(nm&&nm.classList.contains('open')))return;ti=(ti+1)%words.length;showWord(ti);},2400);
+  var twMax=0;for(var wi=0;wi<words.length;wi++){twMax=Math.max(twMax,widthOf(words[wi]));}tw.style.width=twMax+'px';if(!cur)showWord(0); if(!reduce && words.length>1) setInterval(function(){var nm=document.getElementById('navMenu');if(document.hidden||(nm&&nm.classList.contains('open')))return;ti=(ti+1)%words.length;showWord(ti);},2400);
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){var m2=0;for(var wj=0;wj<words.length;wj++){m2=Math.max(m2,widthOf(words[wj]));}tw.style.width=m2+'px';});
   }
 
