@@ -1,0 +1,238 @@
+{
+  "bleed_inches": [
+    3.66,
+    2.16
+  ],
+  "trim_inches": [
+    3.5,
+    2
+  ],
+  "safe_inches": [
+    3.34,
+    1.84
+  ],
+  "bleed_per_edge_inches": 0.08,
+  "raster_pixels": [
+    1098,
+    648
+  ],
+  "raster_dpi": 300,
+  "note_band_trim_inches": [
+    2.0,
+    0.718889
+  ],
+  "spark_source_pixels": [
+    1024,
+    1024
+  ],
+  "spark_placed_effective_dpi": 474.074074074074,
+  "spark_sha256": "22674a628163dc0b01f3317386a26dfe98ee5dd6559ebef1863b5017fe4622a7",
+  "contrast_orange_paper": 3.1295370233833126,
+  "contrast_orange_ink": 5.680947288564925,
+  "cmyk_percent": {
+    "#14110A": [
+      70.2,
+      69.02,
+      70.59,
+      71.37
+    ],
+    "#FBF8F2": [
+      1.96,
+      2.35,
+      3.92,
+      0.0
+    ],
+    "#FF4D1C": [
+      0.0,
+      73.33,
+      85.49,
+      0.0
+    ]
+  },
+  "icc_profile": "/System/Library/ColorSync/Profiles/Generic CMYK Profile.icc",
+  "icc_sha256": "0c8a584b288a306eac9e1d3f1e68bc1b64331c717ceb051420e6257f17b3509a",
+  "text_safe_bounds_checked": true,
+  "text_bounds": [
+    {
+      "text": "AmirGets",
+      "bounds_pt_from_top_left": [
+        20.759999999999998,
+        21.432,
+        146.70400000000004,
+        42.208
+      ]
+    },
+    {
+      "text": "Leads",
+      "bounds_pt_from_top_left": [
+        20.759999999999998,
+        55.2,
+        125.18593617057948,
+        81.19200000000001
+      ]
+    },
+    {
+      "text": "Amir Haider",
+      "bounds_pt_from_top_left": [
+        180.384,
+        71.44550000000001,
+        242.76,
+        79.89800000000001
+      ]
+    },
+    {
+      "text": "(559) 550-5474",
+      "bounds_pt_from_top_left": [
+        20.759999999999998,
+        108.768,
+        85.5025,
+        117.26100000000001
+      ]
+    },
+    {
+      "text": "outreach@amirgetsleads.com",
+      "bounds_pt_from_top_left": [
+        120.10560000000001,
+        109.1084,
+        242.76,
+        117.43440000000001
+      ]
+    },
+    {
+      "text": "amirgetsleads.com",
+      "bounds_pt_from_top_left": [
+        20.759999999999998,
+        128.53,
+        108.27000000000001,
+        137.57999999999998
+      ]
+    },
+    {
+      "text": "Fresno and Los Angeles",
+      "bounds_pt_from_top_left": [
+        162.51160000000002,
+        130.2652,
+        242.76,
+        137.14319999999998
+      ]
+    },
+    {
+      "text": "Get found.",
+      "portrait_bounds_pt_from_top_left": [
+        20.759999999999998,
+        19.595999999999997,
+        89.514,
+        29.983999999999998
+      ]
+    },
+    {
+      "text": "Get clients.",
+      "portrait_bounds_pt_from_top_left": [
+        20.759999999999998,
+        37.596,
+        96.038,
+        47.983999999999995
+      ]
+    },
+    {
+      "text": "Get back to life.",
+      "portrait_bounds_pt_from_top_left": [
+        20.759999999999998,
+        55.596000000000004,
+        125.648,
+        65.98400000000001
+      ]
+    },
+    {
+      "text": "AmirGets",
+      "bounds_pt_from_top_left": [
+        20.759999999999998,
+        21.432,
+        146.70400000000004,
+        42.208
+      ]
+    },
+    {
+      "text": "Leads",
+      "bounds_pt_from_top_left": [
+        20.759999999999998,
+        55.2,
+        125.18593617057948,
+        81.19200000000001
+      ]
+    },
+    {
+      "text": "Amir Haider",
+      "bounds_pt_from_top_left": [
+        180.384,
+        71.44550000000001,
+        242.76,
+        79.89800000000001
+      ]
+    },
+    {
+      "text": "(559) 550-5474",
+      "bounds_pt_from_top_left": [
+        20.759999999999998,
+        108.768,
+        85.5025,
+        117.26100000000001
+      ]
+    },
+    {
+      "text": "outreach@amirgetsleads.com",
+      "bounds_pt_from_top_left": [
+        120.10560000000001,
+        109.1084,
+        242.76,
+        117.43440000000001
+      ]
+    },
+    {
+      "text": "amirgetsleads.com",
+      "bounds_pt_from_top_left": [
+        20.759999999999998,
+        128.53,
+        108.27000000000001,
+        137.57999999999998
+      ]
+    },
+    {
+      "text": "Fresno and Los Angeles",
+      "bounds_pt_from_top_left": [
+        162.51160000000002,
+        130.2652,
+        242.76,
+        137.14319999999998
+      ]
+    },
+    {
+      "text": "Get found.",
+      "portrait_bounds_pt_from_top_left": [
+        20.759999999999998,
+        19.595999999999997,
+        89.514,
+        29.983999999999998
+      ]
+    },
+    {
+      "text": "Get clients.",
+      "portrait_bounds_pt_from_top_left": [
+        20.759999999999998,
+        37.596,
+        96.038,
+        47.983999999999995
+      ]
+    },
+    {
+      "text": "Get back to life.",
+      "portrait_bounds_pt_from_top_left": [
+        20.759999999999998,
+        55.596000000000004,
+        125.648,
+        65.98400000000001
+      ]
+    }
+  ],
+  "report_path": "/Users/amir/amgwebsite/brand/REPORT.md"
+}

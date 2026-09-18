@@ -1,0 +1,35 @@
+{
+  "gbp_max_radius_px": 337.53962730322496,
+  "gbp_circle_radius_px": 512,
+  "contrast_orange_paper": 3.1295370233833126,
+  "contrast_orange_ink": 5.680947288564925,
+  "contrast_deep_paper": 4.918457019597415,
+  "cmyk_percent": {
+    "#FBF8F2": [
+      1.96,
+      2.35,
+      3.92,
+      0.0
+    ],
+    "#14110A": [
+      70.2,
+      69.02,
+      70.59,
+      71.37
+    ],
+    "#FF4D1C": [
+      0.0,
+      73.33,
+      85.49,
+      0.0
+    ],
+    "#574F40": [
+      60.39,
+      59.22,
+      72.55,
+      24.71
+    ]
+  },
+  "icc_profile": "/System/Library/ColorSync/Profiles/Generic CMYK Profile.icc",
+  "icc_sha256": "0c8a584b288a306eac9e1d3f1e68bc1b64331c717ceb051420e6257f17b3509a"
+}
