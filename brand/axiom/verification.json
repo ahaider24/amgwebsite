@@ -1,0 +1,1544 @@
+{
+  "purpose": "Exploration only. Not press ready.",
+  "branch": "feat/brand-assets",
+  "working_convention": {
+    "trim_in": [
+      3.5,
+      2
+    ],
+    "bleed_in": 0.125,
+    "safe_in": 0.125,
+    "axiom_confirmed": false
+  },
+  "portrait_direction": "03-personal-linen uses the same physical trim, rotated to 2 x 3.5 in",
+  "dpi": 300,
+  "landscape_bleed_png_px": [
+    1125,
+    675
+  ],
+  "portrait_bleed_png_px": [
+    675,
+    1125
+  ],
+  "color": "DeviceRGB exploration. No assigned press profile or PDF/X certification.",
+  "material_simulation": "Procedural vector crosshatch. Paper shade is a placeholder. Not measured Axiom stock.",
+  "orange": "01 front has one 3pt square. 02 faces and all 03 faces have no orange.",
+  "sources_sha256": {
+    "brand/source/geist-700-outlines.json": "eab57193376ad8273ef7121e260bf74123a9dbdc8b06cde181e745422288d687",
+    "brand/source/archivo-400-outlines.json": "cc48f2dd115e05dfda2f8e42e4002ff853292c940f2b4bb330b119a10a32d713",
+    "brand/source/archivo-600-outlines.json": "73839b8083b4ac50277d156e836c4eea28d1f7d0c1904af1c4cb920856285bd7",
+    "brand/avatars/spark-ink-1024.png": "22674a628163dc0b01f3317386a26dfe98ee5dd6559ebef1863b5017fe4622a7"
+  },
+  "bounds": [
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "AmirGets",
+      "font": "geist",
+      "size_pt": 24,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        17.576,
+        125.952,
+        35.384
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "Leads",
+      "font": "geist",
+      "size_pt": 28,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        44.120000000000005,
+        99.22017257711738,
+        64.336
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "Amir Haider",
+      "font": "medium",
+      "size_pt": 12,
+      "bounds_trim_top_left_pt": [
+        170.912,
+        54.324,
+        236.0,
+        63.144
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "(559) 550-5474",
+      "font": "medium",
+      "size_pt": 11.5,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        83.536,
+        97.36149999999998,
+        93.817
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "outreach@amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        103.77,
+        151.32,
+        112.82
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        120.77,
+        101.96000000000001,
+        129.82
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/back",
+      "text": "Get found. Get clients.",
+      "font": "geist",
+      "size_pt": 13,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        20.562,
+        155.20200000000003,
+        30.208
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/back",
+      "text": "Get back to life.",
+      "font": "geist",
+      "size_pt": 13,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        38.562,
+        115.39599999999999,
+        48.208
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/back",
+      "text": "Fresno and Los Angeles",
+      "font": "body",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        121.493,
+        113.03100000000002,
+        129.638
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "AmirGets",
+      "font": "geist",
+      "size_pt": 24,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        17.576,
+        125.952,
+        35.384
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "Leads",
+      "font": "geist",
+      "size_pt": 28,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        44.120000000000005,
+        99.22017257711738,
+        64.336
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "Amir Haider",
+      "font": "medium",
+      "size_pt": 12,
+      "bounds_trim_top_left_pt": [
+        170.912,
+        54.324,
+        236.0,
+        63.144
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "(559) 550-5474",
+      "font": "medium",
+      "size_pt": 11.5,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        83.536,
+        97.36149999999998,
+        93.817
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "outreach@amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        103.77,
+        151.32,
+        112.82
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        120.77,
+        101.96000000000001,
+        129.82
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/back",
+      "text": "Get found. Get clients.",
+      "font": "geist",
+      "size_pt": 13,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        20.562,
+        155.20200000000003,
+        30.208
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/back",
+      "text": "Get back to life.",
+      "font": "geist",
+      "size_pt": 13,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        38.562,
+        115.39599999999999,
+        48.208
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/back",
+      "text": "Fresno and Los Angeles",
+      "font": "body",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        121.493,
+        113.03100000000002,
+        129.638
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/front",
+      "text": "AmirGets",
+      "font": "geist",
+      "size_pt": 33,
+      "bounds_trim_top_left_pt": [
+        51.782999999999994,
+        34.042,
+        200.21699999999998,
+        58.528
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/front",
+      "text": "Leads",
+      "font": "geist",
+      "size_pt": 39,
+      "bounds_trim_top_left_pt": [
+        69.43595124093612,
+        68.31,
+        182.5640487590639,
+        96.468
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/front",
+      "text": "Fresno and Los Angeles",
+      "font": "body",
+      "size_pt": 8.5,
+      "bounds_trim_top_left_pt": [
+        81.12425,
+        120.8545,
+        170.87574999999998,
+        128.547
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/back",
+      "text": "Amir Haider",
+      "font": "geist",
+      "size_pt": 21,
+      "bounds_trim_top_left_pt": [
+        22.0,
+        23.838,
+        138.928,
+        39.252
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/back",
+      "text": "(559) 550-5474",
+      "font": "medium",
+      "size_pt": 12,
+      "bounds_trim_top_left_pt": [
+        22.0,
+        65.168,
+        104.81200000000001,
+        75.896
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/back",
+      "text": "outreach@amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10.5,
+      "bounds_trim_top_left_pt": [
+        22.0,
+        88.4085,
+        161.98600000000002,
+        97.911
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/back",
+      "text": "amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10.5,
+      "bounds_trim_top_left_pt": [
+        22.0,
+        110.4085,
+        110.158,
+        119.911
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/front",
+      "text": "AmirGets",
+      "font": "geist",
+      "size_pt": 33,
+      "bounds_trim_top_left_pt": [
+        51.782999999999994,
+        34.042,
+        200.21699999999998,
+        58.528
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/front",
+      "text": "Leads",
+      "font": "geist",
+      "size_pt": 39,
+      "bounds_trim_top_left_pt": [
+        69.43595124093612,
+        68.31,
+        182.5640487590639,
+        96.468
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/front",
+      "text": "Fresno and Los Angeles",
+      "font": "body",
+      "size_pt": 8.5,
+      "bounds_trim_top_left_pt": [
+        81.12425,
+        120.8545,
+        170.87574999999998,
+        128.547
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/back",
+      "text": "Amir Haider",
+      "font": "geist",
+      "size_pt": 21,
+      "bounds_trim_top_left_pt": [
+        22.0,
+        23.838,
+        138.928,
+        39.252
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/back",
+      "text": "(559) 550-5474",
+      "font": "medium",
+      "size_pt": 12,
+      "bounds_trim_top_left_pt": [
+        22.0,
+        65.168,
+        104.81200000000001,
+        75.896
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/back",
+      "text": "outreach@amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10.5,
+      "bounds_trim_top_left_pt": [
+        22.0,
+        88.4085,
+        161.98600000000002,
+        97.911
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/back",
+      "text": "amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10.5,
+      "bounds_trim_top_left_pt": [
+        22.0,
+        110.4085,
+        110.158,
+        119.911
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "Amir",
+      "font": "geist",
+      "size_pt": 25,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        24.95,
+        71.5,
+        43.0
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "Haider",
+      "font": "geist",
+      "size_pt": 25,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        52.95,
+        92.22500000000001,
+        71.3
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "AmirGetsLeads",
+      "font": "geist",
+      "size_pt": 10.5,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        86.377,
+        93.595,
+        94.168
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "(559) 550-5474",
+      "font": "medium",
+      "size_pt": 10.5,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        169.272,
+        88.46050000000001,
+        178.659
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "outreach@amirgetsleads.com",
+      "font": "body",
+      "size_pt": 8.5,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        189.8545,
+        129.32200000000003,
+        197.547
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "amirgetsleads.com",
+      "font": "body",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        207.493,
+        91.56400000000001,
+        215.638
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "Fresno and Los Angeles",
+      "font": "body",
+      "size_pt": 8,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        230.216,
+        100.472,
+        237.456
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/back",
+      "text": "AmirGets",
+      "font": "geist",
+      "size_pt": 16,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        24.384,
+        87.96799999999999,
+        36.256
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/back",
+      "text": "Leads",
+      "font": "geist",
+      "size_pt": 19,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        43.51,
+        71.11368853447249,
+        57.228
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "Amir",
+      "font": "geist",
+      "size_pt": 25,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        24.95,
+        71.5,
+        43.0
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "Haider",
+      "font": "geist",
+      "size_pt": 25,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        52.95,
+        92.22500000000001,
+        71.3
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "AmirGetsLeads",
+      "font": "geist",
+      "size_pt": 10.5,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        86.377,
+        93.595,
+        94.168
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "(559) 550-5474",
+      "font": "medium",
+      "size_pt": 10.5,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        169.272,
+        88.46050000000001,
+        178.659
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "outreach@amirgetsleads.com",
+      "font": "body",
+      "size_pt": 8.5,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        189.8545,
+        129.32200000000003,
+        197.547
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "amirgetsleads.com",
+      "font": "body",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        207.493,
+        91.56400000000001,
+        215.638
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "Fresno and Los Angeles",
+      "font": "body",
+      "size_pt": 8,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        230.216,
+        100.472,
+        237.456
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/back",
+      "text": "AmirGets",
+      "font": "geist",
+      "size_pt": 16,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        24.384,
+        87.96799999999999,
+        36.256
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/back",
+      "text": "Leads",
+      "font": "geist",
+      "size_pt": 19,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        43.51,
+        71.11368853447249,
+        57.228
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "AmirGets",
+      "font": "geist",
+      "size_pt": 24,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        17.576,
+        125.952,
+        35.384
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "Leads",
+      "font": "geist",
+      "size_pt": 28,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        44.120000000000005,
+        99.22017257711738,
+        64.336
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "Amir Haider",
+      "font": "medium",
+      "size_pt": 12,
+      "bounds_trim_top_left_pt": [
+        170.912,
+        54.324,
+        236.0,
+        63.144
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "(559) 550-5474",
+      "font": "medium",
+      "size_pt": 11.5,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        83.536,
+        97.36149999999998,
+        93.817
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "outreach@amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        103.77,
+        151.32,
+        112.82
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        120.77,
+        101.96000000000001,
+        129.82
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/back",
+      "text": "Get found. Get clients.",
+      "font": "geist",
+      "size_pt": 13,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        20.562,
+        155.20200000000003,
+        30.208
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/back",
+      "text": "Get back to life.",
+      "font": "geist",
+      "size_pt": 13,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        38.562,
+        115.39599999999999,
+        48.208
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/back",
+      "text": "Fresno and Los Angeles",
+      "font": "body",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        121.493,
+        113.03100000000002,
+        129.638
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/front",
+      "text": "AmirGets",
+      "font": "geist",
+      "size_pt": 33,
+      "bounds_trim_top_left_pt": [
+        51.782999999999994,
+        34.042,
+        200.21699999999998,
+        58.528
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/front",
+      "text": "Leads",
+      "font": "geist",
+      "size_pt": 39,
+      "bounds_trim_top_left_pt": [
+        69.43595124093612,
+        68.31,
+        182.5640487590639,
+        96.468
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/front",
+      "text": "Fresno and Los Angeles",
+      "font": "body",
+      "size_pt": 8.5,
+      "bounds_trim_top_left_pt": [
+        81.12425,
+        120.8545,
+        170.87574999999998,
+        128.547
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/back",
+      "text": "Amir Haider",
+      "font": "geist",
+      "size_pt": 21,
+      "bounds_trim_top_left_pt": [
+        22.0,
+        23.838,
+        138.928,
+        39.252
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/back",
+      "text": "(559) 550-5474",
+      "font": "medium",
+      "size_pt": 12,
+      "bounds_trim_top_left_pt": [
+        22.0,
+        65.168,
+        104.81200000000001,
+        75.896
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/back",
+      "text": "outreach@amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10.5,
+      "bounds_trim_top_left_pt": [
+        22.0,
+        88.4085,
+        161.98600000000002,
+        97.911
+      ]
+    },
+    {
+      "direction_side": "02-painted-edge/back",
+      "text": "amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10.5,
+      "bounds_trim_top_left_pt": [
+        22.0,
+        110.4085,
+        110.158,
+        119.911
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "Amir",
+      "font": "geist",
+      "size_pt": 25,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        24.95,
+        71.5,
+        43.0
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "Haider",
+      "font": "geist",
+      "size_pt": 25,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        52.95,
+        92.22500000000001,
+        71.3
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "AmirGetsLeads",
+      "font": "geist",
+      "size_pt": 10.5,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        86.377,
+        93.595,
+        94.168
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "(559) 550-5474",
+      "font": "medium",
+      "size_pt": 10.5,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        169.272,
+        88.46050000000001,
+        178.659
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "outreach@amirgetsleads.com",
+      "font": "body",
+      "size_pt": 8.5,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        189.8545,
+        129.32200000000003,
+        197.547
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "amirgetsleads.com",
+      "font": "body",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        207.493,
+        91.56400000000001,
+        215.638
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/front",
+      "text": "Fresno and Los Angeles",
+      "font": "body",
+      "size_pt": 8,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        230.216,
+        100.472,
+        237.456
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/back",
+      "text": "AmirGets",
+      "font": "geist",
+      "size_pt": 16,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        24.384,
+        87.96799999999999,
+        36.256
+      ]
+    },
+    {
+      "direction_side": "03-personal-linen/back",
+      "text": "Leads",
+      "font": "geist",
+      "size_pt": 19,
+      "bounds_trim_top_left_pt": [
+        16.0,
+        43.51,
+        71.11368853447249,
+        57.228
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "AmirGets",
+      "font": "geist",
+      "size_pt": 24,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        17.576,
+        125.952,
+        35.384
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "Leads",
+      "font": "geist",
+      "size_pt": 28,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        44.120000000000005,
+        99.22017257711738,
+        64.336
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "Amir Haider",
+      "font": "medium",
+      "size_pt": 12,
+      "bounds_trim_top_left_pt": [
+        170.912,
+        54.324,
+        236.0,
+        63.144
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "(559) 550-5474",
+      "font": "medium",
+      "size_pt": 11.5,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        83.536,
+        97.36149999999998,
+        93.817
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "outreach@amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        103.77,
+        151.32,
+        112.82
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        120.77,
+        101.96000000000001,
+        129.82
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "AmirGets",
+      "font": "geist",
+      "size_pt": 24,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        17.576,
+        125.952,
+        35.384
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "Leads",
+      "font": "geist",
+      "size_pt": 28,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        44.120000000000005,
+        99.22017257711738,
+        64.336
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "Amir Haider",
+      "font": "medium",
+      "size_pt": 12,
+      "bounds_trim_top_left_pt": [
+        170.912,
+        54.324,
+        236.0,
+        63.144
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "(559) 550-5474",
+      "font": "medium",
+      "size_pt": 11.5,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        83.536,
+        97.36149999999998,
+        93.817
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "outreach@amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        103.77,
+        151.32,
+        112.82
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        120.77,
+        101.96000000000001,
+        129.82
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "Amir Haider",
+      "font": "geist",
+      "size_pt": 21,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        23.838,
+        134.928,
+        39.252
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "outreach@amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        102.77,
+        151.32,
+        111.82
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "Amir Haider",
+      "font": "geist",
+      "size_pt": 21,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        23.838,
+        134.928,
+        39.252
+      ]
+    },
+    {
+      "direction_side": "01-natural-linen/front",
+      "text": "outreach@amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        102.77,
+        151.32,
+        111.82
+      ]
+    }
+  ],
+  "report_destination": "/Users/amir/amgwebsite/brand/axiom/report.md",
+  "pdf_checks": [
+    {
+      "file": "01-natural-linen-artwork-study.pdf",
+      "pages": 2,
+      "media_boxes": [
+        [
+          0,
+          0,
+          270,
+          162
+        ],
+        [
+          0,
+          0,
+          270,
+          162
+        ]
+      ],
+      "trim_boxes": [
+        [
+          9,
+          9,
+          261,
+          153
+        ],
+        [
+          9,
+          9,
+          261,
+          153
+        ]
+      ]
+    },
+    {
+      "file": "01-natural-linen-material-study.pdf",
+      "pages": 2,
+      "media_boxes": [
+        [
+          0,
+          0,
+          270,
+          162
+        ],
+        [
+          0,
+          0,
+          270,
+          162
+        ]
+      ],
+      "trim_boxes": [
+        [
+          9,
+          9,
+          261,
+          153
+        ],
+        [
+          9,
+          9,
+          261,
+          153
+        ]
+      ]
+    },
+    {
+      "file": "02-painted-edge-artwork-study.pdf",
+      "pages": 2,
+      "media_boxes": [
+        [
+          0,
+          0,
+          270,
+          162
+        ],
+        [
+          0,
+          0,
+          270,
+          162
+        ]
+      ],
+      "trim_boxes": [
+        [
+          9,
+          9,
+          261,
+          153
+        ],
+        [
+          9,
+          9,
+          261,
+          153
+        ]
+      ]
+    },
+    {
+      "file": "02-painted-edge-material-study.pdf",
+      "pages": 2,
+      "media_boxes": [
+        [
+          0,
+          0,
+          270,
+          162
+        ],
+        [
+          0,
+          0,
+          270,
+          162
+        ]
+      ],
+      "trim_boxes": [
+        [
+          9,
+          9,
+          261,
+          153
+        ],
+        [
+          9,
+          9,
+          261,
+          153
+        ]
+      ]
+    },
+    {
+      "file": "03-personal-linen-artwork-study.pdf",
+      "pages": 2,
+      "media_boxes": [
+        [
+          0,
+          0,
+          162,
+          270
+        ],
+        [
+          0,
+          0,
+          162,
+          270
+        ]
+      ],
+      "trim_boxes": [
+        [
+          9,
+          9,
+          153,
+          261
+        ],
+        [
+          9,
+          9,
+          153,
+          261
+        ]
+      ]
+    },
+    {
+      "file": "03-personal-linen-material-study.pdf",
+      "pages": 2,
+      "media_boxes": [
+        [
+          0,
+          0,
+          162,
+          270
+        ],
+        [
+          0,
+          0,
+          162,
+          270
+        ]
+      ],
+      "trim_boxes": [
+        [
+          9,
+          9,
+          153,
+          261
+        ],
+        [
+          9,
+          9,
+          153,
+          261
+        ]
+      ]
+    },
+    {
+      "file": "comparison.pdf",
+      "pages": 1,
+      "media_boxes": [
+        [
+          0,
+          0,
+          630,
+          936
+        ]
+      ],
+      "trim_boxes": [
+        [
+          0,
+          0,
+          630,
+          936
+        ]
+      ]
+    },
+    {
+      "file": "linen-stress-test.pdf",
+      "pages": 1,
+      "media_boxes": [
+        [
+          0,
+          0,
+          612,
+          792
+        ]
+      ],
+      "trim_boxes": [
+        [
+          0,
+          0,
+          612,
+          792
+        ]
+      ]
+    }
+  ],
+  "visual_review": {
+    "all_14_pngs_inspected": true,
+    "card_face_renders": 12,
+    "review_sheets": 2,
+    "observations": "See report.md, Linen test and visual inspection."
+  },
+  "final_checks": {
+    "no_em_dash_in_authored_text": true,
+    "all_report_links_exist": true,
+    "report_matches_source": true,
+    "study_page_count_and_boxes_pass": true,
+    "all_card_typography_outlined": true,
+    "pngs": [
+      {
+        "file": "proofs/01-natural-linen-back-artwork-study-300dpi.png",
+        "size": [
+          1125,
+          675
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "visually_inspected": true
+      },
+      {
+        "file": "proofs/01-natural-linen-back-material-study-300dpi.png",
+        "size": [
+          1125,
+          675
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "visually_inspected": true
+      },
+      {
+        "file": "proofs/01-natural-linen-front-artwork-study-300dpi.png",
+        "size": [
+          1125,
+          675
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "visually_inspected": true
+      },
+      {
+        "file": "proofs/01-natural-linen-front-material-study-300dpi.png",
+        "size": [
+          1125,
+          675
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "visually_inspected": true
+      },
+      {
+        "file": "proofs/02-painted-edge-back-artwork-study-300dpi.png",
+        "size": [
+          1125,
+          675
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "visually_inspected": true
+      },
+      {
+        "file": "proofs/02-painted-edge-back-material-study-300dpi.png",
+        "size": [
+          1125,
+          675
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "visually_inspected": true
+      },
+      {
+        "file": "proofs/02-painted-edge-front-artwork-study-300dpi.png",
+        "size": [
+          1125,
+          675
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "visually_inspected": true
+      },
+      {
+        "file": "proofs/02-painted-edge-front-material-study-300dpi.png",
+        "size": [
+          1125,
+          675
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "visually_inspected": true
+      },
+      {
+        "file": "proofs/03-personal-linen-back-artwork-study-300dpi.png",
+        "size": [
+          675,
+          1125
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "visually_inspected": true
+      },
+      {
+        "file": "proofs/03-personal-linen-back-material-study-300dpi.png",
+        "size": [
+          675,
+          1125
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "visually_inspected": true
+      },
+      {
+        "file": "proofs/03-personal-linen-front-artwork-study-300dpi.png",
+        "size": [
+          675,
+          1125
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "visually_inspected": true
+      },
+      {
+        "file": "proofs/03-personal-linen-front-material-study-300dpi.png",
+        "size": [
+          675,
+          1125
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "visually_inspected": true
+      },
+      {
+        "file": "proofs/comparison-300dpi-1.png",
+        "size": [
+          2625,
+          3900
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "visually_inspected": true
+      },
+      {
+        "file": "proofs/linen-stress-test-300dpi-1.png",
+        "size": [
+          2550,
+          3300
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "visually_inspected": true
+      }
+    ]
+  }
+}
