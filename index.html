@@ -182,7 +182,15 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .mono{font-family:var(--mono)}.serif{font-family:var(--display)}.accent{color:var(--accent)}
   .eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep)}
   .eb-br{display:none}
-  @media (max-width:640px){.eb-br{display:block}.eb-sep{display:none}}
+  @media (max-width:640px){
+    .eb-br{display:block}
+    .eb-sep{display:none}
+    /* Amir 2026-09-18, mobile: the eyebrow breaks to THREE stacked lines here,
+       and as an inline span it had no leading and no way to carry a bottom
+       margin, so the third line crashed into the H1. Block plus real leading
+       plus a gap. Desktop is untouched: there it stays one line with separators. */
+    .hero .eyebrow{display:block;line-height:2.05;margin:0 0 16px}
+  }
 
   /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:16px 26px;transition:background .4s,box-shadow .4s,padding .4s}
