@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "exports": [
+    {
+      "file": "brand/avatars/astra-avatar-1024.png",
+      "size": 1024,
+      "sha256": "5d4b3fdbef5bba6bbaf86f2fe3ee00322598419a60642aa09bb3ee19287360db"
+    },
+    {
+      "file": "brand/avatars/astra-avatar-800.png",
+      "size": 800,
+      "sha256": "5d9d1d835ed95bc1b47842f9eeb57859a24586d430fcb18f22b0ce3de1488530"
+    },
+    {
+      "file": "brand/avatars/astra-avatar-512.png",
+      "size": 512,
+      "sha256": "a2906640f0be10723f2274f1c836700954dfb1cd35cee7f2ecad4c38284d774a"
+    },
+    {
+      "file": "brand/avatars/astra-avatar-400.png",
+      "size": 400,
+      "sha256": "ebdeab929c330ccf550b0d348b71a98b15703f40d075ae22ad47c49f071fcb4e"
+    },
+    {
+      "file": "brand/avatars/astra-avatar-360.png",
+      "size": 360,
+      "sha256": "9bb8ecbc02bb3011068b5224b4db9b43154318ba0d725fe1127cd0135f9b9ba8"
+    },
+    {
+      "file": "brand/avatars/astra-avatar-320.png",
+      "size": 320,
+      "sha256": "77767bcbc5d0701866b30745dbb7c326ca9d16f7e442a111fd355ab8fc04767f"
+    },
+    {
+      "file": "brand/avatars/astra-avatar-180.png",
+      "size": 180,
+      "sha256": "13ae19c1902b58f53557e03f500c1d8e5f2f7cc0b6663f1de84dd364abcc3e4e"
+    },
+    {
+      "file": "brand/avatars/astra-avatar-48.png",
+      "size": 48,
+      "sha256": "36993b6fd1c63b38c372cf65f9ce554a6365913b7ae443090cddd1e96ce1de18"
+    },
+    {
+      "file": "brand/avatars/astra-avatar-32.png",
+      "size": 32,
+      "sha256": "311591476ea2fd1ed1234d932e258e2d7ba38ccea56b01f3278ebb0d33a58d09"
+    }
+  ],
+  "option_renders": 16,
+  "outlined_svg_masters": 15,
+  "all_outline_control_points_inside_circle": true,
+  "minimum_margin_units": 69.80459768318423,
+  "native_pixel_proofs_visually_reviewed": true,
+  "transparent_circular_exports": true,
+  "opaque_square_uploads": true,
+  "font_fallback": false,
+  "em_dash_found": false,
+  "pushed": false,
+  "deployed": false
+}

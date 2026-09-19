@@ -29,17 +29,28 @@ For Google Business Profile use `../gbp-wordmark-1024.png`. GBP displays larger
 and on warm paper rather than blue, and it was verified under a circular mask
 with nothing cut.
 
-## Alternates
+## Typesetting
 
-Swapping is a rename, not a rebuild. All three are rendered at every size in
-`../avatars/`.
+Set by Astra, 2026-09-18, after Amir called my first attempt short of best work.
+He was right: I had centred two bounding boxes with a chosen gap, which is
+arithmetic rather than typesetting. Four decisions were wrong and are fixed:
 
-- `alt-wordmark-even-400.png`, both words the same size, calmest
-- `alt-wordmark-tight-400.png`, largest overall, most legible at 32px
-- shipped: `wordmark-leads`, the payoff word larger, matching the site's own
-  emphasis and the strongest at profile size where people actually judge a brand
+- Centring an italic by its bounding box leaves it optically left, because the
+  box is skewed. `Leads` now sits on a shared optical axis.
+- No tracking was applied. The site sets its logo at -.02em and Geist wants
+  tightening at display size.
+- The vertical gap was a number I picked rather than derived from cap height.
+- The size relationship between an eight character word and a five character one
+  was undecided rather than designed.
 
-Compare them at real sizes in `../proofs/avatar-wordmark.png`.
+Shipped option B, a measured step: `Leads` at 84 percent of the upper line's
+width, optically shifted right, with deliberate clearance inside the circle.
+Three alternates were rendered and are in `../proofs/avatar-typesetting-comparison.png`:
+equal optical widths, one shared type size, and a shared left reading edge.
+
+**Separate display and small cuts.** A mark drawn at 1024 and downsampled is not
+the same as one drawn for 32px, where counters fill and the italic lean muddies.
+The 48 and 32 exports come from their own cut, not from the display master.
 
 ## Rejected, and why it is worth knowing
 
