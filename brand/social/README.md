@@ -22,9 +22,18 @@ For Google Business Profile use `../gbp-wordmark-1024.png` instead. GBP shows
 the image larger, so the full wordmark reads there and carries more brand than a
 two-letter mark. It was verified under a circular mask with nothing cut.
 
-Ground is ink `#14110A`, the A in paper `#FBF8F2`, the L in accent `#FF4D1C`
-italic, which is the same relationship the site's wordmark uses. Dark ground is
-deliberate: avatars sit on white and light UI almost everywhere.
+Ground is the site's own CTA gradient, `#3CB8DE` to `#2596BE` to `#1A5E92`,
+with the A in paper `#FBF8F2` and the italic L in accent `#FF4D1C`.
+
+Corrected 2026-09-18. The first export was ink, white and orange, because I had
+wrongly concluded blue was only a button colour. It is not: `#2596BE` appears 12
+times in index.html and across 28 files sitewide as the section eyebrow colour.
+Amir: "the whole point was like a sky blue orange and white." Black, white and
+orange is a common palette; sky blue with orange on warm white is not.
+
+Alternatives rendered in `../avatars/`: `al-blue-ground` flat blue,
+`al-paper-ground` for light surfaces, `al-ink-ground` if a dark mark is ever
+needed. All four are real Geist 700 with the italic L.
 
 Open question, Amir's call: AL is a two letter mark and two letters is roughly
 all that survives 32px. If it reads as too generic, the alternative is accepting
