@@ -1,7 +1,7 @@
 """Build held Axiom chat studies. All outputs stay beside this file.
 
 Use the cached Python runtime with ReportLab, Pillow, pypdf and Poppler.
-No QR is generated until a prompt URL has been verified in a live browser.
+Generic chat UI only. No QR, product marks, website edits or deployment.
 """
 from pathlib import Path
 import argparse
@@ -24,16 +24,11 @@ spec.loader.exec_module(base)
 base.FONTS['body'] = json.loads((HERE/'source/geist-400-outlines.json').read_text())
 base.FONTS['medium'] = json.loads((HERE/'source/geist-500-outlines.json').read_text())
 PAPER, INK, SOFT, ORANGE = '#FBF8F2', '#14110A', '#574F40', '#FF4D1C'
-TAKES = ['01-understated', '02-exchange', '03-dialogue']
+TAKES = ['01-minimal', '02-app', '03-full-interface']
+TITLES = ['MINIMAL FRAME', 'CHAT APP', 'FULL INTERFACE']
+STROKES = []
 RECORDS = base.RECORDS
-QR = {'encoded_url': None, 'status': 'PLACEHOLDER: prefill not verified',
-      'candidate_url': 'https://chatgpt.com/?q=Why%20should%20I%20hire%20AmirGetsLeads%3F',
-      'prompt': 'Why should I hire AmirGetsLeads?',
-      'attempt_date': '2026-09-18',
-      'browser_result': 'No browser is available',
-      'web_result': 'Failed to fetch, Cache miss; normalized spaces to +',
-      'reserved_square_pt': 64.8, 'reserved_square_inches': 0.9,
-      'quiet_zone': 'Must be included inside the reserved square when a code is approved.'}
+QR = {'status': 'Omitted by brief', 'encoded_url': None}
 
 
 def text(c, value, size, x, y, h=252, w=144, **kw):
@@ -41,39 +36,103 @@ def text(c, value, size, x, y, h=252, w=144, **kw):
     base.text(c, value, size, x, y, h, tw=w, **kw)
 
 
-def qr_placeholder(c):
-    """Removed 2026-09-18. Amir: "no qr code, our brand will adapt in the next
-    months, we just need to complete the move." The right call: the engine's own
-    measurement shows AmirGetsLeads at zero mentions across AI surfaces while
-    AmirGetsJobs still has 27, so a scan would have asked about a brand the
-    models do not know yet. The website on the information face carries it
-    instead, and the vertical face is stronger without a third of it given to a
-    placeholder."""
-    return
+def stroke(c, width=.8, color=SOFT):
+    assert width > .5
+    STROKES.append(width)
+    c.setStrokeColor(HexColor(color))
+    c.setLineWidth(width)
+    c.setLineCap(1)
+    c.setLineJoin(1)
+
+
+def line(c, x1, y1, x2, y2, width=.8, color=SOFT):
+    stroke(c, width, color)
+    c.line(x1, 252-y1, x2, 252-y2)
+
+
+def box(c, x, y, w, h, radius=8, color=SOFT, width=.8):
+    stroke(c, width, color)
+    c.roundRect(x, 252-y-h, w, h, radius, stroke=1, fill=0)
+
+
+def plus(c, x, y):
+    line(c,x-3,y,x+3,y)
+    line(c,x,y-3,x,y+3)
+
+
+def send(c, x, y):
+    # Real, optical-size send affordance. No low-contrast orange text.
+    stroke(c,.85,SOFT)
+    c.circle(x,252-y,7.3,fill=0,stroke=1)
+    line(c,x,y+3,x,y-3,1.2,ORANGE)
+    line(c,x-2.7,y-.3,x,y-3,1.2,ORANGE)
+    line(c,x,y-3,x+2.7,y-.3,1.2,ORANGE)
+
+
+def composer(c, full=False):
+    if full:
+        box(c,18,194,108,40,10)
+        text(c,'Message...',8.5,27,209,font='body',color=SOFT)
+        plus(c,28,223)
+        send(c,114,223)
+    else:
+        box(c,12,211,120,29,12)
+        text(c,'Message...',9,23,229,font='body',color=SOFT)
+        send(c,119,225.5)
+
+
+def prompt(c, x, y, w, size=9.5):
+    box(c,x,y,w,59,10)
+    for value,dy in zip(["I need marketing", "but I don't know", "who to pick."],[19,32,45]):
+        text(c,value,size,x+10,y+dy,font='body')
+
+
+def reply(c, x, y, size=11):
+    text(c,'AmirGetsLeads.',size,x,y,font='medium')
+    text(c,'Turn the card over.',9,x,y+17,font='body')
 
 
 def vertical(c, take):
     base.ACTIVE = take+'/vertical'
     if take == TAKES[0]:
-        for line,y in zip(['I need marketing','but I don\'t know','who to pick.'],[74,95,116]):
-            text(c,line,14.5,16,y,font='body',color=SOFT)
-        text(c,'AmirGetsLeads.',13.5,16,160)
-        text(c,'Turn the card over.',10,16,178,font='body')
+        # The composer and asymmetrical turn alignment carry the recognition.
+        text(c,'AI chat',9,14,29,font='medium',color=SOFT)
+        prompt(c,30,57,102)
+        reply(c,14,148,11.5)
+        composer(c)
     elif take == TAKES[1]:
-        for line,y in zip(['I need marketing','but I don\'t know','who to pick.'],[74,95,116]):
-            text(c,line,14.5,16,y,font='body',color=SOFT)
-        # One non-semantic orange mark. Weight and indent carry the exchange.
-        base.rect(c,16,252-149,3,3,ORANGE)
-        text(c,'AmirGetsLeads.',12.5,28,153)
-        text(c,'Turn the card over.',9.5,28,172,font='body')
+        # A normal app bar, transcript and anchored composer without a device bezel.
+        line(c,14,23,24,23)
+        line(c,14,27,21,27)
+        text(c,'AI chat',10,34,29,font='medium')
+        plus(c,125,25)
+        line(c,12,42,132,42)
+        prompt(c,30,60,102)
+        text(c,'Assistant',7.5,14,140,font='medium',color=SOFT)
+        reply(c,14,157,11.5)
+        composer(c)
     else:
-        text(c,'QUESTION',7,16,62,font='medium',color=SOFT)
-        for line,y in zip(['I need marketing','but I don\'t know','who to pick.'],[83,101,119]):
-            text(c,line,13.5,16,y,font='body',color=SOFT)
-        text(c,'ANSWER',7,16,146,font='medium',color=SOFT)
-        text(c,'AmirGetsLeads.',13.5,16,166)
-        text(c,'Turn the card over.',10,16,183,font='body')
-    qr_placeholder(c)
+        # A complete generic app viewport. Controls are drawn at print-safe weights.
+        box(c,10,12,124,228,11)
+        line(c,19,26,28,26)
+        line(c,19,30,25,30)
+        text(c,'AI chat',9.5,39,32,font='medium')
+        plus(c,121,28)
+        line(c,10,46,134,46)
+        prompt(c,32,60,94,9)
+        # Neutral square, no interlaced or product-derived avatar.
+        box(c,19,132,7,7,1.3)
+        text(c,'Assistant',7.5,32,138,font='medium',color=SOFT)
+        reply(c,19,156,10.8)
+        # Familiar copy and retry controls, without invented feedback or ratings.
+        box(c,20,180,5.5,6.5,.7)
+        line(c,22,178,28,178)
+        line(c,28,178,28,184)
+        stroke(c,.8)
+        c.arc(36,252-186,44,252-178,startAng=35,extent=280)
+        line(c,44,180,44,177)
+        line(c,44,180,41,180)
+        composer(c,full=True)
 
 
 def horizontal(c):
@@ -131,14 +190,14 @@ def comparison():
         c.setFillColor(HexColor(INK)); c.setFont('Helvetica',size); c.drawString(x,y,s)
     label('THE CARD THAT ANSWERS ITS OWN QUESTION',36,611,16)
     label('AXIOM NATURAL WHITE LINEN / 100# / DESIGN REVIEW',36,590,8)
-    label('HOLD: brand findability, email alias, QR prefill and Axiom specification approval.',36,568,9)
+    label('Three generic chat interfaces. Proposed choice: 02. Print specifications await Axiom.',36,568,9)
     for i,take in enumerate(TAKES):
         x=36+i*180
-        label(['01 / UNDERSTATED','02 / EXCHANGE','03 / DIALOGUE'][i],x,538,10)
+        label(f'{i+1:02d} / {TITLES[i]}',x,538,10)
         c.saveState(); c.translate(x,270)
         face(c,take,'vertical',material=True,bleed=False,upright=True)
         c.restoreState()
-        label(['Nearly invisible','Moderate / proposed choice','More explicit'][i],x,253,8)
+        label(['Minimal frame','Recognisably an app / ship','Fully rendered viewport'][i],x,253,8)
     label('SHARED INFORMATION FACE',36,223,10)
     c.saveState(); c.translate(36,62)
     face(c,TAKES[1],'horizontal',material=True,bleed=False); c.restoreState()
@@ -146,7 +205,7 @@ def comparison():
         ('All cards shown at actual trim size.',187),
         ('Print this sheet at 100% to judge scale.',172),
         ('Linen texture is a digital simulation.',145),
-        ('No QR: the website carries it on the information face.',130),
+        ('No QR. Website on information face.',130),
         ('The exchange is authored card copy.',103),
         ('No captured AI response is presented.',88)]: label(line,318,y,9)
     label('REVIEW ONLY / 3.5 x 2 in trim / 0.125 in bleed and safety assumed / 18 Sep 2026',36,31,8)
@@ -159,6 +218,9 @@ def main():
     args=parser.parse_args()
     if not args.o.resolve().is_relative_to(HERE):
         raise ValueError('Report output must stay inside brand/axiom/chat for this asset-only task.')
+    (HERE/'proofs').mkdir(exist_ok=True)
+    outputs=[]
+    RECORDS.clear(); STROKES.clear()
     for take in TAKES:
         for material in [False,True]:
             suffix='linen' if material else 'artwork'
@@ -169,10 +231,11 @@ def main():
                 face(c,take,side,material=material)
                 c.showPage()
             c.save(); base.finish(raw,out,252,144); render(out)
+            outputs.append(out)
     comparison()
     records=list({json.dumps(r,sort_keys=True):r for r in RECORDS}.values())
     files={}
-    for path in sorted(HERE.glob('*.pdf')):
+    for path in outputs+[HERE/'comparison-HOLD.pdf']:
         pages=PdfReader(path).pages
         if 'comparison' not in path.name:
             assert len(pages)==2
@@ -183,6 +246,15 @@ def main():
                 assert not p.get('/Rotate',0)
                 assert not p.get('/Annots')
                 assert not p['/Resources'].get('/XObject')
+                if '-artwork-' in path.name:
+                    for operands,operator in p.get_contents().operations:
+                        if operator == b'w': assert float(operands[0]) > .5
+            files_horizontal = Image.open(HERE/'proofs'/f'{path.stem}-horizontal-landscape-300dpi.png').tobytes()
+            if path.name.startswith(TAKES[0]):
+                if '-artwork-' in path.name: shared_art = files_horizontal
+                else: shared_linen = files_horizontal
+            else:
+                assert files_horizontal == (shared_art if '-artwork-' in path.name else shared_linen)
         files[path.name]={'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'pages':len(pages)}
     inputs=[HERE.parent/'build.py',ROOT/'brand/source/font-outlines.c',ROOT/'brand/source/geist-700-outlines.json',
             ROOT/'brand/fonts/Geist-googlefonts-latin.woff2',HERE/'source/geist-400-outlines.json',
@@ -190,6 +262,8 @@ def main():
     report=(HERE/'report-source.md').read_text()
     for path in [HERE/'build.py',HERE/'report-source.md']:
         assert chr(0x2014) not in path.read_text(),path
+    assert chr(0x2014) not in report
+    args.o.parent.mkdir(parents=True,exist_ok=True)
     args.o.write_text(report)
     (HERE/'qr-verification.json').write_text(json.dumps(QR,indent=2)+'\n')
     result={'status':'HOLD, not press-ready','report_path':str(args.o.resolve()),
@@ -197,7 +271,11 @@ def main():
             'font_inputs':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs},
             'card_page_points':[270,162],'trim_points':[9,9,261,153],
             'safe_points':[18,18,252,144], 'all_card_pages_landscape':True,
-            'all_text_outlined':True,'em_dash_check':'pass',
+            'all_card_text_outlined':True,'em_dash_check':'pass',
+            'minimum_artwork_stroke_pt':min(STROKES),
+            'shared_information_face_pixel_identical':True,
+            'recommended_take':'02-app',
+            'reviewed_dpi':300,
             'colour':'Exploratory DeviceRGB. No approved output intent.',
             'texture':'Procedural illustration only; absent from artwork PDFs.'}
     (HERE/'verification.json').write_text(json.dumps(result,indent=2)+'\n')

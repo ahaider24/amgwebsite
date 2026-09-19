@@ -1,12 +1,4 @@
 {
-  "encoded_url": null,
-  "status": "PLACEHOLDER: prefill not verified",
-  "candidate_url": "https://chatgpt.com/?q=Why%20should%20I%20hire%20AmirGetsLeads%3F",
-  "prompt": "Why should I hire AmirGetsLeads?",
-  "attempt_date": "2026-09-18",
-  "browser_result": "No browser is available",
-  "web_result": "Failed to fetch, Cache miss; normalized spaces to +",
-  "reserved_square_pt": 64.8,
-  "reserved_square_inches": 0.9,
-  "quiet_zone": "Must be included inside the reserved square when a code is approved."
+  "status": "Omitted by brief",
+  "encoded_url": null
 }
