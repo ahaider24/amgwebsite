@@ -1,0 +1,421 @@
+{
+  "status": "HOLD, not press-ready",
+  "report_path": "/Users/amir/amgwebsite/brand/axiom/chat/report.md",
+  "qr": {
+    "status": "Omitted by brief",
+    "encoded_url": null
+  },
+  "files": {
+    "01-minimal-artwork-HOLD.pdf": {
+      "sha256": "1c896cb6ca787a66a5787bb7f8619d85ba31db290f776ac7cc8936e84f9b01e3",
+      "pages": 2
+    },
+    "01-minimal-linen-HOLD.pdf": {
+      "sha256": "b37372e989b8b17370daf3e45ff453ea3b2389e098420c940bd98b8354e0aae0",
+      "pages": 2
+    },
+    "02-app-artwork-HOLD.pdf": {
+      "sha256": "9737f7082ed690fa195308153179bd59e11a4a544acd7e03fe6b77dd97f12ad1",
+      "pages": 2
+    },
+    "02-app-linen-HOLD.pdf": {
+      "sha256": "be51090aab0889bf1b33d3fa6edc0ad6889b3c34910ffe0d12fe737e50fd4233",
+      "pages": 2
+    },
+    "03-full-interface-artwork-HOLD.pdf": {
+      "sha256": "9b8f0e17ae1a7e27c7e40c6e8bbc5850f490973a20920329dc01ae265ea92114",
+      "pages": 2
+    },
+    "03-full-interface-linen-HOLD.pdf": {
+      "sha256": "a4787e945bb28cfdb38965f4daeef958b3c7a8f0d0062f4779daaf71e870c648",
+      "pages": 2
+    },
+    "comparison-HOLD.pdf": {
+      "sha256": "ef6286087b80570e92badde386fd5ba5fa43686ca6e670d0c4adffb7fe8a370a",
+      "pages": 1
+    }
+  },
+  "glyph_bounds": [
+    {
+      "direction_side": "01-minimal/vertical",
+      "text": "AI chat",
+      "font": "medium",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        14.0,
+        22.61,
+        43.601,
+        29.108
+      ]
+    },
+    {
+      "direction_side": "01-minimal/vertical",
+      "text": "I need marketing",
+      "font": "body",
+      "size_pt": 9.5,
+      "bounds_trim_top_left_pt": [
+        40.0,
+        69.24549999999999,
+        112.81749999999997,
+        77.539
+      ]
+    },
+    {
+      "direction_side": "01-minimal/vertical",
+      "text": "but I don't know",
+      "font": "body",
+      "size_pt": 9.5,
+      "bounds_trim_top_left_pt": [
+        40.0,
+        82.255,
+        109.939,
+        89.114
+      ]
+    },
+    {
+      "direction_side": "01-minimal/vertical",
+      "text": "who to pick.",
+      "font": "body",
+      "size_pt": 9.5,
+      "bounds_trim_top_left_pt": [
+        40.0,
+        95.24549999999999,
+        92.70599999999999,
+        103.425
+      ]
+    },
+    {
+      "direction_side": "01-minimal/vertical",
+      "text": "AmirGetsLeads.",
+      "font": "medium",
+      "size_pt": 11.5,
+      "bounds_trim_top_left_pt": [
+        14.0,
+        139.651,
+        100.01999999999998,
+        148.184
+      ]
+    },
+    {
+      "direction_side": "01-minimal/vertical",
+      "text": "Turn the card over.",
+      "font": "body",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        14.0,
+        158.61,
+        91.724,
+        165.108
+      ]
+    },
+    {
+      "direction_side": "01-minimal/vertical",
+      "text": "Message...",
+      "font": "body",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        23.0,
+        222.61,
+        64.859,
+        230.458
+      ]
+    },
+    {
+      "direction_side": "shared/horizontal",
+      "text": "AmirGetsLeads",
+      "font": "geist",
+      "size_pt": 23,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        21.302,
+        187.96999999999997,
+        38.368
+      ]
+    },
+    {
+      "direction_side": "shared/horizontal",
+      "text": "Marketing and AI agency",
+      "font": "body",
+      "size_pt": 10,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        48.89,
+        132.39999999999998,
+        57.62
+      ]
+    },
+    {
+      "direction_side": "shared/horizontal",
+      "text": "Amir Haider",
+      "font": "medium",
+      "size_pt": 12,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        75.42,
+        84.25200000000001,
+        84.144
+      ]
+    },
+    {
+      "direction_side": "shared/horizontal",
+      "text": "559-550-5474",
+      "font": "body",
+      "size_pt": 11.5,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        92.651,
+        96.982,
+        101.184
+      ]
+    },
+    {
+      "direction_side": "shared/horizontal",
+      "text": "amir@amirgetsleads.com",
+      "font": "body",
+      "size_pt": 10.5,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        109.5345,
+        140.24099999999999,
+        118.701
+      ]
+    },
+    {
+      "direction_side": "shared/horizontal",
+      "text": "amirgetsleads.com",
+      "font": "medium",
+      "size_pt": 11,
+      "bounds_trim_top_left_pt": [
+        18.0,
+        124.135,
+        116.219,
+        133.782
+      ]
+    },
+    {
+      "direction_side": "02-app/vertical",
+      "text": "AI chat",
+      "font": "medium",
+      "size_pt": 10,
+      "bounds_trim_top_left_pt": [
+        34.0,
+        21.9,
+        66.89,
+        29.12
+      ]
+    },
+    {
+      "direction_side": "02-app/vertical",
+      "text": "I need marketing",
+      "font": "body",
+      "size_pt": 9.5,
+      "bounds_trim_top_left_pt": [
+        40.0,
+        72.24549999999999,
+        112.81749999999997,
+        80.539
+      ]
+    },
+    {
+      "direction_side": "02-app/vertical",
+      "text": "but I don't know",
+      "font": "body",
+      "size_pt": 9.5,
+      "bounds_trim_top_left_pt": [
+        40.0,
+        85.255,
+        109.939,
+        92.114
+      ]
+    },
+    {
+      "direction_side": "02-app/vertical",
+      "text": "who to pick.",
+      "font": "body",
+      "size_pt": 9.5,
+      "bounds_trim_top_left_pt": [
+        40.0,
+        98.24549999999999,
+        92.70599999999999,
+        106.425
+      ]
+    },
+    {
+      "direction_side": "02-app/vertical",
+      "text": "Assistant",
+      "font": "medium",
+      "size_pt": 7.5,
+      "bounds_trim_top_left_pt": [
+        14.0,
+        134.6375,
+        47.6,
+        140.09
+      ]
+    },
+    {
+      "direction_side": "02-app/vertical",
+      "text": "AmirGetsLeads.",
+      "font": "medium",
+      "size_pt": 11.5,
+      "bounds_trim_top_left_pt": [
+        14.0,
+        148.651,
+        100.01999999999998,
+        157.184
+      ]
+    },
+    {
+      "direction_side": "02-app/vertical",
+      "text": "Turn the card over.",
+      "font": "body",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        14.0,
+        167.61,
+        91.724,
+        174.108
+      ]
+    },
+    {
+      "direction_side": "02-app/vertical",
+      "text": "Message...",
+      "font": "body",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        23.0,
+        222.61,
+        64.859,
+        230.458
+      ]
+    },
+    {
+      "direction_side": "03-full-interface/vertical",
+      "text": "AI chat",
+      "font": "medium",
+      "size_pt": 9.5,
+      "bounds_trim_top_left_pt": [
+        39.0,
+        25.255,
+        70.2455,
+        32.114
+      ]
+    },
+    {
+      "direction_side": "03-full-interface/vertical",
+      "text": "I need marketing",
+      "font": "body",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        42.0,
+        72.601,
+        110.985,
+        80.458
+      ]
+    },
+    {
+      "direction_side": "03-full-interface/vertical",
+      "text": "but I don't know",
+      "font": "body",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        42.0,
+        85.61,
+        108.258,
+        92.108
+      ]
+    },
+    {
+      "direction_side": "03-full-interface/vertical",
+      "text": "who to pick.",
+      "font": "body",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        42.0,
+        98.601,
+        91.93199999999999,
+        106.35
+      ]
+    },
+    {
+      "direction_side": "03-full-interface/vertical",
+      "text": "Assistant",
+      "font": "medium",
+      "size_pt": 7.5,
+      "bounds_trim_top_left_pt": [
+        32.0,
+        132.6375,
+        65.6,
+        138.09
+      ]
+    },
+    {
+      "direction_side": "03-full-interface/vertical",
+      "text": "AmirGetsLeads.",
+      "font": "medium",
+      "size_pt": 10.8,
+      "bounds_trim_top_left_pt": [
+        19.0,
+        148.1592,
+        99.78400000000002,
+        156.1728
+      ]
+    },
+    {
+      "direction_side": "03-full-interface/vertical",
+      "text": "Turn the card over.",
+      "font": "body",
+      "size_pt": 9,
+      "bounds_trim_top_left_pt": [
+        19.0,
+        166.61,
+        96.724,
+        173.108
+      ]
+    },
+    {
+      "direction_side": "03-full-interface/vertical",
+      "text": "Message...",
+      "font": "body",
+      "size_pt": 8.5,
+      "bounds_trim_top_left_pt": [
+        27.0,
+        202.965,
+        66.5335,
+        210.377
+      ]
+    }
+  ],
+  "font_inputs": {
+    "brand/axiom/build.py": "2acf5f1dd49dc903711daadf68ce2b190412db777ef2cf58c94f9702b8bf6a16",
+    "brand/source/font-outlines.c": "4e273602c7f85e6e44610d09dcdb78ac3fe3ecc6e0b43e27b68c090bc9135aed",
+    "brand/source/geist-700-outlines.json": "eab57193376ad8273ef7121e260bf74123a9dbdc8b06cde181e745422288d687",
+    "brand/fonts/Geist-googlefonts-latin.woff2": "9b6f5ff45b278c744b5f379a2c4ecbaf858a842b8eaf82ac8d21b699ca16c608",
+    "brand/axiom/chat/source/geist-400-outlines.json": "329c312c1c818350f3343faa84addc4b09403dc9069e9051fd8177977ac5583e",
+    "brand/axiom/chat/source/geist-500-outlines.json": "632121e1099f527100299aedc178ab847425f7cc413a4fa7dface91c52f5d54d"
+  },
+  "card_page_points": [
+    270,
+    162
+  ],
+  "trim_points": [
+    9,
+    9,
+    261,
+    153
+  ],
+  "safe_points": [
+    18,
+    18,
+    252,
+    144
+  ],
+  "all_card_pages_landscape": true,
+  "all_card_text_outlined": true,
+  "em_dash_check": "pass",
+  "minimum_artwork_stroke_pt": 0.8,
+  "shared_information_face_pixel_identical": true,
+  "recommended_take": "02-app",
+  "reviewed_dpi": 300,
+  "colour": "Exploratory DeviceRGB. No approved output intent.",
+  "texture": "Procedural illustration only; absent from artwork PDFs."
+}
