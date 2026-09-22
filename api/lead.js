@@ -8,7 +8,31 @@
 
 const ENGINE_LEAD_URL = 'https://n8n.amirgetsjobs.com/hooks/lead';
 
+// GET /api/lead?health=1 is the uptime probe (Checkly). It sends
+// {"health": true} down the same path a real lead takes; the engine checks
+// the lead store and the Slack alert pipe and answers 200 or 503 without
+// saving anything. Any other GET is still 405.
+async function health(res) {
+  try {
+    const r = await fetch(ENGINE_LEAD_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ health: true }),
+    });
+    const text = await r.text();
+    res.setHeader('Cache-Control', 'no-store');
+    res.setHeader('Content-Type', 'application/json');
+    return res.status(r.status === 200 ? 200 : 503).send(text);
+  } catch (err) {
+    console.error('Lead health error', err);
+    return res.status(503).json({ ok: false, error: 'engine unreachable' });
+  }
+}
+
 export default async function handler(req, res) {
+  if (req.method === 'GET' && req.query && req.query.health === '1') {
+    return health(res);
+  }
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ error: 'Method not allowed' });
