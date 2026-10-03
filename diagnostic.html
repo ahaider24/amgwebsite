@@ -78,6 +78,17 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .self-check{font-family:var(--mono);font-size:.6875rem;line-height:1.7;margin-top:.75rem;color:var(--ink-soft)}
   .self-check span{display:block;color:var(--ink)}
   .risk{font-size:.8125rem;line-height:1.55;max-width:42ch;margin-top:1rem;color:var(--ink-soft)}
+  .film{padding-block:2.5rem 1rem}
+  .film .label{margin-bottom:.75rem}
+  .film h2{font-family:var(--display);font-weight:500;font-size:clamp(1.6rem,3.6vw,2.4rem);line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:1.25rem}
+  .film-frame{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:14px;overflow:hidden;background:var(--ink);cursor:pointer;box-shadow:0 24px 60px rgba(20,17,10,.25)}
+  .film-frame img{width:100%;height:100%;object-fit:cover;display:block}
+  .film-frame iframe{width:100%;height:100%;border:0;display:block}
+  .film-play{position:absolute;top:50%;left:50%;width:76px;height:76px;transform:translate(-50%,-50%);border-radius:50%;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;transition:transform .2s}
+  .film-frame:hover .film-play{transform:translate(-50%,-50%) scale(1.08)}
+  .film-frame:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+  .film-tag{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:.6875rem;letter-spacing:.12em;color:#fff;background:rgba(0,0,0,.55);padding:6px 10px;border-radius:6px}
+  .rev-src{display:inline-block;margin-top:1rem;font-family:var(--mono);font-size:.6875rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--line)}
   .rev-wall{margin-top:2.25rem;padding-top:1.75rem;border-top:1px solid var(--line)}
   .rev-grid{display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:1.5rem}
   .rev{border-left:2px solid var(--line);padding-left:1rem}
@@ -217,6 +228,16 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
     </div>
   </section>
 
+  <section class="film wrap" aria-labelledby="film-title">
+    <p class="label rv">Who you will be working with</p>
+    <h2 id="film-title" class="rv">Three minutes on who we are.</h2>
+    <button type="button" class="film-frame rv" id="filmframe" data-film="573458682e65aff406132d2044068d3c" aria-label="Play the AmirGetsLeads film, 2 minutes 58 seconds">
+      <img src="/amg-commercial-fresno-poster.v2.jpg" alt="Still from the AmirGetsLeads film" width="1920" height="864" decoding="async">
+      <span class="film-play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="film-tag">PLAY · 2:58</span>
+    </button>
+  </section>
+
   <section class="proof wrap" aria-label="Client review and credentials">
     <div class="press-row rv">
       <p class="label">As featured in</p>
@@ -229,8 +250,9 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
     <p class="press-quote rv">“Fresno agency bets AI chatbots are the new word of mouth.”
       <a href="https://thebusinessjournal.com/fresno-ai-agency-chatbot-referrals-amir-haider/" target="_blank" rel="noopener">The Business Journal, August 28, 2026 ↗</a></p>
     <div class="rev-wall rv">
-      <p class="label">Ten reviews. Ten five stars. All on Google.</p>
+      <p class="label">Eleven reviews. Eleven five stars. All on Google.</p>
       <div class="rev-grid">
+        <figure class="rev"><p>“We are starting to get busy with his help on creating awesome website and Ai and our seo.”</p><figcaption>Ken Romo <span>Sep 2026</span></figcaption></figure>
         <figure class="rev"><p>“Amir got our firm to the top of chat gpt.”</p><figcaption>H <span>Sep 2026</span></figcaption></figure>
         <figure class="rev"><p>“They designed an AI-native system tailored to the high volume of public interaction we face daily.”</p><figcaption>Yazan Amireh <span>Aug 2026</span></figcaption></figure>
         <figure class="rev"><p>“A person who genuinely wants to help people do better... a total professional.”</p><figcaption>Rafael Ramirez <span>Jul 2026</span></figcaption></figure>
@@ -242,6 +264,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
         <figure class="rev"><p>“The way he uses AI and automation for local marketing is genuinely different from anything I’ve seen.”</p><figcaption>Ahsan K <span>Mar 2026</span></figcaption></figure>
         <figure class="rev"><p>“Since it went up I’ve been getting a completely different caliber of patient reaching out. More serious, more qualified.”</p><figcaption>Noman Naqvi <span>Mar 2026</span></figcaption></figure>
       </div>
+      <a class="rev-src" href="https://maps.google.com/maps?cid=17255384803177239107" target="_blank" rel="noopener">Read every review on Google ↗</a>
     </div>
   </section>
 
@@ -297,6 +320,8 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   // Failsafe: IO misses on anchor jumps and some iOS scroll patterns left
   // sections invisible (blank pricing cards on mobile, 2026-08-24). Reveal
   // anything actually in the viewport, on a timer and on scroll.
+  var ff=document.getElementById('filmframe');
+  if(ff){ff.addEventListener('click',function(){if(ff.querySelector('iframe'))return;var f=document.createElement('iframe');f.src='https://customer-1dbaiqcmozq0dh9g.cloudflarestream.com/'+ff.dataset.film+'/iframe?autoplay=true&primaryColor=%23FF4D1C';f.allow='accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.title='AmirGetsLeads film';ff.innerHTML='';ff.appendChild(f);});}
   function rvSweep(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight*.98&&r.bottom>0)el.classList.add('in');});}
   setTimeout(rvSweep,900);setTimeout(rvSweep,2500);
   var rvTick=false;function rvOnScroll(){if(rvTick)return;rvTick=true;requestAnimationFrame(function(){rvSweep();rvTick=false;});}window.addEventListener('scroll',rvOnScroll,{passive:true});document.addEventListener('scroll',rvOnScroll,{capture:true,passive:true});setInterval(rvSweep,800);
