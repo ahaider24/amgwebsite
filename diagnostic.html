@@ -321,7 +321,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   // sections invisible (blank pricing cards on mobile, 2026-08-24). Reveal
   // anything actually in the viewport, on a timer and on scroll.
   var ff=document.getElementById('filmframe');
-  if(ff){ff.addEventListener('click',function(){if(ff.querySelector('iframe'))return;var f=document.createElement('iframe');f.src='https://customer-1dbaiqcmozq0dh9g.cloudflarestream.com/'+ff.dataset.film+'/iframe?autoplay=true&primaryColor=%23FF4D1C';f.allow='accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.title='AmirGetsLeads film';ff.innerHTML='';ff.appendChild(f);});}
+  if(ff){ff.addEventListener('click',function(){var f=document.createElement('iframe');f.src='https://customer-1dbaiqcmozq0dh9g.cloudflarestream.com/'+ff.dataset.film+'/iframe?autoplay=true&primaryColor=%23FF4D1C';f.allow='accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.title='AmirGetsLeads film';var w=document.createElement('div');w.className='film-frame in';w.appendChild(f);ff.replaceWith(w);f.focus();});}
   function rvSweep(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight*.98&&r.bottom>0)el.classList.add('in');});}
   setTimeout(rvSweep,900);setTimeout(rvSweep,2500);
   var rvTick=false;function rvOnScroll(){if(rvTick)return;rvTick=true;requestAnimationFrame(function(){rvSweep();rvTick=false;});}window.addEventListener('scroll',rvOnScroll,{passive:true});document.addEventListener('scroll',rvOnScroll,{capture:true,passive:true});setInterval(rvSweep,800);
