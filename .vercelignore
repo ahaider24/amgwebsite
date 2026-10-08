@@ -1,2 +1,4 @@
 # Internal review artifacts are not public site assets.
 ASTRA_*.md
+STYLE.md
+CLAUDE.md
