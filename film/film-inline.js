@@ -106,6 +106,10 @@
     var segs = SECTIONS.map(function (s, i) {
       var scene = el('div', 'ifilm-scene'); scene.style.setProperty('--sw-accent', s.accent || '');
       var img = el('img', 'ifilm-scene__still'); img.alt = ''; img.decoding = 'async';
+      img.loading = 'lazy';
+      if (s.stillFallback) img.addEventListener('error', function () {
+        img.src = s.stillFallback;
+      }, { once: true });
       if (s.still) img.src = s.still;
       scene.appendChild(img); stage.appendChild(scene);
       return { s: s, i: i, el: scene, img: img, video: null, blobUrl: null,
@@ -274,6 +278,14 @@
         '<p class="ifilm-mbody">' + esc(s.body || '') + '</p></div></section>';
     });
     m.innerHTML = html; section.appendChild(m);
+    m.querySelectorAll('.ifilm-mcard img').forEach(function (img, i) {
+      var fallback = SECTIONS[i].stillFallback;
+      if (fallback) img.addEventListener('error', function () {
+        img.src = fallback;
+        var video = img.parentNode.querySelector('video');
+        if (video) video.poster = fallback;
+      }, { once: true });
+    });
     var canUseVideo = !reduce;
     function startScene(n) {
       n.classList.add('in');
