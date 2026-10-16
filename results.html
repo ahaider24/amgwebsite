@@ -192,6 +192,90 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
 </script>
 </head>
 <body>
+
+<style id="results-redesign">
+/* Page-specific overrides live here to preserve the original head verbatim. */
+#main .wrap{max-width:1200px;padding-left:32px;padding-right:32px}
+.hero{background:var(--ink);padding:156px 0 76px}
+.hero .wrap{display:grid;grid-template-columns:1.35fr 1fr;column-gap:80px;align-items:end}
+.hero .eyebrow{grid-column:1/-1;color:#C6C0B3;font-size:11px;letter-spacing:.12em;margin-bottom:32px}
+.hero h1{font-size:clamp(56px,6.6vw,94px);line-height:1.03;letter-spacing:-.045em;max-width:13ch}
+.hero h1 em{color:#76C9E4}
+.hero-copy{padding-bottom:4px}.hero .line{margin:0;color:#D6D1C7;font-size:17px;line-height:1.75;max-width:42ch}
+.hero-link{font-size:14px;color:#FFF;margin-top:22px;text-decoration-color:#716A5F}
+.highlights{background:var(--paper);color:var(--ink);padding:64px 0 80px}
+.section-label{display:flex;justify-content:space-between;gap:20px;align-items:baseline;margin-bottom:28px}
+.section-label h2,.section-label p{font:11px/1.6 var(--mono);letter-spacing:.1em;text-transform:uppercase;font-weight:400}
+.section-label p{color:var(--ink-soft)}
+.result-grid{max-width:none;gap:24px}
+.result-card{display:block;background:#fff;border:0;border-radius:4px;padding:36px;box-shadow:0 4px 30px rgba(20,17,10,.045);position:relative}
+.card-client{display:block;font:12px/1.5 var(--mono);color:var(--ink-soft);min-height:0}
+h3.card-client{font-weight:400}.result-card strong{display:block;font-family:var(--display);font-weight:400;font-size:116px;letter-spacing:-.065em;line-height:1;margin:30px 0 14px;color:var(--ink)}
+.result-card strong .unit{font-size:.6em;letter-spacing:-.04em}
+.card-payoff{display:block;max-width:30ch;font-weight:500;font-size:21px;line-height:1.4;min-height:88px}
+.card-before{display:block;font-size:13px;line-height:1.7;color:var(--ink-soft);margin-top:24px;max-width:48ch}
+.proof-chart{margin-top:32px;padding-top:24px;border-top:1px solid var(--line-soft)}
+.proof-chart figcaption{font:10px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:18px}
+.chart-label{display:flex;justify-content:space-between;font-size:13px;line-height:1.5;margin:15px 0 8px;gap:12px}
+.chart-label b{font:500 13px/1.5 var(--mono)}
+.track{height:12px;background:var(--paper-2);overflow:hidden;border-radius:2px}
+.fill{height:100%;background:#16A34A}
+.fill.previous{background:#BDB4A2}.fill.google{background:#86CFA0}
+.axis{display:flex;justify-content:space-between;font:10px/1.5 var(--mono);color:var(--ink-soft);margin-top:10px}
+.search-results{background:var(--paper-2);padding:64px 0 72px}
+.search-results .result-card{background:transparent;padding:0;box-shadow:none}
+.search-results .result-grid{gap:80px}
+.search-results .result-card strong{font-size:84px;margin-top:26px}
+.search-results .card-payoff{min-height:0;font-size:20px}
+.search-results .card-before{min-height:66px;max-width:48ch}
+.search-results .proof-chart{border-color:rgba(20,17,10,.14)}
+.calls-svg{display:block;width:100%;height:auto;overflow:visible}
+.visits-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px}
+.visits-pair .visit-number{font:400 72px/1.1 var(--display);letter-spacing:-.04em}
+.visits-pair .visit-number.after{color:#15803D}
+.visits-pair p{font:11px/1.7 var(--mono);color:var(--ink-soft);margin-top:10px}
+.measurement{background:var(--paper);padding:40px 0 0}
+.measurement .wrap{display:grid;grid-template-columns:1fr 2fr;gap:60px}
+.measurement h2{font:11px/1.7 var(--mono);letter-spacing:.08em;text-transform:uppercase;font-weight:400}
+.snapshot-note{margin:0;max-width:none;font-size:13px;line-height:1.8;color:var(--ink-soft)}
+.reso{background:var(--paper);padding:100px 0 80px}
+.reso>.wrap{position:relative;border-bottom:1px solid var(--line);padding-bottom:80px}
+.reso h2{font-size:clamp(40px,4.8vw,66px);max-width:18ch}.reso h2 em{color:var(--ink)}
+.reso .eyebrow{font-size:11px;letter-spacing:.1em}
+.reso .line{max-width:56ch;font-size:17px}.reso .btn-primary{background:var(--blue);box-shadow:none}
+.ai-section-header{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-bottom:28px}
+.ai-section-header .section-label{display:block;margin-bottom:0}
+.ai-section-header .section-label p{margin-top:8px}
+.ai-answer-mock{padding:20px;background:#fff;border:1px solid var(--line-soft);border-radius:4px;font-size:14px;line-height:1.6}
+.ai-answer-mock .question{margin-left:24px;padding:12px 16px;background:var(--paper-2);border-radius:12px 12px 2px 12px}
+.ai-answer-mock .answer{margin-top:14px;margin-right:24px;padding:12px 16px;background:var(--paper);border:1px solid var(--line-soft);border-radius:12px 12px 12px 2px}
+.ai-answer-mock mark{background:#DCF2E3;color:var(--ink);padding:2px 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.ai-answer-mock .mock-label{display:block;margin-top:10px;font:10px/1.7 var(--mono);color:var(--ink-soft)}
+.reviews{padding-top:24px;padding-bottom:72px;scroll-margin-top:100px}
+.reviews h2{font-family:var(--display);font-size:clamp(36px,4vw,52px);font-weight:400;line-height:1.1;letter-spacing:-.035em;margin-bottom:20px}
+.reviews .lede{font-size:17px;line-height:1.75;max-width:60ch}
+.reviews .facts{gap:8px 24px;margin:24px 0 32px;font:11px/1.7 var(--mono);align-items:center}
+.reviews .rv{padding:32px 0;border-color:var(--line-soft)}
+.reviews .rv header{margin-bottom:16px}
+.reviews .rv .who{font-size:14px;font-weight:500}
+.reviews .rv time,.reviews .rv .src{font:11px/1.6 var(--mono)}
+.reviews .rv .src{border-radius:4px}
+.reviews .rv p{font-size:17px;line-height:1.8;max-width:85ch}
+.reviews .rv .reply{font-size:14px;margin-top:20px;padding-left:20px;border-left:2px solid var(--line-soft)}
+.reviews .cta{margin-top:32px;border-color:var(--line-soft)}
+.reviews .cta a{font-size:14px;font-weight:500;border-radius:4px}
+.rv .src{min-height:44px;display:inline-flex;align-items:center;padding:8px 16px}.reviews .facts a{min-height:44px;display:inline-flex;align-items:center}
+.rv time,.rv .src{color:var(--ink-soft)}
+@media(min-width:1000px){.reso .btn{position:absolute;right:32px;top:145px}.reso .xlinks{margin-top:32px}}
+@media(max-width:780px){
+#main .wrap{padding-left:24px;padding-right:24px}.hero{padding:124px 0 48px}.hero .wrap{display:block}.hero .eyebrow{font-size:10px;letter-spacing:.07em;margin-bottom:26px}.hero h1{font-size:58px;max-width:12ch}.hero-copy{margin-top:28px}.hero .line{font-size:16px;line-height:1.7}.hero-link{font-size:13px;margin-top:16px}
+.ai-section-header{grid-template-columns:1fr;gap:20px;margin-bottom:20px}.ai-answer-mock{padding:16px;font-size:13px}.ai-answer-mock .question{margin-left:12px}.ai-answer-mock .answer{margin-right:12px}
+.highlights{padding:36px 0 44px}.section-label{margin-bottom:20px}.section-label p{display:none}.result-grid{gap:20px}.result-card{padding:26px}.card-client{font-size:11px}.result-card strong{font-size:98px;margin-top:28px}.card-payoff{font-size:19px;min-height:0}.card-before{font-size:12px;margin-top:20px}.proof-chart{margin-top:26px;padding-top:20px}
+.search-results{padding:36px 0 44px}.search-results .result-grid{gap:48px}.search-results .result-card strong{font-size:76px}.search-results .card-before{min-height:0}.measurement{padding-top:32px}.measurement .wrap{display:block}.measurement h2{margin-bottom:14px}.snapshot-note{font-size:12px}.reso{padding:64px 0 40px}.reso>.wrap{padding-bottom:48px}.reso h2{font-size:44px}.reso .line{font-size:16px}.reso .xlinks{gap:8px;margin-top:24px}.reviews{padding:24px 24px 64px}.reviews .facts{font-size:11px}.reviews .rv p{font-size:16px}.reviews .rv .reply{font-size:14px}.rv header{gap:8px 12px}.rv time{font-size:12px}.rv .src{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){#main *,#main *::before,#main *::after{animation:none!important;transition:none!important}}
+</style>
+
 <a class="skip-link" href="#main">Skip to results</a>
 
 <nav id="nav" class="nav-dark">
@@ -332,46 +416,68 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
 <div class="eyebrow">Client results · updated Oct 15, 2026</div>
 <h1>Their business, <em>found more often.</em>
 </h1>
+<div class="hero-copy">
 <p class="line">Real results for local businesses we work with. The numbers come from Google and from the buyer questions we ask AI assistants every week, each with its dates, and we show the industry instead of the name.</p>
 
 <a class="hero-link" href="/ai-seo">AI SEO for getting found by your next customer →</a>
 </div>
+</div>
 </header>
-<section class="highlights" aria-label="Client results">
-<div class="wrap">
-<div class="result-grid">
-<div class="result-card">
-<span class="card-client">Beverage &amp; foodservice supplier</span>
+<section class="highlights" aria-labelledby="ai-results-heading"><div class="wrap">
+<div class="ai-section-header">
+<div class="section-label"><h2 id="ai-results-heading">01 / Named in AI answers</h2><p>Measured Oct 1 to 15, 2026</p></div>
+<div class="ai-answer-mock" aria-hidden="true">
+<p class="question">Who's the best CO2 and syrup supplier near Fresno?</p>
+<p class="answer"><mark>[Beverage &amp; foodservice supplier]</mark><span class="mock-label">named in 61% of ChatGPT answers</span></p>
+</div></div>
+<div class="result-grid"><article class="result-card srv">
+<h3 class="card-client">Beverage &amp; foodservice supplier</h3>
 <!-- SOURCE: som_answers, surface chatgpt_search, Oct 1 to 15 2026: 75 answers, 61% named; aio 66% of 35; claude_search 71% of 75 -->
-<strong>61%</strong>
+<strong>61<span class="unit">%</span></strong>
 <span class="card-payoff">of ChatGPT answers with web search name it when buyers ask who to buy from</span>
-<span class="card-before">75 buyer questions asked Oct 1 to 15, 2026. Google's AI answers named it in 66% of 35.</span>
-</div>
-<div class="result-card">
-<span class="card-client">Industrial services company</span>
+<span class="card-before">75 buyer questions asked Oct 1 to 15, 2026. Google's AI answers named it in 66% of 35.</span><figure class="proof-chart" aria-label="Business named in 61 percent of ChatGPT answers and 66 percent of Google AI answers. Scale 0 to 100 percent.">
+<figcaption>Answers that named the business</figcaption>
+<div class="chart-label"><span>ChatGPT · 75 questions</span><b>61%</b></div><div class="track"><div class="fill" style="width:61%"></div></div>
+<div class="chart-label"><span>Google AI · 35 questions</span><b>66%</b></div><div class="track"><div class="fill google" style="width:66%"></div></div>
+<div class="axis"><span>0%</span><span>100%</span></div>
+</figure></article><article class="result-card srv">
+<h3 class="card-client">Industrial services company</h3>
 <!-- SOURCE: som_answers, surface claude_search: Sep 2026 38% of 50; Oct 1 to 15 2026 72% of 75 -->
-<strong>72%</strong>
+<strong>72<span class="unit">%</span></strong>
 <span class="card-payoff">of Claude answers with web search name it when buyers ask who to hire</span>
-<span class="card-before">Up from 38% in September 2026, across 75 buyer questions asked Oct 1 to 15, 2026.</span>
-</div>
-<div class="result-card">
-<span class="card-client">Beverage &amp; foodservice supplier</span>
+<span class="card-before">Up from 38% in September 2026, across 75 buyer questions asked Oct 1 to 15, 2026.</span><figure class="proof-chart" aria-label="Claude answers naming the business rose from 38 percent in September to 72 percent in October. Scale 0 to 100 percent.">
+<figcaption>Claude answers that named the business</figcaption>
+<div class="chart-label"><span>September 2026</span><b>38%</b></div><div class="track"><div class="fill previous" style="width:38%"></div></div>
+<div class="chart-label"><span>Oct 1 to 15, 2026</span><b>72%</b></div><div class="track"><div class="fill" style="width:72%"></div></div>
+<div class="axis"><span>0%</span><span>100%</span></div>
+</figure></article></div></div></section>
+<section class="search-results" aria-labelledby="search-results-heading"><div class="wrap">
+<div class="section-label"><h2 id="search-results-heading">02 / Found on Google</h2><p>Calls &amp; search visits</p></div>
+<div class="result-grid"><article class="result-card srv">
+<h3 class="card-client">Beverage &amp; foodservice supplier</h3>
 <!-- SOURCE: Google Business Profile performance, calls per month; engine vault client page (March 0 to 3, September 12 to 14) -->
 <strong>12 to 14</strong>
 <span class="card-payoff">calls a month started from its Google listing</span>
-<span class="card-before">0 to 3 a month in March 2026, then 12 to 14 a month by September 2026.</span>
-</div>
-<div class="result-card">
-<span class="card-client">Industrial services company</span>
+<span class="card-before">0 to 3 a month in March 2026, then 12 to 14 a month by September 2026.</span><figure class="proof-chart">
+<figcaption>Monthly calls from its Google listing</figcaption>
+<svg class="calls-svg" viewBox="0 0 480 170" role="img" aria-label="Monthly call ranges: March 2026, zero to three. September 2026, twelve to fourteen. Axis starts at zero and ends at fifteen.">
+<g stroke="#CFC5B1" stroke-width="1"><path d="M110 15V124M225 15V124M340 15V124M455 15V124"/></g>
+<g font-family="Archivo, sans-serif" font-size="13" fill="#574F40"><text x="0" y="44">Mar 2026</text><text x="0" y="97">Sep 2026</text></g>
+<path d="M110 40H179" stroke="#A79C86" stroke-width="12"/><path d="M110 93H386" stroke="#16A34A" stroke-width="12"/><path d="M386 93H432" stroke="#16A34A" stroke-width="12" stroke-opacity=".35"/>
+<g fill="#F1EAD9"><rect x="182" y="28" width="56" height="23" rx="2"/><rect x="360" y="60" width="72" height="23" rx="2"/></g>
+<g font-family="JetBrains Mono, monospace" font-size="12" fill="#14110A"><text x="188" y="44">0 to 3</text><text x="366" y="76">12 to 14</text></g>
+<g font-family="JetBrains Mono, monospace" font-size="11" fill="#574F40" text-anchor="middle"><text x="110" y="148">0</text><text x="225" y="148">5</text><text x="340" y="148">10</text><text x="455" y="148">15</text></g>
+</svg>
+</figure></article><article class="result-card srv">
+<h3 class="card-client">Industrial services company</h3>
 <!-- SOURCE: outputs/gsc_snapshot_2026-08-29.json (28 days to Aug 29: 5 clicks); outputs/gsc_snapshot_2026-10-10.json (28 days to Oct 10: 26 clicks); (26 - 5) / 5 = 420% -->
 <strong>+420%</strong>
 <span class="card-payoff">visits from Google search</span>
-<span class="card-before">A website we built from scratch: 5 visits from Google in the four weeks to Aug 29, 2026, then 26 in the four weeks to Oct 10, 2026.</span>
-</div>
-</div>
-<p class="snapshot-note">AI answers come from the buyer questions we ask ChatGPT, Claude and Google's AI every week, calls from Google Business Profile and visits from Google Search Console, and each card states its dates. We don't show revenue yet because our clients haven't confirmed their numbers. We'll add it when they do.</p>
-</div>
-</section>
+<span class="card-before">A website we built from scratch: 5 visits from Google in the four weeks to Aug 29, 2026, then 26 in the four weeks to Oct 10, 2026.</span><figure class="proof-chart">
+<figcaption>Visits from Google · four-week periods</figcaption>
+<div class="visits-pair"><div><div class="visit-number">5</div><p>Four weeks to<br>Aug 29, 2026</p></div><div><div class="visit-number after">26</div><p>Four weeks to<br>Oct 10, 2026</p></div></div>
+</figure></article></div></div></section>
+<section class="measurement" aria-labelledby="measurement-heading"><div class="wrap"><h2 id="measurement-heading">How we measure</h2><p class="snapshot-note">AI answers come from the buyer questions we ask ChatGPT, Claude and Google's AI every week, calls from Google Business Profile and visits from Google Search Console, and each card states its dates. We don't show revenue yet because our clients haven't confirmed their numbers. We'll add it when they do.</p></div></section>
 <section class="reso">
 <div class="wrap">
 <div class="eyebrow" style="color:var(--blue)">Your business, next</div>
@@ -386,7 +492,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
 </div>
 </div>
 </section>
-<section class="reviews" id="reviews" aria-label="Google reviews">
+<section class="reviews wrap" id="reviews" aria-label="Google reviews">
   <h2>Google reviews</h2>
   <p class="lede">Every Google review, reproduced with the reviewer, the date and the source, so any reader, human or AI assistant, can check it.</p>
   <div class="facts"><span>Google: 5.0 stars</span><span>Yelp: 5.0 stars</span><a href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">AmirGetsLeads on Google Maps</a><a href="https://www.yelp.com/biz/amir-gets-jobs-fresno" rel="noopener">AmirGetsLeads on Yelp</a></div>
