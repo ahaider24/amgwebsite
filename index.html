@@ -234,6 +234,8 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
 
   .btn{font-weight:700;font-size:16px;padding:15px 25px;border-radius:100px;display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s,background .2s;font-family:var(--sans)}
   .btn-primary{background:linear-gradient(135deg,#3CB8DE 0%,#2596BE 46%,#1A5E92 100%);background-size:160% 160%;background-position:0% 50%;color:#fff;box-shadow:0 12px 32px rgba(37,150,190,.34);transition:transform .2s,box-shadow .2s,background-position .5s}
+  .btn-results{background:linear-gradient(135deg,#FF8A5C 0%,#FF4D1C 48%,#C8380E 100%);background-size:160% 160%;background-position:0% 50%;color:#fff;box-shadow:0 12px 32px rgba(255,77,28,.30);transition:transform .2s,box-shadow .2s,background-position .5s}
+  .btn-results:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(200,56,14,.40);background-position:96% 50%}
   .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(29,110,160,.46);background-position:96% 50%}
   .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
   .btn-ghost:hover{border-color:var(--ink);transform:translateY(-3px)}
@@ -469,11 +471,6 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .ba-dash{width:100%;height:auto;display:block}
 
   /* BRANDS */
-  .brands{padding:58px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
-  .brands .lbl{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);text-align:center;margin-bottom:24px}
-  .marks{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
-  .marks .mk{font-family:var(--sans);font-weight:800;font-size:18px;opacity:.5;transition:.3s;letter-spacing:-.01em}
-  .marks .mk:hover{opacity:1;transform:translateY(-2px)}
 
   /* PRICING */
   .pricing{padding:108px 0;background:var(--paper-2)}
@@ -637,7 +634,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
     .vizbox{padding:14px;border-radius:18px}
     .flow-list{grid-template-columns:1fr}
     .press{gap:24px}.press .mk{font-size:18px}.press .mk.fc{font-size:21px}
-    .marks{gap:22px}.marks .mk{font-size:16px}
+
     .scene .pinch{font-size:19px}
     .btn{font-size:15px;padding:14px 22px}
   }
@@ -743,7 +740,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
       </figure>
       <div class="hero-ctas rv in d3">
         <a href="https://calendar.app.google/eQvwG6TeVDq5GCG7A" target="_blank" rel="noopener" class="btn btn-primary">Book a call with Amir <span class="arr">→</span></a>
-        <a href="/results" class="btn btn-ghost">See case studies</a>
+        <a href="#receipts" class="btn btn-results">See results</a>
       </div>
     </div>
   </div>
@@ -1108,28 +1105,6 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
 <section class="cred" id="results">
   <div class="wrap">
     <style>
-    .res-panel{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;margin-top:44px;align-items:center;max-width:940px}
-    .res-mock{background:#fff;border-radius:16px;padding:20px;border:1px solid rgba(20,17,10,.08);box-shadow:0 14px 40px rgba(20,17,10,.08);display:flex;flex-direction:column;gap:13px}
-    .rm-bar{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#b7ad9b}
-    .rm-bar span{width:9px;height:9px;border-radius:50%;background:#e4dece;display:inline-block}
-    .rm-bar em{margin-left:auto;font-style:normal}
-    .rm-q{align-self:flex-end;max-width:84%;background:var(--ink);color:#fff;padding:11px 15px;border-radius:14px 14px 4px 14px;font-size:13.5px;line-height:1.4}
-    .rm-a{background:#fff;border:1px solid #ece5d8;border-radius:14px 14px 14px 4px;padding:15px 16px;font-size:13.5px;line-height:1.45;color:var(--ink)}
-    .rm-a-lead{color:var(--ink-soft);margin-bottom:12px}
-    .rm-pick{display:flex;align-items:center;gap:10px;background:rgba(255,77,28,.1);border:1px solid var(--accent);border-radius:10px;padding:11px 13px;font-weight:700;color:var(--ink)}
-    .rm-pick .chk{width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;flex:0 0 auto}
-    .rm-pick .rm-meta{margin-left:auto;font-family:var(--mono);font-size:10.5px;font-weight:500;color:var(--accent-deep);white-space:nowrap}
-    .rm-others{margin-top:11px;font-size:12px;color:var(--faint)}
-    .res-proof{display:flex;flex-direction:column;justify-content:center;gap:20px;padding:4px 2px}
-    .rp-label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);font-weight:700}
-    .rp-num{font-family:var(--display);font-size:46px;font-weight:520;color:var(--ink);line-height:1;letter-spacing:-.02em}
-    .rp-num .rp-den{font-size:23px;color:var(--faint)}
-    .rp-cap{color:var(--ink-soft);font-size:13.5px;line-height:1.4;margin-top:6px;max-width:32ch}
-    .rp-dots{display:flex;gap:5px;margin-top:11px}
-    .rp-dots i{width:12px;height:12px;border-radius:50%;background:rgba(20,17,10,.12)}
-    .rp-dots i.on{background:var(--accent)}
-    .rp-foot{font-family:var(--mono);font-size:10px;letter-spacing:.02em;color:var(--faint);line-height:1.6;border-top:1px solid rgba(20,17,10,.10);padding-top:13px}
-    @media (max-width:760px){.res-panel{grid-template-columns:1fr;gap:18px}.rp-num{font-size:40px}}
     .ai-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:46px;max-width:940px}
     .ai-stat .sv{font-family:var(--display);font-weight:520;font-size:clamp(34px,4vw,50px);line-height:1;letter-spacing:-.02em;color:#16A34A}
     .ai-stat:nth-child(1) .sv{color:#16A34A}.ai-stat:nth-child(2) .sv{color:#15803D}.ai-stat:nth-child(3) .sv{color:#2E8B34}.ai-stat:nth-child(4) .sv{color:#4D7C0F}
@@ -1186,38 +1161,6 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
 <section id="filmSection"></section>
 
 
-
-<!-- ============ CLIENT RESULTS (proof, lands after the film) ============ -->
-<section class="cred" id="client-results">
-  <div class="wrap">
-    <span class="eyebrow rv">Here is one we already built</span>
-    <h2 class="rv d1" style="max-width:22ch">A Central Valley supplier, now the name the <em>AI hands over.</em></h2>
-    <div class="res-panel rv d2">
-      <div class="res-mock">
-        <div class="rm-bar"><span></span><span></span><span></span><em>AI assistant</em></div>
-        <div class="rm-q">Who should I hire for [your service] near me?</div>
-        <div class="rm-a">
-          <div class="rm-a-lead">The strongest local option is:</div>
-          <div class="rm-pick"><span class="chk">&#10003;</span> Your business <span class="rm-meta">top-rated</span></div>
-          <div class="rm-others">also considered: two competitors</div>
-        </div>
-      </div>
-      <div class="res-proof">
-        <div class="rp-label">Beverage &amp; CO2 supplier &middot; Central Valley</div>
-        <div>
-          <div class="rp-num">8<span class="rp-den">/10</span></div>
-          <div class="rp-cap">AI answers name them, when it can search the web</div>
-          <div class="rp-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
-        </div>
-        <div>
-          <div class="rp-num">Top 3</div>
-          <div class="rp-cap">in Google's map pack, and the highest-rated name in it</div>
-        </div>
-        <div class="rp-foot">ChatGPT 84%, Claude 80% with web search; Google AI 52 to 56%. 25 category questions, July 2026. Map pack Aug 2026.</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ============ THE TURN ============ -->
 <section class="turn">
@@ -1383,72 +1326,60 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   </div>
 </section>
 
-<!-- ============ BRANDS ============ -->
-<section class="brands">
-  <div class="wrap">
-    <div class="lbl rv">Working with businesses across Central California and beyond</div>
-    <div class="marks rv d1">
-      <span class="mk">Fresno D</span>
-      <span class="mk">Patriot Crane</span>
-      <span class="mk">Amassii Construction</span>
-      <span class="mk">Quality Beverage</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PRICING ============ -->
+<!-- ============ RESULTS BY CATEGORY (Amir 2026-10-15: one section, numbers by client category) ============ -->
 <style>
-  .disc{padding:120px 0;background:var(--paper)}
-  .disc-head{text-align:center;max-width:680px;margin:0 auto 56px}
-  .disc-head h2{font-family:var(--display);font-weight:430;font-size:clamp(32px,4.4vw,54px);line-height:1.02;letter-spacing:-.025em;margin:14px 0 16px}
-  .disc-head p{color:var(--ink-soft);font-size:18px;line-height:1.55;max-width:56ch;margin:0 auto}
-  .disc-grid{display:grid;grid-template-columns:1fr;gap:22px;max-width:520px;margin:0 auto;align-items:stretch}
-  .oc{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:26px;padding:44px 40px;display:flex;flex-direction:column}
-  .oc.feat{background:#fff;border:1.5px solid rgba(20,17,10,.12);box-shadow:0 24px 70px rgba(20,17,10,.09)}
-  .oc .lab{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-  .oc .oname{font-family:var(--display);font-weight:500;font-size:25px;letter-spacing:-.01em;line-height:1.12;margin-bottom:22px;min-height:56px}
-  .oc-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
-  .oc-price{font-family:var(--display);font-size:46px;font-weight:500;line-height:1}
-  .oc-price small{font-family:var(--sans);font-size:14px;font-weight:500;color:var(--faint);margin-left:7px}
-  .oc-btn{display:inline-block;padding:13px 32px;border-radius:100px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .2s,background .2s,color .2s;white-space:nowrap;cursor:pointer}
-  .oc-btn.primary{background:#2596BE;color:#fff}
-  .oc-btn.primary:hover{transform:scale(1.04)}
-  .oc-btn.ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(20,17,10,.22)}
-  .oc-btn.ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-  .oc-credit{font-family:var(--mono);font-size:12px;color:var(--accent-deep);margin:14px 0 4px}
-  .oc-note{font-size:14.5px;color:var(--ink-soft);line-height:1.5;margin:16px 0 4px}
-  .oc-feat{list-style:none;margin-top:22px}
-  .oc-feat li{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-top:1px solid var(--line-soft);font-size:14.5px;line-height:1.45;color:var(--ink)}
-  .oc-feat li svg{flex-shrink:0;width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-top:1px}
-  .disc-fine{text-align:center;font-family:var(--mono);font-size:12px;color:var(--faint);margin:36px auto 0;line-height:1.7;max-width:64ch}
-  @media(max-width:820px){.disc-grid{grid-template-columns:1fr;max-width:520px}.oc .oname{min-height:0}}
+  .rcpt{padding:120px 0;background:var(--paper)}
+  .rcpt-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+  .rcpt-head h2{font-family:var(--display);font-weight:430;font-size:clamp(32px,4.4vw,54px);line-height:1.02;letter-spacing:-.025em;margin-top:14px}
+  .rcpt-all{font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:2px}
+  .rcpt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .rc{background:#fff;border:1px solid rgba(20,17,10,.08);border-radius:22px;padding:30px 28px;display:flex;flex-direction:column;box-shadow:0 14px 40px rgba(20,17,10,.06)}
+  .rc-cat{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);font-weight:700}
+  .rc-metric{font-size:14px;color:var(--ink-soft);margin-top:22px}
+  .rc-num{font-family:var(--display);font-size:clamp(46px,5vw,64px);font-weight:520;line-height:1;letter-spacing:-.025em;color:var(--ink);margin-top:6px}
+  .rc-desc{font-size:15px;line-height:1.5;color:var(--ink);margin-top:14px;flex:1}
+  .rc-link{margin-top:22px;font-weight:600;font-size:14.5px;color:var(--accent-deep);text-decoration:none}
+  .rc-link:hover{text-decoration:underline;text-underline-offset:3px}
+  .rcpt-src{font-family:var(--mono);font-size:11px;color:var(--faint);line-height:1.7;margin-top:22px;max-width:90ch}
+  .rcpt-cta{display:flex;gap:13px;flex-wrap:wrap;justify-content:center;margin-top:52px}
+  @media(max-width:900px){.rcpt-grid{grid-template-columns:1fr;max-width:520px}.rcpt{padding:84px 0}}
 </style>
-<section class="disc" id="pricing">
+<section class="rcpt" id="receipts">
   <div class="wrap">
-    <div class="disc-head rv">
-      <span class="eyebrow">Where to start</span>
-      <h2>Two ways in. Both honest.</h2>
-      <p>Start with a conversation. Or choose a diagnostic of your business. No tiers, no mystery quote.</p>
+    <div class="rcpt-head rv">
+      <div>
+        <span class="eyebrow">Client results</span>
+        <h2>The numbers, by business.</h2>
+      </div>
+      <a class="rcpt-all" href="/results">All results &rarr;</a>
     </div>
-    <div class="disc-grid">
-      <div class="oc feat rv">
-        <div class="lab">Start here</div>
-        <div class="oname">Discovery Call</div>
-        <div class="oc-top">
-          <span class="oc-price">Free</span>
-          <a class="oc-btn primary" href="https://calendar.app.google/eQvwG6TeVDq5GCG7A" target="_blank" rel="noopener">Book a call with Amir</a>
-        </div>
-        <p class="oc-note">Thirty minutes with the person behind the work. Your business in AI answers, live on the call.</p>
-        <ul class="oc-feat">
-          <li><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg> A straight read on whether your market is winnable</li>
-          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg> Your first one or two priorities</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> No pitch, no pressure, no obligation</li>
-        </ul>
+    <div class="rcpt-grid">
+      <div class="rc rv">
+        <div class="rc-cat">Beverage supplier</div>
+        <div class="rc-metric">Calls from Google</div>
+        <div class="rc-num">4x</div>
+        <p class="rc-desc">From 0 to 3 calls a month in March to 12 to 14 a month by September.</p>
+        <a class="rc-link" href="/ai-seo-quality-beverage-results">Read the breakdown &rarr;</a>
+      </div>
+      <div class="rc rv d1">
+        <div class="rc-cat">Industrial services</div>
+        <div class="rc-metric">Google search clicks</div>
+        <div class="rc-num">+157%</div>
+        <p class="rc-desc">From 7 to 18 clicks per two weeks, and #2 in Google's map pack for its main Fresno search.</p>
+        <a class="rc-link" href="/ai-seo-patriot-crane-results">Read the breakdown &rarr;</a>
+      </div>
+      <div class="rc rv d2">
+        <div class="rc-cat">Beverage supplier</div>
+        <div class="rc-metric">Named in AI answers</div>
+        <div class="rc-num">8/10</div>
+        <p class="rc-desc">Named in about 8 of 10 ChatGPT and Claude answers when buyers ask who to buy from.</p>
+        <a class="rc-link" href="/ai-seo-quality-beverage-results">Read the breakdown &rarr;</a>
       </div>
     </div>
-    <p class="disc-fine rv" style="font-size:15px;color:var(--ink);margin-top:30px"><strong>Or just call me.</strong> <a href="tel:+15595505474" style="color:var(--accent-deep);text-decoration:none;font-weight:700">(559) 550-5474</a> &middot; it rings my phone.</p>
-    <p class="disc-fine rv">Ongoing engagements start at $3,000/mo. Your market determines the scope.</p>
-    <p class="disc-fine rv" style="margin-top:14px">Not ready for either? <a href="/what-ai-can-do" style="color:var(--accent-deep);text-decoration:underline;text-underline-offset:3px">See what your leads cost you</a> first. Free, takes a minute.</p>
+    <p class="rcpt-src rv">Calls: Google Business Profile, March and September 2026. Clicks: Search Console, Sep 14 to 27 against Sep 30 to Oct 13, 2026. Map pack: Oct 13, 2026. AI answers: 25 category questions with web search, July 2026 (ChatGPT 84%, Claude 80%, Google AI 52 to 56%).</p>
+    <div class="rcpt-cta rv">
+      <a href="https://calendar.app.google/eQvwG6TeVDq5GCG7A" target="_blank" rel="noopener" class="btn btn-primary">Book a call with Amir <span class="arr">&rarr;</span></a>
+    </div>
   </div>
 </section>
 
