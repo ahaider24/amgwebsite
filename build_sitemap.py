@@ -34,7 +34,6 @@ PRIORITY = {
     "/ai-seo": "0.9",
     "/ai-agents": "0.9",
     "/home-services-marketing": "0.9",
-    "/diagnostic": "0.9",
     "/pricing": "0.9",
     "/results": "0.8",
     "/ai-seo-patriot-crane-results": "0.8",

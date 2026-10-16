@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/diagnostic",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
