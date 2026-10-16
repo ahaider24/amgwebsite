@@ -90,37 +90,6 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .hero h1 em{font-style:italic;color:var(--accent)}
   .hero .line{margin-top:18px;font-size:clamp(16px,1.6vw,19px);line-height:1.62;color:rgba(255,255,255,.85);max-width:52ch}
 
-  /* the rules of this page */
-  .rules{background:var(--ink);color:#fff;padding:0 0 9vh}
-  .rulegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:920px}
-  .rule{border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px 18px}
-  .rule .rn{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#FFB08A}
-  .rule p{margin-top:8px;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.78)}
-
-  /* ledger */
-  .ledger{background:var(--paper);padding:10vh 0 6vh}
-  .client{max-width:860px;margin:0 auto 8vh}
-  .client-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:14px}
-  .client-head h2{font-family:var(--display);font-weight:520;font-size:clamp(26px,3.2vw,38px);letter-spacing:-.015em}
-  .client-head .ck{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
-  .entry{display:grid;grid-template-columns:150px 1fr;gap:22px;padding:26px 0;border-bottom:1px solid var(--line)}
-  .entry:last-child{border-bottom:none}
-  .stamp{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);line-height:1.7}
-  .stamp .tag{display:inline-block;margin-top:8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:4px;border:1px solid var(--line)}
-  .tag.measured{color:var(--green);border-color:rgba(46,125,79,.4)}
-  .tag.reported{color:var(--blue);border-color:rgba(37,150,190,.45)}
-  .tag.clock{color:var(--accent);border-color:rgba(255,77,28,.4)}
-  .entry h3{font-family:var(--display);font-weight:520;font-size:clamp(20px,2.2vw,25px);letter-spacing:-.01em;line-height:1.15}
-  .entry h3 em{font-style:italic;color:var(--accent)}
-  .entry p{margin-top:10px;color:var(--ink-soft);font-size:16px;line-height:1.62;max-width:58ch}
-  .entry .how{margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--faint);line-height:1.7}
-
-  /* refusal note */
-  .refuse{background:var(--paper);padding:0 0 10vh}
-  .refuse-box{max-width:860px;margin:0 auto;border:1px dashed var(--line);border-radius:14px;padding:24px 26px;background:#fff}
-  .refuse-box .rk{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
-  .refuse-box p{margin-top:10px;color:var(--ink-soft);font-size:15.5px;line-height:1.65;max-width:70ch}
-
   /* resolution */
   .reso{background:var(--paper-2);color:var(--ink);padding:11vh 0 64px}
   .reso h2{font-family:var(--display);font-weight:430;font-size:clamp(30px,4.4vw,54px);line-height:1.04;letter-spacing:-.02em;max-width:18ch;text-wrap:balance}
@@ -131,6 +100,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(29,110,160,.46)}
   .xlinks{margin-top:40px;font-size:15px;color:var(--ink-soft)}
   .xlinks a{text-decoration:underline}
+  .xlinks{display:flex;flex-wrap:wrap;gap:8px 24px}.xlinks a{display:inline-flex;align-items:center;min-height:44px}
   footer{padding:46px 0;border-top:1px solid var(--line);background:var(--paper-2);color:var(--ink)}
   .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:12px;color:var(--faint);line-height:1.8}
   .foot-meta{font-family:var(--mono);color:var(--faint)}
@@ -138,7 +108,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .srv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
   .srv.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.srv{opacity:1;transform:none;transition:none}}
-  @media (max-width:780px){.rulegrid{grid-template-columns:1fr}.entry{grid-template-columns:1fr;gap:8px}.stamp{display:flex;align-items:center;gap:10px}.stamp .tag{margin-top:0}}
+  
 
   /* UNIFIED-NAV DARK SCROLL */
   nav.nav-dark.scrolled{background:rgba(10,8,5,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(251,248,242,.08)}
@@ -185,12 +155,10 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .skip-link:focus{transform:none}
   a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
   .hero{padding:160px 0 64px}.hero h1{max-width:17ch}.hero-link{display:inline-flex;align-items:center;min-height:44px;margin-top:24px;font-size:15px;color:#9EDEF1;text-decoration:underline;text-underline-offset:5px}
-  .highlights{background:var(--ink);color:#fff;padding:0 0 64px}.snapshot-label,.snapshot-note{font-size:13px;color:#C7C1B6;line-height:1.6}.snapshot-label{margin-bottom:16px}.snapshot-note{margin-top:18px;max-width:80ch}
-  .result-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.result-card{display:flex;flex-direction:column;align-items:flex-start;border:1px solid #4B453B;border-radius:14px;padding:24px;transition:background .2s}.result-card:hover{background:#252017}.card-client{font-size:14px;line-height:1.45;min-height:42px;color:#D9D2C7}.result-card strong{font-family:"Geist",var(--sans);font-size:clamp(40px,5vw,58px);font-weight:600;letter-spacing:-.05em;line-height:1.15;margin:22px 0 8px;color:#FFB08A;font-variant-numeric:tabular-nums}.card-payoff{font-size:17px;line-height:1.35;font-weight:600;min-height:46px}.card-before{font-size:12px;color:#C7C1B6;margin-top:14px}.card-link{font-size:13px;margin-top:24px;color:#9EDEF1}
-  .ledger{padding:72px 0 8px}.ledger-intro{max-width:860px;margin:0 auto 48px}.ledger-intro .eyebrow{color:var(--ink-soft)}.ledger-intro h2{font-family:var(--display);font-size:clamp(30px,4vw,44px);font-weight:500;line-height:1.1;margin-bottom:16px}.client{scroll-margin-top:100px;margin-bottom:72px;min-width:0}.client-head .ck{color:var(--ink-soft)}.outcome-head{margin:26px 0 16px}.receipt-label{display:block;font-family:var(--mono);font-size:11px;color:var(--green);letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px}.outcome-head h3,.case-section h2{font-family:var(--display);font-size:clamp(25px,3.4vw,36px);font-weight:500;line-height:1.15;letter-spacing:-.02em}.outcome-head h3 em,.case-section h2 em{color:var(--accent);font-style:italic}.client>p,.case-section>p{font-size:16px;line-height:1.7;color:var(--ink-soft);max-width:73ch;margin:16px 0}
-  .table-scroll{max-width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain;border:1px solid var(--line);border-radius:12px;background:#fff;margin-top:24px;-webkit-overflow-scrolling:touch}.table-scroll table{border-collapse:collapse;width:100%;min-width:610px;text-align:left;font-size:14px;font-variant-numeric:tabular-nums}.table-scroll caption{text-align:left;padding:16px 18px;background:var(--paper-2);font-size:12px;color:var(--ink-soft)}.table-scroll th,.table-scroll td{padding:16px 18px;vertical-align:top;border-bottom:1px solid var(--line);line-height:1.5}.table-scroll thead th{font-size:11px;letter-spacing:.025em;color:var(--ink-soft);font-weight:600}.table-scroll tbody th{font-weight:500;min-width:215px}.table-scroll tr:last-child th,.table-scroll tr:last-child td{border-bottom:0}.table-scroll small{display:block;font-size:11px;color:var(--ink-soft);margin-top:4px}.change{font-weight:700;white-space:nowrap}.caption{font-size:13px!important;line-height:1.65;color:var(--ink-soft);margin-top:12px!important}.history{margin:24px 0 8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:4px 0}.history summary{cursor:pointer;padding:14px 4px;font-size:14px;min-height:48px;font-weight:600}.history .table-scroll{margin:0 0 14px}.history-table{min-width:850px!important}.history .caption{padding:0 4px 14px}.story-link{display:inline-flex;align-items:center;min-height:48px;color:#185E79;font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:5px;margin-top:14px}.xlinks{display:flex;flex-wrap:wrap;gap:8px 24px}.xlinks a{display:inline-flex;align-items:center;min-height:44px}.case-body{max-width:860px;margin:0 auto;padding:64px 0}.case-section{margin:0 0 48px}.case-section:last-child{margin-bottom:0}.breadcrumb{display:flex;gap:8px;flex-wrap:wrap;font-size:13px;color:#C7C1B6;margin-bottom:20px}.breadcrumb a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline}.case-facts{display:flex;gap:12px 30px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:36px;font-size:13px;color:var(--ink-soft)}
+  .highlights{background:var(--ink);color:#fff;padding:0 0 64px}.snapshot-note{font-size:13px;color:#C7C1B6;line-height:1.6}.snapshot-note{margin-top:18px;max-width:80ch}
+  .result-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:860px;gap:16px}.result-card{display:flex;flex-direction:column;align-items:flex-start;border:1px solid #4B453B;border-radius:14px;padding:24px;transition:background .2s}.card-client{font-size:14px;line-height:1.45;min-height:42px;color:#D9D2C7}.result-card strong{font-family:"Geist",var(--sans);font-size:clamp(40px,5vw,58px);font-weight:600;letter-spacing:-.05em;line-height:1.15;margin:22px 0 8px;color:#FFB08A;font-variant-numeric:tabular-nums}.card-payoff{font-size:17px;line-height:1.35;font-weight:600;min-height:46px}.card-before{font-size:12px;color:#C7C1B6;margin-top:14px}
   .nav-burger{min-width:44px;min-height:44px;justify-content:center;align-items:center}.nav-cta{min-height:44px;display:inline-flex;align-items:center}.btn{min-height:48px}.foot a{display:inline-block;padding:6px 0}.foot{color:var(--ink-soft)}
-  @media(max-width:780px){.result-grid{grid-template-columns:1fr}.result-card{padding:22px}.card-client,.card-payoff{min-height:0}.result-card strong{margin-top:12px}.card-link{margin-top:16px}.hero{padding:132px 0 44px}.highlights{padding-bottom:44px}.ledger{padding-top:48px}.client{margin-bottom:52px}.case-body{padding:44px 0}.nav-menu{margin-right:8px}.hero-link{line-height:1.6}}
+  @media(max-width:780px){.result-grid{grid-template-columns:1fr}.result-card{padding:22px}.card-client,.card-payoff{min-height:0}.result-card strong{margin-top:12px}.hero{padding:132px 0 44px}.highlights{padding-bottom:44px}.nav-menu{margin-right:8px}.hero-link{line-height:1.6}}
   @media(max-width:380px){.wrap{padding:0 18px}nav{padding:14px 18px}.nav-burger{margin-left:6px}.nav-cta{padding:10px 14px}.logo{font-size:19px}.hero h1{font-size:38px}.btn{padding:15px 22px;font-size:15px}}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn-primary:hover{transform:none}}
 
@@ -361,448 +329,47 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
 <main id="main">
 <header class="hero">
 <div class="wrap">
-<div class="eyebrow">Client results · through Sep 7, 2026</div>
+<div class="eyebrow">Client results · updated Oct 15, 2026</div>
 <h1>Their business, <em>found more often.</em>
 </h1>
-<p class="line">You want the next call, order, or job, and you have to be found before you can earn it. These dated records show where our clients gained search visits and visibility, where one client's advertising budget came down, and which customer results we haven't measured yet.</p>
+<p class="line">Real results for local businesses we work with. The numbers come from Google and from the buyer questions we ask AI assistants every week, each with its dates, and we show the industry instead of the name.</p>
 
 <a class="hero-link" href="/ai-seo">AI SEO for getting found by your next customer →</a>
 </div>
 </header>
-<section class="highlights" aria-label="Latest client outcomes">
+<section class="highlights" aria-label="Client results">
 <div class="wrap">
-<p class="snapshot-label">Latest comparison · Aug 29 to Sep 7, 2026</p>
 <div class="result-grid">
-<a class="result-card" href="#qb">
+<div class="result-card">
 <span class="card-client">Beverage &amp; foodservice supplier</span>
-<strong>
-<!-- SOURCE: outputs/droplet-mirror/client/perf_history.jsonl | organic_sessions_28d; 2026-08-29: 57; 2026-09-05: 77; 77 - 57 = 20 -->+20</strong>
-<span class="card-payoff">organic search visits</span>
-<!-- SOURCE: outputs/droplet-mirror/client/perf_history.jsonl | organic_sessions_28d; 2026-08-29: 57; 2026-09-05: 77; 77 - 57 = 20 -->
-<span class="card-before">57 → 77 · 28-day analytics totals</span>
-<span class="card-link">See the dated result ↓</span>
-</a>
-<a class="result-card" href="#industrial">
+<!-- SOURCE: som_answers, surface chatgpt_search, Oct 1 to 15 2026: 75 answers, 61% named; aio 66% of 35; claude_search 71% of 75 -->
+<strong>61%</strong>
+<span class="card-payoff">of ChatGPT answers with web search name it when buyers ask who to buy from</span>
+<span class="card-before">75 buyer questions asked Oct 1 to 15, 2026. Google's AI answers named it in 66% of 35.</span>
+</div>
+<div class="result-card">
 <span class="card-client">Industrial services company</span>
-<strong>
-<!-- SOURCE: docs/client_results_ledger.md#2026-08-31 and #2026-09-07 | Google Ads (account id in ledger); earlier campaign (amount in ledger) average daily budget; Search campaign (amount in ledger) average daily budget, only active campaign since Sep 7; budget delta in ledger -->33% lower</strong>
-<span class="card-payoff">Google Ads daily budget</span>
-<!-- SOURCE: docs/client_results_ledger.md#2026-09-07 | average daily budget (amount in ledger) → (amount in ledger); September spend pending -->
-<span class="card-before">Average daily budget cut by a third · one Search campaign since Sep 7 · September spend still being measured</span>
-<span class="card-link">See the dated record ↓</span>
-</a>
-<a class="result-card" href="#fd">
-<span class="card-client">Plumbing &amp; electrical supplier</span>
-<strong>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-29.json; outputs/gsc_snapshot_2026-09-05.json | client site; impressions: 15540 - 13708 = 1832; captures 2026-08-29 and 2026-09-05 -->+1,832</strong>
-<span class="card-payoff">appearances in Google search</span>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-29.json; outputs/gsc_snapshot_2026-09-05.json | client site; impressions: 15540 - 13708 = 1832; captures 2026-08-29 and 2026-09-05 -->
-<span class="card-before">13,708 → 15,540 · 28-day totals</span>
-<span class="card-link">See the dated result ↓</span>
-</a>
+<!-- SOURCE: som_answers, surface claude_search: Sep 2026 38% of 50; Oct 1 to 15 2026 72% of 75 -->
+<strong>72%</strong>
+<span class="card-payoff">of Claude answers with web search name it when buyers ask who to hire</span>
+<span class="card-before">Up from 38% in September 2026, across 75 buyer questions asked Oct 1 to 15, 2026.</span>
 </div>
-<p class="snapshot-note">Search figures are weekly changes in overlapping 28-day totals; the Google Ads figure is the change in average daily budget between the earlier campaign and the Search campaign active since Sep 7. Visits, appearances, and ad bills are measured separately from calls, booked jobs, and revenue.</p>
+<div class="result-card">
+<span class="card-client">Beverage &amp; foodservice supplier</span>
+<!-- SOURCE: Google Business Profile performance, calls per month; engine vault client page (March 0 to 3, September 12 to 14) -->
+<strong>12 to 14</strong>
+<span class="card-payoff">calls a month started from its Google listing</span>
+<span class="card-before">0 to 3 a month in March 2026, then 12 to 14 a month by September 2026.</span>
 </div>
-</section>
-<section class="ledger">
-<div class="wrap">
-<div class="ledger-intro">
-<span class="eyebrow">The dated receipts</span>
-<h2>What each client got.</h2>
-<p class="caption">A Google click is a visit from a search result. A search appearance is an impression and doesn't count individual people. Pages appearing in search are pages with at least one impression, which is different from the number of pages Google has indexed.</p>
+<div class="result-card">
+<span class="card-client">Industrial services company</span>
+<!-- SOURCE: outputs/gsc_snapshot_2026-08-20.json (28 days to Aug 20: 0 clicks); outputs/gsc_snapshot_2026-10-10.json (28 days to Oct 10: 26 clicks) -->
+<strong>26</strong>
+<span class="card-payoff">visits from Google search in the four weeks to Oct 10, 2026</span>
+<span class="card-before">A website we built from scratch: 0 visits from Google in the four weeks to Aug 20, 2026, then 26 in the four weeks to Oct 10, 2026.</span>
 </div>
-<article class="client" id="qb">
-<div class="client-head">
-<h2>Beverage &amp; foodservice supplier</h2>
-<span class="ck">Distributor</span>
 </div>
-<div class="outcome-head">
-<span class="receipt-label">Measured · organic search visits</span>
-<h3>
-<!-- SOURCE: outputs/droplet-mirror/client/perf_history.jsonl | organic_sessions_28d; 2026-07-06: 39; 2026-09-05: 77; 77 - 39 = 38 -->
-<em>38 more visits</em> from organic search.</h3>
-</div>
-<p>A buyer has to find a supplier before calling one. The beverage supplier got more visits from unpaid search during our SEO work, which means more chances to earn that call. The records below verify the visits, but they don't yet show how many became orders.</p>
-
-<div class="table-scroll" role="region" aria-label="Beverage supplier organic visits before and after" tabindex="0">
-<table>
-<caption>Organic search visits · 28-day analytics totals at each capture</caption>
-<thead>
-<tr>
-<th scope="col">Comparison</th>
-<th scope="col">Before</th>
-<th scope="col">After</th>
-<th scope="col">Change</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th scope="row">Since the first measurement</th>
-<!-- SOURCE: outputs/droplet-mirror/client/perf_history.jsonl | organic_sessions_28d; 2026-07-06: 39; 2026-09-05: 77; 77 - 39 = 38 -->
-<td>39<small>Jul 6, 2026</small>
-</td>
-<td>77<small>Sep 5, 2026</small>
-</td>
-<td class="change">+38</td>
-</tr>
-<tr>
-<th scope="row">Previous weekly comparison</th>
-<!-- SOURCE: outputs/droplet-mirror/client/perf_history.jsonl | organic_sessions_28d; 2026-08-22: 61; 2026-08-29: 57; 57 - 61 = -4 -->
-<td>61<small>Aug 22, 2026</small>
-</td>
-<td>57<small>Aug 29, 2026</small>
-</td>
-<td class="change">−4</td>
-</tr>
-<tr>
-<th scope="row">Latest weekly comparison</th>
-<!-- SOURCE: outputs/droplet-mirror/client/perf_history.jsonl | organic_sessions_28d; 2026-08-29: 57; 2026-09-05: 77; 77 - 57 = 20 -->
-<td>57<small>Aug 29, 2026</small>
-</td>
-<td>77<small>Sep 5, 2026</small>
-</td>
-<td class="change">+20</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="caption">A visit here means an organic session in analytics. It can include search engines beyond Google and is counted differently from a Google Search Console click.</p>
-<div class="table-scroll" role="region" aria-label="Beverage & foodservice supplier before and after" tabindex="0">
-<table>
- <caption>Google Search Console · overlapping 28-day windows</caption>
- <thead>
-<tr>
-<th scope="col">What the client got</th>
-<th scope="col">Aug 2 to 29, 2026</th>
-<th scope="col">Aug 9 to Sep 5, 2026</th>
-<th scope="col">Change</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th scope="row">Visits from Google search (clicks)</th>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-29.json; outputs/gsc_snapshot_2026-09-05.json | client site; clicks; captures 2026-08-29, 2026-09-05; 35 - 33 = 2 -->
-<td>33</td>
-<td>35</td>
-<td class="change">+2</td>
-</tr>
-<tr>
-<th scope="row">Appearances in Google search</th>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-29.json; outputs/gsc_snapshot_2026-09-05.json | client site; impressions; captures 2026-08-29, 2026-09-05; 2427 - 2207 = 220 -->
-<td>2,207</td>
-<td>2,427</td>
-<td class="change">+220</td>
-</tr>
-<tr>
-<th scope="row">Website pages appearing in search</th>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-29.json; outputs/gsc_snapshot_2026-09-05.json | client site; pages_with_impressions; captures 2026-08-29, 2026-09-05; 13 - 12 = 1 -->
-<td>12</td>
-<td>13</td>
-<td class="change">+1</td>
-</tr>
-</tbody>
-</table>
-</div>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-22.json; outputs/gsc_snapshot_2026-09-05.json | client site; clicks: 35 - 40 = -5; captures 2026-08-22 and 2026-09-05 -->
-<p>Google clicks recovered to 35 in the latest capture, still below the 40 recorded on Aug 22. The gain in organic visits is progress, and the Google record also shows the weeks when clicks went backward.</p>
-
-<details class="history">
-<summary>See all dated Google snapshots</summary>
-<div class="table-scroll" role="region" aria-label="Beverage & foodservice supplier Google snapshot history" tabindex="0">
-<table class="history-table">
-<caption>Full comparison history · changes shown as clicks / appearances / pages</caption>
-<thead>
-<tr>
-<th scope="col">Captured</th>
-<th scope="col">Search window</th>
-<th scope="col">Clicks</th>
-<th scope="col">Appearances</th>
-<th scope="col">Pages</th>
-<th scope="col">Change since prior capture</th>
-</tr>
-</thead>
-<tbody>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-20.json | client site; window 2026-07-24 through 2026-08-20; clicks, impressions, pages_with_impressions; changes = current minus prior capture -->
-<tr>
-<th scope="row">Aug 20, 2026<small>Before</small>
-</th>
-<td>Jul 24, 2026<br>to Aug 20, 2026</td>
-<td>34</td>
-<td>2,319</td>
-<td>12</td>
-<td>Before</td>
-</tr>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-20.json; outputs/gsc_snapshot_2026-08-22.json | client site; window 2026-07-26 through 2026-08-22; clicks, impressions, pages_with_impressions; changes = current minus prior capture -->
-<tr>
-<th scope="row">Aug 22, 2026<small>2-day step*</small>
-</th>
-<td>Jul 26, 2026<br>to Aug 22, 2026</td>
-<td>40</td>
-<td>2,440</td>
-<td>12</td>
-<td>+6 / +121 / 0</td>
-</tr>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-22.json; outputs/gsc_snapshot_2026-08-29.json | client site; window 2026-08-02 through 2026-08-29; clicks, impressions, pages_with_impressions; changes = current minus prior capture -->
-<tr>
-<th scope="row">Aug 29, 2026<small>Weekly step</small>
-</th>
-<td>Aug 2, 2026<br>to Aug 29, 2026</td>
-<td>33</td>
-<td>2,207</td>
-<td>12</td>
-<td>−7 / −233 / 0</td>
-</tr>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-29.json; outputs/gsc_snapshot_2026-09-05.json | client site; window 2026-08-09 through 2026-09-05; clicks, impressions, pages_with_impressions; changes = current minus prior capture -->
-<tr>
-<th scope="row">Sep 5, 2026<small>Weekly step</small>
-</th>
-<td>Aug 9, 2026<br>to Sep 5, 2026</td>
-<td>35</td>
-<td>2,427</td>
-<td>13</td>
-<td>+2 / +220 / +1</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="caption">*Aug 20 to Aug 22 is a two-day step. Subsequent captures are a week apart. Each total covers its own overlapping 28-day window; changes are not separate weekly traffic totals.</p>
-</details>
-<a class="story-link" href="/ai-seo-quality-beverage-results">Read the beverage supplier case study →</a>
-</article>
-<article class="client" id="industrial">
-<div class="client-head">
-<h2>Industrial services company</h2>
-<span class="ck">Crane service</span>
-</div>
-<div class="outcome-head">
-<span class="receipt-label">Recorded · ad spend, current budget and call-button taps</span>
-<h3>
-<!-- SOURCE: docs/client_results_ledger.md#2026-09-07 | Google Ads (account id in ledger); earlier campaign (amount in ledger) average daily budget; Search campaign (amount in ledger) only active campaign since Sep 7; (amount in ledger) spend and 4 call-button taps Aug 31 to Sep 7 -->A lower Google Ads budget, <em>with four call-button taps recorded.</em>
-</h3>
-</div>
-<p>The company's new Google Search campaign launched Aug 31, 2026. Since Sep 7 it has been the account's only active campaign, and its average daily budget is one third lower than the earlier campaign's. In its first eight days (Aug 31 through Sep 7) it spent 14% of what the earlier campaign spent in August and recorded four call-button taps. The goal is crane inquiries at a lower advertising cost, and September's completed spend and comparable inquiry counts will show whether that happened.</p>
-
-<div class="table-scroll" role="region" aria-label="Industrial services company advertising spend and campaign record" tabindex="0">
-<table>
- <caption>Google Ads · earlier campaign spend and current Search campaign record · captured Sep 7, 2026 (Pacific time)</caption>
- <thead>
-<tr>
-<th scope="col">Recorded item</th>
-<th scope="col">Earlier campaign · July 2026</th>
-<th scope="col">Earlier campaign · August 2026</th>
-<th scope="col">Search campaign · status as of Sep 7, 2026</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th scope="row">Campaign spend in the stated period (relative)</th>
-<!-- SOURCE: docs/client_results_ledger.md#2026-09-07 | Google Ads (account id in ledger); earlier campaign Jul (amount in ledger), Aug (amount in ledger); Search campaign Aug 31 to Sep 7 (amount in ledger) -->
-<td>Baseline month</td>
-<td>Within 1% of July</td>
-<td class="change" style="white-space:normal">14% of August's total · Aug 31 to Sep 7 (8 days); September total pending</td>
-</tr>
-<tr>
-<th scope="row">Average daily budget (relative)</th>
-<!-- SOURCE: docs/client_results_ledger.md#2026-08-31 and #2026-09-07 | earlier campaign (amount in ledger) through Aug 30, reduced to (amount in ledger) on Aug 31, paused Sep 7; Search campaign (amount in ledger) average daily budget -->
-<td>Baseline</td>
-<td>Baseline, cut 87% on Aug 31</td>
-<td class="change">33% below baseline</td>
-</tr>
-<tr>
-<th scope="row">Advertising placement and targeting</th>
-<!-- SOURCE: docs/client_results_ledger.md#2026-08-31 | earlier campaign: automated Performance Max placements; Search campaign: Google Search only, presence targeting on the client's service area -->
-<td colspan="2">Automated placements across Google's network</td>
-<td class="change" style="white-space:normal">Google Search ads targeting its core service searches in its service area</td>
-</tr>
-<tr>
-<th scope="row">Call-button taps recorded by Google Ads</th>
-<!-- SOURCE: docs/client_results_ledger.md#2026-09-07 | earlier campaign: no mobile clicks-to-call in its click-type report (no comparable record); Search campaign: 116 call-asset impressions x 3.45% CTR = 4 taps, Aug 31 to Sep 7; completed calls not verified -->
-<td colspan="2">No comparable call record</td>
-<td class="change" style="white-space:normal">4 taps · Aug 31 to Sep 7; completed calls unverified</td>
-</tr>
-</tbody>
-</table>
-</div>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-20.json; outputs/gsc_snapshot_2026-08-29.json; outputs/gsc_snapshot_2026-09-05.json | client site; clicks 0 (28d ending Aug 20) -> 8 (28d ending Sep 5); impressions 528 (ending Aug 29) -> 1483 (ending Sep 5) -->
-<p>Google Search Console recorded 0 organic clicks in the 28-day window ending Aug 20, 2026, and 8 in the window ending Sep 5. Search appearances increased from 528 in the window ending Aug 29 to 1,483 in the window ending Sep 5. These are overlapping 28-day totals. Google doesn't charge for organic clicks, and we haven't verified whether these ones produced crane inquiries.</p>
-<details class="history">
-<summary>See all dated Google search snapshots</summary>
-<div class="table-scroll" role="region" aria-label="Industrial services company Google snapshot history" tabindex="0">
-<table class="history-table">
-<caption>Full comparison history · changes shown as clicks / appearances / pages</caption>
-<thead>
-<tr>
-<th scope="col">Captured</th>
-<th scope="col">Search window</th>
-<th scope="col">Clicks</th>
-<th scope="col">Appearances</th>
-<th scope="col">Pages</th>
-<th scope="col">Change since prior capture</th>
-</tr>
-</thead>
-<tbody>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-20.json | client site; window 2026-07-24 through 2026-08-20; clicks, impressions, pages_with_impressions; changes = current minus prior capture -->
-<tr>
-<th scope="row">Aug 20, 2026<small>Before</small>
-</th>
-<td>Jul 24, 2026<br>to Aug 20, 2026</td>
-<td>0</td>
-<td>99</td>
-<td>4</td>
-<td>Before</td>
-</tr>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-20.json; outputs/gsc_snapshot_2026-08-22.json | client site; window 2026-07-26 through 2026-08-22; clicks, impressions, pages_with_impressions; changes = current minus prior capture -->
-<tr>
-<th scope="row">Aug 22, 2026<small>2-day step*</small>
-</th>
-<td>Jul 26, 2026<br>to Aug 22, 2026</td>
-<td>1</td>
-<td>244</td>
-<td>4</td>
-<td>+1 / +145 / 0</td>
-</tr>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-22.json; outputs/gsc_snapshot_2026-08-29.json | client site; window 2026-08-02 through 2026-08-29; clicks, impressions, pages_with_impressions; changes = current minus prior capture -->
-<tr>
-<th scope="row">Aug 29, 2026<small>Weekly step</small>
-</th>
-<td>Aug 2, 2026<br>to Aug 29, 2026</td>
-<td>5</td>
-<td>528</td>
-<td>9</td>
-<td>+4 / +284 / +5</td>
-</tr>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-29.json; outputs/gsc_snapshot_2026-09-05.json | client site; window 2026-08-09 through 2026-09-05; clicks, impressions, pages_with_impressions; changes = current minus prior capture -->
-<tr>
-<th scope="row">Sep 5, 2026<small>Weekly step</small>
-</th>
-<td>Aug 9, 2026<br>to Sep 5, 2026</td>
-<td>8</td>
-<td>1,483</td>
-<td>11</td>
-<td>+3 / +955 / +2</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="caption">*Aug 20 to Aug 22 is a two-day step. Subsequent captures are a week apart. Each total covers its own overlapping 28-day window; changes are not separate weekly traffic totals.</p>
-</details>
-<a class="story-link" href="/ai-seo-patriot-crane-results">Read the industrial services case study →</a>
-</article>
-<article class="client" id="fd">
-<div class="client-head">
-<h2>Plumbing &amp; electrical supplier</h2>
-<span class="ck">Industrial supply</span>
-</div>
-<div class="outcome-head">
-<span class="receipt-label">Measured · Google search visibility</span>
-<h3>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-29.json; outputs/gsc_snapshot_2026-09-05.json | client site; impressions: 15540 - 13708 = 1832; captures 2026-08-29 and 2026-09-05 -->
-<em>1,832 more appearances</em> in Google search.</h3>
-</div>
-<p>The supplier appeared in more Google searches, so the business was in view more often, but visits barely changed. The next thing to measure is whether those appearances bring someone to the site and then to the counter.</p>
-
-<div class="table-scroll" role="region" aria-label="Plumbing &amp; electrical supplier before and after" tabindex="0">
-<table>
- <caption>Google Search Console · overlapping 28-day windows</caption>
- <thead>
-<tr>
-<th scope="col">What the client got</th>
-<th scope="col">Aug 2 to 29, 2026</th>
-<th scope="col">Aug 9 to Sep 5, 2026</th>
-<th scope="col">Change</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th scope="row">Visits from Google search (clicks)</th>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-29.json; outputs/gsc_snapshot_2026-09-05.json | client site; clicks; captures 2026-08-29, 2026-09-05; 321 - 320 = 1 -->
-<td>320</td>
-<td>321</td>
-<td class="change">+1</td>
-</tr>
-<tr>
-<th scope="row">Appearances in Google search</th>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-29.json; outputs/gsc_snapshot_2026-09-05.json | client site; impressions; captures 2026-08-29, 2026-09-05; 15540 - 13708 = 1832 -->
-<td>13,708</td>
-<td>15,540</td>
-<td class="change">+1,832</td>
-</tr>
-<tr>
-<th scope="row">Website pages appearing in search</th>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-29.json; outputs/gsc_snapshot_2026-09-05.json | client site; pages_with_impressions; captures 2026-08-29, 2026-09-05; 348 - 326 = 22 -->
-<td>326</td>
-<td>348</td>
-<td class="change">+22</td>
-</tr>
-</tbody>
-</table>
-</div>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-22.json; outputs/gsc_snapshot_2026-09-05.json | client site; clicks: 321 - 325 = -4; captures 2026-08-22 and 2026-09-05 -->
-<p>The latest capture recorded 321 Google clicks, below the 325 recorded on Aug 22, so the extra appearances haven't produced a matching gain in traffic yet. These records don't show whether orders or store visits went up.</p>
-
-<details class="history">
-<summary>See all dated Google snapshots</summary>
-<div class="table-scroll" role="region" aria-label="Plumbing &amp; electrical supplier Google snapshot history" tabindex="0">
-<table class="history-table">
-<caption>Full comparison history · changes shown as clicks / appearances / pages</caption>
-<thead>
-<tr>
-<th scope="col">Captured</th>
-<th scope="col">Search window</th>
-<th scope="col">Clicks</th>
-<th scope="col">Appearances</th>
-<th scope="col">Pages</th>
-<th scope="col">Change since prior capture</th>
-</tr>
-</thead>
-<tbody>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-20.json | client site; window 2026-07-24 through 2026-08-20; clicks, impressions, pages_with_impressions; changes = current minus prior capture -->
-<tr>
-<th scope="row">Aug 20, 2026<small>Before</small>
-</th>
-<td>Jul 24, 2026<br>to Aug 20, 2026</td>
-<td>315</td>
-<td>11,696</td>
-<td>230</td>
-<td>Before</td>
-</tr>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-20.json; outputs/gsc_snapshot_2026-08-22.json | client site; window 2026-07-26 through 2026-08-22; clicks, impressions, pages_with_impressions; changes = current minus prior capture -->
-<tr>
-<th scope="row">Aug 22, 2026<small>2-day step*</small>
-</th>
-<td>Jul 26, 2026<br>to Aug 22, 2026</td>
-<td>325</td>
-<td>12,645</td>
-<td>250</td>
-<td>+10 / +949 / +20</td>
-</tr>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-22.json; outputs/gsc_snapshot_2026-08-29.json | client site; window 2026-08-02 through 2026-08-29; clicks, impressions, pages_with_impressions; changes = current minus prior capture -->
-<tr>
-<th scope="row">Aug 29, 2026<small>Weekly step</small>
-</th>
-<td>Aug 2, 2026<br>to Aug 29, 2026</td>
-<td>320</td>
-<td>13,708</td>
-<td>326</td>
-<td>−5 / +1,063 / +76</td>
-</tr>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-29.json; outputs/gsc_snapshot_2026-09-05.json | client site; window 2026-08-09 through 2026-09-05; clicks, impressions, pages_with_impressions; changes = current minus prior capture -->
-<tr>
-<th scope="row">Sep 5, 2026<small>Weekly step</small>
-</th>
-<td>Aug 9, 2026<br>to Sep 5, 2026</td>
-<td>321</td>
-<td>15,540</td>
-<td>348</td>
-<td>+1 / +1,832 / +22</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="caption">*Aug 20 to Aug 22 is a two-day step. Subsequent captures are a week apart. Each total covers its own overlapping 28-day window; changes are not separate weekly traffic totals.</p>
-</details>
-<a class="story-link" href="/ai-seo">AI SEO for buyers searching for what you sell →</a>
-</article>
+<p class="snapshot-note">AI answers come from the buyer questions we ask ChatGPT, Claude and Google's AI every week, calls from Google Business Profile and visits from Google Search Console, and each card states its dates. We don't show revenue yet because our clients haven't confirmed their numbers. We'll add it when they do.</p>
 </div>
 </section>
 <section class="reso">
@@ -815,7 +382,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
 
 <a href="https://calendar.app.google/eQvwG6TeVDq5GCG7A" target="_blank" rel="noopener" class="btn btn-primary">Book a 15-minute call</a>
 <div class="xlinks">
-<a href="/ai-seo">AI SEO: get found in search and named to buyers →</a> <a href="/results">All client results →</a> <a href="/pricing">See pricing →</a>
+<a href="/ai-seo">AI SEO: get found in search and named to buyers →</a> <a href="/pricing">See pricing →</a>
 </div>
 </div>
 </section>
