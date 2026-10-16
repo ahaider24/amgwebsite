@@ -23,7 +23,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-BASE = "https://amirgetsjobs.com"
+BASE = "https://amirgetsleads.com"
 
 # Priority is a weak hint at best, but an explicit one beats an absent one and
 # it documents which pages we actually care about.
