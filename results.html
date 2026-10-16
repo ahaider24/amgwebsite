@@ -251,14 +251,35 @@ h3.card-client{font-weight:400}.result-card strong{display:block;font-family:var
 .reso h2{font-size:clamp(40px,4.8vw,66px);max-width:18ch}.reso h2 em{color:var(--ink)}
 .reso .eyebrow{font-size:11px;letter-spacing:.1em}
 .reso .line{max-width:56ch;font-size:17px}.reso .btn-primary{background:var(--blue);box-shadow:none}
-.ai-section-header{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-bottom:28px}
+.ai-section-header{margin-bottom:28px}
 .ai-section-header .section-label{display:block;margin-bottom:0}
-.ai-section-header .section-label p{margin-top:8px}
-.ai-answer-mock{padding:20px;background:#fff;border:1px solid var(--line-soft);border-radius:4px;font-size:14px;line-height:1.6}
-.ai-answer-mock .question{margin-left:24px;padding:12px 16px;background:var(--paper-2);border-radius:12px 12px 2px 12px}
-.ai-answer-mock .answer{margin-top:14px;margin-right:24px;padding:12px 16px;background:var(--paper);border:1px solid var(--line-soft);border-radius:12px 12px 12px 2px}
-.ai-answer-mock mark{background:#DCF2E3;color:var(--ink);padding:2px 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-.ai-answer-mock .mock-label{display:block;margin-top:10px;font:10px/1.7 var(--mono);color:var(--ink-soft)}
+.ai-section-header .section-label p{margin-top:8px;display:block}
+.ai-mocks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-bottom:28px}
+.ai-mock{min-width:0;display:flex;flex-direction:column;overflow-wrap:anywhere}
+.ai-mock-label{font:10px/1.6 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+.ai-chat{flex:1;display:flex;flex-direction:column;min-width:0;padding:24px;background:var(--white);border:1px solid var(--line);border-radius:16px;font:14px/1.65 ui-sans-serif,-apple-system,"Segoe UI",sans-serif}
+.ai-chat-question{align-self:flex-end;max-width:90%;padding:12px 18px;background:#F1F1F1;border-radius:24px}
+.ai-chat-answer{margin:24px 0}
+.ai-chat-answer ul{padding-left:20px;margin-top:12px}
+.ai-chat-answer li+li{margin-top:10px}
+.ai-chat mark{background:#DCF2E3;color:var(--ink);padding:2px 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.ai-chat-tools{display:flex;align-items:center;gap:16px;height:18px;margin-top:18px;color:var(--faint)}
+.ai-chat-tools span{display:block;position:relative;width:5px;height:5px;background:currentColor;border-radius:50%;opacity:.6}
+.ai-chat-tools .copy{width:10px;height:11px;border:1px solid currentColor;background:none;border-radius:2px}
+.ai-chat-tools .copy::before{content:"";position:absolute;width:7px;height:8px;border:1px solid currentColor;border-radius:2px;left:-4px;top:-4px;background:var(--white)}
+.ai-chat-composer{margin-top:auto;min-width:0;padding:14px 18px;border:1px solid var(--line);border-radius:28px;background:#F9F9F9;color:var(--ink-soft);font:14px/1.5 ui-sans-serif,-apple-system,"Segoe UI",sans-serif}
+.ai-mock-caption{font:10px/1.7 var(--mono);color:var(--ink-soft);margin-top:12px}
+.ai-chat-claude{background:#F5F4EE}
+.ai-chat-claude .ai-chat-question{background:#EAE8DF;border-radius:12px}
+.ai-chat-claude .ai-chat-answer{font-family:Georgia,ui-serif,serif;font-size:16px;line-height:1.8}
+.ai-chat-claude .ai-chat-answer::before{content:"";display:block;width:8px;height:8px;border-radius:50%;background:var(--accent);opacity:.7;margin-bottom:14px}
+.ai-chat-claude .ai-chat-answer h3{font:700 18px/1.5 Georgia,ui-serif,serif}
+.ai-chat-claude .ai-chat-composer{background:var(--white);border-radius:16px}
+.competitor-strip{margin-top:40px;padding:28px 32px;background:var(--ink);color:var(--paper);border-radius:4px;overflow-wrap:anywhere}
+.competitor-label{font:10px/1.6 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#86CFA0}
+.competitor-strip h3{font:400 clamp(24px,3vw,32px)/1.2 var(--display);margin:8px 0 12px}
+.competitor-copy{font-size:15px;line-height:1.75;max-width:90ch}
+.competitor-source{font:10px/1.7 var(--mono);color:var(--paper-2);margin-top:14px}
 .reviews{padding-top:24px;padding-bottom:72px;scroll-margin-top:100px}
 .reviews h2{font-family:var(--display);font-size:clamp(36px,4vw,52px);font-weight:400;line-height:1.1;letter-spacing:-.035em;margin-bottom:20px}
 .reviews .lede{font-size:17px;line-height:1.75;max-width:60ch}
@@ -277,7 +298,7 @@ h3.card-client{font-weight:400}.result-card strong{display:block;font-family:var
 @media(min-width:1000px){.reso .btn{position:absolute;right:32px;top:145px}.reso .xlinks{margin-top:32px}}
 @media(max-width:780px){
 #main .wrap{padding-left:24px;padding-right:24px}.hero{padding:124px 0 48px}.hero .wrap{display:block}.hero .eyebrow{font-size:10px;letter-spacing:.07em;margin-bottom:26px}.hero h1{font-size:58px;max-width:12ch}.hero-copy{margin-top:28px}.hero .line{font-size:16px;line-height:1.7}.hero-link{font-size:13px;margin-top:16px}
-.ai-section-header{grid-template-columns:1fr;gap:20px;margin-bottom:20px}.ai-answer-mock{padding:16px;font-size:13px}.ai-answer-mock .question{margin-left:12px}.ai-answer-mock .answer{margin-right:12px}
+.ai-section-header{margin-bottom:20px}.ai-mocks{grid-template-columns:minmax(0,1fr);gap:24px;margin-bottom:20px}.ai-chat{padding:18px;font-size:13px}.ai-chat-question{max-width:94%}.competitor-strip{padding:24px;margin-top:32px}
 .highlights{padding:36px 0 44px}.section-label{margin-bottom:20px}.section-label p{display:none}.result-grid{gap:20px}.result-card{padding:26px}.card-client{font-size:11px}.result-card strong{font-size:98px;margin-top:28px}.card-payoff{font-size:19px;min-height:0}.card-before{font-size:12px;margin-top:20px}.proof-chart{margin-top:26px;padding-top:20px}
 .search-results{padding:36px 0 44px}.search-results .result-grid{gap:48px}.search-results .result-card strong{font-size:76px}.search-results .card-before{min-height:0}.measurement{padding-top:32px;padding-bottom:44px}.measurement .wrap{display:block}.measurement h2{margin-bottom:14px}.snapshot-note{font-size:12px}.reso{padding:64px 0 40px}.reso>.wrap{padding-bottom:48px}.reso h2{font-size:44px}.reso .line{font-size:16px}.reso .xlinks{gap:8px;margin-top:24px}.reviews{padding:24px 24px 64px}.reviews .facts{font-size:11px}.reviews .rv p{font-size:16px}.reviews .rv .reply{font-size:14px}.rv header{gap:8px 12px}.rv time{font-size:12px}.rv .src{font-size:12px}
 }
@@ -430,10 +451,36 @@ h3.card-client{font-weight:400}.result-card strong{display:block;font-family:var
 <section class="highlights" aria-labelledby="ai-results-heading"><div class="wrap">
 <div class="ai-section-header">
 <div class="section-label"><h2 id="ai-results-heading">01 / Recommended in AI answers</h2><p>Measured Oct 1 to 15, 2026</p></div>
-<div class="ai-answer-mock" aria-hidden="true">
-<p class="question">Who's the best CO2 and syrup supplier near Fresno?</p>
-<p class="answer"><mark>[Beverage &amp; foodservice supplier]</mark><span class="mock-label">recommended in 61% of ChatGPT answers</span></p>
-</div></div>
+</div>
+<!-- SOURCE: som_answers id 3943 (chatgpt_search, 2026-10-15) and id 1656 (claude_search, 2026-10-01). Answers shortened, names and trade removed. -->
+<div class="ai-mocks">
+<figure class="ai-mock">
+<p class="ai-mock-label">ChatGPT, with web search</p>
+<div class="ai-chat">
+<p class="ai-chat-question">Can a convenience store in Fresno get Dr Pepper syrup and CO2 from one local distributor?</p>
+<div class="ai-chat-answer">
+<p><strong>Yes. <mark>[Beverage &amp; foodservice supplier]</mark> in Fresno is a good match for getting both from one local supplier.</strong></p>
+<ul><li>Authorized fountain syrup distributor, bag-in-box syrups</li><li>20 lb and 50 lb CO2 tanks, and it serves convenience stores</li></ul>
+<div class="ai-chat-tools" aria-hidden="true"><span class="copy"></span><span></span><span></span><span></span></div>
+</div>
+<div class="ai-chat-composer" aria-hidden="true">Ask anything</div>
+</div>
+<figcaption class="ai-mock-caption">Real answer, shortened, names removed. Recommended in 61% of ChatGPT answers, Oct 1 to 15, 2026</figcaption>
+</figure>
+<figure class="ai-mock">
+<p class="ai-mock-label">Claude, with web search</p>
+<div class="ai-chat ai-chat-claude">
+<p class="ai-chat-question">Who should I hire for industrial services in Fresno?</p>
+<div class="ai-chat-answer">
+<h3>Top picks by reviews</h3>
+<ul><li><mark>[Industrial services company]</mark>: 5.0 stars, every Google review five-star, licensed and insured. Strongly recommended based on review volume and consistency.</li><li>[Competitor]: 4.7 stars from 12 reviews.</li></ul>
+</div>
+<div class="ai-chat-composer" aria-hidden="true">Reply...</div>
+</div>
+<figcaption class="ai-mock-caption">Real answer, shortened, names removed. Recommended in 72% of Claude answers, Oct 1 to 15, 2026</figcaption>
+</figure>
+<!-- GROK MOCK: add when Grok is measured -->
+</div>
 <div class="result-grid"><article class="result-card srv">
 <h3 class="card-client">Beverage &amp; foodservice supplier</h3>
 <!-- SOURCE: som_answers, surface chatgpt_search, Oct 1 to 15 2026: 75 answers, 61% named; aio 66% of 35; claude_search 71% of 75 -->
@@ -480,7 +527,15 @@ h3.card-client{font-weight:400}.result-card strong{display:block;font-family:var
 <span class="card-before">A website we built from scratch: 5 visits from Google in the four weeks to Aug 29, 2026, then 26 in the four weeks to Oct 10, 2026.</span><figure class="proof-chart">
 <figcaption>Visits from Google · four-week periods</figcaption>
 <div class="visits-pair"><div><div class="visit-number">5</div><p>Four weeks to<br>Aug 29, 2026</p></div><div><div class="visit-number after">26</div><p>Four weeks to<br>Oct 10, 2026</p></div></div>
-</figure></article></div></div></section>
+</figure></article></div>
+<!-- SOURCE: Amir 2026-10-16 (runs the account): "he didn't start spending until he saw us at the top". DataForSEO historical_rank_overview on the competitor domain (named in the vault PPC client page): paid keywords 0 May to Sep 2026, 1 in Oct 2026 (est. $72/mo). Google Ads auction insights Sep 30 to Oct 6 2026: competitor in 26% of client's auctions. Competitor not named on purpose (proof rule). -->
+<div class="competitor-strip">
+<p class="competitor-label">Competitors</p>
+<h3>We make competitors pay to keep up.</h3>
+<p class="competitor-copy">Our industrial services client started showing up ahead of its biggest local competitor. DataForSEO tracked no paid search keywords for that competitor from May to September 2026, then its first in October. From Sep 30 to Oct 6, 2026, its ads appeared in 26% of our client's ad auctions.</p>
+<p class="competitor-source">Google Ads auction insights, Sep 30 to Oct 6, 2026. Paid history estimated by DataForSEO.</p>
+</div>
+</div></section>
 <section class="measurement" aria-labelledby="measurement-heading"><div class="wrap"><h2 id="measurement-heading">How we measure</h2><p class="snapshot-note">AI answers come from the buyer questions we ask ChatGPT, Claude and Google's AI every week, calls from Google Business Profile and visits from Google Search Console, and each card states its dates.</p></div></section>
 <!-- SOURCE: Amir 2026-10-15: "reference we get it we know you want revenue numbers, lean into it". No client has cleared revenue for publication as of this date. -->
 <section class="revenue" aria-labelledby="revenue-heading"><div class="wrap">
