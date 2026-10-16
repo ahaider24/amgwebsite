@@ -174,6 +174,14 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
 .reviews .cta{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 .reviews .cta a{display:inline-block;padding:12px 18px;border-radius:999px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600}
 .reviews .cta a.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.revenue{background:var(--ink);color:#fff;padding:96px 0}
+.revenue .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:28px 64px;align-items:end}
+.revenue-eyebrow{grid-column:1/-1;font:11px/1.7 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#86CFA0}
+.revenue h2{font-family:var(--display);font-weight:400;font-size:clamp(38px,5vw,68px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
+.revenue h2 em{font-style:italic;color:#86CFA0}
+.revenue-body p{font-size:18px;line-height:1.65;color:rgba(255,255,255,.82);max-width:46ch}
+.revenue-body p+p{margin-top:14px}
+@media(max-width:780px){.revenue{padding:64px 0}.revenue .wrap{grid-template-columns:1fr}.revenue-body p{font-size:17px}}
 </style>
 <!-- Privacy-friendly analytics by Plausible -->
 <script async src="https://plausible.io/js/pa-vzntulcttSZ4XzHyPejsY.js">
@@ -234,7 +242,7 @@ h3.card-client{font-weight:400}.result-card strong{display:block;font-family:var
 .visits-pair .visit-number{font:400 72px/1.1 var(--display);letter-spacing:-.04em}
 .visits-pair .visit-number.after{color:#15803D}
 .visits-pair p{font:11px/1.7 var(--mono);color:var(--ink-soft);margin-top:10px}
-.measurement{background:var(--paper);padding:40px 0 0}
+.measurement{background:var(--paper);padding:40px 0 64px}
 .measurement .wrap{display:grid;grid-template-columns:1fr 2fr;gap:60px}
 .measurement h2{font:11px/1.7 var(--mono);letter-spacing:.08em;text-transform:uppercase;font-weight:400}
 .snapshot-note{margin:0;max-width:none;font-size:13px;line-height:1.8;color:var(--ink-soft)}
@@ -271,7 +279,7 @@ h3.card-client{font-weight:400}.result-card strong{display:block;font-family:var
 #main .wrap{padding-left:24px;padding-right:24px}.hero{padding:124px 0 48px}.hero .wrap{display:block}.hero .eyebrow{font-size:10px;letter-spacing:.07em;margin-bottom:26px}.hero h1{font-size:58px;max-width:12ch}.hero-copy{margin-top:28px}.hero .line{font-size:16px;line-height:1.7}.hero-link{font-size:13px;margin-top:16px}
 .ai-section-header{grid-template-columns:1fr;gap:20px;margin-bottom:20px}.ai-answer-mock{padding:16px;font-size:13px}.ai-answer-mock .question{margin-left:12px}.ai-answer-mock .answer{margin-right:12px}
 .highlights{padding:36px 0 44px}.section-label{margin-bottom:20px}.section-label p{display:none}.result-grid{gap:20px}.result-card{padding:26px}.card-client{font-size:11px}.result-card strong{font-size:98px;margin-top:28px}.card-payoff{font-size:19px;min-height:0}.card-before{font-size:12px;margin-top:20px}.proof-chart{margin-top:26px;padding-top:20px}
-.search-results{padding:36px 0 44px}.search-results .result-grid{gap:48px}.search-results .result-card strong{font-size:76px}.search-results .card-before{min-height:0}.measurement{padding-top:32px}.measurement .wrap{display:block}.measurement h2{margin-bottom:14px}.snapshot-note{font-size:12px}.reso{padding:64px 0 40px}.reso>.wrap{padding-bottom:48px}.reso h2{font-size:44px}.reso .line{font-size:16px}.reso .xlinks{gap:8px;margin-top:24px}.reviews{padding:24px 24px 64px}.reviews .facts{font-size:11px}.reviews .rv p{font-size:16px}.reviews .rv .reply{font-size:14px}.rv header{gap:8px 12px}.rv time{font-size:12px}.rv .src{font-size:12px}
+.search-results{padding:36px 0 44px}.search-results .result-grid{gap:48px}.search-results .result-card strong{font-size:76px}.search-results .card-before{min-height:0}.measurement{padding-top:32px;padding-bottom:44px}.measurement .wrap{display:block}.measurement h2{margin-bottom:14px}.snapshot-note{font-size:12px}.reso{padding:64px 0 40px}.reso>.wrap{padding-bottom:48px}.reso h2{font-size:44px}.reso .line{font-size:16px}.reso .xlinks{gap:8px;margin-top:24px}.reviews{padding:24px 24px 64px}.reviews .facts{font-size:11px}.reviews .rv p{font-size:16px}.reviews .rv .reply{font-size:14px}.rv header{gap:8px 12px}.rv time{font-size:12px}.rv .src{font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){#main *,#main *::before,#main *::after{animation:none!important;transition:none!important}}
 </style>
@@ -477,7 +485,16 @@ h3.card-client{font-weight:400}.result-card strong{display:block;font-family:var
 <figcaption>Visits from Google · four-week periods</figcaption>
 <div class="visits-pair"><div><div class="visit-number">5</div><p>Four weeks to<br>Aug 29, 2026</p></div><div><div class="visit-number after">26</div><p>Four weeks to<br>Oct 10, 2026</p></div></div>
 </figure></article></div></div></section>
-<section class="measurement" aria-labelledby="measurement-heading"><div class="wrap"><h2 id="measurement-heading">How we measure</h2><p class="snapshot-note">AI answers come from the buyer questions we ask ChatGPT, Claude and Google's AI every week, calls from Google Business Profile and visits from Google Search Console, and each card states its dates. We don't show revenue yet because our clients haven't confirmed their numbers. We'll add it when they do.</p></div></section>
+<section class="measurement" aria-labelledby="measurement-heading"><div class="wrap"><h2 id="measurement-heading">How we measure</h2><p class="snapshot-note">AI answers come from the buyer questions we ask ChatGPT, Claude and Google's AI every week, calls from Google Business Profile and visits from Google Search Console, and each card states its dates.</p></div></section>
+<!-- SOURCE: Amir 2026-10-15: "reference we get it we know you want revenue numbers, lean into it". No client has cleared revenue for publication as of this date. -->
+<section class="revenue" aria-labelledby="revenue-heading"><div class="wrap">
+<p class="revenue-eyebrow">The number you came for</p>
+<h2 id="revenue-heading">We get it. You want <em>revenue numbers.</em></h2>
+<div class="revenue-body">
+<p>So do we. Revenue is how you judge whether marketing worked, and every call, visit and AI answer above is meant to turn into it.</p>
+<p>Our clients haven't cleared us to publish their revenue yet, so this page shows what we measure ourselves. As each client says yes, their revenue goes on this page, with dates, next to everything above.</p>
+</div>
+</div></section>
 <section class="reso">
 <div class="wrap">
 <div class="eyebrow" style="color:var(--blue)">Your business, next</div>
