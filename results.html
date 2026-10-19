@@ -47,11 +47,19 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   "@type": "WebPage",
   "name": "Results: Dated Receipts from Real Client Work",
   "url": "https://amirgetsleads.com/results",
-  "description": "Dated client records covering organic search growth, advertising spend and current budgets. Measured results, reporting periods and what remains to be verified.",
+  "description": "Dated client results from six months of work: Google call taps, a website job request, AI recommendations and Google review excerpts.",
   "publisher": {
     "@type": "LocalBusiness",
     "@id": "https://amirgetsleads.com/#business",
-    "name": "AmirGetsLeads", "legalName": "Amir Gets LLC", "alternateName": ["AmirGetsJobs", "Amir Gets Jobs", "Amir Gets Leads", "AMG", "AMG Creative Agency"],
+    "name": "AmirGetsLeads",
+    "legalName": "Amir Gets LLC",
+    "alternateName": [
+      "AmirGetsJobs",
+      "Amir Gets Jobs",
+      "Amir Gets Leads",
+      "AMG",
+      "AMG Creative Agency"
+    ],
     "url": "https://amirgetsleads.com"
   }
 }
@@ -303,6 +311,49 @@ h3.card-client{font-weight:400}.result-card strong{display:block;font-family:var
 .search-results{padding:36px 0 44px}.search-results .result-grid{gap:48px}.search-results .result-card strong{font-size:76px}.search-results .card-before{min-height:0}.measurement{padding-top:32px;padding-bottom:44px}.measurement .wrap{display:block}.measurement h2{margin-bottom:14px}.snapshot-note{font-size:12px}.reso{padding:64px 0 40px}.reso>.wrap{padding-bottom:48px}.reso h2{font-size:44px}.reso .line{font-size:16px}.reso .xlinks{gap:8px;margin-top:24px}.reviews{padding:24px 24px 64px}.reviews .facts{font-size:11px}.reviews .rv p{font-size:16px}.reviews .rv .reply{font-size:14px}.rv header{gap:8px 12px}.rv time{font-size:12px}.rv .src{font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){#main *,#main *::before,#main *::after{animation:none!important;transition:none!important}}
+
+/* Compact six-month results, using the existing cards, chat and review styles. */
+#main .hero{padding:100px 0 36px}
+#main .hero .wrap{display:block}
+#main .hero h1{font-size:clamp(34px,4.4vw,58px);max-width:26ch;letter-spacing:-.035em}
+#main .hero .line{margin-top:16px;max-width:65ch;line-height:1.5}
+#main .result-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
+#main .result-card{padding:22px;color:var(--ink)}
+#main .result-card strong{font-family:"Geist",var(--sans);font-size:clamp(34px,3.6vw,48px);font-weight:600;letter-spacing:-.05em;margin:0 0 10px;white-space:nowrap}
+#main .card-payoff{font-size:16px;line-height:1.4;min-height:0;max-width:none}
+#main .card-before{margin-top:12px;font-size:12px;line-height:1.5}
+#main .hero .btn{margin-top:24px}
+.rating-line{font-size:13px;margin-top:12px;color:#D6D1C7}.rating-line a{text-decoration:underline;text-underline-offset:3px}
+#main .highlights{padding:44px 0}
+.ai-strip{display:grid;grid-template-columns:1fr 1.2fr;gap:24px 48px;align-items:start}
+.ai-section-header h2{font:400 clamp(28px,3vw,40px)/1.1 var(--display);letter-spacing:-.025em}
+.ai-section-header .line{font-size:16px;color:var(--ink-soft);margin-top:18px;line-height:1.65}
+.ai-strip .snapshot-note{grid-column:1/-1;font-size:11px;line-height:1.6}
+#main .reviews{max-width:1200px;padding-top:24px;padding-bottom:36px}
+#main .reviews .lede{font-size:15px;max-width:65ch}
+#main .reviews .rv{padding:16px 0}
+#main .reviews .rv p{font-size:17px}
+#main .reviews .rv header{margin:8px 0 0}
+#main .reviews .cta{margin-top:8px;padding-top:20px}
+#main .reso{background:var(--paper-2);padding:40px 0}
+#main .reso>.wrap{padding-bottom:0;border:0}
+#main .reso h2{font-size:36px;max-width:none}
+#main .reso .btn{position:static;margin-top:20px}
+@media(max-width:780px){
+#main .wrap{padding-left:20px;padding-right:20px}
+#main .hero{padding-top:88px;padding-bottom:28px}
+#main .hero h1{font-size:34px;max-width:22ch}
+#main .hero .line{font-size:15px;margin-top:12px}
+#main .result-grid{grid-template-columns:1fr;gap:10px;margin-top:20px}
+#main .result-card{padding:16px}
+#main .result-card strong{font-size:34px;margin-bottom:6px}
+#main .card-payoff{font-size:15px}
+#main .card-before{margin-top:8px;font-size:11px}
+.ai-strip{grid-template-columns:1fr;gap:20px}
+.ai-section-header{margin-bottom:0}
+#main .highlights{padding:32px 0}
+#main .reviews h2{font-size:32px}
+}
 </style>
 
 <a class="skip-link" href="#main">Skip to results</a>
@@ -440,20 +491,35 @@ h3.card-client{font-weight:400}.result-card strong{display:block;font-family:var
 </nav>
 
 <main id="main">
-<header class="hero">
-<div class="wrap">
-<h1>ChatGPT and Claude <em>recommend our clients.</em></h1>
-<div class="hero-copy">
-<p class="line">Checked every week with the questions buyers ask. Every number is dated.</p>
+<header class="hero"><div class="wrap">
+<h1>What six months of work has done for our clients so far</h1>
+<p class="line">Every number is dated. Client revenue numbers go on this page January 1, 2027.</p>
+<div class="result-grid">
+<article class="result-card">
+<strong>3 to 14</strong>
+<p class="card-payoff">Call taps a month from one client's Google listing.</p>
+<p class="card-before">0 to 3 a month in March 2026, then 12 to 14 a month by September 2026. Google counts taps on the call button, not answered calls.</p>
+</article>
+<article class="result-card">
+<strong>36 units</strong>
+<p class="card-payoff">A job request through the site we built: lift 36 rooftop HVAC units at a convention center.</p>
+<p class="card-before">Received September 30, 2026.</p>
+</article>
+<article class="result-card">
+<strong>38% to 72%</strong>
+<p class="card-payoff">How often Claude names one client when buyers ask who to hire.</p>
+<p class="card-before">38% in September 2026, then 72% from Oct 1 to 15, 2026, across 75 buyer questions asked with web search.</p>
+</article>
 </div>
-</div>
-</header>
-<section class="highlights" aria-labelledby="ai-results-heading"><div class="wrap">
+<a href="https://calendar.app.google/eQvwG6TeVDq5GCG7A" target="_blank" rel="noopener" class="btn btn-primary">Book a 15-minute call</a>
+<p class="rating-line"><a href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">5.0 on Google</a> · <a href="https://www.yelp.com/biz/amir-gets-jobs-fresno" rel="noopener">5.0 on Yelp</a></p>
+</div></header>
+<section class="highlights" aria-labelledby="ai-results-heading"><div class="wrap ai-strip">
 <div class="ai-section-header">
-<div class="section-label"><h2 id="ai-results-heading">01 / Recommended in AI answers</h2><p>Measured Oct 1 to 15, 2026</p></div>
+<h2 id="ai-results-heading">What a buyer sees in ChatGPT</h2>
+<p class="line">We asked ChatGPT the question a convenience store buyer would ask: can one distributor supply both syrup and CO2? It named our client.</p>
+<p class="line">We ask questions like this every week and count how often each client is named.</p>
 </div>
-<!-- SOURCE: som_answers id 3943 (chatgpt_search, 2026-10-15) and id 1656 (claude_search, 2026-10-01). Answers shortened, names and trade removed. -->
-<div class="ai-mocks">
 <figure class="ai-mock">
 <p class="ai-mock-label">ChatGPT, with web search</p>
 <div class="ai-chat">
@@ -467,398 +533,96 @@ h3.card-client{font-weight:400}.result-card strong{display:block;font-family:var
 </div>
 <figcaption class="ai-mock-caption">Real answer, shortened, names removed. Recommended in 61% of ChatGPT answers, Oct 1 to 15, 2026</figcaption>
 </figure>
-<figure class="ai-mock">
-<p class="ai-mock-label">Claude, with web search</p>
-<div class="ai-chat ai-chat-claude">
-<p class="ai-chat-question">Who should I hire for industrial services in Fresno?</p>
-<div class="ai-chat-answer">
-<h3>Top picks by reviews</h3>
-<ul><li><mark>[Industrial services company]</mark>: 5.0 stars, every Google review five-star, licensed and insured. Strongly recommended based on review volume and consistency.</li><li>[Competitor]: 4.7 stars from 12 reviews.</li></ul>
-</div>
-<div class="ai-chat-composer" aria-hidden="true">Reply...</div>
-</div>
-<figcaption class="ai-mock-caption">Real answer, shortened, names removed. Recommended in 72% of Claude answers, Oct 1 to 15, 2026</figcaption>
-</figure>
-<!-- GROK MOCK: add when Grok is measured -->
-</div>
-<div class="result-grid"><article class="result-card srv">
-<h3 class="card-client">Beverage &amp; foodservice supplier</h3>
-<!-- SOURCE: som_answers, surface chatgpt_search, Oct 1 to 15 2026: 75 answers, 61% named; aio 66% of 35; claude_search 71% of 75 -->
-<strong>61<span class="unit">%</span></strong>
-<span class="card-payoff">of ChatGPT answers with web search recommend it when buyers ask who to buy from</span>
-<span class="card-before">75 buyer questions asked Oct 1 to 15, 2026. Google's AI answers recommended it in 66% of 35.</span><figure class="proof-chart" aria-label="Business recommended in 61 percent of ChatGPT answers and 66 percent of Google AI answers. Scale 0 to 100 percent.">
-<figcaption>Answers that recommended the business</figcaption>
-<div class="chart-label"><span>ChatGPT · 75 questions</span><b>61%</b></div><div class="track"><div class="fill" style="width:61%"></div></div>
-<div class="chart-label"><span>Google AI · 35 questions</span><b>66%</b></div><div class="track"><div class="fill google" style="width:66%"></div></div>
-<div class="axis"><span>0%</span><span>100%</span></div>
-</figure></article><article class="result-card srv">
-<h3 class="card-client">Industrial services company</h3>
-<!-- SOURCE: som_answers, surface claude_search: Sep 2026 38% of 50; Oct 1 to 15 2026 72% of 75 -->
-<strong>72<span class="unit">%</span></strong>
-<span class="card-payoff">of Claude answers with web search recommend it when buyers ask who to hire</span>
-<span class="card-before">Up from 38% in September 2026, across 75 buyer questions asked Oct 1 to 15, 2026.</span><figure class="proof-chart" aria-label="Claude answers recommending the business rose from 38 percent in September to 72 percent in October. Scale 0 to 100 percent.">
-<figcaption>Claude answers that recommended the business</figcaption>
-<div class="chart-label"><span>September 2026</span><b>38%</b></div><div class="track"><div class="fill previous" style="width:38%"></div></div>
-<div class="chart-label"><span>Oct 1 to 15, 2026</span><b>72%</b></div><div class="track"><div class="fill" style="width:72%"></div></div>
-<div class="axis"><span>0%</span><span>100%</span></div>
-</figure></article></div></div></section>
-<section class="search-results" aria-labelledby="search-results-heading"><div class="wrap">
-<div class="section-label"><h2 id="search-results-heading">02 / Found on Google</h2><p>Calls &amp; search visits</p></div>
-<div class="result-grid"><article class="result-card srv">
-<h3 class="card-client">Beverage &amp; foodservice supplier</h3>
-<!-- SOURCE: Google Business Profile performance, calls per month; engine vault client page (March 0 to 3, September 12 to 14) -->
-<strong>12 to 14</strong>
-<span class="card-payoff">calls a month started from its Google listing</span>
-<span class="card-before">0 to 3 a month in March 2026, then 12 to 14 a month by September 2026.</span><figure class="proof-chart">
-<figcaption>Monthly calls from its Google listing</figcaption>
-<svg class="calls-svg" viewBox="0 0 480 170" role="img" aria-label="Monthly call ranges: March 2026, zero to three. September 2026, twelve to fourteen. Axis starts at zero and ends at fifteen.">
-<g stroke="#CFC5B1" stroke-width="1"><path d="M110 15V124M225 15V124M340 15V124M455 15V124"/></g>
-<g font-family="Archivo, sans-serif" font-size="13" fill="#574F40"><text x="0" y="44">Mar 2026</text><text x="0" y="97">Sep 2026</text></g>
-<path d="M110 40H179" stroke="#A79C86" stroke-width="12"/><path d="M110 93H386" stroke="#16A34A" stroke-width="12"/><path d="M386 93H432" stroke="#16A34A" stroke-width="12" stroke-opacity=".35"/>
-<g fill="#F1EAD9"><rect x="182" y="28" width="56" height="23" rx="2"/><rect x="360" y="60" width="72" height="23" rx="2"/></g>
-<g font-family="JetBrains Mono, monospace" font-size="12" fill="#14110A"><text x="188" y="44">0 to 3</text><text x="366" y="76">12 to 14</text></g>
-<g font-family="JetBrains Mono, monospace" font-size="11" fill="#574F40" text-anchor="middle"><text x="110" y="148">0</text><text x="225" y="148">5</text><text x="340" y="148">10</text><text x="455" y="148">15</text></g>
-</svg>
-</figure></article><article class="result-card srv">
-<h3 class="card-client">Industrial services company</h3>
-<!-- SOURCE: outputs/gsc_snapshot_2026-08-29.json (28 days to Aug 29: 5 clicks); outputs/gsc_snapshot_2026-10-10.json (28 days to Oct 10: 26 clicks); (26 - 5) / 5 = 420% -->
-<strong>+420%</strong>
-<span class="card-payoff">visits from Google search</span>
-<span class="card-before">A website we built from scratch: 5 visits from Google in the four weeks to Aug 29, 2026, then 26 in the four weeks to Oct 10, 2026.</span><figure class="proof-chart">
-<figcaption>Visits from Google · four-week periods</figcaption>
-<div class="visits-pair"><div><div class="visit-number">5</div><p>Four weeks to<br>Aug 29, 2026</p></div><div><div class="visit-number after">26</div><p>Four weeks to<br>Oct 10, 2026</p></div></div>
-</figure></article></div>
-<!-- SOURCE: Amir 2026-10-16 (runs the account): "he didn't start spending until he saw us at the top". Paid keyword history for the competitor domain (tool and figures in the vault PPC client page): none May to Sep 2026, first in Oct 2026. Google Ads auction insights Sep 30 to Oct 6 2026: competitor in 26% of client's auctions. Competitor not named on purpose (proof rule). -->
-<div class="competitor-strip">
-<p class="competitor-label">Competitors</p>
-<h3>We make competitors pay to keep up.</h3>
-<p class="competitor-copy">Our industrial services client started showing up ahead of its biggest local competitor. Third-party estimates showed no paid search keywords for that competitor from May to September 2026, then one in October 2026. From Sep 30 to Oct 6, 2026, its ads appeared in 26% of our client's ad auctions.</p>
-<p class="competitor-source">Google Ads auction insights, Sep 30 to Oct 6, 2026. Paid keyword history from third-party estimates.</p>
-</div>
+<p class="snapshot-note">AI answers from buyer questions asked weekly in ChatGPT, Claude and Google's AI; calls from Google Business Profile; each number states its dates.</p>
 </div></section>
-<section class="measurement" aria-labelledby="measurement-heading"><div class="wrap"><h2 id="measurement-heading">How we measure</h2><p class="snapshot-note">AI answers come from the buyer questions we ask ChatGPT, Claude and Google's AI every week, calls from Google Business Profile and visits from Google Search Console, and each card states its dates.</p></div></section>
-<!-- SOURCE: Amir 2026-10-15: "reference we get it we know you want revenue numbers, lean into it". No client has cleared revenue for publication as of this date. -->
-<section class="revenue" aria-labelledby="revenue-heading"><div class="wrap">
-<p class="revenue-eyebrow">The number you came for</p>
-<h2 id="revenue-heading">We get it. You want <em>revenue numbers.</em></h2>
-<div class="revenue-body">
-<p>So do we. Revenue is how you judge whether marketing worked, and every call, visit and AI answer above is meant to turn into it.</p>
-<p>Our clients haven't cleared us to publish their revenue yet, so this page shows what we measure ourselves. As each client says yes, their revenue goes on this page, with dates, next to everything above.</p>
-</div>
-</div></section>
-<section class="reso">
-<div class="wrap">
-<div class="eyebrow" style="color:var(--blue)">Your business, next</div>
-<h2>Get found by the people <em>ready to hire.</em>
-</h2>
-<!-- SOURCE: Amir 2026-10-15: one way in, a 15-minute call to check fit; the $499 diagnostic is retired. -->
-<p class="line">Book a 15-minute call. We'll ask about your business and your market and tell you plainly whether we can help. If we can, you get a written price before you commit to anything.</p>
-
+<section class="reviews wrap" id="reviews" aria-labelledby="reviews-heading">
+<h2 id="reviews-heading">What clients say</h2>
+<p class="lede">Excerpts from our Google reviews.</p>
+<article class="rv"><p>"Amir got our firm to the top of chat gpt"</p><header><span class="who">H</span><time datetime="2026-09-11">2026-09-11</time><a class="src" href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Google</a></header></article>
+<article class="rv"><p>"I've been getting a completely different caliber of patient reaching out"</p><header><span class="who">Noman</span><time datetime="2026-03-12">2026-03-12</time><a class="src" href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Google</a></header></article>
+<article class="rv"><p>"We are starting to get busy"</p><header><span class="who">Ken</span><time datetime="2026-09-24">2026-09-24</time><a class="src" href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Google</a></header></article>
+<div class="cta"><a href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Read all reviews on Google</a></div>
+</section>
+<section class="reso"><div class="wrap">
+<h2>Talk about your business</h2>
+<p class="line">In a 15-minute call, we'll ask about your business and your market and tell you plainly whether we can help you reach people looking for the services you provide.</p>
 <a href="https://calendar.app.google/eQvwG6TeVDq5GCG7A" target="_blank" rel="noopener" class="btn btn-primary">Book a 15-minute call</a>
-<div class="xlinks">
-<a href="/ai-seo">AI SEO: get found in search and named to buyers →</a> <a href="/pricing">See pricing →</a>
-</div>
-</div>
-</section>
-<section class="reviews wrap" id="reviews" aria-label="Google reviews">
-  <h2>Google reviews</h2>
-  <p class="lede">Every Google review, reproduced with the reviewer, the date and the source, so any reader, human or AI assistant, can check it.</p>
-  <div class="facts"><span>Google: 5.0 stars</span><span>Yelp: 5.0 stars</span><a href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">AmirGetsLeads on Google Maps</a><a href="https://www.yelp.com/biz/amir-gets-jobs-fresno" rel="noopener">AmirGetsLeads on Yelp</a></div>
-  <article class="rv">
-  <header><span class="who">Ken Romo</span><span class="stars" aria-label="5 stars">★★★★★</span><time datetime="2026-09-24">2026-09-24</time><a class="src" href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Google</a></header>
-  <p>You need help with your website Amir, did a great job! We are starting to get busy with his help on creating awesome website and Ai and our seo. Thanks Amir.....</p>
-</article>
-<article class="rv">
-  <header><span class="who">H</span><span class="stars" aria-label="5 stars">★★★★★</span><time datetime="2026-09-11">2026-09-11</time><a class="src" href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Google</a></header>
-  <p>Amir got our firm to the top of chat gpt. Initially we were reluctant they were could drive sales from AI against larger corporate companies, but we're seeing more new customers who found us from AI and Google</p><p class="reply"><span>Reply from Amir Haider</span> Thank you, H. I get the skepticism about competing with the big corporate names in AI search. The work is just making sure the answer engines can actually find and understand your firm, and it's good to hear new customers are coming through.</p>
-</article><article class="rv">
-  <header><span class="who">Yazan Amireh</span><span class="stars" aria-label="5 stars">★★★★★</span><time datetime="2026-08-22">2026-08-22</time><a class="src" href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Google</a></header>
-  <p>I highly recommend AmirGetsJobs to any large legal department or public legal entity looking to modernize. They didn&#x27;t just give us a generic software package; they designed an AI-native system tailored to the high volume of public interaction we face daily. The automated response and sorting setup is incredibly precise, reliable, and secure. It has significantly improved our response times to the community while easing the daily burden on our administrative staff.</p><p class="reply"><span>Reply from Amir Haider</span> Thank you, Yazan. What stood out to me in your note is that a generic package would not have fit your volume of public interaction. Building the sorting and response layer around how your department actually works is the whole point.</p>
-</article><article class="rv">
-  <header><span class="who">Rafael Ramirez</span><span class="stars" aria-label="5 stars">★★★★★</span><time datetime="2026-07-25">2026-07-25</time><a class="src" href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Google</a></header>
-  <p>Amazing experience from a person who genuinely wants to help people do better! I'm not tech savvy so Amir helping our business stay modern and relevant is a major help in the current economy. He did every bit of work and asked questions when needed, a total professional. Thank you Amir!</p><p class="reply"><span>Reply from Amir Haider</span> Thank you Rafael. Helping owners who would rather run their business than wrestle with technology is exactly why I do this. Keeping you modern and relevant is my job, and I am glad it shows. Grateful for your trust.</p>
-</article><article class="rv">
-  <header><span class="who">gracie pavelski</span><span class="stars" aria-label="5 stars">★★★★★</span><time datetime="2026-07-25">2026-07-25</time><a class="src" href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Google</a></header>
-  <p>Working with Amir was the most quick and painless experience ever. We hardly had to lift a finger as he did everything! He guided us through the entire process, made almost every decision on our behalf while keeping our business's entire identity at the forefront.
-
-The turnaround time was insanely fast as well, we went from talking stage to finished website in less than two weeks!
-
-100% recommend to anyone starting new or needing a refresh!</p><p class="reply"><span>Reply from Amir Haider</span> Thank you Gracie. Quick and painless is the goal. Most owners do not have time to manage a web project, so I carry the decisions and keep you informed instead of burdened. I appreciate you letting me run with it.</p>
-</article><article class="rv">
-  <header><span class="who">Hien</span><span class="stars" aria-label="5 stars">★★★★★</span><time datetime="2026-07-21">2026-07-21</time><a class="src" href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Google</a></header>
-  <p>I was using a particular program generated for billing and it was continually having issues with "error codes." Amir is very talented and I am amazed and happy that he was able to use AI technology to solve the problem and have the program up and running again!</p><p class="reply"><span>Reply from Amir Haider</span> Thank you Hien. Those recurring error codes were a headache you did not need, and using AI to finally put them to rest was a satisfying fix. If anything else in your workflow starts misbehaving, you know where to find me.</p>
-</article><article class="rv">
-  <header><span class="who">Yasin Araim</span><span class="stars" aria-label="5 stars">★★★★★</span><time datetime="2026-07-20">2026-07-20</time><a class="src" href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Google</a></header>
-  <p>Amir gave a great audit of our site, and how we can use the SEO front to optimize for our meta traffic.</p><p class="reply"><span>Reply from Amir Haider</span> Thank you Yasin. An audit is only useful if it turns into a clear plan, so I am glad the SEO roadmap for your site and traffic came through sharp and actionable. Excited to see the results as you put it to work.</p>
-</article><article class="rv">
-  <header><span class="who">Taran Matson</span><span class="stars" aria-label="5 stars">★★★★★</span><time datetime="2026-07-19">2026-07-19</time><a class="src" href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Google</a></header>
-  <p>Amir helped me actually see a clear path to growth. First he set up an extremely targeted SEO strategy, with dashboards to see my progress. Then he even put a custom AI agent in my slack channel that gives me daily updates! Couldn&#x27;t recommend him enough.</p><p class="reply"><span>Reply from Amir Haider</span> Thanks Taran! 
-
-Super excited to see you pilot the AI agents we&#x27;re building to supplement your marketing/ad spend.</p>
-</article><article class="rv">
-  <header><span class="who">Sarkis Khatchikian</span><span class="stars" aria-label="5 stars">★★★★★</span><time datetime="2026-07-19">2026-07-19</time><a class="src" href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Google</a></header>
-  <p>From my experience with Amir, he's not only reliable, he's not only a go-getter type of personality, but he provides you and your business more value than the rates he charges you. In other words, he gives you more out of his service than what you pay for. Some people TRY to make things happen, he MAKES things happen. You get the results you ask for plain and simple. No "ifs", no "buts", and no "maybes".
-
-Before I ultimately decided to consult him, I wanted to know about his prior experiences. This is because nowadays I just see young people who pretend they know a thing or two about AI all of a sudden fake their way into making people believe that they know about how businesses work or that they know the nuances within a particular business sector (i.e. healthcare industry, food industry, retail/e-commerce, wedding industry, etc.). If you don't have any experience or at least have knowledge about my respective business sector then how can I trust you to help my business grow?
-
-Well it turns out Amir has had 14+ years of experience assisting businesses in the healthcare industry, auto industry, sports app industry, wedding designers, distribution, and etc. I was pretty impressed with how well-rounded his resume was and how well-rounded his knowledge was about different business sectors including mine (healthcare). On top of that, I noticed he's at the perfect age where he's not too young to be inexperienced with businesses but he's also not too old to understand the full capabilities of AI and how to leverage it.
-
-He explained to me how quick he is in discovering and becoming familiar with the newest AI models, and he also knows a ton about product development with AI. He has mapped out an impressive Search Engine Optimization and marketing strategy for my business and as a result my business has received more searches these past two months than I ever had since I started. I have him to thank for that.
-
-If you feel stuck, if you feel like your business has plateaued, and you need an answer to get out of your current situation to reach a new potential for your business, I highly recommend AmirGetsJobs.</p><p class="reply"><span>Reply from Amir Haider</span> Thanks Sarkis! 
-
-Super excited to see the work we did translate into meaningful revenue! Will be tracking your performance weekly.</p>
-</article><article class="rv">
-  <header><span class="who">Ahsan K</span><span class="stars" aria-label="5 stars">★★★★★</span><time datetime="2026-03-12">2026-03-12</time><a class="src" href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Google</a></header>
-  <p>I&#x27;ve known Amir for years and watched him build his company from the ground up. The way he uses AI and automation for local marketing is genuinely different from anything I&#x27;ve seen and I&#x27;ve looked around. He&#x27;s not doing what everyone else is doing. If you&#x27;re a contractor or small business owner trying to stand out from the crowd and actually show up on Google, this is the guy to call.</p><p class="reply"><span>Reply from Amir Haider</span> Thank you Ahsan. You have seen this company grow from day one, so this review means more than most. The AI and automation approach is the bet I made early, and I am glad the difference is visible. Grateful for years of support.</p>
-</article><article class="rv">
-  <header><span class="who">Noman Naqvi</span><span class="stars" aria-label="5 stars">★★★★★</span><time datetime="2026-03-12">2026-03-12</time><a class="src" href="https://maps.google.com/maps?cid=17255384803177239107" rel="noopener">Google</a></header>
-  <p>I run my own PT practice on the side and had zero time to deal with building a website. Amir handled the whole thing, I barely had to do anything. Since it went up I&#x27;ve been getting a completely different caliber of patient reaching out. More serious, more qualified. If you&#x27;re running your own business and want more of the right customers, he&#x27;s your guy! He also responds ASAP anytime I have any questions!</p><p class="reply"><span>Reply from Amir Haider</span> Thank you Noman. A different caliber of patient is the outcome that matters, not just a nicer website. Glad I could take the whole build off your plate while you ran your practice. Wishing you continued growth on both fronts.</p>
-</article>
-  <div class="cta"><a href="https://search.google.com/local/writereview?placeid=ChIJ56T6362fvqgRQ5INOA5xd-8" rel="noopener">Leave a Google review</a></div>
-</section>
+</div></section>
 </main>
 <script type="application/ld+json">
 {
- "@context": "https://schema.org",
- "@type": "ProfessionalService",
- "@id": "https://amirgetsleads.com/#business",
- "name": "AmirGetsLeads",
- "legalName": "Amir Gets LLC",
- "alternateName": [
-  "AmirGetsJobs",
-  "Amir Gets Jobs",
-  "Amir Gets Leads",
-  "AMG",
-  "AMG Creative Agency"
- ],
- "url": "https://amirgetsleads.com/",
- "sameAs": [
-  "https://www.linkedin.com/company/amirgetsleads",
-  "https://www.yelp.com/biz/amir-gets-jobs-fresno",
-  "https://maps.google.com/maps?cid=17255384803177239107",
-  "https://business.fresnochamber.com/list/member/amirgetsjobs-32761",
-  "https://www.instagram.com/amirgetsjobs",
-  "https://github.com/AmirGetsJobs",
-  "https://thebusinessjournal.com/tag/amirgetsjobs/"
- ],
- "address": {
-  "@type": "PostalAddress",
-  "addressLocality": "Fresno",
-  "addressRegion": "CA",
-  "addressCountry": "US"
- },
- "review": [
-  {
-   "@type": "Review",
-   "author": {
-    "@type": "Person",
-    "name": "Ken Romo"
-   },
-   "datePublished": "2026-09-24",
-   "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": 5,
-    "bestRating": 5
-   },
-   "reviewBody": "You need help with your website Amir, did a great job! We are starting to get busy with his help on creating awesome website and Ai and our seo. Thanks Amir.....",
-   "publisher": {
-    "@type": "Organization",
-    "name": "Google"
-   },
-   "url": "https://maps.google.com/maps?cid=17255384803177239107"
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://amirgetsleads.com/#business",
+  "name": "AmirGetsLeads",
+  "legalName": "Amir Gets LLC",
+  "alternateName": [
+    "AmirGetsJobs",
+    "Amir Gets Jobs",
+    "Amir Gets Leads",
+    "AMG",
+    "AMG Creative Agency"
+  ],
+  "url": "https://amirgetsleads.com/",
+  "sameAs": [
+    "https://www.linkedin.com/company/amirgetsleads",
+    "https://www.yelp.com/biz/amir-gets-jobs-fresno",
+    "https://maps.google.com/maps?cid=17255384803177239107",
+    "https://business.fresnochamber.com/list/member/amirgetsjobs-32761",
+    "https://www.instagram.com/amirgetsjobs",
+    "https://github.com/AmirGetsJobs",
+    "https://thebusinessjournal.com/tag/amirgetsjobs/"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Fresno",
+    "addressRegion": "CA",
+    "addressCountry": "US"
   },
-  {
-   "@type": "Review",
-   "author": {
-    "@type": "Person",
-    "name": "H"
-   },
-   "datePublished": "2026-09-11",
-   "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": 5,
-    "bestRating": 5
-   },
-   "reviewBody": "Amir got our firm to the top of chat gpt. Initially we were reluctant they were could drive sales from AI against larger corporate companies, but we're seeing more new customers who found us from AI and Google",
-   "publisher": {
-    "@type": "Organization",
-    "name": "Google"
-   },
-   "url": "https://maps.google.com/maps?cid=17255384803177239107"
-  },
-  {
-   "@type": "Review",
-   "author": {
-    "@type": "Person",
-    "name": "Yazan Amireh"
-   },
-   "datePublished": "2026-08-22",
-   "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": 5,
-    "bestRating": 5
-   },
-   "reviewBody": "I highly recommend AmirGetsJobs to any large legal department or public legal entity looking to modernize. They didn't just give us a generic software package; they designed an AI-native system tailored to the high volume of public interaction we face daily. The automated response and sorting setup is incredibly precise, reliable, and secure. It has significantly improved our response times to the community while easing the daily burden on our administrative staff.",
-   "publisher": {
-    "@type": "Organization",
-    "name": "Google"
-   },
-   "url": "https://maps.google.com/maps?cid=17255384803177239107"
-  },
-  {
-   "@type": "Review",
-   "author": {
-    "@type": "Person",
-    "name": "Rafael Ramirez"
-   },
-   "datePublished": "2026-07-25",
-   "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": 5,
-    "bestRating": 5
-   },
-   "reviewBody": "Amazing experience from a person who genuinely wants to help people do better! I’m not tech savvy so Amir helping our business stay modern and relevant is a major help in the current economy. He did every bit of work and asked questions when needed, a total professional. Thank you Amir!",
-   "publisher": {
-    "@type": "Organization",
-    "name": "Google"
-   },
-   "url": "https://maps.google.com/maps?cid=17255384803177239107"
-  },
-  {
-   "@type": "Review",
-   "author": {
-    "@type": "Person",
-    "name": "gracie pavelski"
-   },
-   "datePublished": "2026-07-25",
-   "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": 5,
-    "bestRating": 5
-   },
-   "reviewBody": "Working with Amir was the most quick and painless experience ever. We hardly had to lift a finger as he did everything! He guided us through the entire process, made almost every decision on our behalf while keeping our business’s entire identity at the forefront.\n\nThe turnaround time was insanely fast as well, we went from talking stage to finished website in less than two weeks!\n\n100% recommend to anyone starting new or needing a refresh!",
-   "publisher": {
-    "@type": "Organization",
-    "name": "Google"
-   },
-   "url": "https://maps.google.com/maps?cid=17255384803177239107"
-  },
-  {
-   "@type": "Review",
-   "author": {
-    "@type": "Person",
-    "name": "Hien"
-   },
-   "datePublished": "2026-07-21",
-   "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": 5,
-    "bestRating": 5
-   },
-   "reviewBody": "I was using a particular program generated for billing and it was continually having issues with “error codes.” Amir is very talented and I am amazed and happy that he was able to use AI technology to solve the problem and have the program up and running again!",
-   "publisher": {
-    "@type": "Organization",
-    "name": "Google"
-   },
-   "url": "https://maps.google.com/maps?cid=17255384803177239107"
-  },
-  {
-   "@type": "Review",
-   "author": {
-    "@type": "Person",
-    "name": "Yasin Araim"
-   },
-   "datePublished": "2026-07-20",
-   "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": 5,
-    "bestRating": 5
-   },
-   "reviewBody": "Amir gave a great audit of our site, and how we can use the SEO front to optimize for our meta traffic.",
-   "publisher": {
-    "@type": "Organization",
-    "name": "Google"
-   },
-   "url": "https://maps.google.com/maps?cid=17255384803177239107"
-  },
-  {
-   "@type": "Review",
-   "author": {
-    "@type": "Person",
-    "name": "Taran Matson"
-   },
-   "datePublished": "2026-07-19",
-   "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": 5,
-    "bestRating": 5
-   },
-   "reviewBody": "Amir helped me actually see a clear path to growth. First he set up an extremely targeted SEO strategy, with dashboards to see my progress. Then he even put a custom AI agent in my slack channel that gives me daily updates! Couldn't recommend him enough.",
-   "publisher": {
-    "@type": "Organization",
-    "name": "Google"
-   },
-   "url": "https://maps.google.com/maps?cid=17255384803177239107"
-  },
-  {
-   "@type": "Review",
-   "author": {
-    "@type": "Person",
-    "name": "Sarkis Khatchikian"
-   },
-   "datePublished": "2026-07-19",
-   "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": 5,
-    "bestRating": 5
-   },
-   "reviewBody": "From my experience with Amir, he’s not only reliable, he’s not only a go-getter type of personality, but he provides you and your business more value than the rates he charges you. In other words, he gives you more out of his service than what you pay for. Some people TRY to make things happen, he MAKES things happen. You get the results you ask for plain and simple. No “ifs”, no “buts”, and no “maybes”.\n\nBefore I ultimately decided to consult him, I wanted to know about his prior experiences. This is because nowadays I just see young people who pretend they know a thing or two about AI all of a sudden fake their way into making people believe that they know about how businesses work or that they know the nuances within a particular business sector (i.e. healthcare industry, food industry, retail/e-commerce, wedding industry, etc.). If you don’t have any experience or at least have knowledge about my respective business sector then how can I trust you to help my business grow?\n\nWell it turns out Amir has had 14+ years of experience assisting businesses in the healthcare industry, auto industry, sports app industry, wedding designers, distribution, and etc. I was pretty impressed with how well-rounded his resume was and how well-rounded his knowledge was about different business sectors including mine (healthcare). On top of that, I noticed he’s at the perfect age where he’s not too young to be inexperienced with businesses but he’s also not too old to understand the full capabilities of AI and how to leverage it.\n\nHe explained to me how quick he is in discovering and becoming familiar with the newest AI models, and he also knows a ton about product development with AI. He has mapped out an impressive Search Engine Optimization and marketing strategy for my business and as a result my business has received more searches these past two months than I ever had since I started. I have him to thank for that.\n\nIf you feel stuck, if you feel like your business has plateaued, and you need an answer to get out of your current situation to reach a new potential for your business, I highly recommend AmirGetsJobs.",
-   "publisher": {
-    "@type": "Organization",
-    "name": "Google"
-   },
-   "url": "https://maps.google.com/maps?cid=17255384803177239107"
-  },
-  {
-   "@type": "Review",
-   "author": {
-    "@type": "Person",
-    "name": "Ahsan K"
-   },
-   "datePublished": "2026-03-12",
-   "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": 5,
-    "bestRating": 5
-   },
-   "reviewBody": "I've known Amir for years and watched him build his company from the ground up. The way he uses AI and automation for local marketing is genuinely different from anything I've seen and I've looked around. He's not doing what everyone else is doing. If you're a contractor or small business owner trying to stand out from the crowd and actually show up on Google, this is the guy to call.",
-   "publisher": {
-    "@type": "Organization",
-    "name": "Google"
-   },
-   "url": "https://maps.google.com/maps?cid=17255384803177239107"
-  },
-  {
-   "@type": "Review",
-   "author": {
-    "@type": "Person",
-    "name": "Noman Naqvi"
-   },
-   "datePublished": "2026-03-12",
-   "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": 5,
-    "bestRating": 5
-   },
-   "reviewBody": "I run my own PT practice on the side and had zero time to deal with building a website. Amir handled the whole thing, I barely had to do anything. Since it went up I've been getting a completely different caliber of patient reaching out. More serious, more qualified. If you're running your own business and want more of the right customers, he's your guy! He also responds ASAP anytime I have any questions!",
-   "publisher": {
-    "@type": "Organization",
-    "name": "Google"
-   },
-   "url": "https://maps.google.com/maps?cid=17255384803177239107"
-  }
- ]
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "H"
+      },
+      "datePublished": "2026-09-11",
+      "reviewBody": "Amir got our firm to the top of chat gpt",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      },
+      "url": "https://maps.google.com/maps?cid=17255384803177239107"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Noman"
+      },
+      "datePublished": "2026-03-12",
+      "reviewBody": "I've been getting a completely different caliber of patient reaching out",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      },
+      "url": "https://maps.google.com/maps?cid=17255384803177239107"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Ken"
+      },
+      "datePublished": "2026-09-24",
+      "reviewBody": "We are starting to get busy",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      },
+      "url": "https://maps.google.com/maps?cid=17255384803177239107"
+    }
+  ]
 }
 </script>
 <footer>
