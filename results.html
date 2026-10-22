@@ -603,7 +603,7 @@ footer .wrap{max-width:1200px;padding-left:32px;padding-right:32px}
 </script>
 <script>
 (function(){var ff=document.getElementById('filmframe');
-if(ff){ff.addEventListener('click',function(){if(ff.querySelector('iframe'))return;var f=document.createElement('iframe');f.src='https://customer-1dbaiqcmozq0dh9g.cloudflarestream.com/'+ff.dataset.film+'/iframe?autoplay=true&primaryColor=%23FF4D1C';f.allow='accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.title='AmirGetsLeads film';ff.innerHTML='';ff.appendChild(f);});}})();
+if(ff){ff.addEventListener('click',function(){if(!ff.isConnected)return;var f=document.createElement('iframe');f.src='https://customer-1dbaiqcmozq0dh9g.cloudflarestream.com/'+ff.dataset.film+'/iframe?autoplay=true&primaryColor=%23FF4D1C';f.allow='accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.title='AmirGetsLeads film';var w=document.createElement('div');w.className='film-frame';w.appendChild(f);ff.replaceWith(w);f.focus();});}})();
 </script>
 
 <section class="greviews" id="reviews" aria-labelledby="reviews-heading"><div class="wrap">

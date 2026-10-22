@@ -260,8 +260,10 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
     text-wrap:balance;font-synthesis:none}
   .hero-slogan em{font-style:italic;color:#2596BE}
   /* Amir 2026-10-21: "Hot" reads as fire, the place name takes the brand blue. */
-  .hero-slogan em.hot{background:linear-gradient(180deg,#FFC12E 0%,#FF7A1A 45%,#E8340C 100%);
-    -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-right:.06em}
+  .hero-slogan em.hot{color:#FF7A1A}
+  @supports (background-clip:text) or (-webkit-background-clip:text){
+    .hero-slogan em.hot{background:linear-gradient(180deg,#FFC12E 0%,#FF7A1A 45%,#E8340C 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-right:.06em}}
 
   @media(max-width:640px){
     .hero .eyebrow{font-size:13px;margin:0 0 18px;line-height:1.55}
