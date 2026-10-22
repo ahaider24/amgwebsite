@@ -260,6 +260,18 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
 .cld-av{flex:none;width:26px;height:26px;border-radius:50%;background:#3D3D3A;color:#fff;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
 .cld-ans{margin:16px 4px 16px;font-family:Georgia,"Tiempos Text","Times New Roman",serif;font-size:16px;line-height:1.6}.cld-ans p{margin:0 0 10px}
 .cld-comp{margin-top:auto;padding:14px 16px;background:#fff;border:1px solid #E8E6DC;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.04);font-family:ui-sans-serif,-apple-system,Arial,sans-serif;font-size:15px;color:#8A8880}
+/* Amir 2026-10-21: the film on /results, same lazy Cloudflare Stream player as /diagnostic. */
+.film{background:var(--paper);padding:64px 0 0}
+.film .label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 10px}
+.film h2{font-family:var(--display);font-weight:430;font-size:clamp(30px,4.4vw,54px);line-height:1.04;letter-spacing:-.02em;margin:0 0 24px}
+.film-frame{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:14px;overflow:hidden;background:var(--ink);cursor:pointer;box-shadow:0 24px 60px rgba(20,17,10,.25)}
+.film-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.film-frame iframe{width:100%;height:100%;border:0;display:block}
+.film-play{position:absolute;top:50%;left:50%;width:76px;height:76px;transform:translate(-50%,-50%);border-radius:50%;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.film-frame:hover .film-play{transform:translate(-50%,-50%) scale(1.08)}
+.film-frame:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.film-tag{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:#fff;background:rgba(0,0,0,.55);padding:6px 10px;border-radius:6px}
+@media(max-width:520px){.film{padding-top:44px}}
 .greviews{background:var(--paper);padding:64px 0;scroll-margin-top:100px}
 .greviews h2{font-family:var(--display);font-weight:430;font-size:clamp(30px,4.4vw,54px);line-height:1.04;letter-spacing:-.02em;margin:0 0 24px}
 .g-card{background:#fff;border:1px solid #DADCE0;border-radius:16px;padding:22px 24px;max-width:760px;font-family:Roboto,Arial,sans-serif;color:#202124}
@@ -569,6 +581,24 @@ h3.card-client{font-weight:400}.result-card strong{display:block;font-family:var
 <div class="pair-row"><span class="pair-l">Oct</span><div class="pb after" style="--p:72"><span>72%</span></div></div>
 </figure>
 </div></section>
+
+<section class="film" aria-labelledby="film-title"><div class="wrap">
+<p class="label">Who you will be working with</p>
+<h2 id="film-title">Three minutes on who we are.</h2>
+<button type="button" class="film-frame" id="filmframe" data-film="573458682e65aff406132d2044068d3c" aria-label="Play the AmirGetsLeads film, 2 minutes 58 seconds">
+<img src="/amg-commercial-fresno-poster.v2.jpg" alt="Still from the AmirGetsLeads film" width="1920" height="864" loading="lazy" decoding="async">
+<span class="film-play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>
+<span class="film-tag">PLAY · 2:58</span>
+</button>
+</div></section>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoObject","name":"AmirGetsLeads film","description":"Three minutes on who AmirGetsLeads is: a marketing and AI agency headquartered in Fresno, California.","thumbnailUrl":"https://amirgetsleads.com/amg-commercial-fresno-poster.v2.jpg","uploadDate":"2026-07-23","duration":"PT2M58S","embedUrl":"https://customer-1dbaiqcmozq0dh9g.cloudflarestream.com/573458682e65aff406132d2044068d3c/iframe"}
+</script>
+<script>
+(function(){var ff=document.getElementById('filmframe');
+if(ff){ff.addEventListener('click',function(){if(ff.querySelector('iframe'))return;var f=document.createElement('iframe');f.src='https://customer-1dbaiqcmozq0dh9g.cloudflarestream.com/'+ff.dataset.film+'/iframe?autoplay=true&primaryColor=%23FF4D1C';f.allow='accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.title='AmirGetsLeads film';ff.innerHTML='';ff.appendChild(f);});}})();
+</script>
 
 <section class="greviews" id="reviews" aria-labelledby="reviews-heading"><div class="wrap">
 <h2 id="reviews-heading">Client reviews</h2>
