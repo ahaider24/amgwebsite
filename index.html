@@ -259,6 +259,9 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
     letter-spacing:-.02em;line-height:1.12;color:var(--ink);margin:24px auto 0;
     text-wrap:balance;font-synthesis:none}
   .hero-slogan em{font-style:italic;color:#2596BE}
+  /* Amir 2026-10-21: "Hot" reads as fire, the place name takes the brand blue. */
+  .hero-slogan em.hot{background:linear-gradient(180deg,#FFC12E 0%,#FF7A1A 45%,#E8340C 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-right:.06em}
 
   @media(max-width:640px){
     .hero .eyebrow{font-size:13px;margin:0 0 18px;line-height:1.55}
@@ -269,6 +272,7 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
      wraps between places and .nb keeps a single place name whole. */
   .hero h1 em{font-style:normal;color:var(--accent)}
   .hero h1 em .nb{white-space:nowrap}
+  .hero h1 em.place{color:#2596BE}
   .hero-art{position:relative;display:inline-block;line-height:0;margin:clamp(6px,1.6vh,22px) auto clamp(4px,1.2vh,16px)}
   .hero-art img{display:block;height:clamp(168px,28svh,300px);width:auto;max-width:94vw}
   /* Desktop: the hands run edge to edge. Width is the viewport unless the fold cannot hold it,
@@ -740,9 +744,9 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   <div class="hero-grain"></div>
   <div class="wrap">
     <div class="hero-inner">
-      <span class="eyebrow rv in">AmirGetsLeads<span class="eb-sep"> · </span><br class="eb-br" />Marketing &amp; AI agency</span>
-      <h1 class="rv in d1">The AI marketing agency for <em>Fresno &amp; <span class="nb">Los Angeles</span></em></h1>
-      <p class="hero-slogan rv in d1">Found, chosen, <em>booked.</em></p>
+      <span class="eyebrow rv in">AmirGetsLeads<span class="eb-sep"> · </span><br class="eb-br" />Marketing &amp; AI agency<span class="eb-sep"> · </span><br class="eb-br" />Fresno HQ</span>
+      <h1 class="rv in d1">The AI marketing agency for <em class="place">California</em></h1>
+      <p class="hero-slogan rv in d1"><em class="hot">Hot</em> leads that come to you</p>
       <figure class="hero-art rv in d2">
         <img src="hero-hands.webp" srcset="hero-hands-640.webp 640w, hero-hands-960.webp 960w, hero-hands-1440.webp 1440w, hero-hands-2048.webp 2048w, hero-hands.webp 3360w" sizes="(max-width: 600px) calc(100vw - 36px), (max-width: 900px) calc(100vw - 52px), clamp(calc(28svh * 3.394), calc((100svh - 496px) * 3.394), 100vw)" fetchpriority="high" decoding="async" width="3360" height="990" alt="A robotic hand and a human hand reaching toward each other, fingertips nearly touching" />
         <span class="hero-spark" aria-hidden="true"></span>
