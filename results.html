@@ -251,6 +251,8 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
 .cgpt-user{align-self:flex-end;max-width:80%;background:#F4F4F4;border-radius:18px;padding:10px 16px}
 .cgpt-ans{margin-top:18px}.cgpt-ans p{margin:0}.cgpt-ans ul{margin:8px 0 0;padding-left:20px}.cgpt-ans li{margin:4px 0}
 .hl{font-weight:600;background:#FFF2B3;padding:0 3px;border-radius:3px}
+/* Amir 2026-10-21: client names are blacked out on purpose, so they read as redacted, not as an unfilled template. */
+.redact{display:inline-block;width:6.5em;height:.95em;vertical-align:-.1em;background:var(--ink);border-radius:3px}
 .cgpt-act{display:flex;gap:14px;margin:10px 0 18px}.cgpt-act svg{width:16px;height:16px;fill:none;stroke:#5D5D5D;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .cgpt-comp{margin-top:auto;display:flex;align-items:center;gap:10px;padding:10px 10px 10px 16px;border:1px solid #E5E5E5;border-radius:28px;box-shadow:0 2px 12px rgba(0,0,0,.06);color:#8F8F8F}
 .cgpt-plus{font-size:20px;line-height:1;color:#5D5D5D}.cgpt-ph{flex:1}
@@ -568,14 +570,14 @@ footer .wrap{max-width:1200px;padding-left:32px;padding-right:32px}
 <div class="prong-grid">
 <figure class="cgpt" aria-label="ChatGPT answer recommending our client">
 <div class="cgpt-user">Can a convenience store in Fresno get Dr Pepper syrup and CO2 from one local distributor?</div>
-<div class="cgpt-ans"><p>Yes. <b class="hl">[Our client]</b> in Fresno is a good match for getting both from one local supplier.</p>
+<div class="cgpt-ans"><p>Yes. <span class="redact" role="img" aria-label="client name hidden"></span> in Fresno is a good match for getting both from one local supplier.</p>
 <ul><li>Authorized fountain syrup distributor, bag-in-box syrups</li><li>20 lb and 50 lb CO2 tanks, and it serves convenience stores</li></ul></div>
 <div class="cgpt-act" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M5 15V6a1 1 0 0 1 1-1h9"/></svg><svg viewBox="0 0 24 24"><path d="M7 11v9H4v-9h3zm0 0 4-7a2 2 0 0 1 3 2l-1 4h5a2 2 0 0 1 2 2l-2 7a2 2 0 0 1-2 1H7"/></svg><svg viewBox="0 0 24 24"><path d="M17 13V4h3v9h-3zm0 0-4 7a2 2 0 0 1-3-2l1-4H6a2 2 0 0 1-2-2l2-7a2 2 0 0 1 2-1h9"/></svg></div>
 <div class="cgpt-comp" aria-hidden="true"><span class="cgpt-plus">+</span><span class="cgpt-ph">Ask anything</span><span class="cgpt-send"><svg viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></span></div>
 </figure>
 <figure class="cld" aria-label="Claude answer recommending our client">
 <div class="cld-user"><span class="cld-av">B</span><span>Does a beverage distributor in Fresno handle both syrup and CO2, or do I need two vendors?</span></div>
-<div class="cld-ans"><p>One vendor can cover both, so you don't need two.</p><p><b class="hl">[Our client]</b> is a one-stop fit: they're an authorized fountain syrup distributor and do beverage-grade CO2 tank refills and exchanges, with delivery across Fresno and the Central Valley.</p><p>For most fountain setups, they're the simpler choice since one vendor handles both syrup and gas.</p></div>
+<div class="cld-ans"><p>One vendor can cover both, so you don't need two.</p><p><span class="redact" role="img" aria-label="client name hidden"></span> is a one-stop fit: they're an authorized fountain syrup distributor and do beverage-grade CO2 tank refills and exchanges, with delivery across Fresno and the Central Valley.</p><p>For most fountain setups, they're the simpler choice since one vendor handles both syrup and gas.</p></div>
 <div class="cld-comp" aria-hidden="true">Reply...</div>
 </figure>
 </div>
