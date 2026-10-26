@@ -126,12 +126,14 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   .hero .sub{font-size:clamp(17px,1.7vw,20px);color:rgba(255,255,255,.86);max-width:52ch;line-height:1.55}
   .hero .scene-note{position:absolute;right:26px;bottom:9vh;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);writing-mode:vertical-rl}
   @media (max-width:900px){.hero .scene-note{display:none}}
-  .route{background:var(--ink);color:var(--paper);padding:22px 0;overflow-x:auto}
-  .route .wrap{display:flex;align-items:center;gap:14px;white-space:nowrap}
+  .route{background:var(--ink);color:var(--paper);padding:22px 0}
+  .route .wrap{display:flex;flex-wrap:wrap;align-items:center;column-gap:14px;row-gap:12px;white-space:nowrap}
   .route .rt-label{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);flex-shrink:0}
   .route .rt-step{font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:rgba(251,248,242,.85);flex-shrink:0}
   .route .rt-arrow{color:var(--accent);flex-shrink:0}
   .route .rt-step.home{color:#fff;border:1px solid rgba(251,248,242,.35);border-radius:100px;padding:5px 14px}
+  .route .rt-pair{display:inline-flex;align-items:center;gap:14px}
+  @media (max-width:760px){.route .wrap{flex-direction:column;align-items:flex-start;row-gap:8px;white-space:normal}.route .rt-pair{flex-direction:column;align-items:flex-start;gap:8px;max-width:100%}.route .rt-step{white-space:normal;max-width:100%;flex-shrink:1}.route .rt-arrow{transform:rotate(90deg);margin-left:4px}}
 
   .operator{padding:30px 0 0}
   .op-card{display:grid;grid-template-columns:300px 1fr;gap:50px;align-items:center}
@@ -338,14 +340,10 @@ posthog.init('phc_B4p4JkzKJ6YmUajoouGUZ2epDEvHhyAJ3AuR88sofHik', {api_host: '/in
   <div class="wrap">
     <span class="rt-label">The route</span>
     <span class="rt-step">Neuroscience, USC</span>
-    <span class="rt-arrow">→</span>
-    <span class="rt-step">Product lead, ranking systems that read 10M articles</span>
-    <span class="rt-arrow">→</span>
-    <span class="rt-step">Lead product manager, $190M exit</span>
-    <span class="rt-arrow">→</span>
-    <span class="rt-step">Chief Product Officer, $15M raised</span>
-    <span class="rt-arrow">→</span>
-    <span class="rt-step home">Founder, AmirGetsLeads: SEO &amp; AI search</span>
+    <span class="rt-pair"><span class="rt-arrow" aria-hidden="true">→</span> <span class="rt-step">Product lead, ranking systems that read 10M articles</span></span>
+    <span class="rt-pair"><span class="rt-arrow" aria-hidden="true">→</span> <span class="rt-step">Lead product manager, $190M exit</span></span>
+    <span class="rt-pair"><span class="rt-arrow" aria-hidden="true">→</span> <span class="rt-step">Chief Product Officer, $15M raised</span></span>
+    <span class="rt-pair"><span class="rt-arrow" aria-hidden="true">→</span> <span class="rt-step home">Founder, AmirGetsLeads: SEO &amp; AI search</span></span>
   </div>
 </div>
 
