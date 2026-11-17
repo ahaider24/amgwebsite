@@ -296,7 +296,7 @@ mountInlineFilm(document.getElementById('filmSection'), {
   });
 
   /* CTA scroll */
-  document.querySelectorAll('.tbtn').forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();if(b.hasAttribute('data-cal')){window.open('https://calendar.app.google/eQvwG6TeVDq5GCG7A','_blank','noopener');}else{document.getElementById('audit').scrollIntoView({behavior:'smooth'});}});});
+  document.querySelectorAll('.tbtn').forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();if(b.hasAttribute('data-cal')){window.open('https://calendar.app.google/LdkL5BTjuSGbYcXK9','_blank','noopener');}else{document.getElementById('audit').scrollIntoView({behavior:'smooth'});}});});
 })();
 
 /* Before/after business dashboard: revenue, pipeline influence, lead quality, acquisition cost */
